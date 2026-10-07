@@ -21,9 +21,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install V
-        uses: vlang/setup-v@v1
-        with:
-          version: "0.5.2"
+        run: |
+          curl -sSL https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip -o v.zip
+          unzip -o v.zip -d /usr/local/bin
+          chmod +x /usr/local/bin/v
+          v version
 
       - name: Install mdBook
         run: |
