@@ -25,8 +25,8 @@ jobs:
           curl -sSL https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip -o v.zip
           unzip -o v.zip -d /usr/local/bin
           chmod +x /usr/local/bin/v/v
-          ln -sf /usr/local/bin/v/v /usr/local/bin/vc
-          /usr/local/bin/v/v version
+          echo "/usr/local/bin/v" >> $GITHUB_PATH
+          v version
 
       - name: Install mdBook
         run: |
