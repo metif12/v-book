@@ -9,12 +9,12 @@ Attributes are metadata annotations placed before declarations. They control com
 Marks a function or type as deprecated. The compiler emits a warning when the item is used.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
@@ -25,7 +25,7 @@ fn old_multiply(a int, b int) int {
 Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -41,7 +41,7 @@ fn main() {
 Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }

@@ -19,6 +19,7 @@ fn main() {
 
 ```v
 struct Stack[T] {
+mut:
     items []T
 }
 
