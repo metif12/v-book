@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch03-03-functions.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="functions"><a class="header" href="#functions">Functions</a></h1>
+<p>Functions are declared with <code>fn</code>:</p>
+<pre><code class="language-v">fn add(a int, b int) int {
+    return a + b
+}
+
+fn main() {
+    result := add(2, 3)
+    println(result)
+}
+</code></pre>
+<h2 id="multiple-return-values"><a class="header" href="#multiple-return-values">Multiple return values</a></h2>
+<pre><code class="language-v">fn divmod(a int, b int) (int, int) {
+    return a / b, a % b
+}
+
+fn main() {
+    q, r := divmod(17, 5)
+    println('quotient: ${q}, remainder: ${r}')
+}
+</code></pre>
+<h2 id="no-return-value"><a class="header" href="#no-return-value">No return value</a></h2>
+<pre><code class="language-v">fn greet(name string) {
+    println('Hello, ${name}!')
+}
+
+fn main() {
+    greet('World')
+}
+</code></pre>
+<h2 id="function-hoisting"><a class="header" href="#function-hoisting">Function hoisting</a></h2>
+<p>Functions can be called before they are declared:</p>
+<pre><code class="language-v">fn main() {
+    println(add(2, 3))
+}
+
+fn add(a int, b int) int {
+    return a + b
+}
+</code></pre>
+<h2 id="next"><a class="header" href="#next">Next</a></h2>
+<p><a href="ch03-04-comments.html">Comments</a></p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

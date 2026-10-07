@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch03-02-data-types.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="data-types"><a class="header" href="#data-types">Data Types</a></h1>
+<h2 id="integer-types"><a class="header" href="#integer-types">Integer types</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Type</th><th>Size</th><th>Range</th></tr></thead><tbody>
+<tr><td><code>i8</code></td><td>8-bit</td><td>-128 to 127</td></tr>
+<tr><td><code>i16</code></td><td>16-bit</td><td>-32,768 to 32,767</td></tr>
+<tr><td><code>i32</code></td><td>32-bit</td><td>-2^31 to 2^31-1</td></tr>
+<tr><td><code>i64</code></td><td>64-bit</td><td>-2^63 to 2^63-1</td></tr>
+<tr><td><code>int</code></td><td>platform</td><td>usually 64-bit</td></tr>
+<tr><td><code>u8</code></td><td>8-bit</td><td>0 to 255</td></tr>
+<tr><td><code>u16</code></td><td>16-bit</td><td>0 to 65,535</td></tr>
+<tr><td><code>u32</code></td><td>32-bit</td><td>0 to 2^32-1</td></tr>
+<tr><td><code>u64</code></td><td>64-bit</td><td>0 to 2^64-1</td></tr>
+</tbody></table>
+</div>
+<h2 id="float-types"><a class="header" href="#float-types">Float types</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Type</th><th>Size</th></tr></thead><tbody>
+<tr><td><code>f32</code></td><td>32-bit</td></tr>
+<tr><td><code>f64</code></td><td>64-bit</td></tr>
+</tbody></table>
+</div>
+<h2 id="other-types"><a class="header" href="#other-types">Other types</a></h2>
+<ul>
+<li><code>bool</code> — <code>true</code> or <code>false</code></li>
+<li><code>string</code> — UTF-8 string</li>
+<li><code>rune</code> — single Unicode character (alias for <code>u32</code>)</li>
+<li><code>byte</code> — alias for <code>u8</code></li>
+</ul>
+<h2 id="type-conversion"><a class="header" href="#type-conversion">Type conversion</a></h2>
+<pre><code class="language-v">fn main() {
+    a := 42
+    b := f64(a)
+    c := int(b)
+    println('${a} ${b} ${c}')
+}
+</code></pre>
+<h2 id="next"><a class="header" href="#next">Next</a></h2>
+<p><a href="ch03-03-functions.html">Functions</a></p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

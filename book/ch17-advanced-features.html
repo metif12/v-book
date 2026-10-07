@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 17: Advanced Features - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch17-advanced-features.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-17-advanced-features"><a class="header" href="#chapter-17-advanced-features">Chapter 17: Advanced Features</a></h1>
+<h2 id="attributes"><a class="header" href="#attributes">Attributes</a></h2>
+<p>Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.</p>
+<h3 id="deprecated"><a class="header" href="#deprecated">[deprecated]</a></h3>
+<p>Marks a function or type as deprecated. The compiler emits a warning when the item is used.</p>
+<pre><code class="language-v">[deprecated]
+fn old_add(a int, b int) int {
+    return a + b
+}
+
+[deprecated: 'Use new_add instead']
+fn old_multiply(a int, b int) int {
+    return a * b
+}
+</code></pre>
+<h3 id="inline"><a class="header" href="#inline">[inline]</a></h3>
+<p>Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.</p>
+<pre><code class="language-v">[inline]
+fn square(x int) int {
+    return x * x
+}
+
+fn main() {
+    result := square(5)
+    println(result)
+}
+</code></pre>
+<h3 id="unsafe"><a class="header" href="#unsafe">[unsafe]</a></h3>
+<p>Marks a function as unsafe, allowing it to use <code>unsafe</code> blocks without the caller also being marked unsafe.</p>
+<pre><code class="language-v">[unsafe]
+fn read_pointer(ptr voidptr) int {
+    return unsafe { *(&amp;int(ptr)) }
+}
+
+fn main() {
+    x := 42
+    val := read_pointer(&amp;x)
+    println(val)
+}
+</code></pre>
+<h3 id="if"><a class="header" href="#if">[if]</a></h3>
+<p>Conditional compilation at compile time. The block is included only when the condition is true.</p>
+<pre><code class="language-v">$if debug {
+    println('Debug mode enabled')
+} $else {
+    println('Release mode')
+}
+</code></pre>
+<h2 id="compile-time-code"><a class="header" href="#compile-time-code">Compile-time code</a></h2>
+<p>V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.</p>
+<h3 id="if-1"><a class="header" href="#if-1">$if</a></h3>
+<p>Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.</p>
+<pre><code class="language-v">$if windows {
+    const os_name = 'Windows'
+} $else $if macos {
+    const os_name = 'macOS'
+} $else $if linux {
+    const os_name = 'Linux'
+} $else {
+    const os_name = 'Unknown'
+}
+
+fn main() {
+    println('Running on ${os_name}')
+}
+</code></pre>
+<h3 id="for"><a class="header" href="#for">$for</a></h3>
+<p>Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.</p>
+<pre><code class="language-v">const platforms = ['windows', 'linux', 'macos']
+
+fn is_platform(name string) bool {
+    return name in platforms
+}
+
+fn main() {
+    println(is_platform('windows'))
+    println(is_platform('linux'))
+    println(is_platform('macos'))
+    println(is_platform('freebsd'))
+}
+</code></pre>
+<h3 id="assert"><a class="header" href="#assert">$assert</a></h3>
+<p>Compile-time assertions that abort compilation if the condition is false.</p>
+<pre><code class="language-v">$assert sizeof(int) == 8 || sizeof(int) == 4
+$assert @VMOD_FILE.len &gt; 0
+
+fn main() {
+    println('Assertions passed')
+}
+</code></pre>
+<h2 id="operator-overloading"><a class="header" href="#operator-overloading">Operator overloading</a></h2>
+<p>V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.</p>
+<h3 id="arithmetic-operators"><a class="header" href="#arithmetic-operators">Arithmetic operators</a></h3>
+<pre><code class="language-v">struct Vec2 {
+    x f64
+    y f64
+}
+
+fn (a Vec2) + (b Vec2) Vec2 {
+    return Vec2{x: a.x + b.x, y: a.y + b.y}
+}
+
+fn (a Vec2) - (b Vec2) Vec2 {
+    return Vec2{x: a.x - b.x, y: a.y - b.y}
+}
+
+fn (a Vec2) * (b Vec2) Vec2 {
+    return Vec2{x: a.x * b.x, y: a.y * b.y}
+}
+
+fn (a Vec2) / (b Vec2) Vec2 {
+    return Vec2{x: a.x / b.x, y: a.y / b.y}
+}
+
+fn main() {
+    a := Vec2{x: 10, y: 20}
+    b := Vec2{x: 2, y: 4}
+    sum := a + b
+    diff := a - b
+    prod := a * b
+    quot := a / b
+    println('Sum: ${sum.x}, ${sum.y}')
+    println('Diff: ${diff.x}, ${diff.y}')
+    println('Prod: ${prod.x}, ${prod.y}')
+    println('Quot: ${quot.x}, ${quot.y}')
+}
+</code></pre>
+<h3 id="comparison-operators"><a class="header" href="#comparison-operators">Comparison operators</a></h3>
+<pre><code class="language-v">struct Money {
+    amount   f64
+    currency string
+}
+
+fn (a Money) == (b Money) bool {
+    return a.amount == b.amount &amp;&amp; a.currency == b.currency
+}
+
+fn main() {
+    a := Money{amount: 10.0, currency: 'USD'}
+    b := Money{amount: 10.0, currency: 'USD'}
+    c := Money{amount: 20.0, currency: 'USD'}
+    println(a == b)
+    println(a == c)
+}
+</code></pre>
+<h3 id="index-operator"><a class="header" href="#index-operator">Index operator</a></h3>
+<pre><code class="language-v">struct Grid {
+    data [][]int
+}
+
+fn (g Grid) row_count() int {
+    return g.data.len
+}
+
+fn (g Grid) get(row int, col int) int {
+    return g.data[row][col]
+}
+
+fn main() {
+    g := Grid{
+        data: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    }
+    println(g.row_count())
+    println(g.get(1, 2))
+}
+</code></pre>
+<h2 id="compile-time-reflection"><a class="header" href="#compile-time-reflection">Compile-time reflection</a></h2>
+<p>V’s <code>$for</code> construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.</p>
+<h3 id="iterating-struct-fields"><a class="header" href="#iterating-struct-fields">Iterating struct fields</a></h3>
+<pre><code class="language-v">struct User {
+    id    int
+    name  string
+    email string
+    age   int
+}
+
+fn main() {
+    u := User{
+        id: 1
+        name: 'Alice'
+        email: 'alice@example.com'
+        age: 30
+    }
+    $for field in User.fields {
+        $if field.typ is string {
+            println('${field.name} is a string field')
+        } $else $if field.typ is int {
+            println('${field.name} is an int field')
+        }
+    }
+    println('${u.name} is ${u.age} years old')
+}
+</code></pre>
+<h3 id="generating-validation-code"><a class="header" href="#generating-validation-code">Generating validation code</a></h3>
+<pre><code class="language-v">struct Config {
+    host    string
+    port    int
+    timeout f64
+}
+
+fn validate_config(c Config) ! {
+    $for field in Config.fields {
+        $if field.typ is string {
+            if c.$(field.name).len == 0 {
+                return error('${field.name} must not be empty')
+            }
+        } $else $if field.typ is int {
+            if c.$(field.name) &lt;= 0 {
+                return error('${field.name} must be positive')
+            }
+        }
+    }
+}
+
+fn main() {
+    cfg := Config{
+        host: 'localhost'
+        port: 8080
+        timeout: 30.0
+    }
+    validate_config(cfg) or {
+        println('Config invalid: ${err}')
+        return
+    }
+    println('Config is valid')
+}
+</code></pre>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we’ll explore memory management in depth.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Ownership and Memory - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch04-ownership-and-memory.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-4-ownership-and-memory"><a class="header" href="#chapter-4-ownership-and-memory">Chapter 4: Ownership and Memory</a></h1>
+<p>V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.</p>
+<h2 id="stack-and-heap"><a class="header" href="#stack-and-heap">Stack and Heap</a></h2>
+<p>V automatically decides whether to allocate on the stack or heap:</p>
+<pre><code class="language-v">fn main() {
+    // Stack-allocated (small, fixed size)
+    x := 42
+    arr := [1, 2, 3]
+
+    // Heap-allocated (large, dynamic)
+    mut big := []int{}
+    for i in 0 .. 1000 {
+        big &lt;&lt; i
+    }
+
+    println('${x} ${arr} ${big.len}')
+}
+</code></pre>
+<h2 id="garbage-collection"><a class="header" href="#garbage-collection">Garbage Collection</a></h2>
+<p>V uses a garbage collector by default. You don’t need to free memory manually:</p>
+<pre><code class="language-v">fn main() {
+    mut names := []string{}
+    for i in 0 .. 100 {
+        names &lt;&lt; 'name ${i}'
+    }
+    // Memory is automatically freed when no longer referenced
+    println(names.len)
+}
+</code></pre>
+<h2 id="autofree"><a class="header" href="#autofree">Autofree</a></h2>
+<p>V has an autofree mode that automatically frees memory when variables go out of scope:</p>
+<pre><code class="language-bash">v -autofree main.v
+</code></pre>
+<pre><code class="language-v">fn process() {
+    mut data := []int{}
+    for i in 0 .. 1000 {
+        data &lt;&lt; i
+    }
+    // data is automatically freed here
+}
+
+fn main() {
+    process()
+    println('done')
+}
+</code></pre>
+<h2 id="references"><a class="header" href="#references">References</a></h2>
+<p>You can use references to avoid copying large data:</p>
+<pre><code class="language-v">fn modify(mut arr []int) {
+    arr &lt;&lt; 42
+}
+
+fn main() {
+    mut data := [1, 2, 3]
+    modify(mut data)
+    println(data)
+}
+</code></pre>
+<h2 id="memory-management-modes"><a class="header" href="#memory-management-modes">Memory management modes</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Mode</th><th>Flag</th><th>Description</th></tr></thead><tbody>
+<tr><td>GC (default)</td><td><code>-gc boehm</code></td><td>Boehm garbage collector</td></tr>
+<tr><td>Autofree</td><td><code>-autofree</code></td><td>Automatic memory freeing</td></tr>
+<tr><td>None</td><td><code>-gc none</code></td><td>Manual memory management</td></tr>
+<tr><td>Prealloc</td><td><code>-prealloc</code></td><td>Arena allocation</td></tr>
+</tbody></table>
+</div>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about V’s memory management options. In the next chapter, we’ll explore structs.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

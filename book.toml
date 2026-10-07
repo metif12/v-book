@@ -13,7 +13,7 @@ create-missing = true
 [output.html]
 default-theme = "v-dark"
 preferred-dark-theme = "v-dark"
-curly-quotes = true
+smart-punctuation = true
 mathjax-support = false
 copy-fonts = true
 no-section-label = false

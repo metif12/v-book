@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Getting Started - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch01-getting-started.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-1-getting-started"><a class="header" href="#chapter-1-getting-started">Chapter 1: Getting Started</a></h1>
+<p>Let’s start your V journey! There’s a lot to learn, but every journey starts with a small step. In this chapter, you’ll learn how to:</p>
+<ul>
+<li>Install V on your system</li>
+<li>Write a “Hello, World!” program</li>
+<li>Use the V compiler and its commands</li>
+<li>Create a V project</li>
+</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:</p>
+<h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
+<p>Download and run the installer from <a href="https://vlang.io/install.html">vlang.io/install</a>, or use PowerShell:</p>
+<pre><code class="language-powershell">irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
+</code></pre>
+<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
+<pre><code class="language-bash">brew install vlang
+</code></pre>
+<p>Or use the installer script:</p>
+<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
+</code></pre>
+<h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
+<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
+</code></pre>
+<h3 id="from-source"><a class="header" href="#from-source">From source</a></h3>
+<p>To build V from source:</p>
+<pre><code class="language-bash">git clone https://github.com/vlang/v
+cd v
+make
+</code></pre>
+<h2 id="verifying-the-installation"><a class="header" href="#verifying-the-installation">Verifying the installation</a></h2>
+<p>After installation, verify V is working:</p>
+<pre><code class="language-bash">v version
+</code></pre>
+<p>You should see output like:</p>
+<pre><code>V 0.5.2
+</code></pre>
+<h2 id="hello-world"><a class="header" href="#hello-world">Hello, World!</a></h2>
+<p>Now let’s write our first V program. Create a file called <code>main.v</code>:</p>
+<pre><code class="language-v">fn main() {
+    println('Hello, World!')
+}
+</code></pre>
+<p>Run it:</p>
+<pre><code class="language-bash">v run main.v
+</code></pre>
+<p>You should see:</p>
+<pre><code>Hello, World!
+</code></pre>
+<p>Congratulations! You’ve written and run your first V program.</p>
+<h2 id="hello-v"><a class="header" href="#hello-v">Hello, V!</a></h2>
+<p>Let’s look at a slightly more interesting example:</p>
+<pre><code class="language-v">fn main() {
+    name := 'V'
+    println('Hello, ${name}!')
+    println('${name} is a great language.')
+}
+</code></pre>
+<p>Run it:</p>
+<pre><code class="language-bash">v run main.v
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello, V!
+V is a great language.
+</code></pre>
+<h2 id="the-v-compiler"><a class="header" href="#the-v-compiler">The V compiler</a></h2>
+<p>The V compiler is invoked with the <code>v</code> command. Common commands:</p>
+<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>v run file.v</code></td><td>Compile and run a V file</td></tr>
+<tr><td><code>v file.v</code></td><td>Compile a V file to an executable</td></tr>
+<tr><td><code>v fmt file.v</code></td><td>Format a V file</td></tr>
+<tr><td><code>v test .</code></td><td>Run tests in the current directory</td></tr>
+<tr><td><code>v doc .</code></td><td>Generate documentation</td></tr>
+<tr><td><code>v doctor</code></td><td>Diagnose your V installation</td></tr>
+</tbody></table>
+</div>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned how to install V, write a “Hello, World!” program, and use the V compiler. In the next chapter, we’ll look at how to structure a V project.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

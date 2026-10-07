@@ -18,10 +18,11 @@ A comprehensive book for the [V programming language](https://vlang.io), inspire
 | Theme/CSS | Complete |
 | CI pipeline | Complete |
 | Code testing preprocessor | Complete |
-| Chapters 0-12 | Written |
-| Chapters 13-20 | Written |
+| Book structure validator | Complete |
+| Chapters 0-20 | Written |
 | Appendices A-G | Written |
-| Translations (15 languages) | Infrastructure ready, content TODO |
+| Code examples | 148/148 passing |
+| Translations (15 languages) | Complete |
 
 ## Quick Start
 
@@ -40,6 +41,12 @@ mdbook build
 
 ```bash
 v run tools/mdbook-v-test .
+```
+
+### Validate book structure
+
+```bash
+v run tools/validate.vsh
 ```
 
 ### Run tests
@@ -63,18 +70,31 @@ v-book/
 │   ├── ch01-hello-v/
 │   └── ...
 ├── theme/                  # CSS, JS, templates
-│   ├── index.hbs
+│   ├── index.hbs           # Page template with Edit on GitHub button
 │   ├── favicon.svg
 │   ├── css/
 │   └── js/
 ├── tools/
-│   └── mdbook-v-test/      # Custom preprocessor for code testing
+│   ├── mdbook-v-test/      # Custom preprocessor for code testing
+│   └── validate.vsh        # Book structure validator
 ├── translations/           # 16 language translations
 │   ├── README.md
-│   ├── zh/
-│   ├── fa/
-│   └── ...
-├── ci/                     # CI scripts
+│   ├── de/                 # German
+│   ├── es/                 # Spanish
+│   ├── fr/                 # French
+│   ├── zh/                 # Chinese
+│   ├── ru/                 # Russian
+│   ├── ja/                 # Japanese
+│   ├── ko/                 # Korean
+│   ├── pt/                 # Portuguese
+│   ├── it/                 # Italian
+│   ├── ar/                 # Arabic (RTL)
+│   ├── fa/                 # Persian/Farsi (RTL)
+│   ├── hi/                 # Hindi
+│   ├── bn/                 # Bengali
+│   ├── ur/                 # Urdu (RTL)
+│   ├── id/                 # Indonesian
+│   └── tr/                 # Turkish
 ├── scripts/                # Scaffolding scripts
 │   ├── new_chapter.vsh
 │   └── new_locale.vsh
@@ -82,7 +102,9 @@ v-book/
 │   └── main.yml
 ├── book.toml               # mdBook config
 ├── v.mod                   # V module
-└── CONTRIBUTING.md
+├── AGENTS.md               # AI assistant instructions
+├── CONTRIBUTING.md            # Contribution guidelines
+└── README.md
 ```
 
 ## Chapters
@@ -130,21 +152,22 @@ This book is available in 16 languages:
 | Code | Language | Status |
 |------|----------|--------|
 | en | English | Complete (canonical) |
-| zh | 简体中文 | TODO |
-| hi | हिन्दी | TODO |
-| es | Español | TODO |
-| fa | فارسی | TODO |
-| ar | العربية | TODO |
-| fr | Français | TODO |
-| bn | বাংলা | TODO |
-| pt | Português | TODO |
-| ru | Русский | TODO |
-| ur | اردو | TODO |
-| id | Bahasa Indonesia | TODO |
-| de | Deutsch | TODO |
-| ja | 日本語 | TODO |
-| tr | Türkçe | TODO |
-| ko | 한국어 | TODO |
+| de | Deutsch | Complete |
+| es | Español | Complete |
+| fr | Français | Complete |
+| zh | 简体中文 | Complete |
+| ru | Русский | Complete |
+| ja | 日本語 | Complete |
+| ko | 한국어 | Complete |
+| pt | Português | Complete |
+| it | Italiano | Complete |
+| ar | العربية | Complete (RTL) |
+| fa | فارسی | Complete (RTL) |
+| hi | हिन्दी | Complete |
+| bn | বাংলা | Complete |
+| ur | اردو | Complete (RTL) |
+| id | Bahasa Indonesia | Complete |
+| tr | Türkçe | Complete |
 
 See [translations/README.md](translations/README.md) for how to contribute.
 
@@ -155,6 +178,8 @@ Code examples follow these conventions:
 - `v` — compiled and run in CI
 - `v ignore` — not compiled (pseudocode, incomplete examples)
 - `v no_run` — compiled but not run (blocking examples)
+
+Every code block is self-contained and tested in CI. The preprocessor (`tools/mdbook-v-test`) extracts all `v` blocks and runs them through `v run`.
 
 ## Contributing
 

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World! - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch01-02-hello-world.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="hello-world"><a class="header" href="#hello-world">Hello, World!</a></h1>
+<p>Create a file called <code>main.v</code>:</p>
+<pre><code class="language-v">fn main() {
+    println('Hello, World!')
+}
+</code></pre>
+<p>Run it:</p>
+<pre><code class="language-bash">v run main.v
+</code></pre>
+<p>Output:</p>
+<pre><code>Hello, World!
+</code></pre>
+<h2 id="anatomy-of-a-v-program"><a class="header" href="#anatomy-of-a-v-program">Anatomy of a V program</a></h2>
+<p>Let’s break down the program:</p>
+<ul>
+<li><code>fn main()</code> — Every V program starts with a <code>main</code> function. The <code>fn</code> keyword declares a function.</li>
+<li><code>println(...)</code> — A built-in function that prints a line to stdout.</li>
+<li><code>'Hello, World!'</code> — A string literal. V uses single quotes for strings.</li>
+</ul>
+<h2 id="compiling-vs-running"><a class="header" href="#compiling-vs-running">Compiling vs running</a></h2>
+<p><code>v run</code> compiles and runs in one step. You can also compile first:</p>
+<pre><code class="language-bash">v main.v
+./main
+</code></pre>
+<h2 id="next"><a class="header" href="#next">Next</a></h2>
+<p><a href="ch01-03-hello-v.html">Hello, V!</a></p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

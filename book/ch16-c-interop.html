@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 16: C Interop - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch16-c-interop.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-16-c-interop"><a class="header" href="#chapter-16-c-interop">Chapter 16: C Interop</a></h1>
+<p>V can call C functions and be called from C.</p>
+<h2 id="calling-c-from-v"><a class="header" href="#calling-c-from-v">Calling C from V</a></h2>
+<p>V can call C functions directly using the <code>C</code> module. You need to declare the C function signature and include the necessary headers.</p>
+<pre><code class="language-v">#flag -lm
+#include "math.h"
+
+fn C.sqrt(f64) f64
+
+fn main() {
+    result := C.sqrt(16.0)
+    println(result)
+}
+</code></pre>
+<p>The <code>#flag</code> directive passes flags to the C compiler. For example, <code>-lm</code> links the math library. The <code>#include</code> directive includes C header files so the compiler knows about the C functions. The <code>fn C.function_name</code> declaration tells V about the C function signature.</p>
+<p>You can call any C function by declaring its signature. For example, to call <code>puts</code>:</p>
+<pre><code class="language-v">#flag -lm
+#include "stdio.h"
+
+fn C.puts(byteptr) int
+
+fn main() {
+    C.puts(c'Hello, World!')
+}
+</code></pre>
+<h2 id="calling-v-from-c"><a class="header" href="#calling-v-from-c">Calling V from C</a></h2>
+<p>Compile V to a shared library:</p>
+<pre><code class="language-bash">v -shared -o libmylib.so mylib.v
+</code></pre>
+<p>Then use the shared library from C:</p>
+<pre><code class="language-v ignore">#include &lt;stdio.h&gt;
+
+extern int add(int a, int b);
+
+int main() {
+    printf("%d\n", add(2, 3));
+    return 0;
+}
+</code></pre>
+<h2 id="c2v"><a class="header" href="#c2v">C2V</a></h2>
+<p>V can translate C code to V:</p>
+<pre><code class="language-bash">v translate myheader.h
+</code></pre>
+<h2 id="working-with-c-types"><a class="header" href="#working-with-c-types">Working with C types</a></h2>
+<p>V provides C-compatible types like <code>C.int</code>, <code>C.double</code>, <code>C.char</code>, etc.</p>
+<pre><code class="language-v">fn main() {
+    x := int(42)
+    y := f64(3.14)
+    println(x)
+    println(y)
+}
+</code></pre>
+<h2 id="callbacks"><a class="header" href="#callbacks">Callbacks</a></h2>
+<p>You can pass V functions to C callbacks:</p>
+<pre><code class="language-v ignore">#flag -lm
+#include "stdlib.h"
+
+fn C.atexit(fn ())
+
+fn my_callback() {
+    println('done')
+}
+
+fn main() {
+    C.atexit(my_callback)
+}
+</code></pre>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about C interop. In the next chapter, we’ll explore advanced features.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

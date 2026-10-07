@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Common Concepts - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch03-common-concepts.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-3-common-concepts"><a class="header" href="#chapter-3-common-concepts">Chapter 3: Common Concepts</a></h1>
+<p>This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.</p>
+<h2 id="variables-and-mutability"><a class="header" href="#variables-and-mutability">Variables and Mutability</a></h2>
+<p>In V, variables are immutable by default. Use <code>mut</code> to make them mutable:</p>
+<pre><code class="language-v">fn main() {
+    name := 'V'
+    // name = 'Go'  // Error: name is immutable
+
+    mut count := 0
+    count = 1  // OK: count is mutable
+    count++
+    println(count)
+}
+</code></pre>
+<h2 id="data-types"><a class="header" href="#data-types">Data Types</a></h2>
+<p>V has a rich type system:</p>
+<pre><code class="language-v">fn main() {
+    // Integers
+    a := 42        // int
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
+
+    // Floats
+    pi := 3.14     // f64
+    e := f32(2.71) // 32-bit float
+
+    // Other types
+    name := 'V'    // string
+    is_ok := true  // bool
+    letter := `A`  // rune (single character)
+
+    println('${a} ${b} ${c}')
+    println('${pi} ${e}')
+    println('${name} ${is_ok} ${letter}')
+}
+</code></pre>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<p>Functions are declared with <code>fn</code>:</p>
+<pre><code class="language-v">fn add(a int, b int) int {
+    return a + b
+}
+
+fn greet(name string) {
+    println('Hello, ${name}!')
+}
+
+fn main() {
+    result := add(2, 3)
+    println(result)
+    greet('World')
+}
+</code></pre>
+<h2 id="comments"><a class="header" href="#comments">Comments</a></h2>
+<pre><code class="language-v">// This is a line comment
+
+/* This is a
+   block comment */
+</code></pre>
+<h2 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h2>
+<h3 id="if"><a class="header" href="#if">If</a></h3>
+<pre><code class="language-v">fn main() {
+    age := 25
+    if age &gt;= 18 {
+        println('Adult')
+    } else {
+        println('Minor')
+    }
+}
+</code></pre>
+<h3 id="for-loop"><a class="header" href="#for-loop">For loop</a></h3>
+<pre><code class="language-v">fn main() {
+    // Loop over an array
+    fruits := ['apple', 'banana', 'cherry']
+    for fruit in fruits {
+        println(fruit)
+    }
+
+    // Range loop
+    for i in 0 .. 5 {
+        println(i)
+    }
+}
+</code></pre>
+<h3 id="match"><a class="header" href="#match">Match</a></h3>
+<pre><code class="language-v">fn main() {
+    color := 'blue'
+    match color {
+        'red' { println('Red!') }
+        'blue' { println('Blue!') }
+        else { println('Other color') }
+    }
+}
+</code></pre>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we’ll explore ownership and memory management.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 14: Concurrency - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch14-concurrency.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-14-concurrency"><a class="header" href="#chapter-14-concurrency">Chapter 14: Concurrency</a></h1>
+<p>V has built-in concurrency support with goroutines, channels, and shared state.</p>
+<h2 id="spawning-goroutines"><a class="header" href="#spawning-goroutines">Spawning goroutines</a></h2>
+<p>A goroutine is a lightweight thread. Start one with the <code>go</code> keyword:</p>
+<pre><code class="language-v">fn worker(id int) {
+    println('Worker ${id} started')
+}
+
+fn main() {
+    for i in 0 .. 3 {
+        go worker(i)
+    }
+}
+</code></pre>
+<p>The <code>go</code> keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.</p>
+<p>To wait for goroutines, use a <code>sync.WaitGroup</code>:</p>
+<pre><code class="language-v">import sync
+
+fn worker(id int, mut wg sync.WaitGroup) {
+    defer {
+        wg.done()
+    }
+    println('Worker ${id} done')
+}
+
+fn main() {
+    mut wg := sync.new_waitgroup()
+    for i in 0 .. 3 {
+        wg.add(1)
+        go worker(i, mut wg)
+    }
+    wg.wait()
+    println('All workers finished')
+}
+</code></pre>
+<p><code>wg.add(1)</code> increments the counter before the goroutine starts. <code>wg.done()</code> decrements it when the goroutine finishes. <code>wg.wait()</code> blocks until the counter reaches zero.</p>
+<h2 id="channels"><a class="header" href="#channels">Channels</a></h2>
+<p>Channels pass values between goroutines. Create one with <code>chan T</code>:</p>
+<pre><code class="language-v">fn main() {
+    ch := chan int{}
+    go fn (ch chan int) {
+        ch &lt;- 42
+    }(ch)
+
+    result := &lt;-ch
+    println(result)
+}
+</code></pre>
+<p>An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:</p>
+<pre><code class="language-v">fn main() {
+    ch := chan int{cap: 3}
+    ch &lt;- 1
+    ch &lt;- 2
+    ch &lt;- 3
+    println(&lt;-ch)
+    println(&lt;-ch)
+    println(&lt;-ch)
+}
+</code></pre>
+<p>Channel direction restricts how a channel can be used. <code>chan&lt;- T</code> is send-only, <code>&lt;-chan T</code> is receive-only:</p>
+<pre><code class="language-v ignore">fn sender(ch chan&lt;- int) {
+    ch &lt;- 42
+}
+
+fn receiver(ch &lt;-chan int) {
+    val := &lt;-ch
+    println(val)
+}
+
+fn main() {
+    ch := chan int{}
+    go sender(ch)
+    receiver(ch)
+}
+</code></pre>
+<h2 id="shared-state"><a class="header" href="#shared-state">Shared state</a></h2>
+<p>When goroutines share mutable state, protect it with a <code>sync.Mutex</code>:</p>
+<pre><code class="language-v">import sync
+
+struct Counter {
+mut:
+    mu    &amp;sync.Mutex
+    count int
+}
+
+fn (mut c Counter) add(n int) {
+    c.mu.lock()
+    c.count += n
+    c.mu.unlock()
+}
+
+fn (c Counter) get() int {
+    c.mu.lock()
+    defer {
+        c.mu.unlock()
+    }
+    return c.count
+}
+
+fn main() {
+    mut c := &amp;Counter{
+        mu:    sync.new_mutex()
+        count: 0
+    }
+    c.add(5)
+    c.add(3)
+    println(c.get())
+}
+</code></pre>
+<p><code>lock</code> blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.</p>
+<p>Use <code>sync.RwMutex</code> when reads are more frequent than writes. It allows multiple readers at once:</p>
+<pre><code class="language-v">import sync
+
+struct Cache {
+mut:
+    mu   &amp;sync.RwMutex
+    data map[string]int
+}
+
+fn (mut c Cache) set(key string, value int) {
+    c.mu.lock()
+    c.data[key] = value
+    c.mu.unlock()
+}
+
+fn (c Cache) get(key string) int {
+    c.mu.rlock()
+    defer {
+        c.mu.runlock()
+    }
+    return c.data[key]
+}
+
+fn main() {
+    mut c := &amp;Cache{
+        mu:   sync.new_rwmutex()
+        data: map[string]int{}
+    }
+    c.set('a', 1)
+    c.set('b', 2)
+    println(c.get('a'))
+    println(c.get('b'))
+}
+</code></pre>
+<p>For a single value, use atomics from <code>sync.stdatomic</code> instead of a lock:</p>
+<pre><code class="language-v">import sync.stdatomic
+
+fn main() {
+    mut counter := stdatomic.new_atomic(u64(0))
+    counter.add(1)
+    counter.add(1)
+    println(counter.load())
+}
+</code></pre>
+<h2 id="select-statement"><a class="header" href="#select-statement">select statement</a></h2>
+<p><code>sync.channel_select</code> waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:</p>
+<pre><code class="language-v">import sync
+import time
+
+fn main() {
+    ch := chan int{}
+    go fn [ch] () {
+        time.sleep(200 * time.millisecond)
+        ch &lt;- 42
+    }()
+
+    mut chans := [voidptr(ch)]
+    mut dirs := [sync.Direction.pop]
+    mut objs := [voidptr(&amp;ch)]
+    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
+    if ready &lt; 0 {
+        println('Timed out')
+    } else {
+        val := &lt;-ch
+        println('Got ${val}')
+    }
+}
+</code></pre>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we’ll explore the Veb web framework.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

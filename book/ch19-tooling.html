@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 19: Tooling - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch19-tooling.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-19-tooling"><a class="header" href="#chapter-19-tooling">Chapter 19: Tooling</a></h1>
+<h2 id="v-fmt"><a class="header" href="#v-fmt">v fmt</a></h2>
+<p>Formats V source code according to the official style guide. Use <code>-w</code> to write changes in place.</p>
+<pre><code class="language-bash">v fmt -w .
+</code></pre>
+<h3 id="formatting-a-single-file"><a class="header" href="#formatting-a-single-file">Formatting a single file</a></h3>
+<pre><code class="language-bash">v fmt -w main.v
+</code></pre>
+<h3 id="check-formatting-without-writing"><a class="header" href="#check-formatting-without-writing">Check formatting without writing</a></h3>
+<pre><code class="language-bash">v fmt -check .
+</code></pre>
+<h2 id="v-doc"><a class="header" href="#v-doc">v doc</a></h2>
+<p>Generates documentation from V source files. Outputs HTML by default.</p>
+<pre><code class="language-bash">v doc .
+</code></pre>
+<h3 id="documenting-a-specific-module"><a class="header" href="#documenting-a-specific-module">Documenting a specific module</a></h3>
+<pre><code class="language-bash">v doc -o docs/ .
+</code></pre>
+<h2 id="v-profiler"><a class="header" href="#v-profiler">v profiler</a></h2>
+<p>Profiles program execution to identify performance bottlenecks.</p>
+<pre><code class="language-bash">v -profile profile.txt run main.v
+</code></pre>
+<h3 id="analyzing-profile-output"><a class="header" href="#analyzing-profile-output">Analyzing profile output</a></h3>
+<pre><code class="language-bash">v profile profile.txt
+</code></pre>
+<h2 id="v-test"><a class="header" href="#v-test">v test</a></h2>
+<p>Runs unit tests in the current directory or specified file.</p>
+<pre><code class="language-bash">v test .
+</code></pre>
+<h3 id="running-a-specific-test"><a class="header" href="#running-a-specific-test">Running a specific test</a></h3>
+<pre><code class="language-bash">v test -run TestName .
+</code></pre>
+<h3 id="running-tests-with-coverage"><a class="header" href="#running-tests-with-coverage">Running tests with coverage</a></h3>
+<pre><code class="language-bash">v test -cover .
+</code></pre>
+<h2 id="v-check"><a class="header" href="#v-check">v check</a></h2>
+<p>Performs static analysis on V code, checking for errors, warnings, and style issues.</p>
+<pre><code class="language-bash">v check .
+</code></pre>
+<h3 id="checking-a-single-file"><a class="header" href="#checking-a-single-file">Checking a single file</a></h3>
+<pre><code class="language-bash">v check main.v
+</code></pre>
+<h2 id="cross-compilation"><a class="header" href="#cross-compilation">Cross-compilation</a></h2>
+<p>V can compile code for different operating systems and architectures from a single machine.</p>
+<pre><code class="language-bash">v -os windows main.v
+v -os linux main.v
+v -os macos main.v
+</code></pre>
+<h3 id="specifying-architecture"><a class="header" href="#specifying-architecture">Specifying architecture</a></h3>
+<pre><code class="language-bash">v -os linux -arch amd64 main.v
+v -os linux -arch arm64 main.v
+</code></pre>
+<h3 id="cross-compiling-for-embedded-targets"><a class="header" href="#cross-compiling-for-embedded-targets">Cross-compiling for embedded targets</a></h3>
+<pre><code class="language-bash">v -os embedded -arch arm main.v
+</code></pre>
+<h2 id="v-doctor"><a class="header" href="#v-doctor">v doctor</a></h2>
+<p>Displays diagnostic information about the V installation, including compiler version, OS, and configuration.</p>
+<pre><code class="language-bash">v doctor
+</code></pre>
+<h2 id="v-up"><a class="header" href="#v-up">v up</a></h2>
+<p>Updates the V compiler to the latest version.</p>
+<pre><code class="language-bash">v up
+</code></pre>
+<h3 id="updating-to-a-specific-version"><a class="header" href="#updating-to-a-specific-version">Updating to a specific version</a></h3>
+<pre><code class="language-bash">v up --version 0.5.2
+</code></pre>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about V’s tooling ecosystem: <code>v fmt</code> for formatting, <code>v doc</code> for documentation, <code>v profiler</code> for performance analysis, <code>v test</code> for testing, <code>v check</code> for static analysis, cross-compilation, <code>v doctor</code> for diagnostics, and <code>v up</code> for self-updates. In the next chapter, we’ll build a final project.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>

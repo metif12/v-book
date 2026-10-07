@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 15: Veb Web Framework - The V Programming Language | The V Programming Language Book</title>
+    <link rel="stylesheet" href="css/v-dark.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/v-highlight.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="page" class="page">
+            <header class="v-header">
+                <a href="" class="v-logo">
+                    <span class="v-logo-text">V</span>
+                    <span class="v-logo-book">Book</span>
+                </a>
+                <nav class="v-nav">
+                    <a href="https://vlang.io">vlang.io</a>
+                    <a href="https://tour.vlang.io">Tour</a>
+                    <a href="https://docs.vlang.io">Docs</a>
+                    <a href="https://play.vlang.io">Playground</a>
+                </nav>
+                <a href="https://github.com/vlang/v-book/edit/main/src/ch15-veb-web-framework.md" class="v-edit-btn" title="Edit this page on GitHub">Edit</a>
+                <div class="v-lang-selector">
+                    <select id="lang-select" onchange="window.location.href=this.value">
+                        <option value="">English</option>
+                        <option value="/v-book/zh/">简体中文</option>
+                        <option value="/v-book/fa/">فارسی</option>
+                        <option value="/v-book/ar/">العربية</option>
+                        <option value="/v-book/ru/">Русский</option>
+                        <option value="/v-book/ja/">日本語</option>
+                        <option value="/v-book/ko/">한국어</option>
+                        <option value="/v-book/de/">Deutsch</option>
+                        <option value="/v-book/fr/">Français</option>
+                        <option value="/v-book/es/">Español</option>
+                        <option value="/v-book/pt/">Português</option>
+                        <option value="/v-book/hi/">हिन्दी</option>
+                        <option value="/v-book/bn/">বাংলা</option>
+                        <option value="/v-book/ur/">اردو</option>
+                        <option value="/v-book/id/">Bahasa Indonesia</option>
+                        <option value="/v-book/tr/">Türkçe</option>
+                    </select>
+                </div>
+            </header>
+            <h1 id="chapter-15-veb-web-framework"><a class="header" href="#chapter-15-veb-web-framework">Chapter 15: Veb Web Framework</a></h1>
+<p>Veb is V’s built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.</p>
+<h2 id="hello-veb"><a class="header" href="#hello-veb">Hello, Veb!</a></h2>
+<pre><code class="language-v no_run">import veb
+
+struct App {}
+
+@['/']
+fn (mut app App) index(mut ctx veb.Context) {
+    ctx.text('Hello, Veb!')
+}
+
+fn main() {
+    veb.run(mut App{}, 8080)
+}
+</code></pre>
+<p>The <code>App</code> struct holds your application state. Each route is a method on <code>App</code> annotated with <code>@['/path']</code>. The handler receives a <code>veb.Context</code> which provides methods for writing responses.</p>
+<h2 id="routing"><a class="header" href="#routing">Routing</a></h2>
+<p>Veb uses path parameters with the <code>:name</code> syntax. Path parameters are passed directly as function arguments to the handler.</p>
+<pre><code class="language-v">import veb
+
+struct App {}
+
+@['/users/:id']
+fn (mut app App) user(mut ctx veb.Context, id string) {
+    ctx.text('User ${id}')
+}
+
+@['/search']
+fn (mut app App) search(mut ctx veb.Context) {
+    query := ctx.query['q']
+    ctx.text('Searching for: ${query}')
+}
+</code></pre>
+<p>Path parameters (<code>:id</code>) are extracted from the URL and passed as arguments. Query string parameters (<code>?q=...</code>) are accessed via <code>ctx.query</code> which is a <code>map[string]string</code>.</p>
+<h2 id="json-responses"><a class="header" href="#json-responses">JSON responses</a></h2>
+<pre><code class="language-v">import veb
+
+struct App {}
+
+struct User {
+    id   int
+    name string
+}
+
+@['/api/users']
+fn (mut app App) users(mut ctx veb.Context) {
+    users := [
+        User{id: 1, name: 'Alice'},
+        User{id: 2, name: 'Bob'},
+    ]
+    ctx.json(users)
+}
+</code></pre>
+<p><code>ctx.json()</code> serializes any V value to JSON and sets the <code>Content-Type</code> header to <code>application/json</code>.</p>
+<h2 id="templates"><a class="header" href="#templates">Templates</a></h2>
+<p>Veb supports HTML templates with the <code>$tmpl</code> function. Templates use V’s string interpolation syntax.</p>
+<pre><code class="language-v no_run">import veb
+
+struct App {}
+
+struct Page {
+    title string
+    body  string
+}
+
+@['/page']
+fn (mut app App) page(mut ctx veb.Context) {
+    page := Page{
+        title: 'My Page'
+        body:  'Welcome to Veb templates!'
+    }
+    ctx.html($tmpl('templates/page.html', page))
+}
+</code></pre>
+<pre><code class="language-v ignore">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;{{ page.title }}&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;{{ page.body }}&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The template file receives the data struct and can access its fields with <code>{{ field_name }}</code>.</p>
+<h2 id="middleware"><a class="header" href="#middleware">Middleware</a></h2>
+<p>Middleware wraps every request. Use <code>app.use()</code> to register global middleware, or <code>app.route_use()</code> for route-specific middleware.</p>
+<pre><code class="language-v no_run">import veb
+import time
+
+struct App {
+    mut:
+    request_count int
+}
+
+fn (mut app App) logger(mut ctx veb.Context) bool {
+    start := time.now()
+    app.request_count++
+    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+    return true
+}
+
+@['/']
+fn (mut app App) index(mut ctx veb.Context) {
+    ctx.text('Hello, Veb!')
+}
+
+fn main() {
+    mut app := &amp;App{}
+    app.use(veb.Middleware[veb.Context]{
+        handler: app.logger
+    })
+    veb.run(mut app, 8080)
+}
+</code></pre>
+<p>Middleware returns <code>bool</code> — <code>true</code> to continue to the next handler, <code>false</code> to stop.</p>
+<h2 id="static-files"><a class="header" href="#static-files">Static files</a></h2>
+<p>Veb can serve static files from a directory using <code>app.handle_static()</code>.</p>
+<pre><code class="language-v no_run">import veb
+
+struct App {}
+
+@['/']
+fn (mut app App) index(mut ctx veb.Context) {
+    ctx.text('Static file server')
+}
+
+fn main() {
+    mut app := &amp;App{}
+    app.handle_static('public', true) or {
+        eprintln('Failed to serve static files: ${err}')
+        return
+    }
+    veb.run(mut app, 8080)
+}
+</code></pre>
+<p>Files in the <code>public/</code> directory are served at the root path. For example, <code>public/style.css</code> is accessible at <code>http://localhost:8080/style.css</code>.</p>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>In this chapter, you learned about Veb — V’s built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we’ll explore C interop.</p>
+
+            <footer class="v-footer">
+                <p>The V Programming Language Book is a community project. <a href="https://github.com/vlang/v-book">Contribute on GitHub</a>.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/v-highlight.js"></script>
+    <script>
+        hljs.highlightAll();
+        document.getElementById('lang-select').addEventListener('change', function() {
+            const currentPath = window.location.pathname;
+            const currentDir = currentPath.substring(currentPath.indexOf('/', 1) + 1);
+            const pagePath = currentDir.includes('/') ? currentDir.split('/').slice(1).join('/') + '.html' : '';
+            window.location.href = this.value + pagePath;
+        });
+    </script>
+</body>
+</html>
