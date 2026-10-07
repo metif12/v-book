@@ -26,7 +26,7 @@ jobs:
           unzip -o v.zip -d /usr/local/bin
           chmod +x /usr/local/bin/v/v
           echo "/usr/local/bin/v" >> $GITHUB_PATH
-          v version
+          /usr/local/bin/v/v version
 
       - name: Install mdBook
         run: |
