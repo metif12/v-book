@@ -8,6 +8,7 @@
 - [x] RTL support for fa, ar, ur
 - [x] CI pipeline (test, lint, build)
 - [x] Code testing preprocessor (mdbook-v-test)
+- [x] Book structure validator (validate.vsh)
 - [x] Scaffolding scripts
 
 ## Phase 2: Content - Part I (Complete)
@@ -50,28 +51,33 @@
 - [x] Appendix F: Translations
 - [x] Appendix G: How V is Made
 
-## Phase 6: Translations (In Progress)
+## Phase 6: Translations (Complete)
 
 - [x] Translation infrastructure
 - [x] Scaffolding script for new locales
-- [ ] Chinese (zh)
-- [ ] Hindi (hi)
-- [ ] Spanish (es)
-- [ ] Persian (fa)
-- [ ] Arabic (ar)
-- [ ] French (fr)
-- [ ] Bengali (bn)
-- [ ] Portuguese (pt)
-- [ ] Russian (ru)
-- [ ] Urdu (ur)
-- [ ] Indonesian (id)
-- [ ] German (de)
-- [ ] Japanese (ja)
-- [ ] Turkish (tr)
-- [ ] Korean (ko)
+- [x] German (de)
+- [x] Spanish (es)
+- [x] French (fr)
+- [x] Chinese (zh)
+- [x] Russian (ru)
+- [x] Japanese (ja)
+- [x] Korean (ko)
+- [x] Portuguese (pt)
+- [x] Italian (it)
+- [x] Arabic (ar)
+- [x] Persian/Farsi (fa)
+- [x] Hindi (hi)
+- [x] Bengali (bn)
+- [x] Urdu (ur)
+- [x] Indonesian (id)
+- [x] Turkish (tr)
 
-## Phase 7: Polish and Launch
+## Phase 7: Polish and Launch (In Progress)
 
+- [x] Code examples passing (148/148)
+- [x] Book structure validator
+- [x] Edit on GitHub button
+- [x] GitHub Pages deployment
 - [ ] Full CI pass on all 16 locales
 - [ ] Link validation
 - [ ] Spellcheck
