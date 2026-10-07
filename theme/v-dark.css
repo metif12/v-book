@@ -1,0 +1,117 @@
+:root {
+    --v-blue: #5d6fbe;
+    --v-purple: #7c5dbf;
+    --v-dark: #1a1b2e;
+    --v-darker: #12131f;
+    --v-light: #e8e9f0;
+    --v-accent: #6c8cff;
+    --v-code-bg: #252640;
+    --v-border: #3a3b5c;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--v-light);
+    background: var(--v-darker);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--v-accent);
+    font-weight: 600;
+}
+
+a {
+    color: var(--v-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background: var(--v-code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9em;
+}
+
+pre {
+    background: var(--v-code-bg);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid var(--v-border);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+blockquote {
+    border-left: 4px solid var(--v-blue);
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background: rgba(93, 111, 190, 0.1);
+    border-radius: 0 8px 8px 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+th, td {
+    border: 1px solid var(--v-border);
+    padding: 8px 12px;
+    text-align: left;
+}
+
+th {
+    background: var(--v-code-bg);
+    color: var(--v-accent);
+}
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] blockquote {
+    border-left: none;
+    border-right: 4px solid var(--v-blue);
+    border-radius: 8px 0 0 8px;
+}
+
+.sidebar {
+    background: var(--v-dark);
+    border-right: 1px solid var(--v-border);
+}
+
+.chapter li a {
+    color: var(--v-light);
+}
+
+.chapter li a.active {
+    color: var(--v-accent);
+    font-weight: 600;
+}
+
+.nav-chapters {
+    background: var(--v-blue);
+}
+
+.mobile-nav-chapters {
+    background: var(--v-blue);
+}
+
+#searchresults {
+    background: var(--v-dark);
+}
+
+.search-results-title {
+    color: var(--v-accent);
+}

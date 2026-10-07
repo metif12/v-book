@@ -1,0 +1,155 @@
+.v-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: var(--v-dark);
+    border-bottom: 1px solid var(--v-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.v-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.v-logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--v-accent);
+}
+
+.v-logo-book {
+    font-size: 18px;
+    color: var(--v-light);
+    opacity: 0.8;
+}
+
+.v-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.v-nav a {
+    color: var(--v-light);
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.v-nav a:hover {
+    opacity: 1;
+    color: var(--v-accent);
+}
+
+.v-lang-selector select {
+    background: var(--v-code-bg);
+    color: var(--v-light);
+    border: 1px solid var(--v-border);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 13px;
+}
+
+.v-footer {
+    text-align: center;
+    padding: 24px;
+    border-top: 1px solid var(--v-border);
+    margin-top: 48px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+#content {
+    padding: 32px 0;
+    line-height: 1.7;
+}
+
+.nav-chapters {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 50;
+}
+
+.nav-chapters:hover {
+    opacity: 0.9;
+}
+
+.nav-chapters.previous {
+    left: 0;
+}
+
+.nav-chapters.next {
+    right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+#menu-bar {
+    background: var(--v-dark);
+    border-bottom: 1px solid var(--v-border);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#menu-bar .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#menu-bar .right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#menu-bar i {
+    color: var(--v-light);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#menu-bar i:hover {
+    opacity: 1;
+}
+
+#theme-list {
+    background: var(--v-dark);
+    border: 1px solid var(--v-border);
+    border-radius: 4px;
+    color: var(--v-light);
+    padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+    .v-nav {
+        display: none;
+    }
+
+    .v-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .page {
+        padding: 0 16px;
+    }
+}

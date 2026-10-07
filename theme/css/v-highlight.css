@@ -1,0 +1,41 @@
+.hljs {
+    background: var(--v-code-bg);
+    color: var(--v-light);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.hljs-keyword {
+    color: #c792ea;
+}
+
+.hljs-string {
+    color: #c3e88d;
+}
+
+.hljs-number {
+    color: #f78c6c;
+}
+
+.hljs-comment {
+    color: #546e7a;
+    font-style: italic;
+}
+
+.hljs-function {
+    color: #82aaff;
+}
+
+.hljs-title {
+    color: #ffcb6b;
+}
+
+.hljs-built_in {
+    color: #89ddff;
+}
+
+[dir="rtl"] .hljs {
+    direction: ltr;
+    text-align: left;
+}
