@@ -1,4 +1,4 @@
-# Methods
+# متدها
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Mutable receivers
+## گیرنده‌های قابل تغییر
 
 ```v
 struct Counter {
@@ -36,6 +36,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Embedded Structs](ch05-03-embedded-structs.md)
+[struct های تودرتو](ch05-03-embedded-structs.md)

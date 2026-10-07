@@ -1,6 +1,6 @@
-# Variables and Mutability
+# المتغيرات والتغيير
 
-In V, variables are immutable by default:
+في V، المتغيرات غير قابلة للتغيير افتراضياً:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## التعريف
 
-Use `:=` to declare and initialize:
+استخدم `:=` للتعريف والتهيئة:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## استنتاج النوع
 
-V infers types from the initializer:
+V يستنتج الأنواع من المُهيّئ:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## الأنواع الصريحة
 
-You can specify types explicitly:
+يمكنك تحديد الأنواع صراحةً:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## التالي
 
-[Data Types](ch03-02-data-types.md)
+[أنواع البيانات](ch03-02-data-types.md)

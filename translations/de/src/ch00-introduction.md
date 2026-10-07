@@ -1,33 +1,33 @@
-# Introduction
+# Einleitung
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*Das V-Programmierhandbuch* ist ein umfassender Leitfaden für die [V-Programmiersprache](https://vlang.io) — eine einfache, schnelle, sichere, kompilierte Sprache zur Entwicklung wartbarer Software.
 
-## Who this book is for
+## Für wen dieses Buch ist
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+Dieses Buch setzt voraus, dass Sie bereits einige Erfahrung mit der Programmierung in einer anderen Sprache haben. Es wird nicht vorausgesetzt, dass Sie V kennen. Wir beginnen mit den Grundlagen und bauen bis zu fortgeschrittenen Themen auf.
 
-## How to use this book
+## Wie man dieses Buch verwendet
 
-The book is organized into parts:
+Das Buch ist in Teile gegliedert:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **Teil I: Erste Schritte** — V installieren, Ihr erstes Programm schreiben, die Projektstruktur verstehen.
+- **Teil II: Häufige Programmierkonzepte** — Variablen, Typen, Funktionen, Kontrollfluss, Structs, Enums, Module, Collections, Fehlerbehandlung.
+- **Teil III: Fortgeschrittenes V** — Generics, Testen, Nebenläufigkeit, Webentwicklung, C-Interop, fortgeschrittene Merkmale und ein Abschlussprojekt.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+Jedes Kapitel baut auf den vorherigen auf. Codebeispiele werden in CI getestet — jeder V-Codeblock in diesem Buch wird automatisch kompiliert und ausgeführt.
 
-## Code examples
+## Codebeispiele
 
-Code examples in this book follow these conventions:
+Codebeispiele in diesem Buch folgen diesen Konventionen:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v`-Codeblöcke werden in CI kompiliert und ausgeführt.
+- `v ignore`-Codeblöcke werden nicht kompiliert (für Pseudocode oder unvollständige Beispiele verwendet).
+- `v no_run`-Codeblöcke werden kompiliert, aber nicht ausgeführt (für Beispiele verwendet, die blockieren oder Eingaben erfordern würden).
 
-## Translations
+## Übersetzungen
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+Dieses Buch ist in 16 Sprachen verfügbar. Siehe [Anhang F](appendix-f-translations.md) für die vollständige Liste.
 
-## Contributing
+## Mitwirken
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+Dieses Buch ist ein Community-Projekt. Siehe [das GitHub-Repository](https://github.com/vlang/v-book), um zu erfahren, wie Sie beitragen können.

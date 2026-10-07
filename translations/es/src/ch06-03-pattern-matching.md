@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Exhaustividad de match
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## Siguiente
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[Capítulo 7: Módulos y Paquetes](ch07-modules-and-packages.md)

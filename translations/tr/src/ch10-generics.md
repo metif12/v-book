@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# Bölüm 10: Generics
 
-Generics allow you to write code that works with any type.
+Generics, herhangi bir tip ile çalışan kod yazmanızı sağlar.
 
-## Generic functions
+## Generic fonksiyonlar
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## Generic struct'lar
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## Tip kısıtlamaları
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+Bu bölümde generic fonksiyonlar ve struct'lar hakkında bilgi edindiniz. Sonraki bölümde test etmeyi inceleyeceğiz.

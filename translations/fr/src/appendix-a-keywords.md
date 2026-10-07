@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Annexe A : Mots-clés
 
-V has the following keywords:
+V possède les mots-clés suivants :
 
-| Keyword | Description |
+| Mot-clé | Description |
 |---------|-------------|
-| `as` | Type casting |
+| `as` | Conversion de type |
 | `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
+| `break` | Sortir de la boucle |
+| `const` | Déclaration de constante |
+| `continue` | Passer à l'itération suivante |
+| `defer` | Exécution différée |
+| `else` | Branche sinon |
+| `enum` | Énumération |
+| `false` | Booléen faux |
+| `fn` | Déclaration de fonction |
+| `for` | Boucle |
+| `go` | Lancer une goroutine |
+| `goto` | Instruction goto |
+| `if` | Conditionnel |
+| `import` | Import de module |
+| `in` | Test d'appartenance |
+| `interface` | Déclaration d'interface |
+| `is` | Vérification de type |
+| `lock` | Verrouillage mutex |
+| `match` | Filtrage par motif |
+| `module` | Déclaration de module |
 | `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `none` | Valeur none |
+| `or` | Gestion des erreurs |
+| `pub` | Visibilité publique |
+| `return` | Retour de fonction |
+| `struct` | Déclaration de struct |
+| `true` | Booléen vrai |
+| `type` | Déclaration de type |
+| `union` | Déclaration d'union |
+| `unsafe` | Code non sécurisé |

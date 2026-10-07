@@ -1,6 +1,6 @@
-# Hello, World!
+# Merhaba, Dünya!
 
-Create a file called `main.v`:
+`main.v` adında bir dosya oluşturun:
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+Çalıştırın:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Çıktı:
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## V programının anatomisi
 
-Let's break down the program:
+Programı parçalara ayıralım:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — Her V programı bir `main` fonksiyonuyla başlar. `fn` anahtar kelimesi bir fonksiyon tanımlar.
+- `println(...)` — stdout'a bir satır yazdırılan yerleşik bir fonksiyon.
+- `'Hello, World!'` — Bir string literal. V, string'ler için tek tırnak kullanır.
 
-## Compiling vs running
+## Derleme vs çalıştırma
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` tek adımda derler ve çalıştırır. Önce de derleyebilirsiniz:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## Sonraki
 
-[Hello, V!](ch01-03-hello-v.md)
+[Merhaba, V!](ch01-03-hello-v.md)

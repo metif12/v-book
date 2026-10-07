@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Chapter 1: 시작하기
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+V 여정을 시작해봅시다! 배울 것이 많지만, 모든 여정은 작은 걸음으로 시작됩니다. 이 장에서는 다음 내용을 배웁니다:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- 시스템에 V 설치하기
+- "Hello, World!" 프로그램 작성하기
+- V 컴파일러와 명령어 사용하기
+- V 프로젝트 생성하기
 
-## Installation
+## 설치
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V는 Windows, macOS, Linux에 설치할 수 있습니다. 가장 쉬운 방법은 인스톨러 스크립트를 사용하는 것입니다:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+[vlang.io/install](https://vlang.io/install.html)에서 인스톨러를 다운로드하여 실행하거나 PowerShell을 사용하세요:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+또는 인스톨러 스크립트를 사용하세요:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### 소스에서 빌드
 
-To build V from source:
+소스에서 V를 빌드하려면:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,15 +47,15 @@ cd v
 make
 ```
 
-## Verifying the installation
+## 설치 확인
 
-After installation, verify V is working:
+설치 후 V가 정상 작동하는지 확인하세요:
 
 ```bash
 v version
 ```
 
-You should see output like:
+다음과 같은 출력이 표시되어야 합니다:
 
 ```
 V 0.5.2
@@ -63,7 +63,7 @@ V 0.5.2
 
 ## Hello, World!
 
-Now let's write our first V program. Create a file called `main.v`:
+이제 첫 번째 V 프로그램을 작성해봅시다. `main.v` 파일을 생성하세요:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+실행하세요:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+다음과 같이 표시됩니다:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+축하합니다! 첫 번째 V 프로그램을 작성하고 실행했습니다.
 
 ## Hello, V!
 
-Let's look at a slightly more interesting example:
+조금 더 흥미로운 예제를 살펴봅시다:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+실행하세요:
 
 ```bash
 v run main.v
 ```
 
-Output:
+출력:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## V 컴파일러
 
-The V compiler is invoked with the `v` command. Common commands:
+V 컴파일러는 `v` 명령으로 실행됩니다. 주요 명령어:
 
-| Command | Description |
+| 명령어 | 설명 |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | V 파일을 컴파일하고 실행 |
+| `v file.v` | V 파일을 실행 파일로 컴파일 |
+| `v fmt file.v` | V 파일 포맷팅 |
+| `v test .` | 현재 디렉터리의 테스트 실행 |
+| `v doc .` | 문서 생성 |
+| `v doctor` | V 설치 진단 |
 
-## Summary
+## 요약
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+이 장에서는 V 설치, "Hello, World!" 프로그램 작성, V 컴파일러 사용 방법을 배웠습니다. 다음 장에서는 V 프로젝트의 구조를 살펴보겠습니다.

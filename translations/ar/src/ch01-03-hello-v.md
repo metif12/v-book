@@ -1,6 +1,6 @@
-# Hello, V!
+# مرحباً، V!
 
-Let's look at a more interesting example:
+لننظر إلى مثال أكثر إثارة للاهتمام:
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+شغّله:
 
 ```bash
 v run main.v
 ```
 
-Output:
+الناتج:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## استيفاء النصوص
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V يستخدم `${...}` لاستيفاء النصوص. أي تعبير داخل `${...}` يُقيَّم ويُحوَّل إلى نص:
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## المتغيرات
 
-Use `:=` to declare and initialize a variable:
+استخدم `:=` لتعريف وتهيئة متغير:
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[الفصل 2: بناء مشروع](ch02-building-a-project.md)

@@ -1,4 +1,4 @@
-# Strings
+# اسٹرنگز
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## اسٹرنگ میتھڈز
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[باب ۹: خرابی کی عاملہ کاری](ch09-error-handling.md)

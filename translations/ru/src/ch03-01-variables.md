@@ -1,22 +1,22 @@
-# Variables and Mutability
+# Переменные и изменяемость
 
-In V, variables are immutable by default:
+В V переменные по умолчанию неизменяемы:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Ошибка: name неизменяема
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: count изменяема
     count++
     println(count)
 }
 ```
 
-## Declaration
+## Объявление
 
-Use `:=` to declare and initialize:
+Используйте `:=` для объявления и инициализации:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## Вывод типов
 
-V infers types from the initializer:
+V выводит типы из инициализатора:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## Явные типы
 
-You can specify types explicitly:
+Вы можете указать типы явно:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## Далее
 
-[Data Types](ch03-02-data-types.md)
+[Типы данных](ch03-02-data-types.md)

@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# باب ۱۸: میموری مینجمنٹ گہرا جائزہ
 
-## GC modes
+## GC موڈز
 
-V provides several memory management strategies, each suited to different use cases.
+V متعدد میموری مینجمنٹ حکمت عملی فراہم کرتا ہے، ہر ایک مختلف استعمال کے معاملات کے لیے موزوں۔
 
-| Mode | Flag | Use case |
+| موڈ | فلگ | استعمال |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | عام مقصد |
+| آٹوفری | `-autofree` | خودکار آزادی |
+| کوئی نہیں | `-gc none` | دستی مینجمنٹ |
+| پری الاکیٹ | `-prealloc` | ایرینا الاکیٹر |
 
-## Stack vs heap
+## اسٹیک بمقابلہ ہیپ
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V خودکار طور پر فیصلہ کرتا ہے کہ میموری کو کہاں الاکیٹ کرنا ہے۔ چھوٹی، مختصر مدتی قدریں اسٹیک پر رہتی ہیں۔ بڑی یا باہر نکلنے والی قدریں ہیپ پر جاتی ہیں۔
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## آٹوفری موڈ
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+آٹوفری متغیرات کے اسکوپ سے باہر جانے پر خودکار طور پر میموری آزاد کرتا ہے۔ یہ ہیپ الاکیشنز کے لیے حوالہ گنتی استعمال کرتا ہے۔
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none اور دستی میموری
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+`-gc none` کے ساتھ، V گاربيج کلکشن کو غیر فعال کرتا ہے۔ آپ کو `free` استعمال کر کے میموری کو دستی طور پر مینیج کرنا ہوگا۔
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -prealloc ایرینا الاکیٹر
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+پری الاکیٹ بہتر پرفارمنس کۆڑ لوپس میں بہتر پرفارمنس کے لیے ایرینا الاکیٹر استعمال کرتا ہے۔ الاکیشنز بڑے پیمانے پر آزاد ہوتے ہیں۔
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## غیر محفوظ کوڈ
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+`unsafe` بلاک ایسے عملوں کی اجازت دیتا ہے جو V کی تحفظ کی ضمانتوں کو نظر انداز کرتے ہیں، جیسے کہ پوئنٹر حساب اور براہ راست میموری رسائی۔
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### پوئنٹر حساب
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## پرفارمنس کی بہتری
 
-Choosing the right memory management mode can significantly impact performance.
+صحیح میموری مینجمنٹ موڈ کا انتخاب پرفارمنس کو نمایاں طور پر متاثر کر سکتا ہے۔
 
-### Benchmarking different modes
+### مختلف موڈز کی بینچ مارکنگ
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### ڈیٹا کی ساخت کی بہتری
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+اس باب میں، آپ نے میموری مینجمنٹ موڈز، اسٹیک بمقابلہ ہیپ الاکیشن، آٹوفری، دستی میموری مینجمنٹ، پری الاکیٹ، غیر محفوظ کوڈ، اور پرفارمنس کی بہتری کے بارے میں سیکھا۔ اگلے باب میں، ہم ٹولنگ کو دریافت کریں گے۔

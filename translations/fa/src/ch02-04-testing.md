@@ -1,6 +1,6 @@
-# Testing with v test
+# تست با v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V یک فریم‌ورک تست داخلی دارد. یک فایل با پسوند `_test.v` ایجاد کنید:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+تست‌ها را اجرا کنید:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## توابع تست
 
-Test functions start with `test_` and take no arguments:
+توابع تست با `test_` شروع می‌شوند و هیچ آرگومانی نمی‌گیرند:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## تأییدیه‌ها
 
-Use `assert` to check conditions:
+از `assert` برای بررسی شرایط استفاده کنید:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## بعدی
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[فصل ۳: مفاهیم رایج](ch03-common-concepts.md)

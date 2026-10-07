@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# Chapter 6: Enum과 Sum Type
 
-## Enums
+## Enum
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## Sum Type
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## 패턴 매칭
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+이 장에서는 enum, sum type, 패턴 매칭에 대해 배웠습니다. 다음 장에서는 모듈과 패키지를 살펴보겠습니다.

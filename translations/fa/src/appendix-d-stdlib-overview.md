@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# پیوست D: نمای کلی کتابخانه استاندارد
 
-V's standard library includes:
+کتابخانه استاندارد V شامل:
 
-| Module | Description |
+| ماژول | توضیح |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | رابط سیستم‌عامل |
+| `io` | ورودی/خروجی |
+| `strings` | ابزارهای رشته |
+| `arrays` | ابزارهای آرایه |
+| `math` | توابع ریاضی |
+| `time` | زمان و تاریخ |
+| `json` | رمزگذاری/رمزگشایی JSON |
+| `http` | کلاینت/سرور HTTP |
+| `db` | رابط پایگاه داده |
+| `rand` | تولید اعداد تصادفی |
+| `crypto` | توابع رمزنگاری |
+| `encoding` | ابزارهای رمزگذاری |
+| `term` | ابزارهای ترمینال |
+| `sync` | اولین‌های همگام‌سازی |
+| `v.ast` | دستکاری AST V |
+| `v.compiler` | ابزارهای کامپایلر |

@@ -1,6 +1,6 @@
-# Garbage Collection
+# Сборщик мусора
 
-V uses a garbage collector by default:
+V по умолчанию использует сборщик мусора:
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## Отключение сборщика мусора
 
-For performance-critical code, you can disable GC:
+Для критичного к производительности кода вы можете отключить сборщик мусора:
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## Далее
 
-[Autofree](ch04-03-autofree.md)
+[Автоосвобождение](ch04-03-autofree.md)

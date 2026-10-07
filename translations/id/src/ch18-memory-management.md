@@ -1,8 +1,8 @@
-# Chapter 18: Memory Management Deep Dive
+# Bab 18: Manajemen Memori Mendalam
 
-## GC modes
+## Mode GC
 
-V provides several memory management strategies, each suited to different use cases.
+V menyediakan beberapa strategi manajemen memori, masing-masing cocok untuk use case yang berbeda.
 
 | Mode | Flag | Use case |
 |------|------|----------|
@@ -13,7 +13,7 @@ V provides several memory management strategies, each suited to different use ca
 
 ## Stack vs heap
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V secara otomatis memutuskan di mana mengalokasikan memori. Nilai kecil yang berumur pendek tetap di stack. Nilai yang lebih besar atau escaped pergi ke heap.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## Mode autofree
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Autofree secara otomatis membebaskan memori ketika variabel keluar dari scope. Ini menggunakan reference counting untuk alokasi heap.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none dan memori manual
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+Dengan `-gc none`, V menonaktifkan garbage collection. Anda harus mengelola memori secara manual menggunakan `free`.
 
 ```v
 fn main() {
@@ -70,7 +70,7 @@ fn main() {
 
 ## -prealloc arena allocation
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc menggunakan arena allocation untuk performa yang lebih baik dalam loop ketat. Alokasi dibebarkan secara massal.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## Kode unsafe
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+Blok `unsafe` memungkinkan operasi yang melewati jaminan keamanan V, seperti pointer arithmetic dan akses memori langsung.
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## Tuning performa
 
-Choosing the right memory management mode can significantly impact performance.
+Memilih mode manajemen memori yang tepat dapat berdampak signifikan pada performa.
 
-### Benchmarking different modes
+### Benchmark mode yang berbeda
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### Optimasi struktur data
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+Dalam bab ini, Anda telah belajar tentang mode manajemen memori, alokasi stack vs heap, autofree, manajemen memori manual, prealloc, kode unsafe, dan tuning performa. Di bab berikutnya, kita akan menjelajahi tooling.

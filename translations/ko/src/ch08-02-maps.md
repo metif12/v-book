@@ -1,4 +1,4 @@
-# Maps
+# 맵
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## 맵 연산
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Strings](ch08-03-strings.md)
+[문자열](ch08-03-strings.md)

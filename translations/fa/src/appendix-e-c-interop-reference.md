@@ -1,25 +1,25 @@
-# Appendix E: V and C Interop Reference
+# پیوست E: مرجع همکاری V و C
 
-## Including C code
+## شامل کردن کد C
 
 ```v ignore
 #include "myheader.h"
 ```
 
-## C flags
+## پرچم‌های C
 
 ```v
 #flag -lm
 #flag -I/path/to/include
 ```
 
-## Calling C functions
+## فراخوانی توابع C
 
 ```v
 fn C.my_c_function(int) int
 ```
 
-## Exporting V functions
+## صادر کردن توابع V
 
 ```v
 @[export: 'my_v_function']
@@ -28,7 +28,7 @@ fn my_v_function() {
 }
 ```
 
-## Shared libraries
+## کتابخانه‌های مشترک
 
 ```bash
 v -shared -o libmylib.so mylib.v

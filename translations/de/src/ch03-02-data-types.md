@@ -1,8 +1,8 @@
-# Data Types
+# Datentypen
 
-## Integer types
+## Ganzzahltypen
 
-| Type | Size | Range |
+| Typ | Größe | Bereich |
 |------|------|-------|
 | `i8` | 8-bit | -128 to 127 |
 | `i16` | 16-bit | -32,768 to 32,767 |
@@ -14,21 +14,21 @@
 | `u32` | 32-bit | 0 to 2^32-1 |
 | `u64` | 64-bit | 0 to 2^64-1 |
 
-## Float types
+## Gleitkommatypen
 
-| Type | Size |
+| Typ | Größe |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## Andere Typen
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` oder `false`
+- `string` — UTF-8-String
+- `rune` — einzelnes Unicode-Zeichen (Alias für `u32`)
+- `byte` — Alias für `u8`
 
-## Type conversion
+## Typumwandlung
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
-[Functions](ch03-03-functions.md)
+[Funktionen](ch03-03-functions.md)

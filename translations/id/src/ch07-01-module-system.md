@@ -1,4 +1,4 @@
-# Module System
+# Sistem Modul
 
 ```
 my_project/
@@ -28,6 +28,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Visibility](ch07-02-visibility.md)
+[Visibilitas](ch07-02-visibility.md)

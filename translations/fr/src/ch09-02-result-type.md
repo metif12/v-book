@@ -1,4 +1,4 @@
-# Result Type
+# Type Result
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## Propagation des erreurs
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Custom Errors](ch09-03-custom-errors.md)
+[Erreurs personnalisées](ch09-03-custom-errors.md)

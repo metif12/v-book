@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# Chapter 5: Struct
 
-Structs are V's way to define custom data types.
+Struct는 V에서 커스텀 데이터 타입을 정의하는 방법입니다.
 
-## Defining Structs
+## Struct 정의하기
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## 메서드
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## 임베디드 Struct
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## 접근 제어자
 
-Fields are private by default. Use `pub` to make them public:
+필드는 기본적으로 private입니다. `pub`을 사용하여 public으로 만드세요:
 
 ```v
 struct User {
@@ -69,11 +69,11 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
+    println(u.name)  // OK: 같은 모듈
     println(u.age)   // OK: public
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+이 장에서는 struct, 메서드, 임베딩, 접근 제어자에 대해 배웠습니다. 다음 장에서는 enum과 sum type을 살펴보겠습니다.

@@ -1,6 +1,6 @@
-# Functions
+# 関数
 
-Functions are declared with `fn`:
+関数は`fn`で宣言します：
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## 複数の戻り値
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## 戻り値なし
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## 関数のホイスティング
 
-Functions can be called before they are declared:
+関数は宣言する前に呼び出すことができます：
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## 次へ
 
-[Comments](ch03-04-comments.md)
+[コメント](ch03-04-comments.md)

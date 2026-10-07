@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# 第 2 章：构建项目
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+在本章中，你将学习如何组织 V 项目、使用 `v.mod`、用 `v fmt` 格式化代码以及用 `v test` 编写测试。
 
-## Project structure
+## 项目结构
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+V 项目是一个包含 `v.mod` 文件和一个或多个 `.v` 文件的目录：
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+每个 V 项目都有一个 `v.mod` 文件来描述项目：
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+使用以下命令创建新项目：
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+这会创建一个 `v.mod` 和一个包含基本模板的 `main.v`。
 
-## Formatting with v fmt
+## 使用 v fmt 格式化
 
-V has a built-in code formatter. Run it on your project:
+V 有内置的代码格式化工具。在项目上运行：
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` 参数将格式化后的代码写回文件。
 
-## Testing with v test
+## 使用 v test 测试
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V 有内置的测试框架。创建一个以 `_test.v` 结尾的文件：
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+运行测试：
 
 ```bash
 v test .
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+在本章中，你学习了如何组织 V 项目、使用 `v.mod`、格式化代码和编写测试。在下一章中，我们将深入探讨 V 中的通用编程概念。

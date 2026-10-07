@@ -1,20 +1,20 @@
-# Comments
+# تبصرے
 
-## Line comments
+## لائن تبصرے
 
 ```v
 // This is a line comment
 x := 42 // Comment after code
 ```
 
-## Block comments
+## بلاک تبصرے
 
 ```v
 /* This is a
    block comment */
 ```
 
-## Documentation comments
+## دستاویزاتی تبصرے
 
 ```v
 // add returns the sum of a and b.
@@ -23,6 +23,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## اگلا
 
-[Control Flow](ch03-05-control-flow.md)
+[کنٹرول فلو](ch03-05-control-flow.md)

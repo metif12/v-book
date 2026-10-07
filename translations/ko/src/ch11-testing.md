@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# Chapter 11: 테스팅
 
-V has a built-in testing framework.
+V에는 내장 테스팅 프레임워크가 있습니다.
 
-## Test files
+## 테스트 파일
 
-Create a file ending in `_test.v`:
+`_test.v`로 끝나는 파일을 생성하세요:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## 테스트 실행
 
 ```bash
 v test .
 ```
 
-## Test organization
+## 테스트 구성
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## 테이블 기반 테스트
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+이 장에서는 V의 테스팅 프레임워크에 대해 배웠습니다. 다음 장에서는 명령줄 도구를 만들어보겠습니다.

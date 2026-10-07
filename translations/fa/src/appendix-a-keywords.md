@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# پیوست A: کلمات کلیدی
 
-V has the following keywords:
+V کلمات کلیدی زیر را دارد:
 
-| Keyword | Description |
+| کلمه کلیدی | توضیح |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | تبدیل نوع |
+| `assert` | تأییدیه |
+| `break` | خروج از حلقه |
+| `const` | تعریف ثابت |
+| `continue` | ادامه به تکرار بعدی |
+| `defer` | اجرای به تعویق افتاده |
+| `else` | شاخه else |
+| `enum` | شمارش |
+| `false` | بولین نادرست |
+| `fn` | تعریف تابع |
+| `for` | حلقه |
+| `go` | ایجاد goroutine |
+| `goto` | دستور goto |
+| `if` | شرطی |
+| `import` | وارد کردن ماژول |
+| `in` | تست عضویت |
+| `interface` | تعریف اینترفیس |
+| `is` | بررسی نوع |
+| `lock` | قفل mutex |
+| `match` | تطبیق الگو |
+| `module` | تعریف ماژول |
+| `mut` | قابل تغییر |
+| `none` | مقدار none |
+| `or` | مدیریت خطا |
+| `pub` | قابلیت مشاهده عمومی |
+| `return` | بازگشت از تابع |
+| `struct` | تعریف struct |
+| `true` | بولین درست |
+| `type` | تعریف نوع |
+| `union` | تعریف union |
+| `unsafe` | کد ناامن |

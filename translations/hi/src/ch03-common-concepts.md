@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# अध्याय 3: सामान्य अवधारणाएँ
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+यह अध्याय V की सामान्य प्रोग्रामिंग अवधारणाओं को कवर करता है: वेरिएबल, डेटा टाइप्स, फ़ंक्शन, कमेंट्स, और कंट्रोल फ़्लो।
 
-## Variables and Mutability
+## वेरिएबल और म्यूटेबिलिटी
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+V में, वेरिएबल डिफ़ॉल्ट रूप से इम्यूटेबल होते हैं। उन्हें म्यूटेबल बनाने के लिए `mut` का उपयोग करें:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## डेटा टाइप्स
 
-V has a rich type system:
+V में एक समृद्ध टाइप सिस्टम है:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## फ़ंक्शन
 
-Functions are declared with `fn`:
+फ़ंक्शन `fn` के साथ घोषित किए जाते हैं:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## कमेंट्स
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## कंट्रोल फ़्लो
 
 ### If
 
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+इस अध्याय में, आपने V में वेरिएबल, डेटा टाइप्स, फ़ंक्शन, कमेंट्स, और कंट्रोल फ़्लो के बारे में सीखा। अगले अध्याय में, हम ओनरशिप और मेमोरी मैनेजमेंट का पता लगाएंगे।

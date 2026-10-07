@@ -1,8 +1,8 @@
-# Data Types
+# Tipe Data
 
-## Integer types
+## Tipe integer
 
-| Type | Size | Range |
+| Tipe | Ukuran | Rentang |
 |------|------|-------|
 | `i8` | 8-bit | -128 to 127 |
 | `i16` | 16-bit | -32,768 to 32,767 |
@@ -14,21 +14,21 @@
 | `u32` | 32-bit | 0 to 2^32-1 |
 | `u64` | 64-bit | 0 to 2^64-1 |
 
-## Float types
+## Tipe float
 
-| Type | Size |
+| Tipe | Ukuran |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## Tipe lainnya
 
 - `bool` — `true` or `false`
 - `string` — UTF-8 string
 - `rune` — single Unicode character (alias for `u32`)
 - `byte` — alias for `u8`
 
-## Type conversion
+## Konversi tipe
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Functions](ch03-03-functions.md)
+[Fungsi](ch03-03-functions.md)

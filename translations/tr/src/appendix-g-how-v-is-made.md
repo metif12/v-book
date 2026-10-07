@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# Ek G: V Nasıl Yapılır
 
-V is an open-source project. The compiler is written in V itself.
+V açık kaynak bir projedir. Derleyici V'nin kendisinde yazılmıştır.
 
-## Repository
+## Depo
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- Lisans: MIT
 
-## Building from source
+## Kaynak koddan derleme
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,11 +15,11 @@ cd v
 make
 ```
 
-## Contributing
+## Katkıda Bulunma
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+Katkı kılavuzu için [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md) dosyasına bakın.
 
-## Community
+## Topluluk
 
 - [Forum](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)

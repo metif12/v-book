@@ -1,6 +1,6 @@
-# Access Modifiers
+# محددات الوصول
 
-Fields are private by default:
+الحقول خاصة افتراضياً:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## الظهور
 
-| Modifier | Scope |
+| المحدد | النطاق |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| (بدون) | الوحدة فقط |
+| `pub` | عام |
 
-## Next
+## التالي
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[الفصل 6: Enums وأنواع الجمع](ch06-enums-and-sum-types.md)

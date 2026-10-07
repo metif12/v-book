@@ -1,16 +1,16 @@
-# Formatting with v fmt
+# v fmt দিয়ে ফরম্যাটিং
 
-V has a built-in code formatter:
+V-তে একটি বিল্ট-ইন কোড ফরম্যাটার আছে:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes changes back to files. Without it, the formatter prints to stdout.
+`-w` ফ্ল্যাগ পরিবর্তনগুলো ফাইলে ফিরিয়ে লেখে। এটি ছাড়া ফরম্যাটার stdout-এ প্রিন্ট করে।
 
-## Example
+## উদাহরণ
 
-Before:
+আগে:
 
 ```v
 fn main(){
@@ -18,7 +18,7 @@ println( 'hello' )
 }
 ```
 
-After `v fmt`:
+`v fmt` এর পর:
 
 ```v
 fn main() {
@@ -26,6 +26,6 @@ fn main() {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Testing with v test](ch02-04-testing.md)
+[v test দিয়ে টেস্টিং](ch02-04-testing.md)

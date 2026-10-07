@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# الفصل 18: إدارة الذاكرة بالتفصيل
 
-## GC modes
+## أوضاع GC
 
-V provides several memory management strategies, each suited to different use cases.
+V يوفر عدة استراتيجيات لإدارة الذاكرة، كل منها مناسب لحالات استخدام مختلفة.
 
-| Mode | Flag | Use case |
+| الوضع | العلمة | حالة الاستخدام |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | للأغراض العامة |
+| Autofree | `-autofree` | تحرير تلقائي |
+| None | `-gc none` | إدارة يدوية |
+| Prealloc | `-prealloc` | تخصيص الساحة |
 
-## Stack vs heap
+## المكدس مقابل الكومة
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+يقرر V تلقائياً أين يخصص الذاكرة. القيم الصغيرة قصيرة الأمد تبقى في المكدس. القيم الأكبر أو الهاربة تذهب إلى الكومة.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## وضع Autofree
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Autofree يحرر الذاكرة تلقائياً عندما تخرج المتغيرات من النطاق. يستخدم عد المراجع لتخصيصات الكومة.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none والذاكرة اليدوية
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+مع `-gc none`، يعطل V جمع القمامة. يجب عليك إدارة الذاكرة يدوياً باستخدام `free`.
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## تخصيص الساحة -prealloc
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc يستخدم تخصيص الساحة لأداء أفضل في الحلقات المحكمة. التخصيصات تُحرَّر دفعة واحدة.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## الكود غير الآمن
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+كتلة `unsafe` تسمح بعمليات تتجاوز ضمانات الأمان في V، مثل حساب المؤشرات والوصول المباشر للذاكرة.
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### حساب المؤشرات
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## ضبط الأداء
 
-Choosing the right memory management mode can significantly impact performance.
+اختيار وضع إدارة الذاكرة المناسب يمكن أن يؤثر بشكل كبير على الأداء.
 
-### Benchmarking different modes
+### قياس أداء الأوضاع المختلفة
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### تحسين هياكل البيانات
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+في هذا الفصل، تعلمت عن أوضاع إدارة الذاكرة، التخصيص في المكدس مقابل الكومة، autofree، إدارة الذاكرة اليدوية، prealloc، الكود غير الآمن، وضبط الأداء. في الفصل التالي، سنستكشف الأدوات.

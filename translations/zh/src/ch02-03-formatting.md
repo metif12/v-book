@@ -1,16 +1,16 @@
-# Formatting with v fmt
+# 使用 v fmt 格式化
 
-V has a built-in code formatter:
+V 有内置的代码格式化工具：
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes changes back to files. Without it, the formatter prints to stdout.
+`-w` 参数将更改写回文件。不带此参数时，格式化工具会输出到标准输出。
 
-## Example
+## 示例
 
-Before:
+格式化前：
 
 ```v
 fn main(){
@@ -18,7 +18,7 @@ println( 'hello' )
 }
 ```
 
-After `v fmt`:
+执行 `v fmt` 后：
 
 ```v
 fn main() {
@@ -26,6 +26,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Testing with v test](ch02-04-testing.md)
+[使用 v test 测试](ch02-04-testing.md)

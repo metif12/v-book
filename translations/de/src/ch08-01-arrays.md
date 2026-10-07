@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## Array-Operationen
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
 [Maps](ch08-02-maps.md)

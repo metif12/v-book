@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# अपेंडिक्स A: कीवर्ड
 
-V has the following keywords:
+V में निम्नलिखित कीवर्ड हैं:
 
-| Keyword | Description |
+| कीवर्ड | विवरण |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | टाइप कास्टिंग |
+| `assert` | असर्शन |
+| `break` | लूप से बाहर निकलें |
+| `const` | कॉन्स्टेंट घोषणा |
+| `continue` | अगली पुनरावृत्ति पर जाएं |
+| `defer` | डिफर्ड निष्पादन |
+| `else` | एल्स ब्रांच |
+| `enum` | एनुमरेशन |
+| `false` | बूलियन फॉल्स |
+| `fn` | फ़ंक्शन घोषणा |
+| `for` | लूप |
+| `go` | Goroutine स्पॉन करें |
+| `goto` | गोटो स्टेटमेंट |
+| `if` | सशर्त |
+| `import` | मॉड्यूल इम्पोर्ट |
+| `in` | मेम्बरशिप टेस्ट |
+| `interface` | इंटरफ़ेस घोषणा |
+| `is` | टाइप जांच |
+| `lock` | Mutex लॉक |
+| `match` | पैटर्न मैचिंग |
+| `module` | मॉड्यूल घोषणा |
+| `mut` | म्यूटेबल |
+| `none` | नोन मान |
+| `or` | एरर हैंडलिंग |
+| `pub` | पब्लिक विज़िबिलिटी |
+| `return` | फ़ंक्शन से रिटर्न |
+| `struct` | Struct घोषणा |
+| `true` | बूलियन ट्रू |
+| `type` | टाइप घोषणा |
+| `union` | यूनियन घोषणा |
+| `unsafe` | असुरक्षित कोड |

@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Chapitre 4 : Propriété et mémoire
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V adopte une approche différente de la gestion de la mémoire par rapport à de nombreux langages. Au lieu d'une gestion manuelle de la mémoire ou d'un ramasse-miettes seul, V offre plusieurs stratégies.
 
-## Stack and Heap
+## Pile et tas
 
-V automatically decides whether to allocate on the stack or heap:
+V décide automatiquement d'allouer sur la pile ou le tas :
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## Ramasse-miettes
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V utilise un ramasse-miettes par défaut. Vous n'avez pas besoin de libérer la mémoire manuellement :
 
 ```v
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V dispose d'un mode autofree qui libère automatiquement la mémoire lorsque les variables sortent de leur portée :
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Références
 
-You can use references to avoid copying large data:
+Vous pouvez utiliser des références pour éviter de copier des données volumineuses :
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Modes de gestion de la mémoire
 
-| Mode | Flag | Description |
-|------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Mode | Option | Description |
+|------|--------|-------------|
+| GC (par défaut) | `-gc boehm` | Ramasse-miettes Boehm |
+| Autofree | `-autofree` | Libération automatique de la mémoire |
+| Aucun | `-gc none` | Gestion manuelle de la mémoire |
+| Prealloc | `-prealloc` | Allocation par arène |
 
-## Summary
+## Résumé
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+Dans ce chapitre, vous avez appris les options de gestion de la mémoire de V. Dans le chapitre suivant, nous explorerons les structs.

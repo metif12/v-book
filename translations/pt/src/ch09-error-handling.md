@@ -1,8 +1,8 @@
-# Chapter 9: Error Handling
+# Capítulo 9: Tratamento de Erros
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V usa os tipos Option (`?T`) e Result (`!T`) para tratamento de erros.
 
-## Option Type
+## Tipo Option
 
 ```v
 struct User {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Result Type
+## Tipo Result
 
 ```v
 fn parse_number(s string) !int {
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## Erros Customizados
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+Neste capítulo, você aprendeu sobre Option, Result e erros customizados. No próximo capítulo, vamos explorar generics.

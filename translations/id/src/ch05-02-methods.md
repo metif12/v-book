@@ -1,4 +1,4 @@
-# Methods
+# Metode
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Mutable receivers
+## Mutable receiver
 
 ```v
 struct Counter {
@@ -36,6 +36,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Embedded Structs](ch05-03-embedded-structs.md)
+[Struct Tersemat](ch05-03-embedded-structs.md)

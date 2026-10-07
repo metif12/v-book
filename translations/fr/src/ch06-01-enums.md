@@ -18,6 +18,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Sum Types](ch06-02-sum-types.md)
+[Types somme](ch06-02-sum-types.md)

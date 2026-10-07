@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# الفصل 5: Structs
 
-Structs are V's way to define custom data types.
+Structs هي طريقة V لتعريف أنواع بيانات مخصصة.
 
-## Defining Structs
+## تعريف Structs
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## الدوال المرتبطة (Methods)
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## Structs المضمنة
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## محددات الوصول
 
-Fields are private by default. Use `pub` to make them public:
+الحقول خاصة افتراضياً. استخدم `pub` لجعلها عامة:
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+في هذا الفصل، تعلمت عن structs، الدوال المرتبطة، التضمين، ومحددات الوصول. في الفصل التالي، سنستكشف enums وأنواع الجمع.

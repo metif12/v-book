@@ -1,34 +1,34 @@
-# Data Types
+# ডেটা টাইপ
 
-## Integer types
+## পূর্ণসংখ্যা টাইপ
 
-| Type | Size | Range |
+| টাইপ | সাইজ | পরিসীমা |
 |------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| `i8` | 8-bit | -128 থেকে 127 |
+| `i16` | 16-bit | -32,768 থেকে 32,767 |
+| `i32` | 32-bit | -2^31 থেকে 2^31-1 |
+| `i64` | 64-bit | -2^63 থেকে 2^63-1 |
+| `int` | প্ল্যাটফর্ম | সাধারণত 64-bit |
+| `u8` | 8-bit | 0 থেকে 255 |
+| `u16` | 16-bit | 0 থেকে 65,535 |
+| `u32` | 32-bit | 0 থেকে 2^32-1 |
+| `u64` | 64-bit | 0 থেকে 2^64-1 |
 
-## Float types
+## ফ্লোট টাইপ
 
-| Type | Size |
+| টাইপ | সাইজ |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## অন্যান্য টাইপ
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` বা `false`
+- `string` — UTF-8 স্ট্রিং
+- `rune` — একক ইউনিকোড অক্ষর (`u32`-এর সমতুল্য)
+- `byte` — `u8`-এর সমতুল্য
 
-## Type conversion
+## টাইপ রূপান্তর
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Functions](ch03-03-functions.md)
+[ফাংশন](ch03-03-functions.md)

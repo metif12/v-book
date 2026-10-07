@@ -1,4 +1,4 @@
-# Strings
+# Строки
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## Методы строк
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[Глава 9: Обработка ошибок](ch09-error-handling.md)

@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# باب ۶: enums اور سم ٹائپس
 
-## Enums
+## enums
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## سم ٹائپس
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## پیٹرن میچنگ
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+اس باب میں، آپ نے enums، سم ٹائپس، اور پیٹرن میچنگ کے بارے میں سیکھا۔ اگلے باب میں، ہم ماڈیولز اور پیکجز کو دریافت کریں گے۔

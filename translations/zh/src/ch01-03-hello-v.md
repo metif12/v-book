@@ -1,6 +1,6 @@
 # Hello, V!
 
-Let's look at a more interesting example:
+让我们看一个更有趣的例子：
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+运行它：
 
 ```bash
 v run main.v
 ```
 
-Output:
+输出：
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## 字符串插值
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V 使用 `${...}` 进行字符串插值。`${...}` 中的任何表达式都会被求值并转换为字符串：
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## 变量
 
-Use `:=` to declare and initialize a variable:
+使用 `:=` 声明和初始化变量：
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[第 2 章：构建项目](ch02-building-a-project.md)

@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+File `v.mod` mendeskripsikan proyek Anda:
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## Field
 
-| Field | Description |
+| Field | Deskripsi |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | Nama proyek (harus sama dengan nama direktori) |
+| `description` | Deskripsi singkat |
+| `version` | Versi semantik |
+| `license` | Identifikasi lisensi |
+| `dependencies` | Daftar nama paket VPM |
 
-## Next
+## Berikutnya
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[Memformat dengan v fmt](ch02-03-formatting.md)

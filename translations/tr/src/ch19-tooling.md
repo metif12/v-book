@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# Bölüm 19: Araçlar
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+V kaynak kodunu resmi stil kılavuzuna göre biçimendirir. Değişiklikleri yerinde yazmak için `-w` kullanın.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### Tek dosyayı biçimlendirme
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### Yazmadan biçimlendirmeyi kontrol etme
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+V kaynak dosyalarından dokümantasyon oluşturur. Varsayılan olarak HTML çıktı verir.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### Belirli bir modülü dokümantasyon
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+Program yürütmesini profiller, performans darboğazlarını belirler.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### Profil çıktısını analiz etme
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+Mevcut dizinde veya belirtilen dosyada birim testlerini çalıştırır.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### Belirli bir testi çalıştırma
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### Testleri coverage ile çalıştırma
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+V kodunda statik analiz yapar, hataları, uyarıları ve stil sorunlarını kontrol eder.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### Tek dosyayı kontrol etme
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## Cross-derleme
 
-V can compile code for different operating systems and architectures from a single machine.
+V, tek bir makineden farklı işletim sistemleri ve mimariler için kod derleyebilir.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### Mimari belirtme
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### Gömülü hedefler için cross-derleme
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+V kurulumu hakkında teşhis bilgileri gösterir, derleyici sürümü, işletim sistemi ve yapılandırma dahil.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+V derleyicisini en son sürüme günceller.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### Belirli bir sürüme güncelleme
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+Bu bölümde V'nin araç ekosistemi hakkında bilgi edindiniz: biçimlendirme için `v fmt`, dokümantasyon için `v doc`, performans analizi için `v profiler`, test etme için `v test`, statik analiz için `v check`, cross-derleme, teşhis için `v doctor` ve kendini güncelleme için `v up`. Sonraki bölümde bir final projesi oluşturacağız.

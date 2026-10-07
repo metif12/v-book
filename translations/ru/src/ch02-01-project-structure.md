@@ -1,6 +1,6 @@
-# Project Structure
+# Структура проекта
 
-A V project is a directory with a `v.mod` file:
+Проект на V — это каталог с файлом `v.mod`:
 
 ```
 my_project/
@@ -22,12 +22,12 @@ Module {
 }
 ```
 
-## Creating a project
+## Создание проекта
 
 ```bash
 v init
 ```
 
-## Next
+## Далее
 
 [v.mod](ch02-02-vmod.md)

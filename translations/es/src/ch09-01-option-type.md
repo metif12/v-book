@@ -1,4 +1,4 @@
-# Option Type
+# Tipo Option
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## Desenvolviendo (unwrapping)
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Siguiente
 
-[Result Type](ch09-02-result-type.md)
+[Tipo Result](ch09-02-result-type.md)

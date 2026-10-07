@@ -1,33 +1,33 @@
-# Introduction
+# مقدمه
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*کتاب زبان برنامه‌نویسی V* یک راهنمای جامع برای [زبان برنامه‌نویسی V](https://vlang.io) است — یک زبان ساده، سریع، امن و کامپایل‌شده برای ساخت نرم‌افزارهای قابل نگهداری.
 
-## Who this book is for
+## این کتاب برای چه کسانی است
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+این کتاب فرض می‌کند شما تجربه‌ای در برنامه‌نویسی با زبان دیگری دارید. این کتاب فرض نمی‌کند شما V را می‌شناسید. ما از مبانی شروع می‌کنیم و تا موضوعات پیشرفته پیش می‌رویم.
 
-## How to use this book
+## چگونه از این کتاب استفاده کنیم
 
-The book is organized into parts:
+این کتاب به بخش‌های مختلفی تقسیم شده است:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **بخش اول: شروع کار** — نصب V، نوشتن اولین برنامه، درک ساختار پروژه.
+- **بخش دوم: مفاهیم رایج برنامه‌نویسی** — متغیرها، انواع داده، توابع، کنترل جریان، struct ها، enum ها، ماژول‌ها، مجموعه‌ها، مدیریت خطا.
+- **بخش سوم: V سطح متوسط** — ژنریک‌ها، تست‌نویسی، همزمانی، توسعه وب، همکاری با C، ویژگی‌های پیشرفته و یک پروژه پایانی.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+هر فصل بر فصل‌های قبلی بنا شده است. نمونه‌های کد در CI تست می‌شوند — هر بلوک کد V در این کتاب به صورت خودکار کامپایل و اجرا می‌شود.
 
-## Code examples
+## نمونه‌های کد
 
-Code examples in this book follow these conventions:
+نمونه‌های کد در این کتاب از قراردادهای زیر پیروی می‌کنند:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- بلوک‌های کد `v` در CI کامپایل و اجرا می‌شوند.
+- بلوک‌های کد `v ignore` کامپایل نمی‌شوند (برای کد شبه‌ساختاریافته یا نمونه‌های ناقص استفاده می‌شود).
+- بلوک‌های کد `v no_run` کامپایل می‌شوند اما اجرا نمی‌شوند (برای نمونه‌هایی که مسدود می‌شوند یا ورودی نیاز دارند).
 
-## Translations
+## ترجمه‌ها
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+این کتاب به ۱۶ زبان در دسترس است. برای لیست کامل به [پیوست F](appendix-f-translations.md) مراجعه کنید.
 
-## Contributing
+## مشارکت
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+این کتاب یک پروژه جامعه‌محور است. برای نحوه مشارکت به [مخزن GitHub](https://github.com/vlang/v-book) مراجعه کنید.

@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# 第16章：C相互運用
 
-V can call C functions and be called from C.
+VはC関数を呼び出すことができ、Cから呼び出すこともできます。
 
-## Calling C from V
+## VからCを呼び出す
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+Vは`C`モジュールを使用してC関数を直接呼び出すことができます。C関数のシグネチャを宣言し、必要なヘッダーを含める必要があります。
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag`ディレクティブはフラグをCコンパイラに渡します。例えば、`-lm`は数学ライブラリをリンクします。`#include`ディレクティブはCヘッダーファイルを含め、コンパイラがC関数を認識できるようにします。`fn C.function_name`宣言はVに関数のシグネチャを伝えます。
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+シグネチャを宣言することで、任意のC関数を呼び出すことができます。例えば、`puts`を呼び出すには：
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## CからVを呼び出す
 
-Compile V to a shared library:
+Vを共有ライブラリにコンパイルします：
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+Cから共有ライブラリを使用します：
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+VはCコードをVに翻訳できます：
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## C型の操作
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+Vは`C.int`、`C.double`、`C.char`などのC互換型を提供しています。
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## コールバック
 
-You can pass V functions to C callbacks:
+V関数をCコールバックに渡すことができます：
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+この章では、C相互運用について学びました。次の章では、高度な機能を見ていきます。

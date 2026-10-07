@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# অধ্যায় 16: C ইন্টরপ
 
-V can call C functions and be called from C.
+V C ফাংশন কল করতে পারে এবং C থেকে কল করা যায়।
 
-## Calling C from V
+## V থেকে C কল করা
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V `C` মডিউল ব্যবহার করে সরাসরি C ফাংশন কল করতে পারে। আপনাকে C ফাংশন সিগনেচার ঘোষণা করতে হবে এবং প্রয়োজনীয় হেডার অন্তর্ভুক্ত করতে হবে।
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag` ডিরেক্টিভ C কম্পাইলারে ফ্ল্যাগ পাঠায়। উদাহরণস্বরূপ, `-lm` ম্যাথ লাইব্রেরি লিংক করে। `#include` ডিরেক্টিভ C হেডার ফাইল অন্তর্ভুক্ত করে যাতে কম্পাইলার C ফাংশন সম্পর্কে জানে। `fn C.function_name` ঘোষণা V-কে C ফাংশন সিগনেচার সম্পর্কে জানায়।
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+আপনি সিগনেচার ঘোষণা করে যেকোনো C ফাংশন কল করতে পারেন। উদাহরণস্বরূপ, `puts` কল করতে:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## C থেকে V কল করা
 
-Compile V to a shared library:
+V কে শেয়ার্ড লাইব্রেরিতে কম্পাইল করুন:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+তারপর C থেকে শেয়ার্ড লাইব্রেরি ব্যবহার করুন:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V C কোডকে V-এ অনুবাদ করতে পারে:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## C টাইপের সাথে কাজ
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V `C.int`, `C.double`, `C.char` ইত্যাদি C-সামঞ্জস্যপূর্ণ টাইপ প্রদান করে।
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## কলব্যাক
 
-You can pass V functions to C callbacks:
+আপনি C কলব্যাকে V ফাংশন পাঠাতে পারেন:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+এই অধ্যায়ে আপনি C ইন্টরপ সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা অ্যাডভান্সড ফিচার শিখব।

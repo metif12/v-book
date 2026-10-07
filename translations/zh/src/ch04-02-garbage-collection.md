@@ -1,6 +1,6 @@
-# Garbage Collection
+# 垃圾回收
 
-V uses a garbage collector by default:
+V 默认使用垃圾回收器：
 
 ```v
 fn main() {
@@ -8,19 +8,19 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // Memory is automatically freed when no longer referenced
+    // 内存不再被引用时自动释放
     println(names.len)
 }
 ```
 
-## Disabling GC
+## 禁用 GC
 
-For performance-critical code, you can disable GC:
+对于性能关键型代码，你可以禁用 GC：
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## 下一步
 
-[Autofree](ch04-03-autofree.md)
+[自动释放](ch04-03-autofree.md)

@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Bölüm 2: Proje Oluşturma
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+Bu bölümde bir V projesini nasıl yapılandıracağınızı, `v.mod` dosyasını nasıl kullanacağınızı, `v fmt` ile kod biçimlendirmeyi ve `v test` ile test yazmayı öğreneceksiniz.
 
-## Project structure
+## Proje yapısı
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Bir V projesi, bir `v.mod` dosyası ve bir veya daha fazla `.v` dosyası içeren bir dizindir:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Her V projesinde projeyi tanımlayan bir `v.mod` dosyası vardır:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Yeni bir proje oluşturmak için:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Bu, temel bir şablon içeren bir `v.mod` ve bir `main.v` dosyası oluşturur.
 
-## Formatting with v fmt
+## v fmt ile biçimlendirme
 
-V has a built-in code formatter. Run it on your project:
+V'nin yerleşik bir kod biçimlendiricisi vardır. Projenizde çalıştırın:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` bayrağı, biçimlendirilmiş kodu dosyaların üzerine yazar.
 
-## Testing with v test
+## v test ile test etme
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V'nin yerleşik bir test çerçevesi vardır. `_test.v` ile biten bir dosya oluşturun:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Testleri çalıştırın:
 
 ```bash
 v test .
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+Bu bölümde bir V projesini yapılandırmayı, `v.mod` dosyasını kullanmayı, kod biçimlendirmeyi ve test yazmayı öğrendiniz. Sonraki bölümde V'deki ortak programlama kavramlarına dalacağız.

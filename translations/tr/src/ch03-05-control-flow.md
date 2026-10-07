@@ -1,4 +1,4 @@
-# Control Flow
+# Kontrol Akışı
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If ifadesi olarak
 
 ```v
 fn main() {
@@ -23,7 +23,7 @@ fn main() {
 }
 ```
 
-## For loop
+## For döngüsü
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[Bölüm 4: Sahiplik ve Bellek](ch04-ownership-and-memory.md)

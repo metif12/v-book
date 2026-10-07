@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# 第3章：共通概念
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+この章では、Vの一般的なプログラミング概念（変数、データ型、関数、コメント、制御フロー）を扱います。
 
-## Variables and Mutability
+## 変数と可変性
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+Vでは、変数はデフォルトで不変です。可変にするには`mut`を使用します：
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // エラー: nameは不変です
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: countは可変です
     count++
     println(count)
 }
 ```
 
-## Data Types
+## データ型
 
-V has a rich type system:
+Vには豊富な型システムがあります：
 
 ```v
 fn main() {
-    // Integers
+    // 整数
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // 64ビット整数
+    c := u8(255)   // 符号なし8ビット
 
-    // Floats
+    // 浮動小数点
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // 32ビット浮動小数点
 
-    // Other types
+    // その他の型
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune（単一文字）
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## 関数
 
-Functions are declared with `fn`:
+関数は`fn`で宣言します：
 
 ```v
 fn add(a int, b int) int {
@@ -64,16 +64,16 @@ fn main() {
 }
 ```
 
-## Comments
+## コメント
 
 ```v
-// This is a line comment
+// これは行コメントです
 
-/* This is a
-   block comment */
+/* これは
+   ブロックコメントです */
 ```
 
-## Control Flow
+## 制御フロー
 
 ### If
 
@@ -88,17 +88,17 @@ fn main() {
 }
 ```
 
-### For loop
+### Forループ
 
 ```v
 fn main() {
-    // Loop over an array
+    // 配列のループ
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range loop
+    // 範囲ループ
     for i in 0 .. 5 {
         println(i)
     }
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+この章では、Vの変数、データ型、関数、コメント、制御フローについて学びました。次の章では、所有権とメモリ管理を見ていきます。

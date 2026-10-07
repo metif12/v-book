@@ -1,4 +1,4 @@
-# Embedded Structs
+# Gömülü Struct'lar
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[Erişim Belirleyiciler](ch05-04-access-modifiers.md)

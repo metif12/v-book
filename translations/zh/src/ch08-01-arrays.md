@@ -1,4 +1,4 @@
-# Arrays
+# 数组
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## 数组操作
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Maps](ch08-02-maps.md)
+[映射](ch08-02-maps.md)

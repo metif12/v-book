@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# Capítulo 3: Conceitos Comuns
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Este capítulo cobre os conceitos comuns de programação em V: variáveis, tipos de dados, funções, comentários e fluxo de controle.
 
-## Variables and Mutability
+## Variáveis e Mutabilidade
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+Em V, variáveis são imutáveis por padrão. Use `mut` para torná-las mutáveis:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Erro: name é imutável
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: count é mutável
     count++
     println(count)
 }
 ```
 
-## Data Types
+## Tipos de Dados
 
-V has a rich type system:
+V tem um sistema de tipos rico:
 
 ```v
 fn main() {
-    // Integers
+    // Inteiros
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // inteiro de 64 bits
+    c := u8(255)   // sem sinal de 8 bits
 
     // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // float de 32 bits
 
-    // Other types
+    // Outros tipos
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune (caractere único)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Funções
 
-Functions are declared with `fn`:
+Funções são declaradas com `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Comentários
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Fluxo de Controle
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### Loop For
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+Neste capítulo, você aprendeu sobre variáveis, tipos de dados, funções, comentários e fluxo de controle em V. No próximo capítulo, vamos explorar posse e gerenciamento de memória.

@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# 附录 B：运算符
 
-## Arithmetic
+## 算术
 
-| Operator | Description |
+| 运算符 | 描述 |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | 加法 |
+| `-` | 减法 |
+| `*` | 乘法 |
+| `/` | 除法 |
+| `%` | 取模 |
+| `**` | 幂运算 |
 
-## Comparison
+## 比较
 
-| Operator | Description |
+| 运算符 | 描述 |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | 等于 |
+| `!=` | 不等于 |
+| `<` | 小于 |
+| `>` | 大于 |
+| `<=` | 小于等于 |
+| `>=` | 大于等于 |
 
-## Logical
+## 逻辑
 
-| Operator | Description |
+| 运算符 | 描述 |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | 逻辑与 |
+| `\|\|` | 逻辑或 |
+| `!` | 逻辑非 |
 
-## Bitwise
+## 位运算
 
-| Operator | Description |
+| 运算符 | 描述 |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | 按位与 |
+| `\|` | 按位或 |
+| `^` | 按位异或 |
+| `<<` | 左移 |
+| `>>` | 右移 |
 
-## Assignment
+## 赋值
 
-| Operator | Description |
+| 运算符 | 描述 |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | 赋值 |
+| `:=` | 短声明 |
+| `+=` | 加后赋值 |
+| `-=` | 减后赋值 |
+| `*=` | 乘后赋值 |
+| `/=` | 除后赋值 |
+| `%=` | 取模后赋值 |

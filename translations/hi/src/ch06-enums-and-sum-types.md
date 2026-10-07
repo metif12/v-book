@@ -1,4 +1,4 @@
-# Chapter 6: Enums and Sum Types
+# अध्याय 6: Enums और Sum Types
 
 ## Enums
 
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## पैटर्न मैचिंग
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+इस अध्याय में, आपने enums, sum types, और पैटर्न मैचिंग के बारे में सीखा। अगले अध्याय में, हम मॉड्यूल और पैकेज का पता लगाएंगे।

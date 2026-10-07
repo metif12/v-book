@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# Глава 16: Интероперабельность с C
 
-V can call C functions and be called from C.
+V может вызывать функции C и быть вызванным из C.
 
-## Calling C from V
+## Вызов C из V
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V может напрямую вызывать функции C с помощью модуля `C`. Вам нужно объявить сигнатуру функции C и подключить необходимые заголовочные файлы.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+Директива `#flag` передаёт флаги компилятору C. Например, `-lm` подключает математическую библиотеку. Директива `#include` подключает заголовочные файлы C, чтобы компилятор знал о функциях C. Объявление `fn C.function_name` сообщает V о сигнатуре функции C.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+Вы можете вызвать любую функцию C, объявив её сигнатуру. Например, чтобы вызвать `puts`:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## Вызов V из C
 
-Compile V to a shared library:
+Скомпилируйте V в разделяемую библиотеку:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+Затем используйте разделяемую библиотеку из C:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V может переводить код C на V:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## Работа с типами C
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V предоставляет совместимые с C типы, такие как `C.int`, `C.double`, `C.char` и т.д.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## Колбэки
 
-You can pass V functions to C callbacks:
+Вы можете передавать функции V в колбэки C:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+В этой главе вы узнали об интероперабельности с C. В следующей главе мы рассмотрим продвинутые возможности.

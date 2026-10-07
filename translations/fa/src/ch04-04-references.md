@@ -1,6 +1,6 @@
-# References
+# مراجع
 
-Use references to avoid copying large data:
+از مراجع برای جلوگیری از کپی کردن داده‌های بزرگ استفاده کنید:
 
 ```v
 fn modify(mut arr []int) {
@@ -14,6 +14,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Chapter 5: Structs](ch05-structs.md)
+[فصل ۵: struct ها](ch05-structs.md)

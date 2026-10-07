@@ -1,14 +1,14 @@
-# Stack and Heap
+# 栈与堆
 
-V automatically decides whether to allocate on the stack or heap:
+V 自动决定是在栈上还是堆上分配内存：
 
 ```v
 fn main() {
-    // Stack-allocated (small, fixed size)
+    // 栈分配（小，固定大小）
     x := 42
     arr := [1, 2, 3]
 
-    // Heap-allocated (large, dynamic)
+    // 堆分配（大，动态）
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## 栈
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- 快速的分配和释放
+- 编译时固定大小
+- 作用域结束时自动释放
 
-## Heap
+## 堆
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- 动态大小
+- 较慢的分配
+- 由 GC 或自动释放管理
 
-## Next
+## 下一步
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[垃圾回收](ch04-02-garbage-collection.md)

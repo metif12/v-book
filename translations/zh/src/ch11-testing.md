@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# 第 11 章：测试
 
-V has a built-in testing framework.
+V 有内置的测试框架。
 
-## Test files
+## 测试文件
 
-Create a file ending in `_test.v`:
+创建一个以 `_test.v` 结尾的文件：
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## 运行测试
 
 ```bash
 v test .
 ```
 
-## Test organization
+## 测试组织
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## 表驱动测试
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+在本章中，你学习了 V 的测试框架。在下一章中，我们将构建一个命令行工具。

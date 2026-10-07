@@ -1,4 +1,4 @@
-# Module System
+# 模块系统
 
 ```
 my_project/
@@ -8,7 +8,7 @@ my_project/
     └── math.v
 ```
 
-`math/math.v`:
+`math/math.v`：
 
 ```v ignore
 module math
@@ -18,7 +18,7 @@ pub fn add(a int, b int) int {
 }
 ```
 
-`main.v`:
+`main.v`：
 
 ```v ignore
 import math
@@ -28,6 +28,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Visibility](ch07-02-visibility.md)
+[可见性](ch07-02-visibility.md)

@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# Bölüm 5: Struct'lar
 
-Structs are V's way to define custom data types.
+Struct'lar, V'nin özel veri tipleri tanımlama yoludur.
 
-## Defining Structs
+## Struct Tanımlama
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## Metotlar
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## Gömülü Struct'lar
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Erişim Belirleyiciler
 
-Fields are private by default. Use `pub` to make them public:
+Alanlar varsayılan olarak özeldir. Herkese açık yapmak için `pub` kullanın:
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+Bu bölümde struct'lar, metotlar, gömme ve erişim belirleyicileri hakkında bilgi edindiniz. Sonraki bölümde enum'ları ve toplam tipleri inceleyeceğiz.

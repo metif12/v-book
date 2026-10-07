@@ -1,4 +1,4 @@
-# Arrays
+# آرایه‌ها
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## عملیات آرایه
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Maps](ch08-02-maps.md)
+[نقشه‌ها](ch08-02-maps.md)

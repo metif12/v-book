@@ -1,6 +1,6 @@
-# Stack and Heap
+# Stack dan Heap
 
-V automatically decides whether to allocate on the stack or heap:
+V secara otomatis memutuskan apakah akan mengalokasikan di stack atau heap:
 
 ```v
 fn main() {
@@ -20,16 +20,16 @@ fn main() {
 
 ## Stack
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- Alokasi dan dealokasi cepat
+- Ukuran tetap saat compile time
+- Otomatis dibebaskan ketika scope berakhir
 
 ## Heap
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- Ukuran dinamis
+- Alokasi lebih lambat
+- Dikelola oleh GC atau autofree
 
-## Next
+## Berikutnya
 
 [Garbage Collection](ch04-02-garbage-collection.md)

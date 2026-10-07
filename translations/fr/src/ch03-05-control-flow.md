@@ -1,4 +1,4 @@
-# Control Flow
+# Flux de contrôle
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If comme expression
 
 ```v
 fn main() {
@@ -23,7 +23,7 @@ fn main() {
 }
 ```
 
-## For loop
+## Boucle for
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[Chapitre 4 : Propriété et mémoire](ch04-ownership-and-memory.md)

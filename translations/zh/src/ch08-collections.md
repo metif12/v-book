@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# 第 8 章：集合
 
-## Arrays
+## 数组
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## 映射
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## 字符串
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+在本章中，你学习了数组、映射和字符串。在下一章中，我们将探讨错误处理。

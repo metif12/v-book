@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# فصل ۱۹: ابزارها
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+کد منبع V را بر اساس راهنمای سبک رسمی قالب‌بندی می‌کند. از `-w` برای نوشتن تغییرات در محل استفاده کنید.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### قالب‌بندی یک فایل تکی
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### بررسی قالب‌بندی بدون نوشتن
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+مستندات را از فایل‌های منبع V تولید می‌کند. به صورت پیش‌فرض HTML خروجی می‌دهد.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### مستندات یک ماژول خاص
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+اجرای برنامه را پروفایل می‌کند تا گلوگاه‌های عملکرد را شناسایی کند.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### تحلیل خروجی پروفایل
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+تست‌های واحد را در دایرکتوری فعلی یا فایل مشخص اجرا می‌کند.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### اجرای یک تست خاص
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### اجرای تست‌ها با پوشش
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+تحلیل ایستا روی کد V انجام می‌دهد و خطاها، هشدارها و مشکلات سبک را بررسی می‌کند.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### بررسی یک فایل تکی
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## کامپایل متقاطع
 
-V can compile code for different operating systems and architectures from a single machine.
+V می‌تواند کد را برای سیستم‌عامل‌ها و معماری‌های مختلف از یک دستگاه کامپایل کند.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### مشخص کردن معماری
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### کامپایل متقاطع برای اهداف تعبیه‌شده
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+اطلاعات تشخیصی درباره نصب V را نمایش می‌دهد، از جمله نسخه کامپایلر، سیستم‌عامل و پیکربندی.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+کامپایلر V را به آخرین نسخه به‌روزرسانی می‌کند.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### به‌روزرسانی به یک نسخه خاص
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+در این فصل، درباره اکوسیستم ابزارهای V یاد گرفتید: `v fmt` برای قالب‌بندی، `v doc` برای مستندات، `v profiler` برای تحلیل عملکرد، `v test` برای تست، `v check` برای تحلیل ایستا، کامپایل متقاطع، `v doctor` برای تشخیص و `v up` برای به‌روزرسانی خودکار. در فصل بعد، یک پروژه پایانی می‌سازیم.

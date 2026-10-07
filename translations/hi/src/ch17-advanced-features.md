@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# अध्याय 17: एडवांस्ड फ़ीचर्स
 
-## Attributes
+## एट्रिब्यूट्स
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+एट्रिब्यूट्स घोषणाओं से पहले रखे गए मेटाडेटा एनोटेशन हैं। ये कंपाइलर व्यवहार, ऑप्टिमाइज़ेशन संकेत और API लाइफसाइकल को नियंत्रित करते हैं।
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+फ़ंक्शन या टाइप को डिप्रिकेटेड के रूप में चिह्नित करता है। आइटम के उपयोग पर कंपाइलर एक चेतावनी देता है।
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+कंपाइलर को कॉल साइट पर फ़ंक्शन को इनलाइन करने का संकेत देता है, कॉल ओवरहेड को समाप्त करता है। छोटे, बार-बार कॉल किए जाने वाले फ़ंक्शन के लिए सबसे अच्छा।
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+फ़ंक्शन को असुरक्षित के रूप में चिह्नित करता है, जिससे कॉलर को भी असुरक्षित चिह्नित किए बिना `unsafe` ब्लॉक का उपयोग करने की अनुमति मिलती है।
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+कंपाइल टाइम पर सशर्त कंपाइलेशन। ब्लॉक केवल तब शामिल होता है जब शर्त सत्य हो।
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## कंपाइल-टाइम कोड
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V कई कंपाइल-टाइम कंस्ट्रक्ट प्रदान करता है जो कंपाइलेशन के दौरान निष्पादित होते हैं, मेटाप्रोग्रामिंग और शून्य-लागत एब्सट्रैक्शन को सक्षम करते हैं।
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+कंपाइल टाइम पर शर्तों का मूल्यांकन करता है। प्लेटफ़ॉर्म डिटेक्शन, आर्किटेक्चर जांच और कस्टम फ़्लैग को सपोर्ट करता है।
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+कंपाइल टाइम पर ऐरे, struct फ़ील्ड्स या रेंज पर पुनरावृत्ति करता है। दोहराए जाने वाले कोड को जनरेट करने के लिए उपयोगी।
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+कंपाइल-टाइम असर्शन जो शर्त गलत होने पर कंपाइलेशन को रोक देते हैं।
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## ऑपरेटर ओवरलोडिंग
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V यूज़र-डिफाइंड टाइप्स पर ऑपरेटर के लिए कस्टम व्यवहार परिभाषित करने की अनुमति देता है। प्रत्येक ऑपरेटर एक विशिष्ट सिग्नेचर वाले मेथड से मैप होता है।
 
-### Arithmetic operators
+### अंकगणित ऑपरेटर
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### तुलना ऑपरेटर
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### इंडेक्स ऑपरेटर
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## कंपाइल-टाइम रिफ्लेक्शन
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+V का `$for` कंस्ट्रक्ट कंपाइल टाइम पर struct फ़ील्ड्स पर पुनरावृत्ति कर सकता है, ऑटोमैटिक सीरियलाइज़ेशन, वैलिडेशन आदि को सक्षम करता है।
 
-### Iterating struct fields
+### struct फ़ील्ड्स पर पुनरावृत्ति
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### वैलिडेशन कोड जनरेट करना
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+इस अध्याय में, आपने एट्रिब्यूट्स, कंपाइल-टाइम कोड, ऑपरेटर ओवरलोडिंग और कंपाइल-टाइम रिफ्लेक्शन के बारे में सीखा। ये फ़ीचर्स शक्तिशाली मेटाप्रोग्रामिंग पैटर्न और कंपाइलेशन पर सूक्ष्म नियंत्रण को सक्षम करते हैं। अगले अध्याय में, हम मेमोरी मैनेजमेंट को गहराई से जानेंगे।

@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Apéndice A: Palabras Clave
 
-V has the following keywords:
+V tiene las siguientes palabras clave:
 
-| Keyword | Description |
-|---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
+| Palabra clave | Descripción |
+|---------------|-------------|
+| `as` | Conversión de tipo |
+| `assert` | Aserciones |
+| `break` | Salir de un bucle |
+| `const` | Declaración de constante |
+| `continue` | Continuar a la siguiente iteración |
+| `defer` | Ejecución diferida |
+| `else` | Rama else |
+| `enum` | Enumeración |
+| `false` | Booleano falso |
+| `fn` | Declaración de función |
+| `for` | Bucle |
+| `go` | Lanzar goroutine |
+| `goto` | Sentencia goto |
+| `if` | Condicional |
+| `import` | Importación de módulo |
+| `in` | Prueba de pertenencia |
+| `interface` | Declaración de interfaz |
+| `is` | Comprobación de tipo |
+| `lock` | Bloqueo de mutex |
 | `match` | Pattern matching |
-| `module` | Module declaration |
+| `module` | Declaración de módulo |
 | `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `none` | Valor none |
+| `or` | Manejo de errores |
+| `pub` | Visibilidad pública |
+| `return` | Retorno de función |
+| `struct` | Declaración de struct |
+| `true` | Booleano verdadero |
+| `type` | Declaración de tipo |
+| `union` | Declaración de unión |
+| `unsafe` | Código inseguro |

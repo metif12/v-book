@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# অধ্যায় 3: সাধারণ ধারণা
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+এই অধ্যায়ে V-এর সাধারণ প্রোগ্রামিং ধারণা আলোচনা করা হয়েছে: ভেরিয়েবল, ডেটা টাইপ, ফাংশন, কমেন্ট এবং কন্ট্রোল ফ্লো।
 
-## Variables and Mutability
+## ভেরিয়েবল এবং মিউটেবিলিটি
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+V-এ ভেরিয়েবল ডিফল্টভাবে অপরিবর্তনীয়। মিউটেবল করতে `mut` ব্যবহার করুন:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## ডেটা টাইপ
 
-V has a rich type system:
+V-তে একটি সমৃদ্ধ টাইপ সিস্টেম আছে:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## ফাংশন
 
-Functions are declared with `fn`:
+ফাংশন `fn` দিয়ে ঘোষণা করা হয়:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## কমেন্ট
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## কন্ট্রোল ফ্লো
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### For লুপ
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+এই অধ্যায়ে আপনি V-এর ভেরিয়েবল, ডেটা টাইপ, ফাংশন, কমেন্ট এবং কন্ট্রোল ফ্লো সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা ওনারশিপ এবং মেমোরি ম্যানেজমেন্ট শিখব।

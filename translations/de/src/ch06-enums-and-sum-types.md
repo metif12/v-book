@@ -1,4 +1,4 @@
-# Chapter 6: Enums and Sum Types
+# Kapitel 6: Enums und Sum Types
 
 ## Enums
 
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+In diesem Kapitel haben Sie Enums, Sum Types und Pattern Matching kennengelernt. Im nächsten Kapitel untersuchen wir Module und Pakete.

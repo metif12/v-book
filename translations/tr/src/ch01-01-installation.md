@@ -1,10 +1,10 @@
-# Installation
+# Kurulum
 
 ## Windows
 
-### Installer
+### Kurulum programı
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+[vlang.io/install](https://vlang.io/install.html) adresinden en güncel kurulum programını indirin ve çalıştırın.
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### Manuel
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. [GitHub releases](https://github.com/vlang/v/releases) adresinden en güncel sürümü indirin.
+2. Zip dosyasını çıkarın.
+3. `v` dizinini PATH'inize ekleyin.
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### Kurulum betiği
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### Kurulum betiği
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## Kaynak koddan
 
-To build V from source, you need a C compiler (gcc or clang):
+V'yi kaynak koddan derlemek için bir C derleyicisine (gcc veya clang) ihtiyacınız var:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,12 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
-
-## Verifying
+## Doğrulama
 
 ```bash
 v version
 ```
 
-## Next
+## Sonraki
 
-[Hello, World!](ch01-02-hello-world.md)
+[Merhaba, Dünya!](ch01-02-hello-world.md)

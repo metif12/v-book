@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# Chapter 7: 모듈과 패키지
 
-## Module System
+## 모듈 시스템
 
-V organizes code into modules. A module is a directory with `.v` files:
+V는 코드를 모듈로 구성합니다. 모듈은 `.v` 파일이 있는 디렉터리입니다:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## 가시성
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — public, 다른 모듈에서 접근 가능
+- (제어자 없음) — private, 모듈 내부만
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+V Package Manager(VPM)는 커뮤니티 패키지를 호스팅합니다:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+이 장에서는 모듈, 가시성, VPM에 대해 배웠습니다. 다음 장에서는 컬렉션을 살펴보겠습니다.

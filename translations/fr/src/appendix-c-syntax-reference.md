@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# Annexe C : Référence de syntaxe V
 
-## Functions
+## Fonctions
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## Types somme
 
 ```v
 struct Type1 {}

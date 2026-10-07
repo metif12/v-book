@@ -1,8 +1,8 @@
-# Chapter 9: Error Handling
+# Chapter 9: 에러 처리
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V는 에러 처리에 Option(`?T`)과 Result(`!T`) 타입을 사용합니다.
 
-## Option Type
+## Option 타입
 
 ```v
 struct User {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Result Type
+## Result 타입
 
 ```v
 fn parse_number(s string) !int {
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## 커스텀 에러
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+이 장에서는 Option, Result, 커스텀 에러에 대해 배웠습니다. 다음 장에서는 제네릭을 살펴보겠습니다.

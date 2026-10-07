@@ -1,6 +1,6 @@
 # Hello, World!
 
-Create a file called `main.v`:
+Buat file bernama `main.v`:
 
 ```v
 fn main() {
@@ -8,7 +8,7 @@ fn main() {
 }
 ```
 
-Run it:
+Jalankan:
 
 ```bash
 v run main.v
@@ -20,23 +20,23 @@ Output:
 Hello, World!
 ```
 
-## Anatomy of a V program
+## Anatomi program V
 
-Let's break down the program:
+Mari uraikan program tersebut:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — Setiap program V dimulai dengan fungsi `main`. Kata kunci `fn` mendeklarasikan sebuah fungsi.
+- `println(...)` — Fungsi bawaan yang mencetak baris ke stdout.
+- `'Hello, World!'` — Literal string. V menggunakan tanda kutip tunggal untuk string.
 
-## Compiling vs running
+## Kompilasi vs menjalankan
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` mengompilasi dan menjalankan dalam satu langkah. Anda juga bisa mengompilasi terlebih dahulu:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## Berikutnya
 
 [Hello, V!](ch01-03-hello-v.md)

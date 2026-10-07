@@ -1,8 +1,8 @@
-# Chapter 20: Final Project: Web Application
+# अध्याय 20: फाइनल प्रोजेक्ट: वेब एप्लिकेशन
 
-In this chapter, we'll build a simple web application with Veb and an ORM.
+इस अध्याय में, हम Veb और ORM के साथ एक सरल वेब एप्लिकेशन बनाएंगे।
 
-## Project setup
+## प्रोजेक्ट सेटअप
 
 ```bash
 mkdir myapp
@@ -10,7 +10,7 @@ cd myapp
 v init
 ```
 
-## Database
+## डेटाबेस
 
 ```v no_run
 import veb
@@ -37,7 +37,7 @@ fn main() {
 }
 ```
 
-## Routes
+## रूट्स
 
 ```v no_run
 import veb
@@ -67,6 +67,6 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-## Summary
+## सारांश
 
-Congratulations! You've completed The V Programming Language Book. You now have a solid foundation in V and are ready to build real-world applications.
+बधाई हो! आपने V प्रोग्रामिंग भाषा बुक पूरी कर ली है। अब आपके पास V की मजबूत नींव है और आप वास्तविक-दुनिया की एप्लिकेशन बनाने के लिए तैयार हैं।

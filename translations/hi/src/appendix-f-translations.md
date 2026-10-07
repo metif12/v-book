@@ -1,8 +1,8 @@
-# Appendix F: Translations
+# अपेंडिक्स F: अनुवाद
 
-This book is available in 16 languages:
+यह पुस्तक 16 भाषाओं में उपलब्ध है:
 
-| Code | Language | Status |
+| कोड | भाषा | स्थिति |
 |------|----------|--------|
 | en | English | Complete (canonical) |
 | zh | 简体中文 | TODO |
@@ -21,6 +21,6 @@ This book is available in 16 languages:
 | tr | Türkçe | TODO |
 | ko | 한국어 | TODO |
 
-## Contributing
+## योगदान
 
-See [translations/README.md](../translations/README.md) for how to contribute a translation.
+अनुवाद में योगदान करने के लिए [translations/README.md](../translations/README.md) देखें।

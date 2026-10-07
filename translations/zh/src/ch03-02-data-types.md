@@ -1,34 +1,34 @@
-# Data Types
+# 数据类型
 
-## Integer types
+## 整数类型
 
-| Type | Size | Range |
+| 类型 | 大小 | 范围 |
 |------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| `i8` | 8 位 | -128 到 127 |
+| `i16` | 16 位 | -32,768 到 32,767 |
+| `i32` | 32 位 | -2^31 到 2^31-1 |
+| `i64` | 64 位 | -2^63 到 2^63-1 |
+| `int` | 平台相关 | 通常为 64 位 |
+| `u8` | 8 位 | 0 到 255 |
+| `u16` | 16 位 | 0 到 65,535 |
+| `u32` | 32 位 | 0 到 2^32-1 |
+| `u64` | 64 位 | 0 到 2^64-1 |
 
-## Float types
+## 浮点类型
 
-| Type | Size |
+| 类型 | 大小 |
 |------|------|
-| `f32` | 32-bit |
-| `f64` | 64-bit |
+| `f32` | 32 位 |
+| `f64` | 64 位 |
 
-## Other types
+## 其他类型
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` 或 `false`
+- `string` — UTF-8 字符串
+- `rune` — 单个 Unicode 字符（`u32` 的别名）
+- `byte` — `u8` 的别名
 
-## Type conversion
+## 类型转换
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Functions](ch03-03-functions.md)
+[函数](ch03-03-functions.md)

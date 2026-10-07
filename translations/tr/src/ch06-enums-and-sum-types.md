@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# Bölüm 6: Enum'lar ve Toplam Tipler
 
-## Enums
+## Enum'lar
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## Toplam Tipler
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## Desen Eşleştirme
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+Bu bölümde enum'lar, toplam tipler ve desen eşleştirme hakkında bilgi edindiniz. Sonraki bölümde modülleri ve paketleri inceleyeceğiz.

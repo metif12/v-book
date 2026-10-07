@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## Operações com maps
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## Próximo
 
 [Strings](ch08-03-strings.md)

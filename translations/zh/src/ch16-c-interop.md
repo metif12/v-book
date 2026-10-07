@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# 第 16 章：C 语言互操作
 
-V can call C functions and be called from C.
+V 可以调用 C 函数，也可以从 C 调用。
 
-## Calling C from V
+## 从 V 调用 C
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V 可以使用 `C` 模块直接调用 C 函数。你需要声明 C 函数签名并包含必要的头文件。
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag` 指令将标志传递给 C 编译器。例如，`-lm` 链接数学库。`#include` 指令包含 C 头文件，使编译器了解 C 函数。`fn C.function_name` 声明告诉 V 关于 C 函数的签名。
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+你可以通过声明签名来调用任何 C 函数。例如，调用 `puts`：
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## 从 C 调用 V
 
-Compile V to a shared library:
+将 V 编译为共享库：
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+然后在 C 中使用共享库：
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V 可以将 C 代码翻译为 V：
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## 使用 C 类型
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V 提供 C 兼容类型，如 `C.int`、`C.double`、`C.char` 等。
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## 回调
 
-You can pass V functions to C callbacks:
+你可以将 V 函数传递给 C 回调：
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+在本章中，你学习了 C 语言互操作。在下一章中，我们将探讨高级特性。

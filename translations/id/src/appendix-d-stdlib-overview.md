@@ -1,8 +1,8 @@
-# Appendix D: Standard Library Overview
+# Lampiran D: Ikhtisar Standard Library
 
-V's standard library includes:
+Standard library V mencakup:
 
-| Module | Description |
+| Modul | Deskripsi |
 |--------|-------------|
 | `os` | Operating system interface |
 | `io` | Input/output |

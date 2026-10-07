@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# Capítulo 11: Pruebas
 
-V has a built-in testing framework.
+V tiene un framework de pruebas integrado.
 
-## Test files
+## Archivos de prueba
 
-Create a file ending in `_test.v`:
+Crea un archivo que termine en `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## Ejecutar pruebas
 
 ```bash
 v test .
 ```
 
-## Test organization
+## Organización de pruebas
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## Pruebas basadas en tablas
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## Resumen
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+En este capítulo, aprendiste sobre el framework de pruebas de V. En el siguiente capítulo, construiremos una herramienta de línea de comandos.

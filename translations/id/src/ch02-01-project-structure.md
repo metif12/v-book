@@ -1,6 +1,6 @@
-# Project Structure
+# Struktur Proyek
 
-A V project is a directory with a `v.mod` file:
+Sebuah proyek V adalah direktori dengan file `v.mod`:
 
 ```
 my_project/
@@ -22,12 +22,12 @@ Module {
 }
 ```
 
-## Creating a project
+## Membuat proyek
 
 ```bash
 v init
 ```
 
-## Next
+## Berikutnya
 
 [v.mod](ch02-02-vmod.md)

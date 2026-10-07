@@ -1,4 +1,4 @@
-# Defining Structs
+# Struct Tanımlama
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## Başlatma
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## Sonraki
 
-[Methods](ch05-02-methods.md)
+[Metotlar](ch05-02-methods.md)

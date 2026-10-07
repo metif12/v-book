@@ -1,4 +1,4 @@
-# Sum Types
+# Tipos Suma
 
 ```v
 type Shape = Circle | Rectangle
@@ -27,6 +27,6 @@ fn main() {
 }
 ```
 
-## Next
+## Siguiente
 
 [Pattern Matching](ch06-03-pattern-matching.md)

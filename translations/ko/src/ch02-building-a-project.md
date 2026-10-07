@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Chapter 2: 프로젝트 구성하기
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+이 장에서는 V 프로젝트의 구조, `v.mod` 사용법, `v fmt`로 코드 포맷팅, `v test`로 테스트 작성 방법을 배웁니다.
 
-## Project structure
+## 프로젝트 구조
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+V 프로젝트는 `v.mod` 파일과 하나 이상의 `.v` 파일이 있는 디렉터리입니다:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+모든 V 프로젝트는 프로젝트를 설명하는 `v.mod` 파일을 가집니다:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+새 프로젝트 생성:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+이 명령은 기본 템플릿이 포함된 `v.mod`과 `main.v`를 생성합니다.
 
-## Formatting with v fmt
+## v fmt로 포맷팅하기
 
-V has a built-in code formatter. Run it on your project:
+V에는 내장 코드 포매터가 있습니다. 프로젝트에 실행하세요:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` 플래그는 포맷팅된 코드를 파일에 다시 저장합니다.
 
-## Testing with v test
+## v test로 테스트하기
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V에는 내장 테스팅 프레임워크가 있습니다. `_test.v`로 끝나는 파일을 생성하세요:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+테스트 실행:
 
 ```bash
 v test .
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+이 장에서는 V 프로젝트의 구조, `v.mod` 사용법, 코드 포맷팅, 테스트 작성 방법을 배웠습니다. 다음 장에서는 V의 일반적인 프로그래밍 개념을 살펴보겠습니다.

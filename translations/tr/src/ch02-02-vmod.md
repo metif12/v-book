@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+`v.mod` dosyası projenizi tanımlar:
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## Alanlar
 
-| Field | Description |
+| Alan | Açıklama |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | Proje adı (dizin adıyla eşleşmelidir) |
+| `description` | Kısa açıklama |
+| `version` | Semantik sürüm |
+| `license` | Lisans tanımlayıcı |
+| `dependencies` | VPM paket adlarının listesi |
 
-## Next
+## Sonraki
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[v fmt ile Biçimlendirme](ch02-03-formatting.md)

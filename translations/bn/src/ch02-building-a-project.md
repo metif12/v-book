@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# অধ্যায় 2: প্রজেক্ট তৈরি
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+এই অধ্যায়ে আপনি শিখবেন কীভাবে একটি V প্রজেক্ট সাজাতে হয়, `v.mod` ব্যবহার করতে হয়, `v fmt` দিয়ে কোড ফরম্যাট করতে হয় এবং `v test` দিয়ে টেস্ট লিখতে হয়।
 
-## Project structure
+## প্রজেক্ট স্ট্রাকচার
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+একটি V প্রজেক্ট হল একটি ডিরেক্টরি যাতে একটি `v.mod` ফাইল এবং এক বা একাধিক `.v` ফাইল থাকে:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+প্রতিটি V প্রজেক্টে একটি `v.mod` ফাইল থাকে যা প্রজেক্টটি বর্ণনা করে:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+নতুন প্রজেক্ট তৈরি করুন:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+এটি একটি বেসিক টেমপ্লেট সহ একটি `v.mod` এবং একটি `main.v` তৈরি করে।
 
-## Formatting with v fmt
+## v fmt দিয়ে ফরম্যাটিং
 
-V has a built-in code formatter. Run it on your project:
+V-তে একটি বিল্ট-ইন কোড ফরম্যাটার আছে। আপনার প্রজেক্টে চালান:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` ফ্ল্যাগ ফরম্যাট করা কোড ফাইলে ফিরিয়ে লেখে।
 
-## Testing with v test
+## v test দিয়ে টেস্টিং
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V-তে একটি বিল্ট-ইন টেস্টিং ফ্রেমওয়ার্ক আছে। `_test.v` দিয়ে শেষ হওয়া একটি ফাইল তৈরি করুন:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+টেস্ট চালান:
 
 ```bash
 v test .
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+এই অধ্যায়ে আপনি শিখেছেন কীভাবে একটি V প্রজেক্ট সাজাতে হয়, `v.mod` ব্যবহার করতে হয়, কোড ফরম্যাট করতে হয় এবং টেস্ট লিখতে হয়। পরবর্তী অধ্যায়ে আমরা V-এর সাধারণ প্রোগ্রামিং ধারণা শিখব।

@@ -1,6 +1,6 @@
-# Chapter 13: Functional Features
+# Capítulo 13: Recursos Funcionais
 
-V supports closures and higher-order functions.
+V suporta closures e funções de ordem superior.
 
 ## Closures
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## Funções de ordem superior
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## Funções anônimas
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+Neste capítulo, você aprendeu sobre closures e funções de ordem superior. No próximo capítulo, vamos explorar concorrência.

@@ -1,8 +1,8 @@
-# Appendix A: Keywords
+# Lampiran A: Kata Kunci
 
-V has the following keywords:
+V memiliki kata kunci berikut:
 
-| Keyword | Description |
+| Kata Kunci | Deskripsi |
 |---------|-------------|
 | `as` | Type casting |
 | `assert` | Assertions |

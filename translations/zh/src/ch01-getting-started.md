@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# 第 1 章：入门
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+让我们开始你的 V 学习之旅！有很多东西要学，但每段旅程都始于一小步。在本章中，你将学习如何：
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- 在你的系统上安装 V
+- 编写 "Hello, World!" 程序
+- 使用 V 编译器及其命令
+- 创建一个 V 项目
 
-## Installation
+## 安装
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V 可以安装在 Windows、macOS 和 Linux 上。最简单的方式是使用安装脚本：
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+从 [vlang.io/install](https://vlang.io/install.html) 下载并运行安装程序，或者使用 PowerShell：
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+或者使用安装脚本：
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### 从源码构建
 
-To build V from source:
+要从源码构建 V：
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,15 +47,15 @@ cd v
 make
 ```
 
-## Verifying the installation
+## 验证安装
 
-After installation, verify V is working:
+安装完成后，验证 V 是否正常工作：
 
 ```bash
 v version
 ```
 
-You should see output like:
+你应该会看到类似输出：
 
 ```
 V 0.5.2
@@ -63,7 +63,7 @@ V 0.5.2
 
 ## Hello, World!
 
-Now let's write our first V program. Create a file called `main.v`:
+现在让我们编写第一个 V 程序。创建一个名为 `main.v` 的文件：
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+运行它：
 
 ```bash
 v run main.v
 ```
 
-You should see:
+你应该会看到：
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+恭喜！你已经编写并运行了你的第一个 V 程序。
 
 ## Hello, V!
 
-Let's look at a slightly more interesting example:
+让我们看一个稍微有趣的例子：
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+运行它：
 
 ```bash
 v run main.v
 ```
 
-Output:
+输出：
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## V 编译器
 
-The V compiler is invoked with the `v` command. Common commands:
+V 编译器通过 `v` 命令调用。常用命令：
 
-| Command | Description |
+| 命令 | 描述 |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | 编译并运行 V 文件 |
+| `v file.v` | 将 V 文件编译为可执行文件 |
+| `v fmt file.v` | 格式化 V 文件 |
+| `v test .` | 运行当前目录中的测试 |
+| `v doc .` | 生成文档 |
+| `v doctor` | 诊断 V 安装状态 |
 
-## Summary
+## 小结
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+在本章中，你学习了如何安装 V、编写 "Hello, World!" 程序以及使用 V 编译器。在下一章中，我们将学习如何组织 V 项目。

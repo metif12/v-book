@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# 付録D：標準ライブラリ概要
 
-V's standard library includes:
+Vの標準ライブラリには以下が含まれます：
 
-| Module | Description |
+| モジュール | 説明 |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | オペレーティングシステムインターフェース |
+| `io` | 入出力 |
+| `strings` | 文字列ユーティリティ |
+| `arrays` | 配列ユーティリティ |
+| `math` | 数学関数 |
+| `time` | 日付と時刻 |
+| `json` | JSONエンコード/デコード |
+| `http` | HTTPクライアント/サーバー |
+| `db` | データベースインターフェース |
+| `rand` | 乱数生成 |
+| `crypto` | 暗号関数 |
+| `encoding` | エンコーディングユーティリティ |
+| `term` | ターミナルユーティリティ |
+| `sync` | 同期プリミティブ |
+| `v.ast` | V AST操作 |
+| `v.compiler` | コンパイラユーティリティ |

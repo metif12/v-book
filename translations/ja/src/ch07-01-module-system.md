@@ -1,4 +1,4 @@
-# Module System
+# モジュールシステム
 
 ```
 my_project/
@@ -28,6 +28,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Visibility](ch07-02-visibility.md)
+[可視性](ch07-02-visibility.md)

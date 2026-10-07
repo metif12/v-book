@@ -1,4 +1,4 @@
-# Control Flow
+# کنٹرول فلو
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If بطور ایکسپریشن
 
 ```v
 fn main() {
@@ -23,7 +23,7 @@ fn main() {
 }
 ```
 
-## For loop
+## For لوپ
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[باب ۴: ملکیت اور میموری](ch04-ownership-and-memory.md)

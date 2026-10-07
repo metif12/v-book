@@ -1,6 +1,6 @@
-# Chapter 15: Veb Web Framework
+# Bab 15: Web Framework Veb
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb adalah web framework bawaan V. Ini menyediakan routing, penanganan JSON, template HTML, middleware, dan penyajian file statis — semuanya dengan API yang minimal.
 
 ## Hello, Veb!
 
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+Struct `App` menyimpan state aplikasi Anda. Setiap route adalah metode pada `App` yang dianotasi dengan `@['/path']`. Handler menerima `veb.Context` yang menyediakan metode untuk menulis respons.
 
 ## Routing
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb menggunakan path parameter dengan sintaks `:name`. Path parameter diteruskan langsung sebagai argumen fungsi ke handler.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+Path parameter (`:id`) diekstrak dari URL dan diteruskan sebagai argumen. Query string parameter (`?q=...`) diakses melalui `ctx.query` yang merupakan `map[string]string`.
 
-## JSON responses
+## Respons JSON
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` menserialisasi nilai V apa pun ke JSON dan mengatur header `Content-Type` ke `application/json`.
 
-## Templates
+## Template
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb mendukung HTML template dengan fungsi `$tmpl`. Template menggunakan sintaks interpolasi string V.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+File template menerima struct data dan dapat mengakses fieldnya dengan `{{ field_name }}`.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Middleware membungkus setiap request. Gunakan `app.use()` untuk mendaftarkan middleware global, atau `app.route_use()` untuk middleware spesifik route.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+Middleware mengembalikan `bool` — `true` untuk melanjutkan ke handler berikutnya, `false` untuk berhenti.
 
-## Static files
+## File statis
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb dapat menyajikan file statis dari direktori menggunakan `app.handle_static()`.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+File dalam direktori `public/` disajikan di root path. Misalnya, `public/style.css` dapat diakses di `http://localhost:8080/style.css`.
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+Dalam bab ini, Anda telah belajar tentang Veb — web framework bawaan V. Anda melihat cara mendefinisikan route dengan parameter path dan query, mengembalikan respons JSON, merender HTML template, menambahkan middleware untuk cross-cutting concerns, dan menyajikan file statis. Di bab berikutnya, kita akan menjelajahi C interop.

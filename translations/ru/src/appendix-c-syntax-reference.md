@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# Приложение C: Справочник по синтаксису V
 
-## Functions
+## Функции
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -8,7 +8,7 @@ fn function_name(param1 int, param2 string) int {
 }
 ```
 
-## Structs
+## Структуры
 
 ```v
 struct StructName {
@@ -19,7 +19,7 @@ pub:
 }
 ```
 
-## Enums
+## Перечисления
 
 ```v
 enum EnumName {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## Суммирующие типы
 
 ```v
 struct Type1 {}
@@ -37,7 +37,7 @@ struct Type2 {}
 type SumType = Type1 | Type2
 ```
 
-## Interfaces
+## Интерфейсы
 
 ```v
 interface InterfaceName {
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## Модули
 
 ```v ignore
 module module_name

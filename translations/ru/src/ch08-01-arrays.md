@@ -1,4 +1,4 @@
-# Arrays
+# Массивы
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## Операции с массивами
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Maps](ch08-02-maps.md)
+[Словари](ch08-02-maps.md)

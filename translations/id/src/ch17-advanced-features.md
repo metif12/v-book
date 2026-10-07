@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# Bab 17: Fitur Lanjutan
 
-## Attributes
+## Atribut
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+Atribut adalah anotasi metadata yang ditempatkan sebelum deklarasi. Mereka mengontrol perilaku kompiler, petunjuk optimasi, dan siklus hidup API.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+Menandai fungsi atau tipe sebagai deprecated. Kompiler mengeluarkan peringatan ketika item digunakan.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+Memberi petunjuk ke kompiler untuk inline fungsi di call site, menghilangkan overhead call. Terbaik untuk fungsi kecil yang sering dipanggil.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+Menandai fungsi sebagai unsafe, memungkinkan penggunaan blok `unsafe` tanpa pemanggil juga ditandai unsafe.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+Kompilasi kondisional saat compile time. Blok hanya disertakan ketika kondisi bernilai true.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## Kode compile-time
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V menyediakan beberapa konstruk compile-time yang dieksekusi selama kompilasi, memungkinkan metaprogramming dan abstraksi zero-cost.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+Mengevaluasi kondisi saat compile time. Mendukung deteksi platform, pemeriksaan arsitektur, dan flag kustom.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+Iterasi saat compile time pada array, field struct, atau range. Berguna untuk menghasilkan kode repetitif.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+Assertion compile-time yang menghentikan kompilasi jika kondisi bernilai false.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -123,9 +123,9 @@ fn main() {
 
 ## Operator overloading
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V memungkinkan definisi perilaku kustom untuk operator pada tipe yang didefinisikan pengguna. Setiap operator dipetakan ke metode dengan signature spesifik.
 
-### Arithmetic operators
+### Operator aritmatika
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### Operator perbandingan
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### Operator index
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## Refleksi compile-time
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+Konstruk `$for` V dapat mengiterasi field struct saat compile time, memungkinkan serialisasi otomatis, validasi, dan lainnya.
 
-### Iterating struct fields
+### Iterasi field struct
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### Menghasilkan kode validasi
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+Dalam bab ini, Anda telah belajar tentang atribut, kode compile-time, operator overloading, dan refleksi compile-time. Fitur-fitur ini memungkinkan pola metaprogramming yang kuat dan kontrol terperinci atas kompilasi. Di bab berikutnya, kita akan menjelajahi manajemen memori secara mendalam.

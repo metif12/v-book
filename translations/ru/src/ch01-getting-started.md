@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Глава 1: Начало работы
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+Давайте начнём ваше путешествие в мир V! Многое нужно изучить, но каждое путешествие начинается с маленького шага. В этой главе вы узнаете, как:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- Установить V на вашу систему
+- Написать программу «Привет, мир!»
+- Использовать компилятор V и его команды
+- Создать проект на V
 
-## Installation
+## Установка
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V можно установить на Windows, macOS и Linux. Самый простой способ — использовать установочный скрипт:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Скачайте и запустите установщик с [vlang.io/install](https://vlang.io/install.html) или используйте PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+Или используйте установочный скрипт:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### Из исходного кода
 
-To build V from source:
+Чтобы собрать V из исходного кода:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## Проверка установки
 
-After installation, verify V is working:
+После установки проверьте, что V работает:
 
 ```bash
 v version
 ```
 
-You should see output like:
+Вы должны увидеть вывод типа:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## Привет, мир!
 
-Now let's write our first V program. Create a file called `main.v`:
+Теперь давайте напишем нашу первую программу на V. Создайте файл с именем `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+Запустите его:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+Вы должны увидеть:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+Поздравляем! Вы написали и запустили свою первую программу на V.
 
-## Hello, V!
+## Привет, V!
 
-Let's look at a slightly more interesting example:
+Давайте рассмотрим немного более интересный пример:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+Запустите его:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Вывод:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## Компилятор V
 
-The V compiler is invoked with the `v` command. Common commands:
+Компилятор V вызывается командой `v`. Основные команды:
 
-| Command | Description |
-|---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| Команда | Описание |
+|---------|----------|
+| `v run file.v` | Скомпилировать и запустить файл V |
+| `v file.v` | Скомпилировать файл V в исполняемый файл |
+| `v fmt file.v` | Отформатировать файл V |
+| `v test .` | Запустить тесты в текущем каталоге |
+| `v doc .` | Сгенерировать документацию |
+| `v doctor` | Диагностика установки V |
 
-## Summary
+## Итоги
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+В этой главе вы узнали, как установить V, написать программу «Привет, мир!» и использовать компилятор V. В следующей главе мы рассмотрим, как структурировать проект на V.

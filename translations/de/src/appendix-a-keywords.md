@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Anhang A: Schlüsselwörter
 
-V has the following keywords:
+V verfügt über die folgenden Schlüsselwörter:
 
-| Keyword | Description |
+| Schlüsselwort | Beschreibung |
 |---------|-------------|
-| `as` | Type casting |
+| `as` | Typumwandlung |
 | `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `break` | Schleife verlassen |
+| `const` | Konstantendeklaration |
+| `continue` | Mit nächster Iteration fortfahren |
+| `defer` | Verzögerte Ausführung |
+| `else` | Else-Zweig |
+| `enum` | Aufzählung |
+| `false` | Boolesches falsch |
+| `fn` | Funktionsdeklaration |
+| `for` | Schleife |
+| `go` | Goroutine starten |
+| `goto` | Goto-Anweisung |
+| `if` | Bedingung |
+| `import` | Modulimport |
+| `in` | Mitgliedschaftstest |
+| `interface` | Schnittstellendeklaration |
+| `is` | Typprüfung |
+| `lock` | Mutex-Sperre |
+| `match` | Pattern Matching |
+| `module` | Moduldeklaration |
+| `mut` | Veränderbar |
+| `none` | Kein Wert |
+| `or` | Fehlerbehandlung |
+| `pub` | Öffentliche Sichtbarkeit |
+| `return` | Rückkehr aus Funktion |
+| `struct` | Struct-Deklaration |
+| `true` | Boolesches wahr |
+| `type` | Typdeklaration |
+| `union` | Union-Deklaration |
+| `unsafe` | Unsicherer Code |

@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# Bölüm 11: Test Etme
 
-V has a built-in testing framework.
+V'nin yerleşik bir test çerçevesi vardır.
 
-## Test files
+## Test dosyaları
 
-Create a file ending in `_test.v`:
+`_test.v` ile biten bir dosya oluşturun:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## Testleri çalıştırma
 
 ```bash
 v test .
 ```
 
-## Test organization
+## Test organizasyonu
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## Tablo odaklı testler
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+Bu bölümde V'nin test çerçevesi hakkında bilgi edindiniz. Sonraki bölümde bir komut satırı aracı oluşturacağız.

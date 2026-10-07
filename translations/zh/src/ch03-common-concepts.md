@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# 第 3 章：基本概念
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+本章涵盖 V 中的通用编程概念：变量、数据类型、函数、注释和控制流。
 
-## Variables and Mutability
+## 变量与可变性
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+在 V 中，变量默认是不可变的。使用 `mut` 使其可变：
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // 错误：name 是不可变的
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // 正确：count 是可变的
     count++
     println(count)
 }
 ```
 
-## Data Types
+## 数据类型
 
-V has a rich type system:
+V 有丰富的类型系统：
 
 ```v
 fn main() {
-    // Integers
+    // 整数
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // 64 位整数
+    c := u8(255)   // 无符号 8 位
 
-    // Floats
+    // 浮点数
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // 32 位浮点数
 
-    // Other types
+    // 其他类型
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune（单个字符）
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## 函数
 
-Functions are declared with `fn`:
+函数使用 `fn` 声明：
 
 ```v
 fn add(a int, b int) int {
@@ -64,16 +64,16 @@ fn main() {
 }
 ```
 
-## Comments
+## 注释
 
 ```v
-// This is a line comment
+// 这是行注释
 
-/* This is a
-   block comment */
+/* 这是
+   块注释 */
 ```
 
-## Control Flow
+## 控制流
 
 ### If
 
@@ -88,17 +88,17 @@ fn main() {
 }
 ```
 
-### For loop
+### For 循环
 
 ```v
 fn main() {
-    // Loop over an array
+    // 遍历数组
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range loop
+    // 范围循环
     for i in 0 .. 5 {
         println(i)
     }
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+在本章中，你学习了 V 中的变量、数据类型、函数、注释和控制流。在下一章中，我们将探讨所有权和内存管理。

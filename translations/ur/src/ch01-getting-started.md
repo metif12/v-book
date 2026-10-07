@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# باب ۱: آغاز
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+آئیے آپ کا V سفر شروع کرتے ہیں! سیکھنے کے لیے بہت کچھ ہے، لیکن ہر سفر ایک چھوٹے قدم سے شروع ہوتا ہے۔ اس باب میں، آپ سیکھیں گے کہ کیسے:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- اپنے سسٹم پر V انسٹال کریں
+- ایک "ہیلو، ورلڈ!" پروگرام لکھیں
+- V کمپائلر اور اس کے کمانڈز کو استعمال کریں
+- ایک V پروجیکٹ بنائیں
 
-## Installation
+## انسٹالیشن
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V کو Windows، macOS،اور Linux پر انسٹال کیا جا سکتا ہے۔ سب سے آسان طریقہ انسٹالر اسکرپٹ کو استعمال کرنا ہے:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+[vlang.io/install](https://vlang.io/install.html) سے انسٹالر ڈاؤن لوڈ کریں اور چلائیں، یا PowerShell استعمال کریں:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+یا انسٹالر اسکرپٹ استعمال کریں:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### ماخذ سے
 
-To build V from source:
+ماخذ سے V بنانے کے لیے:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## انسٹالیشن کی تصدیق
 
-After installation, verify V is working:
+انسٹالیشن کے بعد، V کے کام کرنے کی تصدیق کریں:
 
 ```bash
 v version
 ```
 
-You should see output like:
+آپ کو ایسا آؤٹ پٹ نظر آنا چاہیے:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## ہیلو، ورلڈ!
 
-Now let's write our first V program. Create a file called `main.v`:
+اب ہم اپنا پہلا V پروگرام لکھتے ہیں۔ `main.v` نامی فائل بنائیں:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+اسے چلائیں:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+آپ کو نظر آنا چاہیے:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+مبارک ہو! آپ نے اپنا پہلا V پروگرام لکھا اور چلایا۔
 
-## Hello, V!
+## ہیلو، V!
 
-Let's look at a slightly more interesting example:
+آئیے ایک قدراً دلچسپ مثال دیکھتے ہیں:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+اسے چلائیں:
 
 ```bash
 v run main.v
 ```
 
-Output:
+آؤٹ پٹ:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## V کمپائلر
 
-The V compiler is invoked with the `v` command. Common commands:
+V کمپائلر `v` کمانڈ سے چلایا جاتا ہے۔ عام کمانڈز:
 
-| Command | Description |
+| کمانڈ | تفصیل |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | V فائل کو کمپائل اور چلائیں |
+| `v file.v` | V فائل کو ایکزیکٹیبل میں کمپائل کریں |
+| `v fmt file.v` | V فائل کو فارمیٹ کریں |
+| `v test .` | موجودہ ڈائریکٹری میں ٹیسٹ چلائیں |
+| `v doc .` | دستاویزات تیار کریں |
+| `v doctor` | اپنی V انسٹالیشن کا تشخیص کریں |
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+اس باب میں، آپ نے سیکھا کہ V کو کیسے انسٹال کریں، "ہیلو، ورلڈ!" پروگرام کیسے لکھیں، اور V کمپائلر کو کیسے استعمال کریں۔ اگلے باب میں، ہم دیکھیں گے کہ V پروجیکٹ کا ڈھانچہ کیسے بنائیں۔

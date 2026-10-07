@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# अध्याय 13: फ़ंक्शनल फ़ीचर्स
 
-V supports closures and higher-order functions.
+V क्लोज़र और हायर-ऑर्डर फ़ंक्शन को सपोर्ट करता है।
 
-## Closures
+## क्लोज़र
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## हायर-ऑर्डर फ़ंक्शन
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## अनोनिमस फ़ंक्शन
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+इस अध्याय में, आपने क्लोज़र और हायर-ऑर्डर फ़ंक्शन के बारे में सीखा। अगले अध्याय में, हम कॉनकरेंसी का पता लगाएंगे।

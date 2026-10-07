@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Kapitel 1: Erste Schritte
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+Beginnen Sie Ihre V-Reise! Es gibt viel zu lernen, aber jede Reise beginnt mit einem kleinen Schritt. In diesem Kapitel lernen Sie, wie Sie:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- V auf Ihrem System installieren
+- Ein "Hallo, Welt!"-Programm schreiben
+- Den V-Compiler und seine Befehle verwenden
+- Ein V-Projekt erstellen
 
 ## Installation
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V kann auf Windows, macOS und Linux installiert werden. Der einfachste Weg ist die Verwendung des Installationsskripts:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Laden Sie den Installer von [vlang.io/install](https://vlang.io/install.html) herunter und führen Sie ihn aus, oder verwenden Sie PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+Oder verwenden Sie das Installationsskript:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### Aus dem Quellcode
 
-To build V from source:
+Um V aus dem Quellcode zu kompilieren:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## Installation überprüfen
 
-After installation, verify V is working:
+Nach der Installation überprüfen Sie, ob V funktioniert:
 
 ```bash
 v version
 ```
 
-You should see output like:
+Sie sollten eine Ausgabe wie folgt sehen:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## Hallo, Welt!
 
-Now let's write our first V program. Create a file called `main.v`:
+Nun schreiben wir unser erstes V-Programm. Erstellen Sie eine Datei namens `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+Führen Sie es aus:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+Sie sollten folgendes sehen:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+Herzlichen Glückwunsch! Sie haben Ihr erstes V-Programm geschrieben und ausgeführt.
 
-## Hello, V!
+## Hallo, V!
 
-Let's look at a slightly more interesting example:
+Betrachten wir ein etwas interessanteres Beispiel:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+Führen Sie es aus:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Ausgabe:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## Der V-Compiler
 
-The V compiler is invoked with the `v` command. Common commands:
+Der V-Compiler wird mit dem Befehl `v` aufgerufen. Häufige Befehle:
 
-| Command | Description |
+| Befehl | Beschreibung |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | Eine V-Datei kompilieren und ausführen |
+| `v file.v` | Eine V-Datei zu einer ausführbaren Datei kompilieren |
+| `v fmt file.v` | Eine V-Datei formatieren |
+| `v test .` | Tests im aktuellen Verzeichnis ausführen |
+| `v doc .` | Dokumentation generieren |
+| `v doctor` | Ihre V-Installation diagnostizieren |
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+In diesem Kapitel haben Sie gelernt, wie Sie V installieren, ein "Hallo, Welt!"-Programm schreiben und den V-Compiler verwenden. Im nächsten Kapitel werden wir uns ansehen, wie man ein V-Projekt strukturiert.

@@ -1,4 +1,4 @@
-# Strings
+# 문자열
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## 문자열 메서드
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[Chapter 9: 에러 처리](ch09-error-handling.md)

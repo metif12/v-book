@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# Bab 13: Fitur Fungsional
 
-V supports closures and higher-order functions.
+V mendukung closure dan higher-order function.
 
-## Closures
+## Closure
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## Higher-order function
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## Fungsi anonim
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+Dalam bab ini, Anda telah belajar tentang closure dan higher-order function. Di bab berikutnya, kita akan menjelajahi konkurensi.

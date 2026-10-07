@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# অধ্যায় 4: ওনারশিপ এবং মেমোরি
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V অনেক ভাষার চেয়ে ভিন্ন পদ্ধতিতে মেমোরি ম্যানেজমেন্ট করে। ম্যানুয়াল মেমোরি ম্যানেজমেন্ট বা শুধুমাত্র গার্বেজ কালেকশনের বদলে, V একাধিক কৌশল অফার করে।
 
-## Stack and Heap
+## স্ট্যাক এবং হিপ
 
-V automatically decides whether to allocate on the stack or heap:
+V স্বয়ংক্রিয়ভাবে সিদ্ধান্ত নেয় স্ট্যাক নাকি হিপে অ্যালোকেট করতে হবে:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## গার্বেজ কালেকশন
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V ডিফল্টভাবে গার্বেজ কালেক্টর ব্যবহার করে। আপনাকে ম্যানুয়ালি মেমোরি ফ্রি করতে হয় না:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## অটোফ্রি
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V-তে একটি অটোফ্রি মোড আছে যা ভেরিয়েবল স্কোপ থেকে বের হয়ে গেলে স্বয়ংক্রিয়ভাবে মেমোরি ফ্রি করে:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## রেফারেন্স
 
-You can use references to avoid copying large data:
+বড় ডেটা কপি এড়াতে রেফারেন্স ব্যবহার করতে পারেন:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## মেমোরি ম্যানেজমেন্ট মোড
 
-| Mode | Flag | Description |
+| মোড | ফ্ল্যাগ | বিবরণ |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (ডিফল্ট) | `-gc boehm` | Boehm গার্বেজ কালেক্টর |
+| অটোফ্রি | `-autofree` | স্বয়ংক্রিয় মেমোরি ফ্রি |
+| কোনোটি নেই | `-gc none` | ম্যানুয়াল মেমোরি ম্যানেজমেন্ট |
+| প্রিঅ্যালোক | `-prealloc` | অ্যারেনা অ্যালোকেশন |
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+এই অধ্যায়ে আপনি V-এর মেমোরি ম্যানেজমেন্ট বিকল্প সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা struct শিখব।

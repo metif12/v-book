@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Ek A: Anahtar Kelimeler
 
-V has the following keywords:
+V'nin aşağıdaki anahtar kelimeleri vardır:
 
-| Keyword | Description |
+| Anahtar Kelime | Açıklama |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
+| `as` | Tip dönüştürme |
+| `assert` | Assert ifadeleri |
+| `break` | Döngüden çık |
+| `const` | Sabit bildirimi |
+| `continue` | Sonraki yinelemeye geç |
+| `defer` | Ertelenmiş yürütme |
+| `else` | Else dalı |
 | `enum` | Enumeration |
 | `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
+| `fn` | Fonksiyon bildirimi |
+| `for` | Döngü |
+| `go` | Goroutine başlat |
+| `goto` | Goto ifadesi |
+| `if` | Koşul |
+| `import` | Modül içe aktarma |
+| `in` | Üyelik testi |
+| `interface` | Interface bildirimi |
+| `is` | Tip kontrolü |
+| `lock` | Mutex kilidi |
+| `match` | Desen eşleştirme |
+| `module` | Modül bildirimi |
+| `mut` | Değişken |
+| `none` | None değeri |
+| `or` | Hata yönetimi |
+| `pub` | Herkese açık görünürlük |
+| `return` | Fonksiyondan dön |
+| `struct` | Struct bildirimi |
 | `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `type` | Tip bildirimi |
+| `union` | Union bildirimi |
+| `unsafe` | Güvensiz kod |

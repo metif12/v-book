@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# Chapter 10: 제네릭
 
-Generics allow you to write code that works with any type.
+제네릭을 사용하면 어떤 타입에도 동작하는 코드를 작성할 수 있습니다.
 
-## Generic functions
+## 제네릭 함수
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## 제네릭 struct
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## 타입 제약
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+이 장에서는 제네릭 함수와 struct에 대해 배웠습니다. 다음 장에서는 테스팅을 살펴보겠습니다.

@@ -1,6 +1,6 @@
-# Autofree
+# 自动释放
 
-V has an autofree mode that automatically frees memory:
+V 有自动释放模式，自动释放内存：
 
 ```bash
 v -autofree main.v
@@ -12,7 +12,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data is automatically freed here
+    // data 在这里自动释放
 }
 
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[References](ch04-04-references.md)
+[引用](ch04-04-references.md)

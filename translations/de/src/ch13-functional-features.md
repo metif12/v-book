@@ -1,6 +1,6 @@
-# Chapter 13: Functional Features
+# Kapitel 13: Funktionale Merkmale
 
-V supports closures and higher-order functions.
+V unterstützt Closures und Funktionen höherer Ordnung.
 
 ## Closures
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## Funktionen höherer Ordnung
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## Anonyme Funktionen
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+In diesem Kapitel haben Sie Closures und Funktionen höherer Ordnung kennengelernt. Im nächsten Kapitel untersuchen wir Nebenläufigkeit.

@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# فصل ۱۲: پروژه I/O: ساخت یک ابزار CLI
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+در این فصل، یک ابزار خط فرمان ساده می‌سازیم که یک فایل را می‌خواند و تعداد خطوط، کلمات و کاراکترهای آن را می‌شمارد.
 
-## Project setup
+## راه‌اندازی پروژه
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## پیاده‌سازی
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## اجرا
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+در این فصل، یک ابزار خط فرمان ساختید. در فصل بعد، به ویژگی‌های تابعی می‌پردازیم.

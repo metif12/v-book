@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## Opérations sur les maps
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Strings](ch08-03-strings.md)
+[Chaînes de caractères](ch08-03-strings.md)

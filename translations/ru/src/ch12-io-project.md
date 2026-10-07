@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Глава 12: Проект ввода-вывода: создание CLI-инструмента
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+В этой главе мы создадим простой инструмент командной строки, который читает файл и подсчитывает количество строк, слов и символов.
 
-## Project setup
+## Настройка проекта
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## Реализация
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## Запуск
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+В этой главе вы создали инструмент командной строки. В следующей главе мы рассмотрим функциональные возможности.

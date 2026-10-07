@@ -1,4 +1,4 @@
-# Option Type
+# Option型
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## アンラップ
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Result Type](ch09-02-result-type.md)
+[Result型](ch09-02-result-type.md)

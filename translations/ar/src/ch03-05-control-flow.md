@@ -1,4 +1,4 @@
-# Control Flow
+# التحكم في التدفق
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If كتعبير
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[الفصل 4: الملكية والذاكرة](ch04-ownership-and-memory.md)

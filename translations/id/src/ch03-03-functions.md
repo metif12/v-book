@@ -1,6 +1,6 @@
-# Functions
+# Fungsi
 
-Functions are declared with `fn`:
+Fungsi dideklarasikan dengan `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## Nilai kembalian ganda
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## Tanpa nilai kembalian
 
 ```v
 fn greet(name string) {
@@ -40,7 +40,7 @@ fn main() {
 
 ## Function hoisting
 
-Functions can be called before they are declared:
+Fungsi dapat dipanggil sebelum dideklarasikan:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Comments](ch03-04-comments.md)
+[Komentar](ch03-04-comments.md)

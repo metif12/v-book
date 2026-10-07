@@ -1,6 +1,6 @@
-# Testing with v test
+# 使用 v test 测试
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V 有内置的测试框架。创建一个以 `_test.v` 结尾的文件：
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+运行测试：
 
 ```bash
 v test .
 ```
 
-## Test functions
+## 测试函数
 
-Test functions start with `test_` and take no arguments:
+测试函数以 `test_` 开头，不接收参数：
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## 断言
 
-Use `assert` to check conditions:
+使用 `assert` 检查条件：
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## 下一步
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[第 3 章：基本概念](ch03-common-concepts.md)

@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# অধ্যায় 1: শুরু করা
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+আসুন আপনার V যাত্রা শুরু করি! শিখতে অনেক কিছু আছে, কিন্তু প্রতিটি যাত্রা একটি ছোট পদক্ষেপ দিয়ে শুরু হয়। এই অধ্যায়ে আপনি শিখবেন কীভাবে:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- আপনার সিস্টেমে V ইনস্টল করতে হয়
+- একটি "Hello, World!" প্রোগ্রাম লিখতে হয়
+- V কম্পাইলার এবং এর কমান্ড ব্যবহার করতে হয়
+- একটি V প্রজেক্ট তৈরি করতে হয়
 
-## Installation
+## ইনস্টলেশন
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V ইনস্টল করা যায় Windows, macOS এবং Linux-এ। সবচেয়ে সহজ উপায় হল ইনস্টলার স্ক্রিপ্ট ব্যবহার করা:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+[vlang.io/install](https://vlang.io/install.html) থেকে ইনস্টলার ডাউনলোড করে চালান, অথবা PowerShell ব্যবহার করুন:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+অথবা ইনস্টলার স্ক্রিপ্ট ব্যবহার করুন:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### সোর্স থেকে
 
-To build V from source:
+সোর্স থেকে V বিল্ড করতে:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,15 +47,15 @@ cd v
 make
 ```
 
-## Verifying the installation
+## ইনস্টলেশন যাচাই
 
-After installation, verify V is working:
+ইনস্টলেশনের পর, V ঠিকভাবে কাজ করছে কিনা যাচাই করুন:
 
 ```bash
 v version
 ```
 
-You should see output like:
+আপনাকে এমন আউটপুট দেখতে হবে:
 
 ```
 V 0.5.2
@@ -63,7 +63,7 @@ V 0.5.2
 
 ## Hello, World!
 
-Now let's write our first V program. Create a file called `main.v`:
+এখন আসুন আমাদের প্রথম V প্রোগ্রাম লিখি। `main.v` নামে একটি ফাইল তৈরি করুন:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+চালান:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+আপনাকে দেখতে হবে:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+অভিনন্দন! আপনি আপনার প্রথম V প্রোগ্রাম লিখেছেন এবং চালিয়েছেন।
 
 ## Hello, V!
 
-Let's look at a slightly more interesting example:
+আসুন একটু বেশি আকর্ষণীয় উদাহরণ দেখি:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+চালান:
 
 ```bash
 v run main.v
 ```
 
-Output:
+আউটপুট:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## V কম্পাইলার
 
-The V compiler is invoked with the `v` command. Common commands:
+V কম্পাইলার `v` কমান্ড দিয়ে চালানো হয়। সাধারণ কমান্ড:
 
-| Command | Description |
+| কমান্ড | বিবরণ |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | একটি V ফাইল কম্পাইল করে চালায় |
+| `v file.v` | একটি V ফাইল কম্পাইল করে এক্সিকিউটেবল তৈরি করে |
+| `v fmt file.v` | একটি V ফাইল ফরম্যাট করে |
+| `v test .` | বর্তমান ডিরেক্টরিতে টেস্ট চালায় |
+| `v doc .` | ডকুমেন্টেশন তৈরি করে |
+| `v doctor` | আপনার V ইনস্টলেশন নির্ণয় করে |
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+এই অধ্যায়ে আপনি শিখেছেন কীভাবে V ইনস্টল করতে হয়, একটি "Hello, World!" প্রোগ্রাম লিখতে হয় এবং V কম্পাইলার ব্যবহার করতে হয়। পরবর্তী অধ্যায়ে আমরা দেখব কীভাবে একটি V প্রজেক্ট সাজাতে হয়।

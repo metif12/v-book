@@ -1,6 +1,6 @@
-# Access Modifiers
+# 접근 제어자
 
-Fields are private by default:
+필드는 기본적으로 private입니다:
 
 ```v
 struct User {
@@ -11,18 +11,18 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
+    println(u.name)  // OK: 같은 모듈
     println(u.age)   // OK: public
 }
 ```
 
-## Visibility
+## 가시성
 
-| Modifier | Scope |
+| 제어자 | 범위 |
 |----------|-------|
-| (none) | Module only |
+| (없음) | 모듈 내부만 |
 | `pub` | Public |
 
-## Next
+## 다음
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[Chapter 6: Enum과 Sum Type](ch06-enums-and-sum-types.md)

@@ -1,4 +1,4 @@
-# Defining Structs
+# تعریف struct ها
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## مقداردهی اولیه
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## بعدی
 
-[Methods](ch05-02-methods.md)
+[متدها](ch05-02-methods.md)

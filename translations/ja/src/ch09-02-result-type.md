@@ -1,4 +1,4 @@
-# Result Type
+# Result型
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## エラーの伝播
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Custom Errors](ch09-03-custom-errors.md)
+[カスタムエラー](ch09-03-custom-errors.md)

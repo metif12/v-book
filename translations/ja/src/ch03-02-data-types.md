@@ -1,34 +1,34 @@
-# Data Types
+# データ型
 
-## Integer types
+## 整数型
 
-| Type | Size | Range |
+| 型 | サイズ | 範囲 |
 |------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| `i8` | 8ビット | -128～127 |
+| `i16` | 16ビット | -32,768～32,767 |
+| `i32` | 32ビット | -2^31～2^31-1 |
+| `i64` | 64ビット | -2^63～2^63-1 |
+| `int` | プラットフォーム依存 | 通常64ビット |
+| `u8` | 8ビット | 0～255 |
+| `u16` | 16ビット | 0～65,535 |
+| `u32` | 32ビット | 0～2^32-1 |
+| `u64` | 64ビット | 0～2^64-1 |
 
-## Float types
+## 浮動小数点型
 
-| Type | Size |
+| 型 | サイズ |
 |------|------|
-| `f32` | 32-bit |
-| `f64` | 64-bit |
+| `f32` | 32ビット |
+| `f64` | 64ビット |
 
-## Other types
+## その他の型
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true`または`false`
+- `string` — UTF-8文字列
+- `rune` — 単一Unicode文字（`u32`のエイリアス）
+- `byte` — `u8`のエイリアス
 
-## Type conversion
+## 型変換
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Functions](ch03-03-functions.md)
+[関数](ch03-03-functions.md)

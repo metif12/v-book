@@ -1,6 +1,6 @@
-# Stack and Heap
+# پشته و هیپ
 
-V automatically decides whether to allocate on the stack or heap:
+V به صورت خودکار تصمیم می‌گیرد که آیا در پشته یا هیپ تخصیص دهد:
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## پشته
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- تخصیص و آزادسازی سریع
+- اندازه ثابت در زمان کامپایل
+- به صورت خودکار وقتی محدوده تمام می‌شود آزاد می‌شود
 
-## Heap
+## هیپ
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- اندازه پویا
+- تخصیص کندتر
+- توسط GC یا آزادسازی خودکار مدیریت می‌شود
 
-## Next
+## بعدی
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[جمع‌آوری زباله](ch04-02-garbage-collection.md)

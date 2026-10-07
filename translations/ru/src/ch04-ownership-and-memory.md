@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Глава 4: Владение и память
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V использует другой подход к управлению памятью по сравнению со многими языками. Вместо ручного управления памятью или только сборщика мусора, V предлагает несколько стратегий.
 
-## Stack and Heap
+## Стек и куча
 
-V automatically decides whether to allocate on the stack or heap:
+V автоматически решает, выделить память в стеке или в куче:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## Сборщик мусора
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V по умолчанию использует сборщик мусора. Вам не нужно освобождать память вручную:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## Автоосвобождение
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+В V есть режим автоосвобождения, который автоматически освобождает память, когда переменные выходят из области видимости:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Ссылки
 
-You can use references to avoid copying large data:
+Вы можете использовать ссылки, чтобы избежать копирования больших объёмов данных:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Режимы управления памятью
 
-| Mode | Flag | Description |
-|------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Режим | Флаг | Описание |
+|-------|------|----------|
+| GC (по умолчанию) | `-gc boehm` | Сборщик мусора Boehm |
+| Автоосвобождение | `-autofree` | Автоматическое освобождение памяти |
+| Без GC | `-gc none` | Ручное управление памятью |
+| Prealloc | `-prealloc` | Выделение памяти из арены |
 
-## Summary
+## Итоги
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+В этой главе вы узнали о возможностях управления памятью в V. В следующей главе мы рассмотрим структуры.

@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# فصل ۱۷: ویژگی‌های پیشرفته
 
-## Attributes
+## ویژگی‌ها (Attributes)
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+ویژگی‌ها حاشیه‌نویسی‌های متادیتا هستند که قبل از اعلامیات قرار می‌گیرند. آن‌ها رفتار کامپایلر، نکات بهینه‌سازی و چرخه حیات API را کنترل می‌کنند.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+یک تابع یا نوع را به عنوان منسوخ علامت می‌زند. کامپایلر هنگام استفاده از آن مورد هشدار صادر می‌کند.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+به کامپایلر اشاره می‌کند که تابع را در محل فراخوانی درون‌خطی کند و هزینه فراخوانی را حذف کند. برای توابع کوچک و پرکاربرد بهتر است.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+یک تابع را به عنوان ناامن علامت می‌زند و اجازه می‌دهد از بلوک‌های `unsafe` بدون علامت زدن فراخوان استفاده کند.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+گردآیند شرطی در زمان کامپایل. بلوک فقط وقتی شرط برقرار باشد گنجانده می‌شود.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## کد زمان کامپایل
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V چندین سازه زمان کامپایل ارائه می‌دهد که در طول کامپایل اجرا می‌شوند و برنامه‌نویسی متا و انتزاعات بدون هزینه را امکان‌پذیر می‌کنند.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+شرایط را در زمان کامپایل ارزیابی می‌کند. از تشخیص پلتفرم، بررسی معماری و پرچم‌های سفارشی پشتیبانی می‌کند.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+در زمان کامپایل روی آرایه‌ها، فیلدهای struct یا بازه‌ها تکرار می‌کند. برای تولید کدهای تکراری مفید است.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+تأییدیه‌های زمان کامپایل که اگر شرط برقرار نباشد کامپایل را متوقف می‌کنند.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## بارگذاری عملگر
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V اجازه می‌دهد رفتار سفارشی برای عملگرها روی انواع تعریف‌شده توسط کاربر تعریف کنید. هر عملگر به یک متد با امضای خاصی نگاشت می‌شود.
 
-### Arithmetic operators
+### عملگرهای ریاضی
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### عملگرهای مقایسه‌ای
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### عملگر ایندکس
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## بازتاب زمان کامپایل
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+سازه `$for` می‌تواند در زمان کامپایل روی فیلدهای struct تکرار کند و سریالایز خودکار، اعتبارسنجی و موارد دیگر را امکان‌پذیر کند.
 
-### Iterating struct fields
+### تکرار روی فیلدهای struct
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### تولید کد اعتبارسنجی
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+در این فصل، درباره ویژگی‌ها، کد زمان کامپایل، بارگذاری عملگر و بازتاب زمان کامپایل یاد گرفتید. این ویژگی‌ها الگوهای قدرتمند برنامه‌نویسی متا و کنترل دقیق بر کامپایل را امکان‌پذیر می‌کنند. در فصل بعد، به مدیریت حافظه به طور عمیق می‌پردازیم.

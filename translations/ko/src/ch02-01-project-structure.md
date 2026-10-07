@@ -1,6 +1,6 @@
-# Project Structure
+# 프로젝트 구조
 
-A V project is a directory with a `v.mod` file:
+V 프로젝트는 `v.mod` 파일이 있는 디렉터리입니다:
 
 ```
 my_project/
@@ -22,12 +22,12 @@ Module {
 }
 ```
 
-## Creating a project
+## 프로젝트 생성
 
 ```bash
 v init
 ```
 
-## Next
+## 다음
 
 [v.mod](ch02-02-vmod.md)

@@ -1,4 +1,4 @@
-# Pattern Matching
+# مطابقة الأنماط
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## شمولية Match
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[الفصل 7: الوحدات والحزم](ch07-modules-and-packages.md)

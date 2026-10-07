@@ -1,6 +1,6 @@
-# Variables and Mutability
+# वेरिएबल और म्यूटेबिलिटी
 
-In V, variables are immutable by default:
+V में, वेरिएबल डिफ़ॉल्ट रूप से इम्यूटेबल होते हैं:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## घोषणा
 
-Use `:=` to declare and initialize:
+घोषित करने और इनिशियलाइज़ करने के लिए `:=` का उपयोग करें:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## टाइप इनफरेंस
 
-V infers types from the initializer:
+V इनिशियलाइज़र से टाइप्स का अनुमान लगाता है:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## स्पष्ट टाइप्स
 
-You can specify types explicitly:
+आप टाइप्स स्पष्ट रूप से निर्दिष्ट कर सकते हैं:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## अगला
 
-[Data Types](ch03-02-data-types.md)
+[डेटा टाइप्स](ch03-02-data-types.md)

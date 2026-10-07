@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# باب ۱۵: Veb ویب فریم ورک
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb V کا بلٹ اِن ویب فریم ورک ہے۔ یہ روٹنگ، JSON ہینڈلنگ، HTML ٹیمپلیٹس، مڈل ویئر، اور اسٹیک فائل سروس فراہم کرتا ہے — سب کچھ ایک مختصر API سطح کے ساتھ۔
 
-## Hello, Veb!
+## ہیلو، Veb!
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+`App` struct آپ کی ایپلیکیشن کی حالت رکھتا ہے۔ ہر روٹ `App` پر ایک میتھڈ ہے جو `@['/path']` کے ساتھ تشریف ہے۔ ہینڈلر ایک `veb.Context` وصول کرتا ہے جو جوابات لکھنے کے لیے میتھڈز فراہم کرتا ہے۔
 
-## Routing
+## روٹنگ
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb `:name` نحو کے ساتھ پاتھ پیرامیٹرز استعمال کرتا ہے۔ پاتھ پیرامیٹرز براہ راست فنکشن کی دلیل کے طور پر ہینڈلر کو دیے جاتے ہیں۔
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+پاتھ پیرامیٹرز (`:id`) URL سے نکالے جاتے ہیں اور دلیل کے طور پر دیے جاتے ہیں۔ کوئری اسٹرنگ پیرامیٹرز (`?q=...`) `ctx.query` کے ذریعے تک رسائی ہوتے ہیں جو ایک `map[string]string` ہے۔
 
-## JSON responses
+## JSON جوابات
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` کسی بھی V قدر کو JSON میں سیریلائز کرتا ہے اور `Content-Type` ہیڈر کو `application/json` پر سیٹ کرتا ہے۔
 
-## Templates
+## ٹیمپلیٹس
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb `$tmpl` فنکشن کے ساتھ HTML ٹیمپلیٹس کی حمایت کرتا ہے۔ ٹیمپلیٹس V کے اسٹرنگ انٹرپولیشن نحو استعمال کرتے ہیں۔
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+ٹیمپلیٹ فائل ڈیٹا struct وصول کرتی ہے اور `{{ field_name }}` کے ذریعے اس کے فیلڈز تک رسائی حاصل کر سکتی ہے۔
 
-## Middleware
+## مڈل ویئر
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+مڈل ویئر ہر درخواست کو لپیٹتا ہے۔ عالمی مڈل ویئر کو رجسٹر کرنے کے لیے `app.use()` استعمال کریں، یا روٹ کے لیے `app.route_use()` استعمال کریں۔
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+مڈل ویئر `bool` واپس کرتا ہے — اگلے ہینڈلر پر جانے کے لیے `true`، روکنے کے لیے `false`۔
 
-## Static files
+## اسٹیک فائلیں
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb `app.handle_static()` کے ذریعے ڈائریکٹری سے اسٹیک فائلیں سروس کر سکتا ہے۔
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+`public/` ڈائریکٹری کی فائلیں روٹ پاتھ پر سروس ہوتی ہیں۔ مثال کے طور پر، `public/style.css` `http://localhost:8080/style.css` پر قابل رسائی ہے۔
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+اس باب میں، آپ نے Veb — V کا بلٹ اِن ویب فریم ورک کے بارے میں سیکھا۔ آپ نے دیکھا کہ پاتھ اور کوئری پیرامیٹرز کے ساتھ روٹس کیسے تعریف کریں، JSON جوابات کیسے واپس کریں، HTML ٹیمپلیٹس کیسے رینڈر کریں، کراس کٹنگ خدمتوں کے لیے مڈل ویئر کیسے شامل کریں، اور اسٹیک فائلیں کیسے سروس کریں۔ اگلے باب میں، ہم C انٹراپ کو دریافت کریں گے۔

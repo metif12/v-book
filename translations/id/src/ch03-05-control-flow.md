@@ -1,4 +1,4 @@
-# Control Flow
+# Alur Kontrol
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If sebagai ekspresi
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[Bab 4: Kepemilikan dan Memori](ch04-ownership-and-memory.md)

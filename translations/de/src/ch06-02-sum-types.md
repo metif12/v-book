@@ -27,6 +27,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
 [Pattern Matching](ch06-03-pattern-matching.md)

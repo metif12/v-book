@@ -1,5 +1,5 @@
-# Page Not Found
+# পৃষ্ঠা পাওয়া যায়নি
 
-The page you're looking for doesn't exist.
+আপনি যে পৃষ্ঠাটি খুঁজছেন তা বিদ্যমান নেই।
 
-[Back to the book](index.html)
+[বইয়ে ফিরুন](index.html)

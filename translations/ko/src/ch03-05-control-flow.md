@@ -1,4 +1,4 @@
-# Control Flow
+# 제어 흐름
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If 표현식
 
 ```v
 fn main() {
@@ -23,22 +23,22 @@ fn main() {
 }
 ```
 
-## For loop
+## For 루프
 
 ```v
 fn main() {
-    // Over an array
+    // 배열 순회
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range
+    // 범위
     for i in 0 .. 5 {
         println(i)
     }
 
-    // With index
+    // 인덱스와 함께
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[Chapter 4: 소유권과 메모리](ch04-ownership-and-memory.md)

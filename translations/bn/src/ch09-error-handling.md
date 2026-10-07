@@ -1,8 +1,8 @@
-# Chapter 9: Error Handling
+# অধ্যায় 9: এরর হ্যান্ডলিং
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V এরর হ্যান্ডলিংয়ের জন্য Option (`?T`) এবং Result (`!T`) টাইপ ব্যবহার করে।
 
-## Option Type
+## option টাইপ
 
 ```v
 struct User {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Result Type
+## result টাইপ
 
 ```v
 fn parse_number(s string) !int {
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## কাস্টম এরর
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+এই অধ্যায়ে আপনি option, result এবং কাস্টম এরর সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা জেনেরিক্স শিখব।

@@ -1,4 +1,4 @@
-# Chapter 6: Enums and Sum Types
+# Chapitre 6 : Enums et types somme
 
 ## Enums
 
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## Types somme
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## Filtrage par motif
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+Dans ce chapitre, vous avez appris les enums, les types somme et le filtrage par motif. Dans le chapitre suivant, nous explorerons les modules et les paquets.

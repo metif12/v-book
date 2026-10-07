@@ -1,4 +1,4 @@
-# Custom Errors
+# أخطاء مخصصة
 
 ```v
 struct MyError {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 10: Generics](ch10-generics.md)
+[الفصل 10: التعميمات (Generics)](ch10-generics.md)

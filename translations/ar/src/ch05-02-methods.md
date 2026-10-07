@@ -1,4 +1,4 @@
-# Methods
+# الدوال المرتبطة (Methods)
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Mutable receivers
+## المُستقبِلات القابلة للتغيير
 
 ```v
 struct Counter {
@@ -36,6 +36,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Embedded Structs](ch05-03-embedded-structs.md)
+[Structs المضمنة](ch05-03-embedded-structs.md)

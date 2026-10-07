@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# الفصل 10: التعميمات (Generics)
 
-Generics allow you to write code that works with any type.
+التعميمات تسمح لك بكتابة كود يعمل مع أي نوع.
 
-## Generic functions
+## دوال معممة
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## structs معممة
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## قيود النوع
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+في هذا الفصل، تعلمت عن الدوال وال structs المعممة. في الفصل التالي، سنستكشف الاختبار.

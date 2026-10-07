@@ -1,4 +1,4 @@
-# Defining Structs
+# Struct 정의하기
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## 초기화
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## 다음
 
-[Methods](ch05-02-methods.md)
+[메서드](ch05-02-methods.md)

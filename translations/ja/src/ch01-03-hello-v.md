@@ -1,6 +1,6 @@
 # Hello, V!
 
-Let's look at a more interesting example:
+もう少し興味深い例を見てみましょう：
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+実行します：
 
 ```bash
 v run main.v
 ```
 
-Output:
+出力：
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## 文字列補間
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+Vでは`${...}`を文字列補間に使用します。`${...}`内の任意の式が評価されて文字列に変換されます：
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## 変数
 
-Use `:=` to declare and initialize a variable:
+`:=`を使って変数を宣言して初期化します：
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[第2章：プロジェクトの構築](ch02-building-a-project.md)

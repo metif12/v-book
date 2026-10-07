@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# Chapter 17: 고급 기능
 
-## Attributes
+## 어트리뷰트
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+어트리뷰트는 선언 앞에 위치하는 메타데이터 어노테이션입니다. 컴파일러 동작, 최적화 힌트, API 수명 주기를 제어합니다.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+함수나 타입을 더 이상 사용되지 않음으로 표시합니다. 항목이 사용될 때 컴파일러가 경고를 발생시킵니다.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+컴파일러가 호출 사이트에서 함수를 인라인하도록 힌트를 제공합니다. 작고 자주 호출되는 함수에 적합합니다.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+함수를 unsafe로 표시하여 호출자도 unsafe로 표시하지 않고 `unsafe` 블록을 사용할 수 있게 합니다.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+컴파일 타임의 조건부 컴파일입니다. 조건이 참일 때만 블록이 포함됩니다.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## 컴파일 타임 코드
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V는 컴파일 중에 실행되는 여러 컴파일 타임 구문을 제공하여 메타프로그래밍과 제로 비용 추상화를 가능하게 합니다.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+컴파일 타임에 조건을 평가합니다. 플랫폼 감지, 아키텍처 확인, 커스텀 플래그를 지원합니다.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+컴파일 타임에 배열, struct 필드, 범위를 반복합니다. 반복적인 코드 생성에 유용합니다.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+조건이 거짓이면 컴파일을 중단하는 컴파일 타임 어서션입니다.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## 연산자 오버로딩
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V는 사용자 정의 타입의 연산자에 대한 커스텀 동작을 정의할 수 있습니다. 각 연산자는 특정 시그니처를 가진 메서드에 매핑됩니다.
 
-### Arithmetic operators
+### 산술 연산자
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### 비교 연산자
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### 인덱스 연산자
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## 컴파일 타임 리플렉션
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+V의 `$for` 구문은 컴파일 타임에 struct 필드를 반복할 수 있어 자동 직렬화, 유효성 검사 등을 가능하게 합니다.
 
-### Iterating struct fields
+### struct 필드 반복
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### 유효성 검사 코드 생성
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+이 장에서는 어트리뷰트, 컴파일 타임 코드, 연산자 오버로딩, 컴파일 타임 리플렉션에 대해 배웠습니다. 이러한 기능은 강력한 메타프로그래밍 패턴과 컴파일에 대한 세밀한 제어를 가능하게 합니다. 다음 장에서는 메모리 관리를 심화하여 살펴보겠습니다.

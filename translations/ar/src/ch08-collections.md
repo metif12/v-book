@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# الفصل 8: المجموعات
 
-## Arrays
+## المصفوفات
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## الخرائط
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## النصوص
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+في هذا الفصل، تعلمت عن المصفوفات، الخرائط، والنصوص. في الفصل التالي، سنستكشف معالجة الأخطاء.

@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# 부록 G: V는 어떻게 만들어지는가
 
-V is an open-source project. The compiler is written in V itself.
+V는 오픈 소스 프로젝트입니다. 컴파일러는 V 자체로 작성되었습니다.
 
-## Repository
+## 저장소
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- 라이선스: MIT
 
-## Building from source
+## 소스에서 빌드
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,12 +15,12 @@ cd v
 make
 ```
 
-## Contributing
+## 기여하기
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+[기여 가이드](https://github.com/vlang/v/blob/master/CONTRIBUTING.md)를 참조하세요.
 
-## Community
+## 커뮤니티
 
-- [Forum](https://forum.vlang.io)
+- [포럼](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

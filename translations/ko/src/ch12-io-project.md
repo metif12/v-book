@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Chapter 12: I/O 프로젝트: CLI 도구 만들기
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+이 장에서는 파일을 읽어 줄, 단어, 문자의 개수를 세는 간단한 명령줄 도구를 만들어보겠습니다.
 
-## Project setup
+## 프로젝트 설정
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## 구현
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## 실행
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## 요약
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+이 장에서는 명령줄 도구를 만들었습니다. 다음 장에서는 함수형 기능을 살펴보겠습니다.

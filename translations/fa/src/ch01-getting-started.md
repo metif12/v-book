@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# فصل ۱: شروع کار
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+بیایید سفر V خود را شروع کنید! چیزهای زیادی برای یادگیری وجود دارد، اما هر سفری با یک قدم کوچک شروع می‌شود. در این فصل، یاد می‌گیرید که چگونه:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- V را روی سیستم خود نصب کنید
+- یک برنامه "سلام، دنیا!" بنویسید
+- از کامپایلر V و دستورهای آن استفاده کنید
+- یک پروژه V ایجاد کنید
 
-## Installation
+## نصب
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V را می‌توان روی ویندوز، macOS و لینوکس نصب کرد. ساده‌ترین راه استفاده از اسکریپت نصب است:
 
-### Windows
+### ویندوز
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+نصب‌کننده را از [vlang.io/install](https://vlang.io/install.html) دانلود و اجرا کنید، یا از PowerShell استفاده کنید:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,21 +25,21 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+یا از اسکریپت نصب استفاده کنید:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### Linux
+### لینوکس
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### از سورس
 
-To build V from source:
+برای ساخت V از سورس:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## تأیید نصب
 
-After installation, verify V is working:
+پس از نصب، بررسی کنید که V کار می‌کند:
 
 ```bash
 v version
 ```
 
-You should see output like:
+خروجی باید به این شکل باشد:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## سلام، دنیا!
 
-Now let's write our first V program. Create a file called `main.v`:
+حالا بیایید اولین برنامه V خود را بنویسیم. یک فایل به نام `main.v` ایجاد کنید:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+آن را اجرا کنید:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+خروجی:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+آفرین! شما اولین برنامه V خود را نوشته و اجرا کرده‌اید.
 
-## Hello, V!
+## سلام، V!
 
-Let's look at a slightly more interesting example:
+بیایید یک نمونه جالب‌تر را بررسی کنیم:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+آن را اجرا کنید:
 
 ```bash
 v run main.v
 ```
 
-Output:
+خروجی:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## کامپایلر V
 
-The V compiler is invoked with the `v` command. Common commands:
+کامپایلر V با دستور `v` فراخوانی می‌شود. دستورهای رایج:
 
-| Command | Description |
+| دستور | توضیح |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | کامپایل و اجرای یک فایل V |
+| `v file.v` | کامپایل یک فایل V به یک فایل اجرایی |
+| `v fmt file.v` | قالب‌بندی یک فایل V |
+| `v test .` | اجرای تست‌ها در دایرکتوری فعلی |
+| `v doc .` | تولید مستندات |
+| `v doctor` | تشخیص نصب V |
 
-## Summary
+## خلاصه
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+در این فصل، یاد گرفتید که چگونه V را نصب کنید، یک برنامه "سلام، دنیا!" بنویسید و از کامپایلر V استفاده کنید. در فصل بعد، به نحوه ساختار یک پروژه V می‌پردازیم.

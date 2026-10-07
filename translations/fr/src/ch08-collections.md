@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# Chapitre 8 : Collections
 
-## Arrays
+## Tableaux
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## Chaînes de caractères
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+Dans ce chapitre, vous avez appris les tableaux, les maps et les chaînes de caractères. Dans le chapitre suivant, nous explorerons la gestion des erreurs.

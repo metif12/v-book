@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# Bab 19: Tooling
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+Memformat kode sumber V sesuai dengan style guide resmi. Gunakan `-w` untuk menulis perubahan secara langsung.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### Memformat file tunggal
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### Memeriksa format tanpa menulis
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+Menghasilkan dokumentasi dari file sumber V. Output HTML secara default.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### Mendokumentasikan modul spesifik
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+Memprofil eksekusi program untuk mengidentifikasi bottleneck performa.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### Menganalisis output profil
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+Menjalankan unit test di direktori saat ini atau file yang ditentukan.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### Menjalankan test spesifik
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### Menjalankan test dengan coverage
 
 ```bash
 v test -cover .
@@ -70,13 +70,13 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+Melakukan analisis statis pada kode V, memeriksa error, peringatan, dan masalah gaya.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### Memeriksa file tunggal
 
 ```bash
 v check main.v
@@ -84,7 +84,7 @@ v check main.v
 
 ## Cross-compilation
 
-V can compile code for different operating systems and architectures from a single machine.
+V dapat mengompilasi kode untuk sistem operasi dan arsitektur yang berbeda dari satu mesin.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### Menentukan arsitektur
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### Cross-compile untuk target embedded
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+Menampilkan informasi diagnostik tentang instalasi V, termasuk versi kompiler, OS, dan konfigurasi.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+Memperbarui kompiler V ke versi terbaru.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### Memperbarui ke versi spesifik
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+Dalam bab ini, Anda telah belajar tentang ekosistem tooling V: `v fmt` untuk formatting, `v doc` untuk dokumentasi, `v profiler` untuk analisis performa, `v test` untuk testing, `v check` untuk analisis statis, cross-compilation, `v doctor` untuk diagnostik, dan `v up` untuk pembaruan mandiri. Di bab berikutnya, kita akan membangun proyek akhir.

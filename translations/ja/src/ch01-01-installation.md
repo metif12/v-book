@@ -1,10 +1,10 @@
-# Installation
+# インストール
 
 ## Windows
 
-### Installer
+### インストーラー
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+[vlang.io/install](https://vlang.io/install.html)から最新のインストーラーをダウンロードして実行します。
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### 手動
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. [GitHub releases](https://github.com/vlang/v/releases)から最新リリースをダウンロードします。
+2. zipファイルを展開します。
+3. `v`ディレクトリをPATHに追加します。
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### インストーラースクリプト
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### インストーラースクリプト
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## ソースからビルド
 
-To build V from source, you need a C compiler (gcc or clang):
+ソースからVをビルドするには、Cコンパイラ（gccまたはclang）が必要です：
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,12 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
-
-## Verifying
+では、Vのインストールを確認します：
 
 ```bash
 v version
 ```
 
-## Next
+## 次へ
 
 [Hello, World!](ch01-02-hello-world.md)

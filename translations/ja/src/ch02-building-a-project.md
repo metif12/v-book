@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# 第2章：プロジェクトの構築
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+この章では、Vプロジェクトの構造化、`v.mod`の使用、`v fmt`によるコードのフォーマット、`v test`によるテストの書き方を学びます。
 
-## Project structure
+## プロジェクト構造
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Vプロジェクトは`v.mod`ファイルと1つ以上の`.v`ファイルを持つディレクトリです：
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+すべてのVプロジェクトはプロジェクトを記述する`v.mod`ファイルを持ちます：
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+新しいプロジェクトの作成：
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+これにより、基本テンプレートを含む`v.mod`と`main.v`が作成されます。
 
-## Formatting with v fmt
+## v fmtによるフォーマット
 
-V has a built-in code formatter. Run it on your project:
+Vには組み込みのコードフォーマッターがあります。プロジェクトに対して実行します：
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w`フラグはフォーマットされたコードをファイルに書き戻します。
 
-## Testing with v test
+## v testによるテスト
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+Vには組み込みのテストフレームワークがあります。`_test.v`で終わるファイルを作成します：
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+テストの実行：
 
 ```bash
 v test .
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+この章では、Vプロジェクトの構造化、`v.mod`の使用、コードのフォーマット、テストの書き方を学びました。次の章では、Vの一般的なプログラミング概念を見ていきます。

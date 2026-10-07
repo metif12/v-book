@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[Bab 7: Modul dan Paket](ch07-modules-and-packages.md)

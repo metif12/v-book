@@ -1,4 +1,4 @@
-# Arrays
+# Array
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## Operasi array
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Maps](ch08-02-maps.md)
+[Map](ch08-02-maps.md)

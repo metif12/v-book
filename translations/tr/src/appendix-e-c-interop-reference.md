@@ -1,25 +1,25 @@
-# Appendix E: V and C Interop Reference
+# Ek E: V ve C Birlikte Çalışma Başvurusu
 
-## Including C code
+## C kodunu dahil etme
 
 ```v ignore
 #include "myheader.h"
 ```
 
-## C flags
+## C bayrakları
 
 ```v
 #flag -lm
 #flag -I/path/to/include
 ```
 
-## Calling C functions
+## C fonksiyonlarını çağırma
 
 ```v
 fn C.my_c_function(int) int
 ```
 
-## Exporting V functions
+## V fonksiyonlarını dışa aktarma
 
 ```v
 @[export: 'my_v_function']
@@ -28,7 +28,7 @@ fn my_v_function() {
 }
 ```
 
-## Shared libraries
+## Paylaşılan kütüphaneler
 
 ```bash
 v -shared -o libmylib.so mylib.v

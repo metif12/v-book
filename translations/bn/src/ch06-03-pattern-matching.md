@@ -1,4 +1,4 @@
-# Pattern Matching
+# প্যাটার্ন ম্যাচিং
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Match সম্পূর্ণতা
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[অধ্যায় 7: module এবং প্যাকেজ](ch07-modules-and-packages.md)

@@ -1,4 +1,4 @@
-# Option Type
+# Option Tipi
 
 ```v
 struct User {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Result Type](ch09-02-result-type.md)
+[Result Tipi](ch09-02-result-type.md)

@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+Le fichier `v.mod` décrit votre projet :
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## Champs
 
-| Field | Description |
+| Champ | Description |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | Nom du projet (doit correspondre au nom du répertoire) |
+| `description` | Brève description |
+| `version` | Version sémantique |
+| `license` | Identifiant de licence |
+| `dependencies` | Liste des noms de paquets VPM |
 
-## Next
+## Suivant
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[Formatage avec v fmt](ch02-03-formatting.md)

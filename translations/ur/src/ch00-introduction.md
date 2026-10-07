@@ -1,33 +1,33 @@
-# Introduction
+# تعارف
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*V پروگرامنگ زبان کی کتاب* [V پروگرامنگ زبان](https://vlang.io) کی ایک جامع رہنما ہے — ایک سادہ، تیز، محفوظ، کمپائل کی گئی زبان جو قابل اعتماد سافٹ ویئر بنانے کے لیے ہے۔
 
-## Who this book is for
+## یہ کتاب کس کے لیے ہے
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+یہ کتاب فرض کرتی ہے کہ آپ کو کسی اور زبان میں پروگرامنگ کا کچھ تجربہ ہے۔ یہ فرض نہیں کرتی کہ آپ V کو جانتے ہیں۔ ہم بنیادی باتوں سے شروع کرتے ہیں اور جدید موضوعات تک پہنچتے ہیں۔
 
-## How to use this book
+## اس کتاب کو کیسے استعمال کریں
 
-The book is organized into parts:
+کتاب حصوں میں منظم ہے:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **حصہ اول: آغاز** — V انسٹال کریں، اپنا پہلا پروگرام لکھیں، پروجیکٹ کا ڈھانچہ سمجھیں۔
+- **حصہ دوم: عام پروگرامنگ تصورات** — متغیرات، اقسام، فنکشنز، کنٹرول فلو، structs، enums، ماڈیولز، کلکشنز، خرابی کی عاملہ کاری۔
+- **حصہ سوم: درمیانی V** — جنرکس، ٹیسٹنگ، ہم آہنگی، ویب ڈویلپمنٹ، C انٹراپ، جدید خصوصیات، اور ایک حتمی پروجیکٹ۔
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+ہر باب پچھلے باب پر بنا ہے۔ کوڈ مثالیں CI میں ٹیسٹ کی جاتی ہیں — اس کتاب کا ہر V کوڈ بلاک خودکار طور پر کمپائل اور چلایا جاتا ہے۔
 
-## Code examples
+## کوڈ مثالیں
 
-Code examples in this book follow these conventions:
+اس کتاب میں کوڈ مثالیں ان اصول پر عمل کرتی ہیں:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v` کوڈ بلاکس CI میں کمپائل اور چلائے جاتے ہیں۔
+- `v ignore` کوڈ بلاکس کمپائل نہیں کیے جاتے (پیڈو کوڈ یا نامکمل مثالوں کے لیے)۔
+- `v no_run` کوڈ بلاکس کمپائل ہوتے ہیں لیکن نہیں چلائے جاتے (ایسی مثالوں کے لیے جو روک دیں یا ان پٹ کا مطالبہ کریں)۔
 
-## Translations
+## ترجمے
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+یہ کتاب 16 زبانوں میں دستیاب ہے۔ مکمل فہرست کے لیے [ضمیمہ F](appendix-f-translations.md) دیکھیں۔
 
-## Contributing
+## شراکت
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+یہ کتاب ایک کمیونٹی پروجیکٹ ہے۔ شراکت کے طریقوں کے لیے [GitHub ریپوزٹری](https://github.com/vlang/v-book) دیکھیں۔

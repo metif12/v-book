@@ -1,6 +1,6 @@
-# Stack and Heap
+# Стек и куча
 
-V automatically decides whether to allocate on the stack or heap:
+V автоматически решает, выделить память в стеке или в куче:
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## Стек
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- Быстрое выделение и освобождение
+- Фиксированный размер на этапе компиляции
+- Автоматически освобождается при выходе из области видимости
 
-## Heap
+## Куча
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- Динамический размер
+- Более медленное выделение
+- Управляется сборщиком мусора или автоосвобождением
 
-## Next
+## Далее
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[Сборщик мусора](ch04-02-garbage-collection.md)

@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# باب ۳: عام تصورات
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+یہ باب V کی عام پروگرامنگ تصورات کو چھوتا ہے: متغیرات، ڈیٹا کی اقسام، فنکشنز، تبصرے، اور کنٹرول فلو۔
 
-## Variables and Mutability
+## متغیرات اور تبدیلی پذیری
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+V میں، متغیرات ڈیفالٹ طور پر غیر تبدیل پذیر ہوتے ہیں۔ انہیں تبدیل پذیر بنانے کے لیے `mut` استعمال کریں:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## ڈیٹا کی اقسام
 
-V has a rich type system:
+V کے پاس ایک مکمل ٹائپ سسٹم ہے:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## فنکشنز
 
-Functions are declared with `fn`:
+فنکشنز `fn` سے تعریف کیے جاتے ہیں:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## تبصرے
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## کنٹرول فلو
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### For لوپ
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+اس باب میں، آپ نے V میں متغیرات، ڈیٹا کی اقسام، فنکشنز، تبصرے، اور کنٹرول فلو کے بارے میں سیکھا۔ اگلے باب میں، ہم ملکیت اور میموری مینجمنٹ کو دریافت کریں گے۔

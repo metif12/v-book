@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# অতিরিক্ত A: কীওয়ার্ড
 
-V has the following keywords:
+V-এ নিম্নলিখিত কীওয়ার্ড আছে:
 
-| Keyword | Description |
+| কীওয়ার্ড | বিবরণ |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | টাইপ কাস্টিং |
+| `assert` | অ্যাসারশন |
+| `break` | লুপ থেকে বের হওয়া |
+| `const` | ধ্রুবক ঘোষণা |
+| `continue` | পরবর্তী পুনরাবৃত্তিতে যাওয়া |
+| `defer` | বিলম্বিত এক্সিকিউশন |
+| `else` | else শাখা |
+| `enum` | এনুমারেশন |
+| `false` | বুলিয়ান মিথ্যা |
+| `fn` | ফাংশন ঘোষণা |
+| `for` | লুপ |
+| `go` | goroutine চালু করা |
+| `goto` | goto স্টেটমেন্ট |
+| `if` | শর্তাধীন |
+| `import` | মডিউল ইমপোর্ট |
+| `in` | সদস্যতা পরীক্ষা |
+| `interface` | ইন্টারফেস ঘোষণা |
+| `is` | টাইপ পরীক্ষা |
+| `lock` | Mutex লক |
+| `match` | প্যাটার্ন ম্যাচিং |
+| `module` | মডিউল ঘোষণা |
+| `mut` | মিউটেবল |
+| `none` | none মান |
+| `or` | এরর হ্যান্ডলিং |
+| `pub` | পাবলিক ভিজিবিলিটি |
+| `return` | ফাংশন থেকে রিটার্ন |
+| `struct` | struct ঘোষণা |
+| `true` | বুলিয়ান সত্য |
+| `type` | টাইপ ঘোষণা |
+| `union` | ইউনিয়ন ঘোষণা |
+| `unsafe` | অনিরাপদ কোড |

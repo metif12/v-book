@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# الفصل 14: التزامن
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V لديه دعم مدمج للتزامن مع goroutines والقنوات والحالة المشتركة.
 
-## Spawning goroutines
+## تشغيل goroutines
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+goroutine هو خيط خفيف. ابدأ واحداً بالكلمة المفتاحية `go`:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+الكلمة المفتاحية `go` تبدأ الدالة في goroutine جديد وتعود فوراً. الدالة main لا تنتظر انتهاء goroutines من تلقاء نفسها.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+لانتظار goroutines، استخدم `sync.WaitGroup`:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` يزيد العداد قبل بدء goroutine. `wg.done()` ينقصه عند انتهاء goroutine. `wg.wait()` يُحظر حتى يصل العداد إلى الصفر.
 
-## Channels
+## القنوات (Channels)
 
-Channels pass values between goroutines. Create one with `chan T`:
+القنوات تمرر القيم بين goroutines. أنشئ واحدة بـ `chan T`:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+القناة غير المخزنة تُحظر عند الإرسال حتى يصبح المُستقبِل جاهزاً. القناة المخزنة لديها سعة ولا تُحظر حتى تمتلئ:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+اتجاه القناة يقيد كيفية استخدامها. `chan<- T` للإرسال فقط، `<-chan T` للاستقبال فقط:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## الحالة المشتركة
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+عندما تشترك goroutines في حالة قابلة للتغيير، احمِها بـ `sync.Mutex`:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` يُحظر حتى يصبح القفل متاحاً، ثم يحتفظ به لنطاق الكتلة. أبقِ القسم الحرج قصيراً.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+استخدم `sync.RwMutex` عندما تكون القراءات أكثر تكراراً من الكتابة. يسمح بقراءين متعددين في وقت واحد:
 
 ```v
 import sync
@@ -171,22 +171,9 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+## عبارات select
 
-```v
-import sync.stdatomic
-
-fn main() {
-    mut counter := stdatomic.new_atomic(u64(0))
-    counter.add(1)
-    counter.add(1)
-    println(counter.load())
-}
-```
-
-## select statement
-
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` ينتظر على قنوات متعددة ويعيد فهرس أول قناة جاهزة. مهلة سالبة تنتظر إلى أجل غير مسمى؛ مهلة موجبة تعيد -1 عند انتهاء المهلة:
 
 ```v
 import sync
@@ -212,6 +199,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+في هذا الفصل، تعلمت عن goroutines، القنوات، الحالة المشتركة، و select. في الفصل التالي، سنستكشف إطار عمل Veb للويب.

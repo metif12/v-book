@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Apêndice A: Palavras-chave
 
-V has the following keywords:
+V tem as seguintes palavras-chave:
 
-| Keyword | Description |
+| Palavra-chave | Descrição |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
+| `as` | Conversão de tipo |
+| `assert` | Asserções |
+| `break` | Sair do loop |
+| `const` | Declaração de constante |
+| `continue` | Continuar para próxima iteração |
+| `defer` | Execução adiada |
+| `else` | Ramo else |
+| `enum` | Enumeração |
+| `false` | Booleano falso |
+| `fn` | Declaração de função |
 | `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
+| `go` | Criar goroutine |
+| `goto` | Declaração goto |
+| `if` | Condicional |
+| `import` | Importação de módulo |
+| `in` | Teste de pertinência |
+| `interface` | Declaração de interface |
+| `is` | Verificação de tipo |
+| `lock` | Lock de mutex |
 | `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `module` | Declaração de módulo |
+| `mut` | Mutável |
+| `none` | Valor none |
+| `or` | Tratamento de erros |
+| `pub` | Visibilidade pública |
+| `return` | Retorno de função |
+| `struct` | Declaração de struct |
+| `true` | Booleano verdadeiro |
+| `type` | Declaração de tipo |
+| `union` | Declaração de union |
+| `unsafe` | Código inseguro |

@@ -1,5 +1,5 @@
-# Page Not Found
+# Sayfa Bulunamadı
 
-The page you're looking for doesn't exist.
+Aradığınız sayfa mevcut değil.
 
-[Back to the book](index.html)
+[Kitaba dön](index.html)

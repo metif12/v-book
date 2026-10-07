@@ -1,4 +1,4 @@
-# Option Type
+# Option 타입
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## 언래핑
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Result Type](ch09-02-result-type.md)
+[Result 타입](ch09-02-result-type.md)

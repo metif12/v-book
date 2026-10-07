@@ -1,4 +1,4 @@
-# Arrays
+# المصفوفات
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## عمليات المصفوفات
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Maps](ch08-02-maps.md)
+[الخرائط](ch08-02-maps.md)

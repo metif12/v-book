@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Chapitre 1 : Premiers pas
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+Commençons votre parcours V ! Il y a beaucoup à apprendre, mais chaque voyage commence par un petit pas. Dans ce chapitre, vous apprendrez à :
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- Installer V sur votre système
+- Écrire un programme « Bonjour, le Monde ! »
+- Utiliser le compilateur V et ses commandes
+- Créer un projet V
 
 ## Installation
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V peut être installé sur Windows, macOS et Linux. La méthode la plus simple est d'utiliser le script d'installation :
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Téléchargez et exécutez le programme d'installation depuis [vlang.io/install](https://vlang.io/install.html), ou utilisez PowerShell :
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+Ou utilisez le script d'installation :
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### Depuis les sources
 
-To build V from source:
+Pour compiler V depuis les sources :
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## Vérifier l'installation
 
-After installation, verify V is working:
+Après l'installation, vérifiez que V fonctionne :
 
 ```bash
 v version
 ```
 
-You should see output like:
+Vous devriez voir une sortie comme :
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## Bonjour, le Monde !
 
-Now let's write our first V program. Create a file called `main.v`:
+Écrivons maintenant notre premier programme V. Créez un fichier appelé `main.v` :
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+Exécutez-le :
 
 ```bash
 v run main.v
 ```
 
-You should see:
+Vous devriez voir :
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+Félicitations ! Vous avez écrit et exécuté votre premier programme V.
 
-## Hello, V!
+## Bonjour, V !
 
-Let's look at a slightly more interesting example:
+Regardons un exemple un peu plus intéressant :
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+Exécutez-le :
 
 ```bash
 v run main.v
 ```
 
-Output:
+Sortie :
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## Le compilateur V
 
-The V compiler is invoked with the `v` command. Common commands:
+Le compilateur V est invoqué avec la commande `v`. Commandes courantes :
 
-| Command | Description |
+| Commande | Description |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | Compiler et exécuter un fichier V |
+| `v file.v` | Compiler un fichier V en exécutable |
+| `v fmt file.v` | Formater un fichier V |
+| `v test .` | Exécuter les tests dans le répertoire courant |
+| `v doc .` | Générer la documentation |
+| `v doctor` | Diagnostiquer votre installation V |
 
-## Summary
+## Résumé
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+Dans ce chapitre, vous avez appris à installer V, à écrire un programme « Bonjour, le Monde ! » et à utiliser le compilateur V. Dans le chapitre suivant, nous verrons comment structurer un projet V.

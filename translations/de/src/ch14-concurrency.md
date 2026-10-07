@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# Kapitel 14: Nebenläufigkeit
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V verfügt über integrierte Unterstützung für Nebenläufigkeit mit Goroutines, Channels und Shared State.
 
-## Spawning goroutines
+## Goroutines starten
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+Eine Goroutine ist ein leichtgewichtiger Thread. Starten Sie eine mit dem Schlüsselwort `go`:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+Das Schlüsselwort `go` startet die Funktion in einer neuen Goroutine und kehrt sofort zurück. Die Hauptfunktion wartet nicht von selbst auf den Abschluss der Goroutines.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+Um auf Goroutines zu warten, verwenden Sie eine `sync.WaitGroup`:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` erhöht den Zähler, bevor die Goroutine startet. `wg.done()` verringert ihn, wenn die Goroutine endet. `wg.wait()` blockiert, bis der Zähler null erreicht.
 
 ## Channels
 
-Channels pass values between goroutines. Create one with `chan T`:
+Channels übergeben Werte zwischen Goroutines. Erstellen Sie einen mit `chan T`:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+Ein ungepufferter Channel blockiert beim Senden, bis ein Empfänger bereit ist. Ein gepufferter Channel hat eine Kapazität und blockiert nicht, bis er voll ist:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+Die Channel-Richtung beschränkt, wie ein Channel verwendet werden kann. `chan<- T` ist nur zum Senden, `<-chan T` nur zum Empfangen:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## Shared State
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+Wenn Goroutines veränderlichen Zustand teilen, schützen Sie ihn mit einer `sync.Mutex`:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` blockiert, bis das Mutex verfügbar ist, und hält es dann für den Gültigkeitsbereich des Blocks. Halten Sie den kritischen Abschnitt kurz.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+Verwenden Sie `sync.RwMutex`, wenn Lesevorgänge häufiger sind als Schreibvorgänge. Er ermöglicht mehrere Leser gleichzeitig:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+Für einen einzelnen Wert verwenden Sie Atomics aus `sync.stdatomic` statt eines Locks:
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## select-Anweisung
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` wartet auf mehrere Channels und gibt den Index des ersten zurück, der bereit ist. Ein negativer Timeout wartet unbegrenzt; ein positiver Timeout gibt bei Überschreitung -1 zurück:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+In diesem Kapitel haben Sie Goroutines, Channels, Shared State und select kennengelernt. Im nächsten Kapitel untersuchen wir das Veb-Web-Framework.

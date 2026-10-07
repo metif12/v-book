@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# Bab 3: Konsep Umum
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Bab ini membahas konsep pemrograman umum dalam V: variabel, tipe data, fungsi, komentar, dan alur kontrol.
 
-## Variables and Mutability
+## Variabel dan Mutabilitas
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+Dalam V, variabel bersifat immutable secara default. Gunakan `mut` untuk membuatnya mutable:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## Tipe Data
 
-V has a rich type system:
+V memiliki sistem tipe yang kaya:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Fungsi
 
-Functions are declared with `fn`:
+Fungsi dideklarasikan dengan `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Komentar
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Alur Kontrol
 
 ### If
 
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+Dalam bab ini, Anda telah belajar tentang variabel, tipe data, fungsi, komentar, dan alur kontrol dalam V. Di bab berikutnya, kita akan menjelajahi kepemilikan dan manajemen memori.

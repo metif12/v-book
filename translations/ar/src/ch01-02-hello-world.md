@@ -1,6 +1,6 @@
-# Hello, World!
+# مرحباً، عالم!
 
-Create a file called `main.v`:
+أنشئ ملفاً باسم `main.v`:
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+شغّله:
 
 ```bash
 v run main.v
 ```
 
-Output:
+الناتج:
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## تشريح برنامج V
 
-Let's break down the program:
+لنفكك البرنامج:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — كل برنامج V يبدأ بدالة `main`. الكلمة المفتاحية `fn` تُعرّف دالة.
+- `println(...)` — دالة مدمجة تطبع سطراً إلى stdout.
+- `'Hello, World!'` — نص حرفي. V يستخدم علامات اقتباس مفردة للنصوص.
 
-## Compiling vs running
+## التصريف مقابل التشغيل
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` يُصرّف ويُشغّل في خطوة واحدة. يمكنك أيضاً التصريف أولاً:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## التالي
 
-[Hello, V!](ch01-03-hello-v.md)
+[مرحباً، V!](ch01-03-hello-v.md)

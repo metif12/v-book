@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# Capítulo 16: Interoperabilidad con C
 
-V can call C functions and be called from C.
+V puede llamar a funciones C y ser llamado desde C.
 
-## Calling C from V
+## Llamando a C desde V
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V puede llamar a funciones C directamente usando el módulo `C`. Necesitas declarar la firma de la función C e incluir los encabezados necesarios.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+La directiva `#flag` pasa opciones al compilador de C. Por ejemplo, `-lm` enlaza la biblioteca matemática. La directiva `#include` incluye archivos de encabezado C para que el compilador conozca las funciones C. La declaración `fn C.function_name` le dice a V sobre la firma de la función C.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+Puedes llamar a cualquier función C declarando su firma. Por ejemplo, para llamar a `puts`:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## Llamando a V desde C
 
-Compile V to a shared library:
+Compila V a una biblioteca compartida:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+Luego usa la biblioteca compartida desde C:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V puede traducir código C a V:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## Trabajando con tipos C
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V proporciona tipos compatibles con C como `C.int`, `C.double`, `C.char`, etc.
 
 ```v
 fn main() {
@@ -77,7 +77,7 @@ fn main() {
 
 ## Callbacks
 
-You can pass V functions to C callbacks:
+Puedes pasar funciones V a callbacks de C:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumen
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+En este capítulo, aprendiste sobre la interoperabilidad con C. En el siguiente capítulo, exploraremos características avanzadas.

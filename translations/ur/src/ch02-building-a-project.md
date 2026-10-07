@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# باب ۲: پروجیکٹ بنانا
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+اس باب میں، آپ سیکھیں گے کہ V پروجیکٹ کا ڈھانچہ کیسے بنائیں، `v.mod` کو کیسے استعمال کریں، `v fmt` کے ساتھ کوڈ کو کیسے فارمیٹ کریں، اور `v test` کے ساتھ ٹیسٹ کیسے لکھیں۔
 
-## Project structure
+## پروجیکٹ کا ڈھانچہ
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+ایک V پروجیکٹ ایک ڈائریکٹری ہے جس میں ایک `v.mod` فائل اور ایک یا زیادہ `.v` فائلیں ہوتی ہیں:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+ہر V پروجیکٹ میں ایک `v.mod` فائل ہوتی ہے جو پروجیکٹ کی وضاحت کرتی ہے:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+نیا پروجیکٹ بنانے کے لیے:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+یہ ایک `v.mod` اور ایک `main.v` بناتا ہے جس میں ایک بنیادی ٹیمپلیٹ ہوتا ہے۔
 
-## Formatting with v fmt
+## v fmt کے ساتھ فارمیٹنگ
 
-V has a built-in code formatter. Run it on your project:
+V میں ایک بلٹ اِن کوڈ فارمیٹر ہے۔ اسے اپنے پروجیکٹ پر چلائیں:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` فلگ فارمیٹ شدہ کوڈ کو فائلوں میں واپس لکھتا ہے۔
 
-## Testing with v test
+## v test کے ساتھ ٹیسٹنگ
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V میں ایک بلٹ اِن ٹیسٹنگ فریم ورک ہے۔ `_test.v` پر ختم ہونے والی فائل بنائیں:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+ٹیسٹ چلائیں:
 
 ```bash
 v test .
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+اس باب میں، آپ نے سیکھا کہ V پروجیکٹ کا ڈھانچہ کیسے بنائیں، `v.mod` کو کیسے استعمال کریں، کوڈ کو کیسے فارمیٹ کریں، اور ٹیسٹ کیسے لکھیں۔ اگلے باب میں، ہم V کی عام پروگرامنگ تصورات میں گہرائی سے جائیں گے۔

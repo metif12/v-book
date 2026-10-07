@@ -1,6 +1,6 @@
 # Hello, V!
 
-Let's look at a more interesting example:
+Mari lihat contoh yang lebih menarik:
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-Run it:
+Jalankan:
 
 ```bash
 v run main.v
@@ -23,9 +23,9 @@ Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## Interpolasi string
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V menggunakan `${...}` untuk interpolasi string. Setiap ekspresi di dalam `${...}` dievaluasi dan dikonversi ke string:
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## Variabel
 
-Use `:=` to declare and initialize a variable:
+Gunakan `:=` untuk mendeklarasikan dan menginisialisasi variabel:
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[Bab 2: Membangun Proyek](ch02-building-a-project.md)

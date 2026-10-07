@@ -1,14 +1,14 @@
-# Stack and Heap
+# スタックとヒープ
 
-V automatically decides whether to allocate on the stack or heap:
+Vはスタックとヒープのどちらに割り当てるかを自動的に決定します：
 
 ```v
 fn main() {
-    // Stack-allocated (small, fixed size)
+    // スタック割り当て（小さい、固定サイズ）
     x := 42
     arr := [1, 2, 3]
 
-    // Heap-allocated (large, dynamic)
+    // ヒープ割り当て（大きい、動的）
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## スタック
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- 高速な割り当てと解放
+- コンパイル時に固定サイズ
+- スコープ終了時に自動的に解放
 
-## Heap
+## ヒープ
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- 動的サイズ
+- 割り当てが遅い
+- GCまたはautofreeで管理
 
-## Next
+## 次へ
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[ガベージコレクション](ch04-02-garbage-collection.md)

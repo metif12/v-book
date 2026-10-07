@@ -1,8 +1,8 @@
-# Data Types
+# डेटा टाइप्स
 
-## Integer types
+## पूर्णांक टाइप्स
 
-| Type | Size | Range |
+| टाइप | साइज़ | रेंज |
 |------|------|-------|
 | `i8` | 8-bit | -128 to 127 |
 | `i16` | 16-bit | -32,768 to 32,767 |
@@ -14,21 +14,21 @@
 | `u32` | 32-bit | 0 to 2^32-1 |
 | `u64` | 64-bit | 0 to 2^64-1 |
 
-## Float types
+## फ़्लोट टाइप्स
 
-| Type | Size |
+| टाइप | साइज़ |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## अन्य टाइप्स
 
 - `bool` — `true` or `false`
 - `string` — UTF-8 string
 - `rune` — single Unicode character (alias for `u32`)
 - `byte` — alias for `u8`
 
-## Type conversion
+## टाइप कन्वर्ज़न
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Functions](ch03-03-functions.md)
+[फ़ंक्शन](ch03-03-functions.md)

@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# Глава 6: Перечисления и суммирующие типы
 
-## Enums
+## Перечисления
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## Суммирующие типы
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## Сопоставление с образцом
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+В этой главе вы узнали о перечислениях, суммирующих типах и сопоставлении с образцом. В следующей главе мы рассмотрим модули и пакеты.

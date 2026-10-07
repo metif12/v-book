@@ -1,6 +1,6 @@
-# Functions
+# فنکشنز
 
-Functions are declared with `fn`:
+فنکشنز `fn` سے تعریف کیے جاتے ہیں:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## متعدد واپسی قدریں
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## بغیر واپسی قدر
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## فنکشن ہوسٹنگ
 
-Functions can be called before they are declared:
+فنکشنز کو ان کی تعریف سے پہلے بھی بلایا جا سکتا ہے:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## اگلا
 
-[Comments](ch03-04-comments.md)
+[تبصرے](ch03-04-comments.md)

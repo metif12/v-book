@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# پیوست G: V چگونه ساخته شده است
 
-V is an open-source project. The compiler is written in V itself.
+V یک پروژه متن‌باز است. کامپایلر خودش با V نوشته شده است.
 
-## Repository
+## مخزن
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- مجوز: MIT
 
-## Building from source
+## ساخت از سورس
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,12 +15,12 @@ cd v
 make
 ```
 
-## Contributing
+## مشارکت
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+به [راهنمای مشارکت](https://github.com/vlang/v/blob/master/CONTRIBUTING.md) مراجعه کنید.
 
-## Community
+## جامعه
 
-- [Forum](https://forum.vlang.io)
+- [انجمن](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

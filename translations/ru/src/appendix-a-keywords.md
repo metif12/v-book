@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# Приложение A: Ключевые слова
 
-V has the following keywords:
+V имеет следующие ключевые слова:
 
-| Keyword | Description |
-|---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| Ключевое слово | Описание |
+|----------------|----------|
+| `as` | Приведение типов |
+| `assert` | Проверки |
+| `break` | Выход из цикла |
+| `const` | Объявление константы |
+| `continue` | Переход к следующей итерации |
+| `defer` | Отложенное выполнение |
+| `else` | Ветка else |
+| `enum` | Перечисление |
+| `false` | Логическое ложь |
+| `fn` | Объявление функции |
+| `for` | Цикл |
+| `go` | Запуск горутины |
+| `goto` | Оператор goto |
+| `if` | Условный оператор |
+| `import` | Импорт модуля |
+| `in` | Проверка принадлежности |
+| `interface` | Объявление интерфейса |
+| `is` | Проверка типа |
+| `lock` | Блокировка мьютекса |
+| `match` | Сопоставление с образцом |
+| `module` | Объявление модуля |
+| `mut` | Изменяемый |
+| `none` | Значение none |
+| `or` | Обработка ошибок |
+| `pub` | Публичная видимость |
+| `return` | Возврат из функции |
+| `struct` | Объявление структуры |
+| `true` | Логическое истина |
+| `type` | Объявление типа |
+| `union` | Объявление объединения |
+| `unsafe` | Небезопасный код |

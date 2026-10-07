@@ -1,6 +1,6 @@
-# Autofree
+# التحرير التلقائي
 
-V has an autofree mode that automatically frees memory:
+لديه V وضع التحرير التلقائي الذي يحرر الذاكرة تلقائياً:
 
 ```bash
 v -autofree main.v
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[References](ch04-04-references.md)
+[المراجع](ch04-04-references.md)

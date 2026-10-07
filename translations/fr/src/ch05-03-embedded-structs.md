@@ -1,4 +1,4 @@
-# Embedded Structs
+# Structs imbriquées
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[Modificateurs d'accès](ch05-04-access-modifiers.md)

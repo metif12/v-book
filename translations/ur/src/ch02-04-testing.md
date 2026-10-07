@@ -1,6 +1,6 @@
-# Testing with v test
+# v test کے ساتھ ٹیسٹنگ
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V میں ایک بلٹ اِن ٹیسٹنگ فریم ورک ہے۔ `_test.v` پر ختم ہونے والی فائل بنائیں:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+ٹیسٹ چلائیں:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## ٹیسٹ فنکشنز
 
-Test functions start with `test_` and take no arguments:
+ٹیسٹ فنکشنز `test_` سے شروع ہوتے ہیں اور کوئی دلیل نہیں لیتے:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## اثبات
 
-Use `assert` to check conditions:
+شرائط کی جانچ کے لیے `assert` استعمال کریں:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## اگلا
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[باب ۳: عام تصورات](ch03-common-concepts.md)

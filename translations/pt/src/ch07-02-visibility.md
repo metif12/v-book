@@ -1,7 +1,7 @@
-# Visibility
+# Visibilidade
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — público, acessível de outros módulos
+- (sem modificador) — privado, apenas módulo
 
 ```v ignore
 module math
@@ -15,6 +15,6 @@ pub fn public_function() int {
 }
 ```
 
-## Next
+## Próximo
 
 [VPM](ch07-03-vpm.md)

@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# 附录 D：标准库概览
 
-V's standard library includes:
+V 的标准库包括：
 
-| Module | Description |
+| 模块 | 描述 |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | 操作系统接口 |
+| `io` | 输入/输出 |
+| `strings` | 字符串工具 |
+| `arrays` | 数组工具 |
+| `math` | 数学函数 |
+| `time` | 时间和日期 |
+| `json` | JSON 编码/解码 |
+| `http` | HTTP 客户端/服务器 |
+| `db` | 数据库接口 |
+| `rand` | 随机数生成 |
+| `crypto` | 加密函数 |
+| `encoding` | 编码工具 |
+| `term` | 终端工具 |
+| `sync` | 同步原语 |
+| `v.ast` | V AST 操作 |
+| `v.compiler` | 编译器工具 |

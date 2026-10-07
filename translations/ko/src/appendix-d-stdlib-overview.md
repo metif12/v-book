@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# 부록 D: 표준 라이브러리 개요
 
-V's standard library includes:
+V의 표준 라이브러리는 다음을 포함합니다:
 
-| Module | Description |
+| 모듈 | 설명 |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | 운영체제 인터페이스 |
+| `io` | 입출력 |
+| `strings` | 문자열 유틸리티 |
+| `arrays` | 배열 유틸리티 |
+| `math` | 수학 함수 |
+| `time` | 시간 및 날짜 |
+| `json` | JSON 인코딩/디코딩 |
+| `http` | HTTP 클라이언트/서버 |
+| `db` | 데이터베이스 인터페이스 |
+| `rand` | 난수 생성 |
+| `crypto` | 암호화 함수 |
+| `encoding` | 인코딩 유틸리티 |
+| `term` | 터미널 유틸리티 |
+| `sync` | 동기화 프리미티브 |
+| `v.ast` | V AST 조작 |
+| `v.compiler` | 컴파일러 유틸리티 |

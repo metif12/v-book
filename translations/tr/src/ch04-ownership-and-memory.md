@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Bölüm 4: Sahiplik ve Bellek
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V, birçok dilden farklı bir bellek yönetimi yaklaşımı benimser. Manuel bellek yönetimi veya yalnızca çöp toplama yerine, V birden fazla strateji sunar.
 
-## Stack and Heap
+## Yığın ve Yığın (Heap)
 
-V automatically decides whether to allocate on the stack or heap:
+V, yığın mı yoksa heap mi tahsis edileceğini otomatik olarak belirler:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## Çöp Toplama
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V varsayılan olarak bir çöp toplayıcı kullanır. Belleği manuel olarak serbest bırakmanıza gerek yoktur:
 
 ```v
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V'nin, değişkenler kapsam dışına çıktığında belleği otomatik olarak serbest bırakan bir autofree modu vardır:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Referanslar
 
-You can use references to avoid copying large data:
+Büyük verilerin kopyalanmaktan kaçınmak için referanslar kullanabilirsiniz:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Bellek yönetimi modları
 
-| Mode | Flag | Description |
+| Mod | Bayrak | Açıklama |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
+| GC (varsayılan) | `-gc boehm` | Boehm garbage collector |
 | Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
+| Yok | `-gc none` | Manual memory management |
 | Prealloc | `-prealloc` | Arena allocation |
 
-## Summary
+## Özet
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+Bu bölümde V'nin bellek yönetimi seçenekleri hakkında bilgi edindiniz. Sonraki bölümde struct'ları inceleyeceğiz.

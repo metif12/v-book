@@ -1,4 +1,4 @@
-# Result Type
+# نوع Result
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## انتشار خطا
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Custom Errors](ch09-03-custom-errors.md)
+[خطاهای سفارشی](ch09-03-custom-errors.md)

@@ -1,22 +1,22 @@
-# Variables and Mutability
+# 変数と可変性
 
-In V, variables are immutable by default:
+Vでは、変数はデフォルトで不変です：
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // エラー: nameは不変です
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: countは可変です
     count++
     println(count)
 }
 ```
 
-## Declaration
+## 宣言
 
-Use `:=` to declare and initialize:
+`:=`を使って宣言と初期化を行います：
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## 型推論
 
-V infers types from the initializer:
+Vは初期化子から型を推論します：
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## 明示的な型
 
-You can specify types explicitly:
+型を明示的に指定することもできます：
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## 次へ
 
-[Data Types](ch03-02-data-types.md)
+[データ型](ch03-02-data-types.md)

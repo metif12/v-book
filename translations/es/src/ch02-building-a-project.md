@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Capítulo 2: Construyendo un Proyecto
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+En este capítulo, aprenderás a estructurar un proyecto V, usar `v.mod`, formatear código con `v fmt` y escribir pruebas con `v test`.
 
-## Project structure
+## Estructura del proyecto
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Un proyecto V es un directorio con un archivo `v.mod` y uno o más archivos `.v`:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Todo proyecto V tiene un archivo `v.mod` que describe el proyecto:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Crea un nuevo proyecto con:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Esto crea un `v.mod` y un `main.v` con una plantilla básica.
 
-## Formatting with v fmt
+## Formateo con v fmt
 
-V has a built-in code formatter. Run it on your project:
+V tiene un formateador de código integrado. Ejecútalo en tu proyecto:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+La opción `-w` escribe el código formateado de vuelta en los archivos.
 
-## Testing with v test
+## Pruebas con v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V tiene un framework de pruebas integrado. Crea un archivo que termine en `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Ejecuta las pruebas:
 
 ```bash
 v test .
 ```
 
-## Summary
+## Resumen
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+En este capítulo, aprendiste a estructurar un proyecto V, usar `v.mod`, formatear código y escribir pruebas. En el siguiente capítulo, profundizaremos en los conceptos comunes de programación en V.

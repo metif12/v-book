@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# Chapitre 14 : Concurrence
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V dispose d'un support intégré de concurrence avec les goroutines, les canaux et l'état partagé.
 
-## Spawning goroutines
+## Lancer des goroutines
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+Une goroutine est un thread léger. Démarrez-en une avec le mot-clé `go` :
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+Le mot-clé `go` démarre la fonction dans une nouvelle goroutine et retourne immédiatement. La fonction main n'attend pas que les goroutines se terminent d'elle-même.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+Pour attendre les goroutines, utilisez un `sync.WaitGroup` :
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` incrémente le compteur avant le démarrage de la goroutine. `wg.done()` le décrémente lorsque la goroutine se termine. `wg.wait()` bloque jusqu'à ce que le compteur atteigne zéro.
 
-## Channels
+## Canaux
 
-Channels pass values between goroutines. Create one with `chan T`:
+Les canaux transmettent des valeurs entre les goroutines. Créez-en un avec `chan T` :
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+Un canal non tamponné bloque à l'envoi jusqu'à ce qu'un récepteur soit prêt. Un canal tamponné a une capacité et ne bloque pas tant qu'il n'est pas plein :
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+La direction d'un canal restreint son utilisation. `chan<- T` est en écriture seule, `<-chan T` est en lecture seule :
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## État partagé
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+Lorsque des goroutines partagent un état mutable, protégez-le avec un `sync.Mutex` :
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` bloque jusqu'à ce que le mutex soit disponible, puis le conserve pour la portée du bloc. Gardez la section critique courte.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+Utilisez `sync.RwMutex` lorsque les lectures sont plus fréquentes que les écritures. Il permet plusieurs lecteurs simultanément :
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+Pour une valeur unique, utilisez les atomiques de `sync.stdatomic` au lieu d'un verrou :
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## Instruction select
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` attend sur plusieurs canaux et renvoie l'index du premier qui est prêt. Un timeout négatif attend indéfiniment ; un timeout positif renvoie -1 en cas de dépassement :
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+Dans ce chapitre, vous avez appris les goroutines, les canaux, l'état partagé et select. Dans le chapitre suivant, nous explorerons le framework web Veb.

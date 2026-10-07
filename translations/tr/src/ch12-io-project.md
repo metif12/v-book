@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Bölüm 12: I/O Projesi: CLI Aracı Oluşturma
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+Bu bölümde bir dosyayı okuyan ve satır, kelime ve karakter sayan basit bir komut satırı aracı oluşturacağız.
 
-## Project setup
+## Proje kurulumu
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## Uygulama
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## Çalıştırma
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## Özet
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+Bu bölümde bir komut satırı aracı oluşturdunuz. Sonraki bölümde fonksiyonel özellikleri inceleyeceğiz.

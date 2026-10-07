@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# فصل ۱۰: ژنریک‌ها
 
-Generics allow you to write code that works with any type.
+ژنریک‌ها به شما اجازه می‌دهند کدی بنویسید که با هر نوعی کار کند.
 
-## Generic functions
+## توابع ژنریک
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## struct های ژنریک
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## محدودیت‌های نوع
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+در این فصل، درباره توابع و struct های ژنریک یاد گرفتید. در فصل بعد، به تست‌نویسی می‌پردازیم.

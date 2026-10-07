@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# 부록 B: 연산자
 
-## Arithmetic
+## 산술
 
-| Operator | Description |
+| 연산자 | 설명 |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | 덧셈 |
+| `-` | 뺄셈 |
+| `*` | 곱셈 |
+| `/` | 나눗셈 |
+| `%` | 나머지 |
+| `**` | 거듭제곱 |
 
-## Comparison
+## 비교
 
-| Operator | Description |
+| 연산자 | 설명 |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | 같음 |
+| `!=` | 같지 않음 |
+| `<` | 미만 |
+| `>` | 초과 |
+| `<=` | 이하 |
+| `>=` | 이상 |
 
-## Logical
+## 논리
 
-| Operator | Description |
+| 연산자 | 설명 |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | 논리 AND |
+| `\|\|` | 논리 OR |
+| `!` | 논리 NOT |
 
-## Bitwise
+## 비트
 
-| Operator | Description |
+| 연산자 | 설명 |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | 비트 AND |
+| `\|` | 비트 OR |
+| `^` | 비트 XOR |
+| `<<` | 왼쪽 시프트 |
+| `>>` | 오른쪽 시프트 |
 
-## Assignment
+## 대입
 
-| Operator | Description |
+| 연산자 | 설명 |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | 대입 |
+| `:=` | 짧은 선언 |
+| `+=` | 덧셈 후 대입 |
+| `-=` | 뺄셈 후 대입 |
+| `*=` | 곱셈 후 대입 |
+| `/=` | 나눗셈 후 대입 |
+| `%=` | 나머지 후 대입 |

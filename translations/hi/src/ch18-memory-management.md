@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# अध्याय 18: मेमोरी मैनेजमेंट डीप डाइव
 
-## GC modes
+## GC मोड
 
-V provides several memory management strategies, each suited to different use cases.
+V कई मेमोरी मैनेजमेंट रणनीतियाँ प्रदान करता है, प्रत्येक अलग-अलग उपयोग के लिए उपयुक्त।
 
-| Mode | Flag | Use case |
+| मोड | फ़्लैग | उपयोग |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | सामान्य उद्देश्य |
+| Autofree | `-autofree` | स्वचालित फ्रीइंग |
+| None | `-gc none` | मैनुअल मैनेजमेंट |
+| Prealloc | `-prealloc` | एरेना एलोकेशन |
 
-## Stack vs heap
+## स्टैक बनाम हीप
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V स्वचालित रूप से तय करता है कि मेमोरी कहाँ एलोकेट करनी है। छोटे, अल्पकालिक मान स्टैक पर रहते हैं। बड़े या एस्केप किए गए मान हीप पर जाते हैं।
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## ऑटोफ्री मोड
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+ऑटोफ्री वेरिएबल के स्कोप से बाहर जाने पर स्वचालित रूप से मेमोरी फ्री करता है। यह हीप एलोकेशन के लिए रेफरेंस काउंटिंग का उपयोग करता है।
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none और मैनुअल मेमोरी
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+`-gc none` के साथ, V गार्बेज कलेक्शन को अक्षम करता है। आपको `free` का उपयोग करके मेमोरी को मैनुअल रूप से प्रबंधित करना होगा।
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -prealloc एरेना एलोकेशन
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc टाइट लूप में बेहतर परफ़ॉर्मेंस के लिए एरेना एलोकेशन का उपयोग करता है। एलोकेशन को थोक में फ्री किया जाता है।
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## असुरक्षित कोड
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+`unsafe` ब्लॉक ऐसे ऑपरेशन की अनुमति देता है जो V की सुरक्षा गारंटी को बायपास करते हैं, जैसे पॉइंटर अंकगणित और सीधी मेमोरी एक्सेस।
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### पॉइंटर अंकगणित
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## परफ़ॉर्मेंस ट्यूनिंग
 
-Choosing the right memory management mode can significantly impact performance.
+सही मेमोरी मैनेजमेंट मोड चुनना परफ़ॉर्मेंस को काफी प्रभावित कर सकता है।
 
-### Benchmarking different modes
+### विभिन्न मोड की बेंचमार्किंग
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### डेटा स्ट्रक्चर का ऑप्टिमाइज़ेशन
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+इस अध्याय में, आपने मेमोरी मैनेजमेंट मोड, स्टैक बनाम हीप एलोकेशन, ऑटोफ्री, मैनुअल मेमोरी मैनेजमेंट, prealloc, असुरक्षित कोड और परफ़ॉर्मेंस ट्यूनिंग के बारे में सीखा। अगले अध्याय में, हम टूलिंग का पता लगाएंगे।

@@ -1,6 +1,6 @@
-# Garbage Collection
+# গার্বেজ কালেকশন
 
-V uses a garbage collector by default:
+V ডিফল্টভাবে গার্বেজ কালেক্টর ব্যবহার করে:
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## GC নিষ্ক্রিয় করা
 
-For performance-critical code, you can disable GC:
+পারফরম্যান্স-সংবেদনশীল কোডের জন্য, আপনি GC নিষ্ক্রিয় করতে পারেন:
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## পরবর্তী
 
-[Autofree](ch04-03-autofree.md)
+[অটোফ্রি](ch04-03-autofree.md)

@@ -1,4 +1,4 @@
-# Embedded Structs
+# ایمبیڈڈ structs
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[رسائی کی تعدیل کار](ch05-04-access-modifiers.md)

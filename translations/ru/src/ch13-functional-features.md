@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# Глава 13: Функциональные возможности
 
-V supports closures and higher-order functions.
+V поддерживает замыкания и функции высшего порядка.
 
-## Closures
+## Замыкания
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## Функции высшего порядка
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## Анонимные функции
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+В этой главе вы узнали о замыканиях и функциях высшего порядка. В следующей главе мы рассмотрим конкурентность.

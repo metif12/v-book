@@ -1,4 +1,4 @@
-# Maps
+# मैप
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## मैप ऑपरेशन
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Strings](ch08-03-strings.md)
+[स्ट्रिंग](ch08-03-strings.md)

@@ -1,18 +1,18 @@
-# Chapter 4: Ownership and Memory
+# 第 4 章：所有权与内存
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V 采用了与许多语言不同的内存管理方式。V 不是单纯依赖手动内存管理或垃圾回收，而是提供了多种策略。
 
-## Stack and Heap
+## 栈与堆
 
-V automatically decides whether to allocate on the stack or heap:
+V 自动决定是在栈上还是堆上分配内存：
 
 ```v
 fn main() {
-    // Stack-allocated (small, fixed size)
+    // 栈分配（小，固定大小）
     x := 42
     arr := [1, 2, 3]
 
-    // Heap-allocated (large, dynamic)
+    // 堆分配（大，动态）
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## 垃圾回收
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V 默认使用垃圾回收器。你不需要手动释放内存：
 
 ```v
 fn main() {
@@ -32,14 +32,14 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // Memory is automatically freed when no longer referenced
+    // 内存不再被引用时自动释放
     println(names.len)
 }
 ```
 
-## Autofree
+## 自动释放
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V 有自动释放模式，当变量离开作用域时自动释放内存：
 
 ```bash
 v -autofree main.v
@@ -51,7 +51,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data is automatically freed here
+    // data 在这里自动释放
 }
 
 fn main() {
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## 引用
 
-You can use references to avoid copying large data:
+你可以使用引用来避免复制大量数据：
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## 内存管理模式
 
-| Mode | Flag | Description |
+| 模式 | 参数 | 描述 |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC（默认） | `-gc boehm` | Boehm 垃圾回收器 |
+| 自动释放 | `-autofree` | 自动内存释放 |
+| 无 | `-gc none` | 手动内存管理 |
+| 预分配 | `-prealloc` | 竞技场分配 |
 
-## Summary
+## 小结
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+在本章中，你学习了 V 的内存管理选项。在下一章中，我们将探讨结构体。

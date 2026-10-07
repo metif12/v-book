@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# الفصل 11: الاختبار
 
-V has a built-in testing framework.
+V لديه إطار عمل اختبار مدمج.
 
-## Test files
+## ملفات الاختبار
 
-Create a file ending in `_test.v`:
+أنشئ ملفاً ينتهي بـ `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## تشغيل الاختبارات
 
 ```bash
 v test .
 ```
 
-## Test organization
+## تنظيم الاختبارات
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## اختبارات قائمة على الجداول
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+في هذا الفصل، تعلمت عن إطار عمل الاختبار في V. في الفصل التالي، سنبني أداة سطر أوامر.

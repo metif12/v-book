@@ -1,22 +1,22 @@
-# Variables and Mutability
+# Değişkenler ve Değişkenlik
 
-In V, variables are immutable by default:
+V'de değişkenler varsayılan olarak değişmezdir:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Hata: name değişmez
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // Tamam: count değişkendir
     count++
     println(count)
 }
 ```
 
-## Declaration
+## Tanımlama
 
-Use `:=` to declare and initialize:
+Tanımlamak ve başlatmak için `:=` kullanın:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## Tip çıkarımı
 
-V infers types from the initializer:
+V, tipleri başlatıcıdan çıkarır:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## Açık tipler
 
-You can specify types explicitly:
+Tipleri açıkça belirtebilirsiniz:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## Sonraki
 
-[Data Types](ch03-02-data-types.md)
+[Veri Tipleri](ch03-02-data-types.md)

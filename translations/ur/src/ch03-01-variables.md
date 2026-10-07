@@ -1,6 +1,6 @@
-# Variables and Mutability
+# متغیرات اور تبدیلی پذیری
 
-In V, variables are immutable by default:
+V میں، متغیرات ڈیفالٹ طور پر غیر تبدیل پذیر ہوتے ہیں:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## تعریف
 
-Use `:=` to declare and initialize:
+تعریف اور ابتدائی قدر کے لیے `:=` استعمال کریں:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## ٹائپ کا استنتاج
 
-V infers types from the initializer:
+V ابتدائی قدر سے ٹائپ کا استنتاج کرتا ہے:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## صریح اقسام
 
-You can specify types explicitly:
+آپ اقسام کو صریح طور پر بھی بتا سکتے ہیں:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## اگلا
 
-[Data Types](ch03-02-data-types.md)
+[ڈیٹا کی اقسام](ch03-02-data-types.md)

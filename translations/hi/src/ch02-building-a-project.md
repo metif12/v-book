@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# अध्याय 2: प्रोजेक्ट बनाना
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+इस अध्याय में, आप सीखेंगे कि V प्रोजेक्ट को कैसे संरचित करें, `v.mod` का उपयोग कैसे करें, `v fmt` के साथ कोड को कैसे फॉर्मेट करें, और `v test` के साथ टेस्ट कैसे लिखें।
 
-## Project structure
+## प्रोजेक्ट संरचना
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+एक V प्रोजेक्ट एक डायरेक्टरी है जिसमें एक `v.mod` फ़ाइल और एक या अधिक `.v` फ़ाइलें होती हैं:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+प्रत्येक V प्रोजेक्ट में एक `v.mod` फ़ाइल होती है जो प्रोजेक्ट का वर्णन करती है:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+नया प्रोजेक्ट बनाने के लिए:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+यह एक `v.mod` और एक `main.v` बनाता है बुनियादी टेम्पलेट के साथ।
 
-## Formatting with v fmt
+## v fmt के साथ फॉर्मेटिंग
 
-V has a built-in code formatter. Run it on your project:
+V में एक बिल्ट-इन कोड फॉर्मेटर है। अपने प्रोजेक्ट पर इसे चलाएं:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+`-w` फ़्लैग फॉर्मेट किए गए कोड को वापस फ़ाइलों में लिखता है।
 
-## Testing with v test
+## v test के साथ टेस्टिंग
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V में एक बिल्ट-इन टेस्टिंग फ्रेमवर्क है। `_test.v` पर समाप्त होने वाली एक फ़ाइल बनाएं:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+टेस्ट चलाएं:
 
 ```bash
 v test .
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+इस अध्याय में, आपने सीखा कि V प्रोजेक्ट को कैसे संरचित करें, `v.mod` का उपयोग कैसे करें, कोड को कैसे फॉर्मेट करें, और टेस्ट कैसे लिखें। अगले अध्याय में, हम V की सामान्य प्रोग्रामिंग अवधारणाओं में गहराई से जाएंगे।

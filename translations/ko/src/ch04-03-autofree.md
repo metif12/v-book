@@ -1,6 +1,6 @@
 # Autofree
 
-V has an autofree mode that automatically frees memory:
+V에는 메모리를 자동으로 해제하는 autofree 모드가 있습니다:
 
 ```bash
 v -autofree main.v
@@ -12,7 +12,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data is automatically freed here
+    // data는 여기서 자동으로 해제됩니다
 }
 
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[References](ch04-04-references.md)
+[참조](ch04-04-references.md)

@@ -1,6 +1,6 @@
-# Hello, V!
+# سلام، V!
 
-Let's look at a more interesting example:
+بیایید یک نمونه جالب‌تر را بررسی کنیم:
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+آن را اجرا کنید:
 
 ```bash
 v run main.v
 ```
 
-Output:
+خروجی:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## درون‌یابی رشته
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V از `${...}` برای درون‌یابی رشته استفاده می‌کند. هر عبارت داخل `${...}` ارزیابی و به رشته تبدیل می‌شود:
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## متغیرها
 
-Use `:=` to declare and initialize a variable:
+از `:=` برای تعریف و مقداردهی اولیه یک متغیر استفاده کنید:
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[فصل ۲: ساخت یک پروژه](ch02-building-a-project.md)

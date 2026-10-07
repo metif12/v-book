@@ -1,6 +1,6 @@
-# Access Modifiers
+# アクセス修飾子
 
-Fields are private by default:
+フィールドはデフォルトでプライベートです：
 
 ```v
 struct User {
@@ -11,18 +11,18 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
-    println(u.age)   // OK: public
+    println(u.name)  // OK: 同じモジュール
+    println(u.age)   // OK: パブリック
 }
 ```
 
-## Visibility
+## 可視性
 
-| Modifier | Scope |
+| 修飾子 | スコープ |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| （なし） | モジュール内のみ |
+| `pub` | パブリック |
 
-## Next
+## 次へ
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[第6章：enumとsum型](ch06-enums-and-sum-types.md)

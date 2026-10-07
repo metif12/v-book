@@ -1,6 +1,6 @@
-# Variables and Mutability
+# Variables y Mutabilidad
 
-In V, variables are immutable by default:
+En V, las variables son inmutables por defecto:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## Declaración
 
-Use `:=` to declare and initialize:
+Usa `:=` para declarar e inicializar:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## Inferencia de tipos
 
-V infers types from the initializer:
+V infiere los tipos a partir del inicializador:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## Tipos explícitos
 
-You can specify types explicitly:
+Puedes especificar tipos explícitamente:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## Siguiente
 
-[Data Types](ch03-02-data-types.md)
+[Tipos de Datos](ch03-02-data-types.md)

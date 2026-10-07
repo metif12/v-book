@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# अपेंडिक्स D: स्टैंडर्ड लाइब्रेरी ओवरव्यू
 
-V's standard library includes:
+V की स्टैंडर्ड लाइब्रेरी में शामिल हैं:
 
-| Module | Description |
+| मॉड्यूल | विवरण |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | ऑपरेटिंग सिस्टम इंटरफ़ेस |
+| `io` | इनपुट/आउटपुट |
+| `strings` | स्ट्रिंग यूटिलिटीज़ |
+| `arrays` | ऐरे यूटिलिटीज़ |
+| `math` | गणितीय फ़ंक्शन |
+| `time` | समय और तारीख |
+| `json` JSON एन्कोडिंग/डीकोडिंग |
+| `http` | HTTP क्लाइंट/सर्वर |
+| `db` | डेटाबेस इंटरफ़ेस |
+| `rand` | रैंडम नंबर जनरेशन |
+| `crypto` | क्रिप्टोग्राफ़िक फ़ंक्शन |
+| `encoding` | एन्कोडिंग यूटिलिटीज़ |
+| `term` | टर्मिनल यूटिलिटीज़ |
+| `sync` | सिंक्रोनाइज़ेशन प्रिमिटिव्स |
+| `v.ast` | V AST मैनिपुलेशन |
+| `v.compiler` | कंपाइलर यूटिलिटीज़ |

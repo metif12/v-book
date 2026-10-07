@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# অধ্যায় 13: ফাংশনাল ফিচার
 
-V supports closures and higher-order functions.
+V ক্লোজার এবং হায়ার-অর্ডার ফাংশন সমর্থন করে।
 
-## Closures
+## ক্লোজার
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## হায়ার-অর্ডার ফাংশন
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## বেনামী ফাংশন
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+এই অধ্যায়ে আপনি ক্লোজার এবং হায়ার-অর্ডার ফাংশন সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা কনকারেন্সি শিখব।

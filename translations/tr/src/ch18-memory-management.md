@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# Bölüm 18: Bellek Yönetimi Derinlemesine
 
-## GC modes
+## GC modları
 
-V provides several memory management strategies, each suited to different use cases.
+V, her biri farklı kullanım durumlarına uygun çeşitli bellek yönetimi stratejileri sağlar.
 
-| Mode | Flag | Use case |
+| Mod | Bayrak | Kullanım durumu |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | Genel amaçlı |
+| Autofree | `-autofree` | Otomatik serbest bırakma |
+| Yok | `-gc none` | Manuel yönetim |
+| Prealloc | `-prealloc` | Arena tahsisi |
 
-## Stack vs heap
+## Yığın vs yığın (Heap)
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V, belleğin nereye tahsis edileceğini otomatik olarak belirler. Küçük, kısa ömürlü değerler yığında kalır. Daha büyük veya kaçan değerler heap'e gider.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## Autofree modu
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Autofree, değişkenler kapsam dışına çıktığında belleği otomatik olarak serbest bırakır. Heap tahsisleri için referans sayımı kullanır.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none ve manuel bellek
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+`-gc none` ile V, çöp toplamayı devre dışı bırakır. `free` kullanarak belleği manuel olarak yönetmeniz gerekir.
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -prealloc arena tahsisi
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc, sıkı döngülerde daha iyi performans için arena tahsisi kullanır. Tahsisler toplu halde serbest bırakılır.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## Güvensiz kod
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+`unsafe` bloğu, V'nin güvenlik garantilerini bypass eden işlemlere izin verir, örneğin pointer aritmetiği ve doğrudan bellek erişimi.
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### Pointer aritmetiği
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## Performans ayarlama
 
-Choosing the right memory management mode can significantly impact performance.
+Doğru bellek yönetimi modunu seçmek performansı önemli ölçüde etkileyebilir.
 
-### Benchmarking different modes
+### Farklı modlarda benchmark
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### Veri yapılarını optimizasyon
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+Bu bölümde bellek yönetimi modları, yığın vs heap tahsisi, autofree, manuel bellek yönetimi, prealloc, güvensiz kod ve performans ayarlama hakkında bilgi edindiniz. Sonraki bölümde araçları inceleyeceğiz.

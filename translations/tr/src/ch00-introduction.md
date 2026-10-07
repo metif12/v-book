@@ -1,33 +1,33 @@
-# Introduction
+# Giriş
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*V Programlama Dili Kitabı*, [V programlama dili](https://vlang.io) için kapsamlı bir rehberdir — bakımı yapılabilir yazılımlar oluşturmak için basit, hızlı, güvenli, derlenmiş bir dil.
 
-## Who this book is for
+## Bu kitap kim için
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+Bu kitap, başka bir dille programlama konusunda biraz deneyim sahibi olduğunuzu varsayar. V bildiğinizi varsaymayız. Temellerden başlayıp ileri seviye konulara doğru ilerliyoruz.
 
-## How to use this book
+## Bu kitap nasıl kullanılır
 
-The book is organized into parts:
+Kitap bölümler halinde düzenlenmiştir:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **Bölüm I: Başlangıç** — V'yi kurun, ilk programınızı yazın, proje yapısını anlayın.
+- **Bölüm II: Ortak Programlama Kavramları** — Değişkenler, tipler, fonksiyonlar, kontrol akışı, struct'lar, enum'lar, modüller, koleksiyonlar, hata yönetimi.
+- **Bölüm III: Orta Seviye V** — Generics, test etme, eşzamanlılık, web geliştirme, C birlikte çalışma, gelişmiş özellikler ve bir final projesi.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+Her bölüm öncekine dayanır. Kod örnekleri CI'da test edilir — bu kitaptaki her V kod bloğu otomatik olarak derlenir ve çalıştırılır.
 
-## Code examples
+## Kod örnekleri
 
-Code examples in this book follow these conventions:
+Bu kitaptaki kod örnekleri şu kurallara uyar:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v` kod blokları CI'da derlenir ve çalıştırılır.
+- `v ignore` kod blokları derlenmez (pseudocode veya eksik örnekler için kullanılır).
+- `v no_run` kod blokları derlenir ama çalıştırılmaz (engelleyecek veya girdi gerektirecek örnekler için kullanılır).
 
-## Translations
+## Çeviriler
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+Bu kitap 16 dilde mevcuttur. Tam liste için [Ek F](appendix-f-translations.md)'e bakın.
 
-## Contributing
+## Katkıda Bulunma
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+Bu kitap bir topluluk projesidir. Nasıl katkıda bulunacağınızı öğrenmek için [GitHub deposuna](https://github.com/vlang/v-book) bakın.

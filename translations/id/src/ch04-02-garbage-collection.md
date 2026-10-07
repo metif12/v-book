@@ -1,6 +1,6 @@
 # Garbage Collection
 
-V uses a garbage collector by default:
+V menggunakan garbage collector secara default:
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## Menonaktifkan GC
 
-For performance-critical code, you can disable GC:
+Untuk kode yang kritis terhadap performa, Anda dapat menonaktifkan GC:
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## Berikutnya
 
 [Autofree](ch04-03-autofree.md)

@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# الفصل 4: الملكية والذاكرة
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+يتبع V نهجاً مختلفاً في إدارة الذاكرة مقارنة بالعديد من اللغات. بدلاً من إدارة الذاكرة اليدوية أو جمع القمامة وحده، يقدم V استراتيجيات متعددة.
 
-## Stack and Heap
+## المكدس والكومة
 
-V automatically decides whether to allocate on the stack or heap:
+يقرر V تلقائياً ما إذا كان سيخصص في المكدس أو الكومة:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## جمع القمامة
 
-V uses a garbage collector by default. You don't need to free memory manually:
+يستخدم V جامع قمامة افتراضياً. لا تحتاج لتحرير الذاكرة يدوياً:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## التحرير التلقائي
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+لديه V وضع التحرير التلقائي الذي يحرر الذاكرة تلقائياً عندما تخرج المتغيرات من النطاق:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## المراجع
 
-You can use references to avoid copying large data:
+يمكنك استخدام المراجع لتجنب نسخ البيانات الكبيرة:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## أوضاع إدارة الذاكرة
 
-| Mode | Flag | Description |
+| الوضع | العلمة | الوصف |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (افتراضي) | `-gc boehm` | جامع قمامة Boehm |
+| التحرير التلقائي | `-autofree` | تحرير تلقائي للذاكرة |
+| بدون | `-gc none` | إدارة يدوية للذاكرة |
+| التخصيص المسبق | `-prealloc` | تخصيص الساحة |
 
-## Summary
+## الملخص
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+في هذا الفصل، تعلمت عن خيارات إدارة الذاكرة في V. في الفصل التالي، سنستكشف structs.

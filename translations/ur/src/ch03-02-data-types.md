@@ -1,34 +1,34 @@
-# Data Types
+# ڈیٹا کی اقسام
 
-## Integer types
+## عددی اقسام
 
-| Type | Size | Range |
+| ٹائپ | سائز | حد |
 |------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| `i8` | 8-bit | -128 سے 127 |
+| `i16` | 16-bit | -32,768 سے 32,767 |
+| `i32` | 32-bit | -2^31 سے 2^31-1 |
+| `i64` | 64-bit | -2^63 سے 2^63-1 |
+| `int` | پلیٹ فارم | عموماً 64-bit |
+| `u8` | 8-bit | 0 سے 255 |
+| `u16` | 16-bit | 0 سے 65,535 |
+| `u32` | 32-bit | 0 سے 2^32-1 |
+| `u64` | 64-bit | 0 سے 2^64-1 |
 
-## Float types
+## فلوٹ اقسام
 
-| Type | Size |
+| ٹائپ | سائز |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## دیگر اقسام
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` یا `false`
+- `string` — UTF-8 اسٹرنگ
+- `rune` — واحد یونیکوڈ کریکٹر (`u32` کا ایلیاس)
+- `byte` — `u8` کا ایلیاس
 
-## Type conversion
+## ٹائپ کنورژن
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Functions](ch03-03-functions.md)
+[فنکشنز](ch03-03-functions.md)

@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# Bab 16: C Interop
 
-V can call C functions and be called from C.
+V dapat memanggil fungsi C dan dapat dipanggil dari C.
 
-## Calling C from V
+## Memanggil C dari V
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V dapat langsung memanggil fungsi C menggunakan modul `C`. Anda perlu mendeklarasikan signature fungsi C dan menyertakan header yang diperlukan.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+Direktif `#flag` meneruskan flag ke kompiler C. Misalnya, `-lm` menghubungkan library math. Direktif `#include` menyertakan file header C agar kompiler mengetahui fungsi C. Deklarasi `fn C.function_name` memberi tahu V tentang signature fungsi C.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+Anda dapat memanggil fungsi apa pun dengan mendeklarasikan signature-nya. Misalnya, untuk memanggil `puts`:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## Memanggil V dari C
 
-Compile V to a shared library:
+Kompilasi V menjadi shared library:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+Kemudian gunakan shared library dari C:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V dapat menerjemahkan kode C ke V:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## Bekerja dengan tipe C
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V menyediakan tipe yang kompatibel dengan C seperti `C.int`, `C.double`, `C.char`, dll.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## Callback
 
-You can pass V functions to C callbacks:
+Anda dapat meneruskan fungsi V ke callback C:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+Dalam bab ini, Anda telah belajar tentang C interop. Di bab berikutnya, kita akan menjelajahi fitur lanjutan.

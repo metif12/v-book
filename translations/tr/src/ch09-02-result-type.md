@@ -1,4 +1,4 @@
-# Result Type
+# Result Tipi
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## Hata yayma
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Custom Errors](ch09-03-custom-errors.md)
+[Özel Hatalar](ch09-03-custom-errors.md)

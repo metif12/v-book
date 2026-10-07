@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# 第8章：コレクション
 
-## Arrays
+## 配列
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## マップ
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## 文字列
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+この章では、配列、マップ、文字列について学びました。次の章では、エラー処理を見ていきます。

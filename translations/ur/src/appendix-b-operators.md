@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# ضمیمہ B: آپریٹرز
 
-## Arithmetic
+## حسابی
 
-| Operator | Description |
+| آپریٹر | تفصیل |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | جمع |
+| `-` | تفریق |
+| `*` | ضرب |
+| `/` | تقسیم |
+| `%` | موڈیولو |
+| `**` | طاقت |
 
-## Comparison
+## موازنہ
 
-| Operator | Description |
+| آپریٹر | تفصیل |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | برابر |
+| `!=` | غیر برابر |
+| `<` | کم از کم |
+| `>` | زیادہ از زیادہ |
+| `<=` | کم از کم یا برابر |
+| `>=` | زیادہ از زیادہ یا برابر |
 
-## Logical
+## منطقی
 
-| Operator | Description |
+| آپریٹر | تفصیل |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | منطقی AND |
+| `\|\|` | منطقی OR |
+| `!` | منطقی NOT |
 
-## Bitwise
+## بٹ وائز
 
-| Operator | Description |
+| آپریٹر | تفصیل |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | بٹ وائز AND |
+| `\|` | بٹ وائز OR |
+| `^` | بٹ وائز XOR |
+| `<<` | بائیں شفٹ |
+| `>>` | دائیں شفٹ |
 
-## Assignment
+## اسائنمنٹ
 
-| Operator | Description |
+| آپریٹر | تفصیل |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | اسائنمنٹ |
+| `:=` | مختصر تعریف |
+| `+=` | جمع اور اسائن کریں |
+| `-=` | تفریق اور اسائن کریں |
+| `*=` | ضرب اور اسائن کریں |
+| `/=` | تقسیم اور اسائن کریں |
+| `%=` | موڈیولو اور اسائن کریں |

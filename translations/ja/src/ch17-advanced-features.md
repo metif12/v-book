@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# 第17章：高度な機能
 
-## Attributes
+## アトリビュート
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+アトリビュートは宣言の前に置かれたメタデータアノテーションです。コンパイラの動作、最適化ヒント、APIのライフサイクルを制御します。
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+関数または型を非推奨としてマークします。項目が使用されるとコンパイラが警告を出力します。
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+コンパイラに関数を呼び出し地点でインライン展開するようヒントを出します。呼び出しオーバーヘッドを排除します。小さくて頻繁に呼び出される関数に最適です。
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+関数をunsafeとしてマークし、呼び出し元もunsafeとしてマークすることなく`unsafe`ブロックを使用できるようにします。
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+コンパイル時の条件付きコンパイルです。条件がtrueの場合にのみブロックが含まれます。
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## コンパイル時コード
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+Vはコンパイル中に実行されるいくつかのコンパイル時構文を提供し、メタプログラミングとゼロコスト抽象化を可能にします。
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+コンパイル時に条件を評価します。プラットフォーム検出、アーキテクチャチェック、カスタムフラグをサポートします。
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+コンパイル時に配列、structフィールド、範囲を反復処理します。反復的なコードの生成に便利です。
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+条件がfalseの場合にコンパイルを中止するコンパイル時アサーションです。
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## 演算子オーバーロード
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+Vはユーザー定義型に対する演算子のカスタム動作を定義できます。各演算子は特定のシグネチャを持つメソッドにマップされます。
 
-### Arithmetic operators
+### 算術演算子
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### 比較演算子
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### インデックス演算子
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## コンパイル時リフレクション
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+Vの`$for`構文はコンパイル時にstructフィールドを反復処理でき、自動シリアライズ、バリデーションなどを可能にします。
 
-### Iterating struct fields
+### structフィールドの反復処理
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### バリデーションコードの生成
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+この章では、アトリビュート、コンパイル時コード、演算子オーバーロード、コンパイル時リフレクションについて学びました。これらの機能は強力なメタプログラミングパターンとコンパイルのきめ細かな制御を可能にします。次の章では、メモリ管理を詳しく見ていきます。

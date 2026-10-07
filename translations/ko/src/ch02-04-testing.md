@@ -1,6 +1,6 @@
-# Testing with v test
+# v test로 테스트하기
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V에는 내장 테스팅 프레임워크가 있습니다. `_test.v`로 끝나는 파일을 생성하세요:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+테스트 실행:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## 테스트 함수
 
-Test functions start with `test_` and take no arguments:
+테스트 함수는 `test_`로 시작하며 인자를 받지 않습니다:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## 어서션
 
-Use `assert` to check conditions:
+`assert`를 사용하여 조건을 확인하세요:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## 다음
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[Chapter 3: 공통 개념](ch03-common-concepts.md)

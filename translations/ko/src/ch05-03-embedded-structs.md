@@ -1,4 +1,4 @@
-# Embedded Structs
+# 임베디드 Struct
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[접근 제어자](ch05-04-access-modifiers.md)

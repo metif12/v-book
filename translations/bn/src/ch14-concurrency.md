@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# অধ্যায় 14: কনকারেন্সি
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V-তে goroutine, channel এবং শেয়ার্ড স্টেট সহ বিল্ট-ইন কনকারেন্সি সমর্থন আছে।
 
-## Spawning goroutines
+## goroutine চালু করা
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+একটি goroutine হল একটি হালকা থ্রেড। `go` কীওয়ার্ড দিয়ে শুরু করুন:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+`go` কীওয়ার্ড ফাংশনটি একটি নতুন goroutine-এ শুরু করে এবং সঙ্গে সঙ্গে ফিরে আসে। main ফাংশন নিজে থেকে goroutine শেষ হওয়ার জন্য অপেক্ষা করে না।
 
-To wait for goroutines, use a `sync.WaitGroup`:
+goroutine-এর জন্য অপেক্ষা করতে, `sync.WaitGroup` ব্যবহার করুন:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` goroutine শুরুর আগে কাউন্টার বাড়ায়। `wg.done()` goroutine শেষ হলে কাউন্টার কমায়। `wg.wait()` কাউন্টার শূন্য না হওয়া পর্যন্ত ব্লক করে।
 
-## Channels
+## Channel
 
-Channels pass values between goroutines. Create one with `chan T`:
+Channel goroutine-এর মধ্যে মান পাঠায়। `chan T` দিয়ে তৈরি করুন:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+একটি আনবাফার্ড channel রিসিভার প্রস্তুত না হওয়া পর্যন্ত পাঠানোতে ব্লক করে। একটি বাফার্ড channel-এ একটি ক্যাপাসিটি থাকে এবং পূর্ণ না হওয়া পর্যন্ত ব্লক করে না:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+Channel দিক channel-এর ব্যবহার সীমাবদ্ধ করে। `chan<- T` শুধুমাত্র পাঠানোর জন্য, `<-chan T` শুধুমাত্র রিসিভ করার জন্য:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## শেয়ার্ড স্টেট
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+যখন goroutine মিউটেবল স্টেট শেয়ার করে, তখন `sync.Mutex` দিয়ে সুরক্ষিত করুন:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` mutex পাওয়া না পর্যন্ত ব্লক করে, তারপর ব্লকের স্কোপ পর্যন্ত এটি ধরে রাখে। ক্রিটিক্যাল সেকশন সংক্ষিপ্ত রাখুন।
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+যখন রিড লেখার চেয়ে বেশি ঘন ঘন হয়, তখন `sync.RwMutex` ব্যবহার করুন। এটি একসাথে একাধিক রিডারের অনুমতি দেয়:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+একটি একক মানের জন্য, লকের বদলে `sync.stdatomic` থেকে atomics ব্যবহার করুন:
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## select স্টেটমেন্ট
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` একাধিক channel-এ অপেক্ষা করে এবং প্রথম প্রস্তুত channel-এর ইনডেক্স ফেরত দেয়। ঋণাত্মক টাইমআউট অসীমকাল অপেক্ষা করে; ধনাত্মক টাইমআউট টাইমআউট হলে -1 ফেরত দেয়:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+এই অধ্যায়ে আপনি goroutine, channel, শেয়ার্ড স্টেট এবং select সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা Veb ওয়েব ফ্রেমওয়ার্ক শিখব।

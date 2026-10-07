@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# 第5章：struct
 
-Structs are V's way to define custom data types.
+structはVでカスタムデータ型を定義する方法です。
 
-## Defining Structs
+## structの定義
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## メソッド
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## 埋め込みstruct
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## アクセス修飾子
 
-Fields are private by default. Use `pub` to make them public:
+フィールドはデフォルトでプライベートです。パブリックにするには`pub`を使用します：
 
 ```v
 struct User {
@@ -69,11 +69,11 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
-    println(u.age)   // OK: public
+    println(u.name)  // OK: 同じモジュール
+    println(u.age)   // OK: パブリック
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+この章では、struct、メソッド、埋め込み、アクセス修飾子について学びました。次の章では、enumとsum型を見ていきます。

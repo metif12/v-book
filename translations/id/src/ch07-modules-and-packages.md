@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# Bab 7: Modul dan Paket
 
-## Module System
+## Sistem Modul
 
-V organizes code into modules. A module is a directory with `.v` files:
+V mengorganisir kode ke dalam modul. Sebuah modul adalah direktori dengan file `.v`:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## Visibilitas
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — public, dapat diakses dari modul lain
+- (tanpa modifier) — private, hanya modul tersebut
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+V Package Manager (VPM) menampung paket komunitas:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+Dalam bab ini, Anda telah belajar tentang modul, visibilitas, dan VPM. Di bab berikutnya, kita akan menjelajahi koleksi.

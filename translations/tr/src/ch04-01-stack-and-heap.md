@@ -1,6 +1,6 @@
-# Stack and Heap
+# Yığın ve Yığın (Heap)
 
-V automatically decides whether to allocate on the stack or heap:
+V, yığın mı yoksa heap mi tahsis edileceğini otomatik olarak belirler:
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## Yığın (Stack)
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- Hızlı tahsis ve serbest bırakma
+- Derleme zamanında sabit boyut
+- Kapsam sona erdiğinde otomatik olarak serbest bırakılır
 
-## Heap
+## Yığın (Heap)
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- Dinamik boyut
+- Daha yavaş tahsis
+- GC veya autofree tarafından yönetilir
 
-## Next
+## Sonraki
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[Çöp Toplama](ch04-02-garbage-collection.md)

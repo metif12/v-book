@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# پیوست C: مرجع نحوی V
 
-## Functions
+## توابع
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -8,7 +8,7 @@ fn function_name(param1 int, param2 string) int {
 }
 ```
 
-## Structs
+## struct ها
 
 ```v
 struct StructName {
@@ -19,7 +19,7 @@ pub:
 }
 ```
 
-## Enums
+## enum ها
 
 ```v
 enum EnumName {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## انواع جمع
 
 ```v
 struct Type1 {}
@@ -37,7 +37,7 @@ struct Type2 {}
 type SumType = Type1 | Type2
 ```
 
-## Interfaces
+## اینترفیس‌ها
 
 ```v
 interface InterfaceName {
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## ماژول‌ها
 
 ```v ignore
 module module_name

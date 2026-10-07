@@ -1,4 +1,4 @@
-# Module System
+# ماڈیول سسٹم
 
 ```
 my_project/
@@ -28,6 +28,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Visibility](ch07-02-visibility.md)
+[مرئیت](ch07-02-visibility.md)

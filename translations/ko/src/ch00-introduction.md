@@ -1,33 +1,33 @@
-# Introduction
+# 소개
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*V 프로그래밍 언어 북*은 [V 프로그래밍 언어](https://vlang.io)에 대한 종합 가이드입니다. V는 유지보수 가능한 소프트웨어를 구축하기 위한 간단하고, 빠르며, 안전한 컴파일 언어입니다.
 
-## Who this book is for
+## 이 책의 대상 독자
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+이 책은 다른 언어로 프로그래밍을 해본 경험이 있다고 가정합니다. V를 알고 있다고 가정하지는 않습니다. 기초부터 시작하여 고급 주제까지 차근차근 설명합니다.
 
-## How to use this book
+## 이 책을 사용하는 방법
 
-The book is organized into parts:
+이 책은 여러 파트로 구성되어 있습니다:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **Part I: 시작하기** — V 설치, 첫 번째 프로그램 작성, 프로젝트 구조 이해.
+- **Part II: 일반적인 프로그래밍 개념** — 변수, 타입, 함수, 제어 흐름, struct, enum, 모듈, 컬렉션, 에러 처리.
+- **Part III: 중급 V** — 제네릭, 테스팅, 동시성, 웹 개발, C 인터롭, 고급 기능, 그리고 최종 프로젝트.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+각 장은 이전 장의 내용을 기반으로 합니다. 코드 예제는 CI에서 테스트됩니다. 이 책의 모든 V 코드 블록은 자동으로 컴파일되고 실행됩니다.
 
-## Code examples
+## 코드 예제
 
-Code examples in this book follow these conventions:
+이 책의 코드 예제는 다음 규칙을 따릅니다:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v` 코드 블록은 CI에서 컴파일되고 실행됩니다.
+- `v ignore` 코드 블록은 컴파일되지 않습니다 (의사 코드 또는 불완전한 예제에 사용).
+- `v no_run` 코드 블록은 컴파일되지만 실행되지 않습니다 (블로킹되거나 입력이 필요한 예제에 사용).
 
-## Translations
+## 번역
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+이 책은 16개 언어로 제공됩니다. 전체 목록은 [부록 F](appendix-f-translations.md)를 참조하세요.
 
-## Contributing
+## 기여하기
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+이 책은 커뮤니티 프로젝트입니다. 기여 방법은 [GitHub 저장소](https://github.com/vlang/v-book)를 참조하세요.

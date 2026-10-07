@@ -1,6 +1,6 @@
-# Variables and Mutability
+# Variabel dan Mutabilitas
 
-In V, variables are immutable by default:
+Dalam V, variabel bersifat immutable secara default:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## Deklarasi
 
-Use `:=` to declare and initialize:
+Gunakan `:=` untuk mendeklarasikan dan menginisialisasi:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## Inferensi tipe
 
-V infers types from the initializer:
+V menyimpulkan tipe dari initializer:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## Tipe eksplisit
 
-You can specify types explicitly:
+Anda dapat menentukan tipe secara eksplisit:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## Berikutnya
 
-[Data Types](ch03-02-data-types.md)
+[Tipe Data](ch03-02-data-types.md)

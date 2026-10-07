@@ -1,4 +1,4 @@
-# Pattern Matching
+# پیٹرن میچنگ
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Match کی مکمل پیشکش
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## اگلا
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[باب ۷: ماڈیولز اور پیکجز](ch07-modules-and-packages.md)

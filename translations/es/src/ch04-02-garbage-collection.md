@@ -1,6 +1,6 @@
-# Garbage Collection
+# Recolección de Basura
 
-V uses a garbage collector by default:
+V usa un recolector de basura por defecto:
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## Desactivar el GC
 
-For performance-critical code, you can disable GC:
+Para código crítico en rendimiento, puedes desactivar el GC:
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## Siguiente
 
 [Autofree](ch04-03-autofree.md)

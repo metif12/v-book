@@ -1,15 +1,15 @@
-# Chapter 3: Common Concepts
+# Kapitel 3: Häufige Konzepte
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Dieses Kapitel behandelt die häufigen Programmierkonzepte in V: Variablen, Datentypen, Funktionen, Kommentare und Kontrollfluss.
 
-## Variables and Mutability
+## Variablen und Veränderbarkeit
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+In V sind Variablen standardmäßig unveränderlich. Verwenden Sie `mut`, um sie veränderbar zu machen:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Fehler: name is immutable
 
     mut count := 0
     count = 1  // OK: count is mutable
@@ -18,22 +18,22 @@ fn main() {
 }
 ```
 
-## Data Types
+## Datentypen
 
-V has a rich type system:
+V verfügt über ein umfangreiches Typsystem:
 
 ```v
 fn main() {
-    // Integers
+    // Ganzzahlen
     a := 42        // int
     b := i64(100)  // 64-bit integer
     c := u8(255)   // unsigned 8-bit
 
-    // Floats
+    // Gleitkommazahlen
     pi := 3.14     // f64
     e := f32(2.71) // 32-bit float
 
-    // Other types
+    // Andere Typen
     name := 'V'    // string
     is_ok := true  // bool
     letter := `A`  // rune (single character)
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Funktionen
 
-Functions are declared with `fn`:
+Funktionen werden mit `fn` deklariert:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Kommentare
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Kontrollfluss
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### For-Schleife
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+In diesem Kapitel haben Sie Variablen, Datentypen, Funktionen, Kommentare und Kontrollfluss in V kennengelernt. Im nächsten Kapitel untersuchen wir Ownership und Speicherverwaltung.

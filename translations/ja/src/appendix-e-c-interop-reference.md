@@ -1,25 +1,25 @@
-# Appendix E: V and C Interop Reference
+# 付録E：VとCの相互運用リファレンス
 
-## Including C code
+## Cコードのインクルード
 
 ```v ignore
 #include "myheader.h"
 ```
 
-## C flags
+## Cフラグ
 
 ```v
 #flag -lm
 #flag -I/path/to/include
 ```
 
-## Calling C functions
+## C関数の呼び出し
 
 ```v
 fn C.my_c_function(int) int
 ```
 
-## Exporting V functions
+## V関数のエクスポート
 
 ```v
 @[export: 'my_v_function']
@@ -28,7 +28,7 @@ fn my_v_function() {
 }
 ```
 
-## Shared libraries
+## 共有ライブラリ
 
 ```bash
 v -shared -o libmylib.so mylib.v

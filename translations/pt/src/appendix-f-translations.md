@@ -1,10 +1,10 @@
-# Appendix F: Translations
+# Apêndice F: Traduções
 
-This book is available in 16 languages:
+Este livro está disponível em 16 idiomas:
 
-| Code | Language | Status |
+| Código | Idioma | Status |
 |------|----------|--------|
-| en | English | Complete (canonical) |
+| en | English | Completo (canônico) |
 | zh | 简体中文 | TODO |
 | hi | हिन्दी | TODO |
 | es | Español | TODO |
@@ -21,6 +21,6 @@ This book is available in 16 languages:
 | tr | Türkçe | TODO |
 | ko | 한국어 | TODO |
 
-## Contributing
+## Contribuindo
 
-See [translations/README.md](../translations/README.md) for how to contribute a translation.
+Veja [translations/README.md](../translations/README.md) para saber como contribuir com uma tradução.

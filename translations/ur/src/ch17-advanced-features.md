@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# باب ۱۷: جدید خصوصیات
 
-## Attributes
+## خصوصیات
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+خصوصیات تعریفات سے پہلے رکھے گئے میٹا ڈیٹا تشریف ہیں۔ یہ کمپائلر کے سلوک، بہتری کی اشارے، اور API کی زندگی کے دور کو کنٹرول کرتے ہیں۔
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+فنکشن یا ٹائپ کو فرسودہ کے طور پر نشان زد کرتا ہے۔ کمپائلر شے کے استعمال پر وارننگ خارج کرتا ہے۔
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+کمپائلر کو فنکشن کو کال سائٹ پر ان لائن کرنے کا اشارہ دیتا ہے، کال اوور ہیڈ کو ختم کرتا ہے۔ چھوٹے، زیادہ استعمال ہونے والے فنکشنز کے لیے بہترین۔
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+فنکشن کو غیر محفوظ کے طور پر نشان زد کرتا ہے، اسے `unsafe` بلاکس کو استعمال کرنے کی اجازت دیتا ہے بغیر کال کرنے والے کو بھی غیر محفوظ کے طور پر نشان زد کیے۔
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+کمپائل ٹائم پر مشروط کمپائلیشن۔ بلاک صرف اسی وقت شامل ہوتا ہے جب شرط سچ ہو۔
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## کمپائل ٹائم کوڈ
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V کمپائل ٹائم پر چلنے والے متعدد تصورات فراہم کرتا ہے جو کمپائلیشن کے دوران عمل کرتے ہیں، میٹا پروگرامنگ اور صفر لاگت کے تجربات کو فعال بناتے ہیں۔
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+کمپائل ٹائم پر شرائط کا جائزہ لیتا ہے۔ پلیٹ فارم کی شناخت، آرکٹیکچر کی جانچ، اور حسب منشا فلگز کی حمایت کرتا ہے۔
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+کمپائل ٹائم پر ارےز، struct فیلڈز، یا رینجز پر کرتا ہے۔ دہراتے کوڈ کی تیاری کے لیے مفید۔
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+کمپائل ٹائم پر اثبات جو شرط غلط ہونے پر کمپائلیشن کو روک دیتے ہیں۔
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## آپریٹر اوور لوڈنگ
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V صارف کی تعریف کردہ ٹائپس پر آپریٹرز کے لیے حسب منشا سلوک کی تعریف کی اجازت دیتا ہے۔ ہر آپریٹر ایک مخصوص دستخط کے ساتھ ایک میتھڈ سے منسلک ہوتا ہے۔
 
-### Arithmetic operators
+### حسابی آپریٹرز
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### موازنہ آپریٹرز
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### اشارہ آپریٹر
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## کمپائل ٹائم عکاسی
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+V کا `$for` تصور کمپائل ٹائم پر struct فیلڈز پر کر سکتا ہے، خودکار سیریلائزیشن، تصدیق، اور مزید کو فعال بناتا ہے۔
 
-### Iterating struct fields
+### struct فیلڈز پر کرنا
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### تصدیقی کوڈ کی تیاری
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+اس باب میں، آپ نے خصوصیات، کمپائل ٹائم کوڈ، آپریٹر اوور لوڈنگ، اور کمپائل ٹائم عکاسی کے بارے میں سیکھا۔ یہ خصوصیات طاقتور میٹا پروگرامنگ کے نمونوں اور کمپائلیشن پر باریک بینی کنٹرول کو فعال بناتی ہیں۔ اگلے باب میں، ہم میموری مینجمنٹ کو گہرائی سے دریافت کریں گے۔

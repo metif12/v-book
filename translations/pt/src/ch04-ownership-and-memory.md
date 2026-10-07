@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Capítulo 4: Posse e Memória
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V adota uma abordagem diferente de gerenciamento de memória em relação a muitas linguagens. Em vez de gerenciamento manual de memória ou apenas coleta de lixo, V oferece múltiplas estratégias.
 
-## Stack and Heap
+## Stack e Heap
 
-V automatically decides whether to allocate on the stack or heap:
+V decide automaticamente se aloca na stack ou no heap:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## Coleta de Lixo
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V usa um coletor de lixo por padrão. Você não precisa liberar memória manualmente:
 
 ```v
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V tem um modo autofree que libera memória automaticamente quando variáveis saem de escopo:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Referências
 
-You can use references to avoid copying large data:
+Você pode usar referências para evitar copiar grandes volumes de dados:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Modos de gerenciamento de memória
 
-| Mode | Flag | Description |
+| Modo | Flag | Descrição |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (padrão) | `-gc boehm` | Coletor de lixo Boehm |
+| Autofree | `-autofree` | Liberação automática de memória |
+| Nenhum | `-gc none` | Gerenciamento manual de memória |
+| Prealloc | `-prealloc` | Alocação em arena |
 
-## Summary
+## Resumo
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+Neste capítulo, você aprendeu sobre as opções de gerenciamento de memória de V. No próximo capítulo, vamos explorar structs.

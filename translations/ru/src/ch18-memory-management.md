@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# Глава 18: Углублённое управление памятью
 
-## GC modes
+## Режимы сборщика мусора
 
-V provides several memory management strategies, each suited to different use cases.
+V предоставляет несколько стратегий управления памятью, каждая из которых подходит для разных сценариев использования.
 
-| Mode | Flag | Use case |
-|------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Режим | Флаг | Сценарий использования |
+|-------|------|----------------------|
+| Boehm GC | `-gc boehm` | Общего назначения |
+| Автоосвобождение | `-autofree` | Автоматическое освобождение |
+| Без GC | `-gc none` | Ручное управление |
+| Prealloc | `-prealloc` | Выделение памяти из арены |
 
-## Stack vs heap
+## Стек и куча
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V автоматически решает, где выделять память. Небольшие, недолгоживущие значения остаются в стеке. Большие или выходящие за пределы области видимости значения попадают в кучу.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## Режим автоосвобождения
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Автоосвобождение автоматически освобождает память, когда переменные выходят из области видимости. Оно использует подсчёт ссылок для выделений в куче.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none и ручное управление памятью
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+С флагом `-gc none` V отключает сборщик мусора. Вы должны вручную управлять памятью с помощью `free`.
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -prealloc — выделение памяти из арены
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc использует выделение памяти из арены для повышения производительности в тесных циклах. Выделения освобождаются пакетно.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## Небезопасный код
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+Блок `unsafe` позволяет выполнять операции, обходящие гарантии безопасности V, такие как арифметика указателей и прямой доступ к памяти.
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### Арифметика указателей
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## Настройка производительности
 
-Choosing the right memory management mode can significantly impact performance.
+Выбор правильного режима управления памятью может существенно повлиять на производительность.
 
-### Benchmarking different modes
+### Бенчмаркинг различных режимов
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### Оптимизация структур данных
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+В этой главе вы узнали о режимах управления памятью, выделении в стеке и куче, автоосвобождении, ручном управлении памятью, prealloc, небезопасном коде и настройке производительности. В следующей главе мы рассмотрим инструменты.

@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# অধ্যায় 11: টেস্টিং
 
-V has a built-in testing framework.
+V-তে একটি বিল্ট-ইন টেস্টিং ফ্রেমওয়ার্ক আছে।
 
-## Test files
+## টেস্ট ফাইল
 
-Create a file ending in `_test.v`:
+`_test.v` দিয়ে শেষ হওয়া একটি ফাইল তৈরি করুন:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## টেস্ট চালানো
 
 ```bash
 v test .
 ```
 
-## Test organization
+## টেস্ট সংগঠন
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## টেবল-চালিত টেস্ট
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+এই অধ্যায়ে আপনি V-এর টেস্টিং ফ্রেমওয়ার্ক সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা একটি কমান্ড-লাইন টুল তৈরি করব।

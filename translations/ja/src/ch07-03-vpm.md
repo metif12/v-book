@@ -1,23 +1,23 @@
 # VPM
 
-V Package Manager (VPM) hosts community packages:
+Vパッケージマネージャー（VPM）はコミュニティパッケージをホストしています：
 
 ```bash
 v install vsl
 ```
 
-## Searching
+## 検索
 
 ```bash
 v search json
 ```
 
-## Installing
+## インストール
 
 ```bash
 v install vsl
 ```
 
-## Next
+## 次へ
 
-[Chapter 8: Collections](ch08-collections.md)
+[第8章：コレクション](ch08-collections.md)

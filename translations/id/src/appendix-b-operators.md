@@ -1,8 +1,8 @@
-# Appendix B: Operators
+# Lampiran B: Operator
 
-## Arithmetic
+## Aritmatika
 
-| Operator | Description |
+| Operator | Deskripsi |
 |----------|-------------|
 | `+` | Addition |
 | `-` | Subtraction |
@@ -11,9 +11,9 @@
 | `%` | Modulo |
 | `**` | Power |
 
-## Comparison
+## Perbandingan
 
-| Operator | Description |
+| Operator | Deskripsi |
 |----------|-------------|
 | `==` | Equal |
 | `!=` | Not equal |
@@ -22,9 +22,9 @@
 | `<=` | Less than or equal |
 | `>=` | Greater than or equal |
 
-## Logical
+## Logika
 
-| Operator | Description |
+| Operator | Deskisi |
 |----------|-------------|
 | `&&` | Logical AND |
 | `\|\|` | Logical OR |
@@ -32,7 +32,7 @@
 
 ## Bitwise
 
-| Operator | Description |
+| Operator | Deskripsi |
 |----------|-------------|
 | `&` | Bitwise AND |
 | `\|` | Bitwise OR |
@@ -42,7 +42,7 @@
 
 ## Assignment
 
-| Operator | Description |
+| Operator | Deskripsi |
 |----------|-------------|
 | `=` | Assignment |
 | `:=` | Short declaration |

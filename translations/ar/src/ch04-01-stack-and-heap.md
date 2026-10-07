@@ -1,6 +1,6 @@
-# Stack and Heap
+# المكدس والكومة
 
-V automatically decides whether to allocate on the stack or heap:
+يقرر V تلقائياً ما إذا كان سيخصص في المكدس أو الكومة:
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## المكدس
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- تخصيص وتحرير سريع
+- حجم ثابت عند وقت التصريف
+- يُحرَّر تلقائياً عند انتهاء النطاق
 
-## Heap
+## الكومة
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- حجم ديناميكي
+- تخصيص أبطأ
+- يُدار بواسطة GC أو التحرير التلقائي
 
-## Next
+## التالي
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[جمع القمامة](ch04-02-garbage-collection.md)

@@ -1,33 +1,33 @@
-# Introduction
+# ভূমিকা
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*V প্রোগ্রামিং ল্যাঙ্গুয়েজ বই* হল [V প্রোগ্রামিং ল্যাঙ্গুয়েজ](https://vlang.io)-এর একটি বিস্তারিত গাইড — একটি সরল, দ্রুত, নিরাপদ, কম্পাইলড ভাষা যা রক্ষণাবেক্ষণযোগ্য সফটওয়্যার তৈরির জন্য।
 
-## Who this book is for
+## এই বই কার জন্য
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+এই বই ধরে নেয় যে আপনার অন্য কোনো ভাষায় প্রোগ্রামিংয়ের কিছু অভিজ্ঞতা আছে। এটি ধরে নেয় না যে আপনি V জানেন। আমরা মৌলিক বিষয় থেকে শুরু করে অ্যাডভান্সড টপিক পর্যন্ত এগোব।
 
-## How to use this book
+## এই বই কীভাবে ব্যবহার করবেন
 
-The book is organized into parts:
+বইটি বিভাগে সাজানো:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **পর্ব I: শুরু করা** — V ইনস্টল করুন, প্রথম প্রোগ্রাম লিখুন, প্রজেক্ট স্ট্রাকচার বুঝুন।
+- **পর্ব II: সাধারণ প্রোগ্রামিং ধারণা** — ভেরিয়েবল, টাইপ, ফাংশন, কন্ট্রোল ফ্লো, struct, enum, module, কালেকশন, এরর হ্যান্ডলিং।
+- **পর্ব III: ইন্টারমিডিয়েট V** — জেনেরিক্স, টেস্টিং, কনকারেন্সি, ওয়েব ডেভেলপমেন্ট, C ইন্টরপ, অ্যাডভান্সড ফিচার এবং একটি ফাইনাল প্রজেক্ট।
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+প্রতিটি অধ্যায় পূর্ববর্তী অধ্যায়ের উপর ভিত্তি করে তৈরি। কোড উদাহরণগুলো CI-তে পরীক্ষিত — এই বইয়ের প্রতিটি V কোড ব্লক স্বয়ংক্রিয়ভাবে কম্পাইল এবং রান হয়।
 
-## Code examples
+## কোড উদাহরণ
 
-Code examples in this book follow these conventions:
+এই বইয়ের কোড উদাহরণগুলো নিচের নিয়ম মেনে চলে:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v` কোড ব্লকগুলো CI-তে কম্পাইল এবং রান হয়।
+- `v ignore` কোড ব্লকগুলো কম্পাইল হয় না (সুডোকোড বা অসম্পূর্ণ উদাহরণের জন্য)।
+- `v no_run` কোড ব্লকগুলো কম্পাইল হয় কিন্তু রান হয় না (ব্লকিং বা ইনপুট প্রয়োজন এমন উদাহরণের জন্য)।
 
-## Translations
+## অনুবাদ
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+এই বই ১৬টি ভাষায় পাওয়া যায়। সম্পূর্ণ তালিকার জন্য [অতিরিক্ত F](appendix-f-translations.md) দেখুন।
 
-## Contributing
+## অবদান
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+এই বই একটি কমিউনিটি প্রজেক্ট। কীভাবে অবদান রাখবেন তা জানতে [GitHub রিপোজিটরি](https://github.com/vlang/v-book) দেখুন।

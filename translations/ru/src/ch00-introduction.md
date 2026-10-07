@@ -1,33 +1,33 @@
-# Introduction
+# Введение
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*Книга по языку программирования V* — это всестороннее руководство по [языку программирования V](https://vlang.io) — простому, быстрому, безопасному компилируемому языку для создания поддерживаемого программного обеспечения.
 
-## Who this book is for
+## Для кого предназначена эта книга
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+Эта книга предполагает, что у вас есть опыт программирования на другом языке. Она не предполагает, что вы знаете V. Мы начинаем с основ и постепенно переходим к продвинутым темам.
 
-## How to use this book
+## Как пользоваться этой книгой
 
-The book is organized into parts:
+Книга разделена на части:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **Часть I: Начало работы** — Установите V, напишите свою первую программу, разберитесь в структуре проекта.
+- **Часть II: Общие концепции программирования** — Переменные, типы, функции, управляющие конструкции, структуры, перечисления, модули, коллекции, обработка ошибок.
+- **Часть III: Продвинутый V** — Дженерики, тестирование, конкурентность, веб-разработка, интероперабельность с C, продвинутые возможности и финальный проект.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+Каждая глава основывается на предыдущих. Примеры кода проверяются в CI — каждый блок кода V в этой книге автоматически компилируется и запускается.
 
-## Code examples
+## Примеры кода
 
-Code examples in this book follow these conventions:
+Примеры кода в этой книге следуют следующим соглашениям:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- Блоки кода `v` компилируются и запускаются в CI.
+- Блоки кода `v ignore` не компилируются (используются для псевдокода или неполных примеров).
+- Блоки кода `v no_run` компилируются, но не запускаются (используются для примеров, которые заблокировали бы выполнение или требуют ввода).
 
-## Translations
+## Переводы
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+Эта книга доступна на 16 языках. Полный список см. в [Приложении F](appendix-f-translations.md).
 
-## Contributing
+## Участие в проекте
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+Эта книга — общественный проект. О том, как внести свой вклад, см. [репозиторий на GitHub](https://github.com/vlang/v-book).

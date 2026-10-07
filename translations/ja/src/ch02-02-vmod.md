@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+`v.mod`ファイルはプロジェクトを記述します：
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## フィールド
 
-| Field | Description |
+| フィールド | 説明 |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | プロジェクト名（ディレクトリ名と一致する必要があります） |
+| `description` | 短い説明 |
+| `version` | セマンティックバージョン |
+| `license` | ライセンス識別子 |
+| `dependencies` | VPMパッケージ名のリスト |
 
-## Next
+## 次へ
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[v fmtによるフォーマット](ch02-03-formatting.md)

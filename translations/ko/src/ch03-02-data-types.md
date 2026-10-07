@@ -1,34 +1,34 @@
-# Data Types
+# 데이터 타입
 
-## Integer types
+## 정수 타입
 
-| Type | Size | Range |
+| 타입 | 크기 | 범위 |
 |------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| `i8` | 8비트 | -128 ~ 127 |
+| `i16` | 16비트 | -32,768 ~ 32,767 |
+| `i32` | 32비트 | -2^31 ~ 2^31-1 |
+| `i64` | 64비트 | -2^63 ~ 2^63-1 |
+| `int` | 플랫폼 | 일반적으로 64비트 |
+| `u8` | 8비트 | 0 ~ 255 |
+| `u16` | 16비트 | 0 ~ 65,535 |
+| `u32` | 32비트 | 0 ~ 2^32-1 |
+| `u64` | 64비트 | 0 ~ 2^64-1 |
 
-## Float types
+## 부동소수점 타입
 
-| Type | Size |
+| 타입 | 크기 |
 |------|------|
-| `f32` | 32-bit |
-| `f64` | 64-bit |
+| `f32` | 32비트 |
+| `f64` | 64비트 |
 
-## Other types
+## 기타 타입
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` 또는 `false`
+- `string` — UTF-8 문자열
+- `rune` — 단일 유니코드 문자 (`u32`의 별칭)
+- `byte` — `u8`의 별칭
 
-## Type conversion
+## 타입 변환
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Functions](ch03-03-functions.md)
+[함수](ch03-03-functions.md)

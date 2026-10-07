@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Capítulo 4: Propiedad y Memoria
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V adopta un enfoque diferente a la gestión de memoria que muchos lenguajes. En lugar de la gestión manual de memoria o la recolección de basura por sí sola, V ofrece múltiples estrategias.
 
-## Stack and Heap
+## Stack y Heap
 
-V automatically decides whether to allocate on the stack or heap:
+V decide automáticamente si asignar en el stack o en el heap:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## Recolección de Basura
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V usa un recolector de basura por defecto. No necesitas liberar memoria manualmente:
 
 ```v
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V tiene un modo autofree que libera memoria automáticamente cuando las variables salen de ámbito:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Referencias
 
-You can use references to avoid copying large data:
+Puedes usar referencias para evitar copiar datos grandes:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Modos de gestión de memoria
 
-| Mode | Flag | Description |
-|------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Modo | Opción | Descripción |
+|------|--------|-------------|
+| GC (por defecto) | `-gc boehm` | Recolector de basura Boehm |
+| Autofree | `-autofree` | Liberación automática de memoria |
+| Ninguno | `-gc none` | Gestión manual de memoria |
+| Prealloc | `-prealloc` | Asignación en arena |
 
-## Summary
+## Resumen
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+En este capítulo, aprendiste sobre las opciones de gestión de memoria de V. En el siguiente capítulo, exploraremos los structs.

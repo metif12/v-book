@@ -1,6 +1,6 @@
-# Access Modifiers
+# Modificateurs d'accès
 
-Fields are private by default:
+Les champs sont privés par défaut :
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## Visibilité
 
-| Modifier | Scope |
-|----------|-------|
-| (none) | Module only |
+| Modificateur | Portée |
+|--------------|--------|
+| (aucun) | Module uniquement |
 | `pub` | Public |
 
-## Next
+## Suivant
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[Chapitre 6 : Enums et types somme](ch06-enums-and-sum-types.md)

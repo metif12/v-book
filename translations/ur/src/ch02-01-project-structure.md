@@ -1,6 +1,6 @@
-# Project Structure
+# پروجیکٹ کا ڈھانچہ
 
-A V project is a directory with a `v.mod` file:
+ایک V پروجیکٹ ایک ڈائریکٹری ہے جس میں ایک `v.mod` فائل ہوتی ہے:
 
 ```
 my_project/
@@ -22,12 +22,12 @@ Module {
 }
 ```
 
-## Creating a project
+## پروجیکٹ بنانا
 
 ```bash
 v init
 ```
 
-## Next
+## اگلا
 
 [v.mod](ch02-02-vmod.md)

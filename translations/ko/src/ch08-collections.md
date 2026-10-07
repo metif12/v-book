@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# Chapter 8: 컬렉션
 
-## Arrays
+## 배열
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## 맵
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## 문자열
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+이 장에서는 배열, 맵, 문자열에 대해 배웠습니다. 다음 장에서는 에러 처리를 살펴보겠습니다.

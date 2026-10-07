@@ -1,14 +1,14 @@
-# Stack and Heap
+# 스택과 힙
 
-V automatically decides whether to allocate on the stack or heap:
+V는 스택 또는 힙에 할당할지 자동으로 결정합니다:
 
 ```v
 fn main() {
-    // Stack-allocated (small, fixed size)
+    // 스택 할당 (작고, 고정 크기)
     x := 42
     arr := [1, 2, 3]
 
-    // Heap-allocated (large, dynamic)
+    // 힙 할당 (크고, 동적)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## 스택
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- 빠른 할당 및 해제
+- 컴파일 타임에 고정 크기
+- 스코프가 끝나면 자동으로 해제
 
-## Heap
+## 힙
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- 동적 크기
+- 느린 할당
+- GC 또는 autofree로 관리
 
-## Next
+## 다음
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[가비지 컬렉션](ch04-02-garbage-collection.md)

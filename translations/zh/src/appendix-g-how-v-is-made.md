@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# 附录 G：V 的制作方式
 
-V is an open-source project. The compiler is written in V itself.
+V 是一个开源项目。编译器本身使用 V 语言编写。
 
-## Repository
+## 仓库
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- 许可证: MIT
 
-## Building from source
+## 从源码构建
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,12 +15,12 @@ cd v
 make
 ```
 
-## Contributing
+## 贡献
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+请参见[贡献指南](https://github.com/vlang/v/blob/master/CONTRIBUTING.md)。
 
-## Community
+## 社区
 
-- [Forum](https://forum.vlang.io)
+- [论坛](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

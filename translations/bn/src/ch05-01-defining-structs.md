@@ -1,4 +1,4 @@
-# Defining Structs
+# struct সংজ্ঞায়িত করা
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## আরম্ভ
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## পরবর্তী
 
-[Methods](ch05-02-methods.md)
+[মেথড](ch05-02-methods.md)

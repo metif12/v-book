@@ -1,6 +1,6 @@
-# References
+# Referências
 
-Use references to avoid copying large data:
+Use referências para evitar copiar grandes volumes de dados:
 
 ```v
 fn modify(mut arr []int) {
@@ -14,6 +14,6 @@ fn main() {
 }
 ```
 
-## Next
+## Próximo
 
-[Chapter 5: Structs](ch05-structs.md)
+[Capítulo 5: Structs](ch05-structs.md)

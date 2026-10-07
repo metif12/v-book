@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# Глава 19: Инструменты
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+Форматирует исходный код V в соответствии с официальным руководством по стилю. Используйте `-w` для записи изменений на диск.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### Форматирование одного файла
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### Проверка форматирования без записи
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+Генерирует документацию из исходных файлов V. По умолчанию выводит HTML.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### Документирование конкретного модуля
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+Профилирует выполнение программы для выявления узких мест производительности.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### Анализ вывода профилировщика
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+Запускает модульные тесты в текущем каталоге или указанном файле.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### Запуск конкретного теста
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### Запуск тестов с покрытием
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+Выполняет статический анализ кода V, проверяя ошибки, предупреждения и проблемы стиля.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### Проверка одного файла
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## Кросс-компиляция
 
-V can compile code for different operating systems and architectures from a single machine.
+V может компилировать код для различных операционных систем и архитектур с одной машины.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### Указание архитектуры
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### Кросс-компиляция для встраиваемых целей
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+Отображает диагностическую информацию об установке V, включая версию компилятора, ОС и конфигурацию.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+Обновляет компилятор V до последней версии.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### Обновление до конкретной версии
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+В этой главе вы узнали об экосистеме инструментов V: `v fmt` для форматирования, `v doc` для документации, `v profiler` для анализа производительности, `v test` для тестирования, `v check` для статического анализа, кросс-компиляция, `v doctor` для диагностики и `v up` для самообновления. В следующей главе мы создадим финальный проект.

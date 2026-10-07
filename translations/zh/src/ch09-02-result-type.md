@@ -1,4 +1,4 @@
-# Result Type
+# Result 类型
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## 传播错误
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Custom Errors](ch09-03-custom-errors.md)
+[自定义错误](ch09-03-custom-errors.md)

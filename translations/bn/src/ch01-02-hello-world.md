@@ -1,6 +1,6 @@
 # Hello, World!
 
-Create a file called `main.v`:
+`main.v` নামে একটি ফাইল তৈরি করুন:
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+চালান:
 
 ```bash
 v run main.v
 ```
 
-Output:
+আউটপুট:
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## V প্রোগ্রামের গঠন
 
-Let's break down the program:
+প্রোগ্রামটি ভেঙে দেখি:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — প্রতিটি V প্রোগ্রাম `main` ফাংশন দিয়ে শুরু হয়। `fn` কীওয়ার্ড একটি ফাংশন ঘোষণা করে।
+- `println(...)` — একটি বিল্ট-ইন ফাংশন যা stdout-এ একটি লাইন প্রিন্ট করে।
+- `'Hello, World!'` — একটি স্ট্রিং লিটারাল। V স্ট্রিংয়ের জন্য একক উদ্ধৃতি ব্যবহার করে।
 
-## Compiling vs running
+## কম্পাইল বনাম রান
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` এক ধাপে কম্পাইল এবং রান করে। আপনি আগে কম্পাইলও করতে পারেন:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## পরবর্তী
 
 [Hello, V!](ch01-03-hello-v.md)

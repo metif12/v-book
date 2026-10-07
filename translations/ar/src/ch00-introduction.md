@@ -1,33 +1,33 @@
-# Introduction
+# المقدمة
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*كتاب لغة البرمجة V* هو دليل شامل لـ [لغة البرمجة V](https://vlang.io) — لغة بسيطة وسريعة وآمنة ومُصرَّفة لبناء برمجيات قابلة للصيانة.
 
-## Who this book is for
+## لمن هذا الكتاب
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+يفترض هذا الكتاب أن لديك بعض الخبرة في البرمجة بلغة أخرى. ولا يفترض أنك تعرف V. نبدأ من الأساسيات ونبني حتى المواضيع المتقدمة.
 
-## How to use this book
+## كيف تستخدم هذا الكتاب
 
-The book is organized into parts:
+الكتاب مقسم إلى أجزاء:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **الجزء الأول: البداية** — تثبيت V، كتابة أول برنامج لك، فهم بنية المشروع.
+- **الجزء الثاني: مفاهيم البرمجة الشائعة** — المتغيرات، الأنواع، الدوال، التحكم في التدفق، structs، enums، الوحدات، المجموعات، معالجة الأخطاء.
+- **الجزء الثالث: V المتوسط** — التعميمات، الاختبار، التزامن، تطوير الويب، التفاعل مع C، الميزات المتقدمة، ومشروع نهائي.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+كل فصل يبني على ما قبله. أمثلة الكود مُختبَرة في CI — كل كتلة كود V في هذا الكتاب تُصرَّف وتُشغَّل تلقائياً.
 
-## Code examples
+## أمثلة الكود
 
-Code examples in this book follow these conventions:
+أمثلة الكود في هذا الكتاب تتبع هذه الاتفاقيات:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- كتل `v` تُصرَّف وتُشغَّل في CI.
+- كتل `v ignore` لا تُصرَّف (تُستخدم للكود الافتراضي أو الأمثلة غير المكتملة).
+- كتل `v no_run` تُصرَّف ولكن لا تُشغَّل (تُستخدم للأمثلة التي ستتوقف أو تتطلب إدخالاً).
 
-## Translations
+## الترجمات
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+هذا الكتاب متاح بـ 16 لغة. راجع [الملحق F](appendix-f-translations.md) للقائمة الكاملة.
 
-## Contributing
+## المساهمة
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+هذا الكتاب مشروع مجتمعي. راجع [مستودع GitHub](https://github.com/vlang/v-book) لمعرفة كيفية المساهمة.

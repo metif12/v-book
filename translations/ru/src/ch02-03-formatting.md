@@ -1,16 +1,16 @@
-# Formatting with v fmt
+# Форматирование с помощью v fmt
 
-V has a built-in code formatter:
+В V есть встроенный форматтер кода:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes changes back to files. Without it, the formatter prints to stdout.
+Флаг `-w` записывает изменения обратно в файлы. Без него форматтер выводит результат в стандартный поток вывода.
 
-## Example
+## Пример
 
-Before:
+До:
 
 ```v
 fn main(){
@@ -18,7 +18,7 @@ println( 'hello' )
 }
 ```
 
-After `v fmt`:
+После `v fmt`:
 
 ```v
 fn main() {
@@ -26,6 +26,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Testing with v test](ch02-04-testing.md)
+[Тестирование с помощью v test](ch02-04-testing.md)

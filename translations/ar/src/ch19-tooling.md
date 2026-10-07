@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# الفصل 19: الأدوات
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+يُنسّق كود مصدر V وفق دليل الأسلوب الرسمي. استخدم `-w` لكتابة التغييرات في مكانها.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### تنسيق ملف واحد
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### فحص التنسيق بدون كتابة
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+يُولّد التوثيق من ملفات مصدر V. يُخرج HTML افتراضياً.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### توثيق وحدة محددة
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+يُحلل تنفيذ البرنامج لتحديد اختناقات الأداء.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### تحليل ناتج التحليل
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+يُشغّل اختبارات الوحدة في المجلد الحالي أو ملف محدد.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### تشغيل اختبار محدد
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### تشغيل الاختبارات مع التغطية
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+يُجري تحليلاً ثابتاً على كود V، يفحص الأخطاء والتحذيرات ومشاكل الأسلوب.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### فحص ملف واحد
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## التصريف المتقاطع
 
-V can compile code for different operating systems and architectures from a single machine.
+V يمكنه تصريف الكود لأنظمة تشغيل ومعماريات مختلفة من جهاز واحد.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### تحديد المعمارية
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### التصريف المتقاطع للأهداف المضمنة
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+يعرض معلومات تشخيصية عن تثبيت V، بما في ذلك إصدار المُصرِّف، نظام التشغيل، والإعدادات.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+يُحدّث مُصرِّف V إلى أحدث إصدار.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### التحديث إلى إصدار محدد
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+في هذا الفصل، تعلمت عن منظومة أدوات V: `v fmt` للتنسيق، `v doc` للتوثيق، `v profiler` لتحليل الأداء، `v test` للاختبار، `v check` للتحليل الثابت، التصريف المتقاطع، `v doctor` للتشخيص، و `v up` للتحديث الذاتي. في الفصل التالي، سنبني مشروعاً نهائياً.

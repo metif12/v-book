@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# پیوست B: عملگرها
 
-## Arithmetic
+## ریاضی
 
-| Operator | Description |
+| عملگر | توضیح |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | جمع |
+| `-` | تفریق |
+| `*` | ضرب |
+| `/` | تقسیم |
+| `%` | باقیمانده |
+| `**` | توان |
 
-## Comparison
+## مقایسه‌ای
 
-| Operator | Description |
+| عملگر | توضیح |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | مساوی |
+| `!=` | نامساوی |
+| `<` | کمتر از |
+| `>` | بیشتر از |
+| `<=` | کمتر یا مساوی |
+| `>=` | بیشتر یا مساوی |
 
-## Logical
+## منطقی
 
-| Operator | Description |
+| عملگر | توضیح |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | AND منطقی |
+| `\|\|` | OR منطقی |
+| `!` | NOT منطقی |
 
-## Bitwise
+## بیتی
 
-| Operator | Description |
+| عملگر | توضیح |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | AND بیتی |
+| `\|` | OR بیتی |
+| `^` | XOR بیتی |
+| `<<` | شیفت چپ |
+| `>>` | شیفت راست |
 
-## Assignment
+## انتساب
 
-| Operator | Description |
+| عملگر | توضیح |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | انتساب |
+| `:=` | تعریف کوتاه |
+| `+=` | جمع و انتساب |
+| `-=` | تفریق و انتساب |
+| `*=` | ضرب و انتساب |
+| `/=` | تقسیم و انتساب |
+| `%=` | باقیمانده و انتساب |

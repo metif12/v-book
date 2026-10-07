@@ -1,4 +1,4 @@
-# Option Type
+# Тип Option
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## Распаковка
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Result Type](ch09-02-result-type.md)
+[Тип Result](ch09-02-result-type.md)

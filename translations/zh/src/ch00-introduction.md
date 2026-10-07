@@ -1,33 +1,33 @@
-# Introduction
+# 简介
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*V 编程语言指南* 是 [V 编程语言](https://vlang.io) 的全面指南——一门简单、快速、安全的编译型语言，用于构建可维护的软件。
 
-## Who this book is for
+## 本书适合谁阅读
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+本书假设你已有一些其他语言的编程经验，但不要求你了解 V。我们从基础开始，逐步深入到高级主题。
 
-## How to use this book
+## 如何使用本书
 
-The book is organized into parts:
+本书分为以下几个部分：
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **第一部分：入门** — 安装 V，编写你的第一个程序，理解项目结构。
+- **第二部分：通用编程概念** — 变量、类型、函数、控制流、结构体、枚举、模块、集合、错误处理。
+- **第三部分：进阶 V** — 泛型、测试、并发、Web 开发、C 语言互操作、高级特性以及最终项目。
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+每一章都建立在前一章的基础之上。代码示例在 CI 中经过测试——本书中的每个 V 代码块都会自动编译和运行。
 
-## Code examples
+## 代码示例
 
-Code examples in this book follow these conventions:
+本书中的代码示例遵循以下约定：
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v` 代码块在 CI 中编译并运行。
+- `v ignore` 代码块不编译（用于伪代码或不完整的示例）。
+- `v no_run` 代码块编译但不运行（用于会阻塞或需要输入的示例）。
 
-## Translations
+## 翻译
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+本书提供 16 种语言版本。完整列表请参见[附录 F](appendix-f-translations.md)。
 
-## Contributing
+## 贡献
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+本书是一个社区项目。如何贡献请参见 [GitHub 仓库](https://github.com/vlang/v-book)。

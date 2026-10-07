@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# 第14章：並行性
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+Vにはgoroutine、チャネル、共有状態による組み込みの並行性サポートがあります。
 
-## Spawning goroutines
+## Goroutineの起動
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+Goroutineは軽量スレッドです。`go`キーワードで開始します：
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+`go`キーワードは新しいgoroutineで関数を開始し、即座に返ります。main関数はgoroutineの完了を自動的には待ちません。
 
-To wait for goroutines, use a `sync.WaitGroup`:
+goroutineを待つには、`sync.WaitGroup`を使用します：
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)`はgoroutineが開始する前にカウンターをインクリメントします。`wg.done()`はgoroutineが完了したときにデクリメントします。`wg.wait()`はカウンターがゼロになるまでブロックします。
 
-## Channels
+## チャネル
 
-Channels pass values between goroutines. Create one with `chan T`:
+チャネルはgoroutine間で値を渡します。`chan T`で作成します：
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+バッファなしチャネルは受信者が準備できるまで送信をブロックします。バッファ付きチャネルは容量を持ち、いっぱいになるまでブロックしません：
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+チャネルの方向はチャネルの使用方法を制限します。`chan<- T`は送信専用、`<-chan T`は受信専用です：
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## 共有状態
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+goroutineが可変状態を共有する場合は、`sync.Mutex`で保護します：
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock`はミューテックスが利用可能になるまでブロックし、ブロックのスコープで保持します。クリティカルセクションは短く保ちます。
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+読み取りが書き込みよりも頻繁な場合は、`sync.RwMutex`を使用します。複数の読み取りを同時に許可します：
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+単一の値の場合は、ロックの代わりに`sync.stdatomic`からアトミック操作を使用します：
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## select文
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select`は複数のチャネルを待機し、準備ができた最初のチャネルのインデックスを返します。負のタイムアウトは無期限に待機し、正のタイムアウトはタイムアウト時に-1を返します：
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+この章では、goroutine、チャネル、共有状態、selectについて学びました。次の章では、Veb Webフレームワークを見ていきます。

@@ -1,4 +1,4 @@
-# Control Flow
+# Управляющие конструкции
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If как выражение
 
 ```v
 fn main() {
@@ -23,22 +23,22 @@ fn main() {
 }
 ```
 
-## For loop
+## Цикл for
 
 ```v
 fn main() {
-    // Over an array
+    // По массиву
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range
+    // По диапазону
     for i in 0 .. 5 {
         println(i)
     }
 
-    // With index
+    // С индексом
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[Глава 4: Владение и память](ch04-ownership-and-memory.md)

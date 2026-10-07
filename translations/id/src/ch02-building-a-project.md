@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Bab 2: Membangun Proyek
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+Dalam bab ini, Anda akan belajar cara mengstruktur proyek V, menggunakan `v.mod`, memformat kode dengan `v fmt`, dan menulis test dengan `v test`.
 
-## Project structure
+## Struktur proyek
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Sebuah proyek V adalah direktori dengan file `v.mod` dan satu atau lebih file `.v`:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Setiap proyek V memiliki file `v.mod` yang mendeskripsikan proyek:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Buat proyek baru dengan:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Ini membuat `v.mod` dan `main.v` dengan template dasar.
 
-## Formatting with v fmt
+## Memformat dengan v fmt
 
-V has a built-in code formatter. Run it on your project:
+V memiliki formatter kode bawaan. Jalankan pada proyek Anda:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+Flag `-w` menulis kode yang telah diformat kembali ke file.
 
-## Testing with v test
+## Menguji dengan v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V memiliki framework testing bawaan. Buat file yang diakhiri dengan `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Jalankan test:
 
 ```bash
 v test .
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+Dalam bab ini, Anda telah belajar cara mengstruktur proyek V, menggunakan `v.mod`, memformat kode, dan menulis test. Di bab berikutnya, kita akan membahas konsep pemrograman umum dalam V.

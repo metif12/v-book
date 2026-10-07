@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# الفصل 12: مشروع الإدخال/الإخراج: بناء أداة CLI
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+في هذا الفصل، سنبني أداة سطر أوامر بسيطة تقرأ ملفاً وتحسب أسطره وكلماته وأحرفه.
 
-## Project setup
+## إعداد المشروع
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## التنفيذ
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## التشغيل
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+في هذا الفصل، بنيت أداة سطر أوامر. في الفصل التالي، سنستكشف الميزات الوظيفية.

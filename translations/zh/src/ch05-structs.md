@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# 第 5 章：结构体
 
-Structs are V's way to define custom data types.
+结构体是 V 定义自定义数据类型的方式。
 
-## Defining Structs
+## 定义结构体
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## 方法
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## 内嵌结构体
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## 访问修饰符
 
-Fields are private by default. Use `pub` to make them public:
+字段默认是私有的。使用 `pub` 使其公开：
 
 ```v
 struct User {
@@ -69,11 +69,11 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
-    println(u.age)   // OK: public
+    println(u.name)  // 正确：同一模块
+    println(u.age)   // 正确：公开
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+在本章中，你学习了结构体、方法、内嵌和访问修饰符。在下一章中，我们将探讨枚举与和类型。

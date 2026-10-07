@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# Ek D: Standart Kütüphane Genel Bakış
 
-V's standard library includes:
+V'nin standart kütüphanesi şunları içerir:
 
-| Module | Description |
+| Modül | Açıklama |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | İşletim sistemi arayüzü |
+| `io` | Girdi/çıktı |
+| `strings` | String yardımcıları |
+| `arrays` | Dizi yardımcıları |
+| `math` | Matematiksel fonksiyonlar |
+| `time` | Zaman ve tarih |
+| `json` | JSON kodlama/çözme |
+| `http` | HTTP istemci/sunucu |
+| `db` | Veritabanı arayüzü |
+| `rand` | Rastgele sayı üretimi |
+| `crypto` | Kriptografik fonksiyonlar |
+| `encoding` | Kodlama yardımcıları |
+| `term` | Terminal yardımcıları |
+| `sync` | Eşzamanlılık primitifleri |
+| `v.ast` | V AST manipülasyonu |
+| `v.compiler` | Derleyici yardımcıları |

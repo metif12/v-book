@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# 第7章：モジュールとパッケージ
 
-## Module System
+## モジュールシステム
 
-V organizes code into modules. A module is a directory with `.v` files:
+Vはコードをモジュールに整理します。モジュールは`.v`ファイルを持つディレクトリです：
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## 可視性
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — パブリック、他のモジュールからアクセス可能
+- （修飾子なし） — プライベート、モジュール内のみ
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+Vパッケージマネージャー（VPM）はコミュニティパッケージをホストしています：
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+この章では、モジュール、可視性、VPMについて学びました。次の章では、コレクションを見ていきます。

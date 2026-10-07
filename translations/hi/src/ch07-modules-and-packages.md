@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# अध्याय 7: मॉड्यूल और पैकेज
 
-## Module System
+## मॉड्यूल सिस्टम
 
-V organizes code into modules. A module is a directory with `.v` files:
+V कोड को मॉड्यूल में व्यवस्थित करता है। एक मॉड्यूल एक डायरेक्टरी है जिसमें `.v` फ़ाइलें होती हैं:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## विज़िबिलिटी
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — पब्लिक, अन्य मॉड्यूल से एक्सेस योग्य
+- (कोई मॉडिफायर नहीं) — प्राइवेट, केवल मॉड्यूल
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+V Package Manager (VPM) सामुदायिक पैकेज को होस्ट करता है:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+इस अध्याय में, आपने मॉड्यूल, विज़िबिलिटी, और VPM के बारे में सीखा। अगले अध्याय में, हम कलेक्शन का पता लगाएंगे।

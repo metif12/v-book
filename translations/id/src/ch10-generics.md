@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# Bab 10: Generics
 
-Generics allow you to write code that works with any type.
+Generics memungkinkan Anda menulis kode yang bekerja dengan tipe apa pun.
 
-## Generic functions
+## Fungsi generik
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## Struct generik
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## Batasan tipe
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+Dalam bab ini, Anda telah belajar tentang fungsi dan struct generik. Di bab berikutnya, kita akan menjelajahi testing.

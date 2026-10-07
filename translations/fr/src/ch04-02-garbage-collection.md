@@ -1,6 +1,6 @@
-# Garbage Collection
+# Ramasse-miettes
 
-V uses a garbage collector by default:
+V utilise un ramasse-miettes par défaut :
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## Désactiver le GC
 
-For performance-critical code, you can disable GC:
+Pour les code critiques en termes de performance, vous pouvez désactiver le GC :
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## Suivant
 
 [Autofree](ch04-03-autofree.md)

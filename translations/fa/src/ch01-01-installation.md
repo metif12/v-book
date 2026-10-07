@@ -1,10 +1,10 @@
-# Installation
+# نصب
 
-## Windows
+## ویندوز
 
-### Installer
+### نصب‌کننده
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+آخرین نصب‌کننده را از [vlang.io/install](https://vlang.io/install.html) دانلود و اجرا کنید.
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### دستی
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. آخرین نسخه را از [نسخه‌های GitHub](https://github.com/vlang/v/releases) دانلود کنید.
+2. فایل zip را استخراج کنید.
+3. دایرکتوری `v` را به PATH خود اضافه کنید.
 
 ## macOS
 
@@ -26,29 +26,29 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### اسکریپت نصب
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-## Linux
+## لینوکس
 
-### Installer script
+### اسکریپت نصب
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### Arch Linux
+### آرچ لینوکس
 
 ```bash
 yay -S vlang
 ```
 
-## From source
+## از سورس
 
-To build V from source, you need a C compiler (gcc or clang):
+برای ساخت V از سورس، به یک کامپایلر C (gcc یا clang) نیاز دارید:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+در ویندوز، به جای `make` از `win.bat` استفاده کنید.
 
-## Verifying
+## تأیید
 
 ```bash
 v version
 ```
 
-## Next
+## بعدی
 
-[Hello, World!](ch01-02-hello-world.md)
+[سلام، دنیا!](ch01-02-hello-world.md)

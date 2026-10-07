@@ -1,10 +1,10 @@
-# Installation
+# ইনস্টলেশন
 
 ## Windows
 
-### Installer
+### ইনস্টলার
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+[vlang.io/install](https://vlang.io/install.html) থেকে সর্বশেষ ইনস্টলার ডাউনলোড করে চালান।
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### ম্যানুয়াল
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. [GitHub releases](https://github.com/vlang/v/releases) থেকে সর্বশেষ রিলিজ ডাউনলোড করুন।
+2. zip ফাইল এক্সট্রাক্ট করুন।
+3. আপনার PATH-এ `v` ডিরেক্টরি যোগ করুন।
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### ইনস্টলার স্ক্রিপ্ট
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### ইনস্টলার স্ক্রিপ্ট
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## সোর্স থেকে
 
-To build V from source, you need a C compiler (gcc or clang):
+সোর্স থেকে V বিল্ড করতে আপনাকে একটি C কম্পাইলার (gcc বা clang) প্রয়োজন:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+Windows-এ `make` এর বদলে `win.bat` ব্যবহার করুন।
 
-## Verifying
+## যাচাই
 
 ```bash
 v version
 ```
 
-## Next
+## পরবর্তী
 
 [Hello, World!](ch01-02-hello-world.md)

@@ -1,6 +1,6 @@
-# References
+# রেফারেন্স
 
-Use references to avoid copying large data:
+বড় ডেটা কপি এড়াতে রেফারেন্স ব্যবহার করুন:
 
 ```v
 fn modify(mut arr []int) {
@@ -14,6 +14,6 @@ fn main() {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Chapter 5: Structs](ch05-structs.md)
+[অধ্যায় 5: struct](ch05-structs.md)

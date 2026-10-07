@@ -1,4 +1,4 @@
-# Enums
+# Перечисления
 
 ```v
 enum Color {
@@ -18,6 +18,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Sum Types](ch06-02-sum-types.md)
+[Суммирующие типы](ch06-02-sum-types.md)

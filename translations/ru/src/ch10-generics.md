@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# Глава 10: Дженерики
 
-Generics allow you to write code that works with any type.
+Дженерики позволяют писать код, который работает с любым типом.
 
-## Generic functions
+## Дженерик-функции
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## Дженерик-структуры
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## Ограничения типов
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+В этой главе вы узнали о дженерик-функциях и структурах. В следующей главе мы рассмотрим тестирование.

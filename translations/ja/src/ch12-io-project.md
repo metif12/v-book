@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# 第12章：I/Oプロジェクト：CLIツールの構築
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+この章では、ファイルを読み取って行数、単語数、文字数を数えるシンプルなコマンドラインツールを構築します。
 
-## Project setup
+## プロジェクトのセットアップ
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## 実装
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## 実行
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+この章では、コマンドラインツールを構築しました。次の章では、関数型機能を見ていきます。

@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# الملحق A: الكلمات المفتاحية
 
-V has the following keywords:
+V لديه الكلمات المفتاحية التالية:
 
-| Keyword | Description |
+| الكلمة المفتاحية | الوصف |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | تحويل النوع |
+| `assert` | التأكيدات |
+| `break` | الخروج من الحلقة |
+| `const` | تعريف ثابت |
+| `continue` | المتابعة إلى التكرار التالي |
+| `defer` | تنفيذ مؤجل |
+| `else` | فرع else |
+| `enum` | تعداد |
+| `false` | قيمة منطقية خاطئة |
+| `fn` | تعريف دالة |
+| `for` | حلقة |
+| `go` | تشغيل goroutine |
+| `goto` | عبارة goto |
+| `if` | شرط |
+| `import` | استيراد وحدة |
+| `in` | اختبار العضوية |
+| `interface` | تعريف interface |
+| `is` | فحص النوع |
+| `lock` | قفل Mutex |
+| `match` | مطابقة الأنماط |
+| `module` | تعريف وحدة |
+| `mut` | قابل للتغيير |
+| `none` | قيمة none |
+| `or` | معالجة الأخطاء |
+| `pub` | ظهور عام |
+| `return` | العودة من الدالة |
+| `struct` | تعريف struct |
+| `true` | قيمة منطقية صحيحة |
+| `type` | تعريف نوع |
+| `union` | تعريف union |
+| `unsafe` | كود غير آمن |

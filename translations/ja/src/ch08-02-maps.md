@@ -1,4 +1,4 @@
-# Maps
+# マップ
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## マップ操作
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Strings](ch08-03-strings.md)
+[文字列](ch08-03-strings.md)

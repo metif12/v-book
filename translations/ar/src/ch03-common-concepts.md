@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# الفصل 3: المفاهيم الشائعة
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+يغطي هذا الفصل مفاهيم البرمجة الشائعة في V: المتغيرات، أنواع البيانات، الدوال، التعليقات، والتحكم في التدفق.
 
-## Variables and Mutability
+## المتغيرات والتغيير
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+في V، المتغيرات غير قابلة للتغيير افتراضياً. استخدم `mut` لجعلها قابلة للتغيير:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## أنواع البيانات
 
-V has a rich type system:
+V لديه نظام أنواع غني:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## الدوال
 
-Functions are declared with `fn`:
+الدوال تُعرّف بـ `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## التعليقات
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## التحكم في التدفق
 
 ### If
 
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+في هذا الفصل، تعلمت عن المتغيرات، أنواع البيانات، الدوال، التعليقات، والتحكم في التدفق في V. في الفصل التالي، سنستكشف الملكية وإدارة الذاكرة.

@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# 第 18 章：内存管理深入
 
-## GC modes
+## GC 模式
 
-V provides several memory management strategies, each suited to different use cases.
+V 提供多种内存管理策略，每种适用于不同的用例。
 
-| Mode | Flag | Use case |
+| 模式 | 参数 | 用例 |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | 通用 |
+| 自动释放 | `-autofree` | 自动释放 |
+| 无 | `-gc none` | 手动管理 |
+| 预分配 | `-prealloc` | 竞技场分配 |
 
-## Stack vs heap
+## 栈与堆
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V 自动决定内存分配位置。小型、短生命周期的值保留在栈上。较大或逃逸的值放到堆上。
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## 自动释放模式
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+自动释放在变量离开作用域时自动释放内存。它对堆分配使用引用计数。
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none 和手动内存
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+使用 `-gc none` 时，V 禁用垃圾回收。你必须使用 `free` 手动管理内存。
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -prealloc 竞技场分配
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+预分配使用竞技场分配来提高紧循环中的性能。分配批量释放。
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## 不安全代码
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+`unsafe` 块允许绕过 V 安全保证的操作，如指针运算和直接内存访问。
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### 指针运算
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## 性能调优
 
-Choosing the right memory management mode can significantly impact performance.
+选择正确的内存管理模式可以显著影响性能。
 
-### Benchmarking different modes
+### 对不同模式进行基准测试
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### 优化数据结构
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+在本章中，你学习了内存管理模式、栈与堆分配、自动释放、手动内存管理、预分配、不安全代码和性能调优。在下一章中，我们将探讨工具链。

@@ -1,5 +1,5 @@
-# Page Not Found
+# صفحہ نہیں ملا
 
-The page you're looking for doesn't exist.
+آپ جس صفحے کو تلاش کر رہے ہیں وہ موجود نہیں ہے۔
 
-[Back to the book](index.html)
+[کتاب پر واپس جائیں](index.html)

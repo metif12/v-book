@@ -1,4 +1,4 @@
-# Control Flow
+# کنترل جریان
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If به عنوان عبارت
 
 ```v
 fn main() {
@@ -23,7 +23,7 @@ fn main() {
 }
 ```
 
-## For loop
+## حلقه For
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[فصل ۴: مالکیت و حافظه](ch04-ownership-and-memory.md)

@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
 [Result Type](ch09-02-result-type.md)

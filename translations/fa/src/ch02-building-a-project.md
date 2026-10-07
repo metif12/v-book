@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# فصل ۲: ساخت یک پروژه
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+در این فصل، یاد می‌گیرید که چگونه یک پروژه V را ساختاردهی کنید، از `v.mod` استفاده کنید، کد را با `v fmt` قالب‌بندی کنید و با `v test` تست بنویسید.
 
-## Project structure
+## ساختار پروژه
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+یک پروژه V یک دایرکتوری با یک فایل `v.mod` و یک یا چند فایل `.v` است:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+هر پروژه V یک فایل `v.mod` دارد که پروژه را توصیف می‌کند:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+یک پروژه جدید ایجاد کنید:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+این دستور یک `v.mod` و یک `main.v` با یک قالب پایه ایجاد می‌کند.
 
-## Formatting with v fmt
+## قالب‌بندی با v fmt
 
-V has a built-in code formatter. Run it on your project:
+V یک قالب‌بند کد داخلی دارد. آن را روی پروژه خود اجرا کنید:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+پرچم `-w` کد قالب‌بندی‌شده را به فایل‌ها بازنویسی می‌کند.
 
-## Testing with v test
+## تست با v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V یک فریم‌ورک تست داخلی دارد. یک فایل با پسوند `_test.v` ایجاد کنید:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+تست‌ها را اجرا کنید:
 
 ```bash
 v test .
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+در این فصل، یاد گرفتید که چگونه یک پروژه V را ساختاردهی کنید، از `v.mod` استفاده کنید، کد را قالب‌بندی کنید و تست بنویسید. در فصل بعد، به مفاهیم رایج برنامه‌نویسی در V می‌پردازیم.

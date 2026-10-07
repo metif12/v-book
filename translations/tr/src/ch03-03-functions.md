@@ -1,6 +1,6 @@
-# Functions
+# Fonksiyonlar
 
-Functions are declared with `fn`:
+Fonksiyonlar `fn` ile tanımlanır:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## Birden fazla dönüş değeri
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## Dönüş değeri yok
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## Fonksiyon yükseltme
 
-Functions can be called before they are declared:
+Fonksiyonlar tanımlanmadan önce çağrılabilir:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## Sonraki
 
-[Comments](ch03-04-comments.md)
+[Yorumlar](ch03-04-comments.md)

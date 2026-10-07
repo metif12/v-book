@@ -1,6 +1,6 @@
-# Garbage Collection
+# ガベージコレクション
 
-V uses a garbage collector by default:
+Vはデフォルトでガベージコレクタを使用します：
 
 ```v
 fn main() {
@@ -8,19 +8,19 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // Memory is automatically freed when no longer referenced
+    // 参照されなくなったらメモリは自動的に解放されます
     println(names.len)
 }
 ```
 
-## Disabling GC
+## GCの無効化
 
-For performance-critical code, you can disable GC:
+パフォーマンスが重要なコードでは、GCを無効にできます：
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## 次へ
 
 [Autofree](ch04-03-autofree.md)

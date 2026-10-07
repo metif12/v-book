@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# 付録C：V構文リファレンス
 
-## Functions
+## 関数
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -8,7 +8,7 @@ fn function_name(param1 int, param2 string) int {
 }
 ```
 
-## Structs
+## struct
 
 ```v
 struct StructName {
@@ -19,7 +19,7 @@ pub:
 }
 ```
 
-## Enums
+## enum
 
 ```v
 enum EnumName {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## sum型
 
 ```v
 struct Type1 {}
@@ -37,7 +37,7 @@ struct Type2 {}
 type SumType = Type1 | Type2
 ```
 
-## Interfaces
+## インターフェース
 
 ```v
 interface InterfaceName {
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## モジュール
 
 ```v ignore
 module module_name

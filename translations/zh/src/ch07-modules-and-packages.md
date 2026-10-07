@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# 第 7 章：模块与包
 
-## Module System
+## 模块系统
 
-V organizes code into modules. A module is a directory with `.v` files:
+V 将代码组织为模块。模块是包含 `.v` 文件的目录：
 
 ```
 my_project/
@@ -12,7 +12,7 @@ my_project/
     └── math.v
 ```
 
-`math/math.v`:
+`math/math.v`：
 
 ```v ignore
 module math
@@ -22,7 +22,7 @@ pub fn add(a int, b int) int {
 }
 ```
 
-`main.v`:
+`main.v`：
 
 ```v ignore
 import math
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## 可见性
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — 公开，可从其他模块访问
+- （无修饰符）— 私有，仅模块内
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+V 包管理器（VPM）托管社区包：
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+在本章中，你学习了模块、可见性和 VPM。在下一章中，我们将探讨集合。

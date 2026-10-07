@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# الفصل 7: الوحدات والحزم
 
-## Module System
+## نظام الوحدات
 
-V organizes code into modules. A module is a directory with `.v` files:
+ينظم V الكود في وحدات. الوحدة هي مجلد يحتوي على ملفات `.v`:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## الظهور
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — عام، يمكن الوصول إليه من وحدات أخرى
+- (بدون محدد) — خاص، للوحدة فقط
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+مدير حزم V (VPM) يستضيف حزم المجتمع:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+في هذا الفصل، تعلمت عن الوحدات، الظهور، و VPM. في الفصل التالي، سنستكشف المجموعات.

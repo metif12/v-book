@@ -1,4 +1,4 @@
-# Maps
+# Haritalar
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## Harita işlemleri
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Strings](ch08-03-strings.md)
+[String'ler](ch08-03-strings.md)

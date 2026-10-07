@@ -1,4 +1,4 @@
-# Maps
+# Словари
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## Операции со словарями
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Strings](ch08-03-strings.md)
+[Строки](ch08-03-strings.md)

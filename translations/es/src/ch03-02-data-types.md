@@ -1,34 +1,34 @@
-# Data Types
+# Tipos de Datos
 
-## Integer types
+## Tipos enteros
 
-| Type | Size | Range |
-|------|------|-------|
-| `i8` | 8-bit | -128 to 127 |
-| `i16` | 16-bit | -32,768 to 32,767 |
-| `i32` | 32-bit | -2^31 to 2^31-1 |
-| `i64` | 64-bit | -2^63 to 2^63-1 |
-| `int` | platform | usually 64-bit |
-| `u8` | 8-bit | 0 to 255 |
-| `u16` | 16-bit | 0 to 65,535 |
-| `u32` | 32-bit | 0 to 2^32-1 |
-| `u64` | 64-bit | 0 to 2^64-1 |
+| Tipo | Tamaño | Rango |
+|------|--------|-------|
+| `i8` | 8 bits | -128 a 127 |
+| `i16` | 16 bits | -32,768 a 32,767 |
+| `i32` | 32 bits | -2^31 a 2^31-1 |
+| `i64` | 64 bits | -2^63 a 2^63-1 |
+| `int` | plataforma | normalmente 64 bits |
+| `u8` | 8 bits | 0 a 255 |
+| `u16` | 16 bits | 0 a 65,535 |
+| `u32` | 32 bits | 0 a 2^32-1 |
+| `u64` | 64 bits | 0 a 2^64-1 |
 
-## Float types
+## Tipos de punto flotante
 
-| Type | Size |
-|------|------|
-| `f32` | 32-bit |
-| `f64` | 64-bit |
+| Tipo | Tamaño |
+|------|--------|
+| `f32` | 32 bits |
+| `f64` | 64 bits |
 
-## Other types
+## Otros tipos
 
-- `bool` — `true` or `false`
-- `string` — UTF-8 string
-- `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
+- `bool` — `true` o `false`
+- `string` — string UTF-8
+- `rune` — carácter Unicode individual (alias de `u32`)
+- `byte` — alias de `u8`
 
-## Type conversion
+## Conversión de tipos
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## Siguiente
 
-[Functions](ch03-03-functions.md)
+[Funciones](ch03-03-functions.md)

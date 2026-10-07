@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# فصل ۱۴: همزمانی
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V از همزمانی داخلی با goroutine ها، کانال‌ها و حالت مشترک پشتیبانی می‌کند.
 
-## Spawning goroutines
+## ایجاد goroutine ها
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+یک goroutine یک نسبک سبک است. آن را با کلمه کلیدی `go` شروع کنید:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+کلمه کلیدی `go` تابع را در یک goroutine جدید شروع می‌کند و بلافاصله برمی‌گردد. تابع main به خودی خود منتظر نمی‌ماند تا goroutine ها تمام شوند.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+برای منتظر ماندن از goroutine ها، از `sync.WaitGroup` استفاده کنید:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` شمارنده را قبل از شروع goroutine افزایش می‌دهد. `wg.done()` آن را وقتی goroutine تمام می‌شود کاهش می‌دهد. `wg.wait()` تا رسیدن شمارنده به صفر مسدود می‌کند.
 
-## Channels
+## کانال‌ها
 
-Channels pass values between goroutines. Create one with `chan T`:
+کانال‌ها مقادیر را بین goroutine ها منتقل می‌کنند. یکی با `chan T` ایجاد کنید:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+یک کانال بدون بافر در ارسال تا آماده شدن گیرنده مسدود می‌کند. یک کانال بافر دار ظرفیت دارد  และ تا پر شدن مسدود نمی‌کند:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+جهت کانال نحوه استفاده از کانال را محدود می‌کند. `chan<- T` فقط ارسال، `<-chan T` فقط دریافت:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## حالت مشترک
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+وقتی goroutine ها حالت قابل تغییر مشترک دارند، آن را با `sync.Mutex` محافظت کنید:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` تا در دسترس بودن mutex مسدود می‌کند، سپس آن را برای محدوده بلوک نگه می‌دارد. بخش بحرانی را کوتاه نگه دارید.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+از `sync.RwMutex` وقتی خواندن بیشتر از نوشتن استفاده کنید. اجازه می‌دهد چندین خواننده همزمان داشته باشید:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+برای یک مقدار واحد، به جای قفل از اتمیک‌های `sync.stdatomic` استفاده کنید:
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## دستور select
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` روی چندین کانال منتظر می‌ماند و شاخص اولین کانال آماده را برمی‌گرداند. یک timeout منفی به طور نامحدود منتظر می‌ماند؛ یک timeout مثبت در صورت timeout برمی‌گرداند -1:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+در این فصل، درباره goroutine ها، کانال‌ها، حالت مشترک و select یاد گرفتید. در فصل بعد، به فریم‌ورک وب Veb می‌پردازیم.

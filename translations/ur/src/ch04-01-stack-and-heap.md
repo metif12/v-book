@@ -1,6 +1,6 @@
-# Stack and Heap
+# اسٹیک اور ہیپ
 
-V automatically decides whether to allocate on the stack or heap:
+V خودکار طور پر فیصلہ کرتا ہے کہ اسٹیک یا ہیپ پر الاکیٹ کرنا ہے:
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## اسٹیک
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- تیز الاکیٹر اور ڈی الاکیٹر
+- کمپائل ٹائم پر مقررہ سائز
+- اسکوپ ختم ہونے پر خودکار طور پر آزاد
 
-## Heap
+## ہیپ
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- متحرک سائز
+- سست الاکیٹر
+- GC یا آٹوفری کے ذریعے مینیج
 
-## Next
+## اگلا
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[گاربيج کلکشن](ch04-02-garbage-collection.md)

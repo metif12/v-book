@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# فصل ۱۸: بررسی عمیق مدیریت حافظه
 
-## GC modes
+## حالت‌های GC
 
-V provides several memory management strategies, each suited to different use cases.
+V چندین استراتژی مدیریت حافظه ارائه می‌دهد، هر کدام برای موارد استفاده مختلف مناسب هستند.
 
-| Mode | Flag | Use case |
+| حالت | پرچم | مورد استفاده |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | منظور عمومی |
+| آزادسازی خودکار | `-autofree` | آزادسازی خودکار |
+| هیچ | `-gc none` | مدیریت دستی |
+| پیش‌تخصیص | `-prealloc` | تخصیص آرنا |
 
-## Stack vs heap
+## پشته در مقابل هیپ
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V به صورت خودکار تصمیم می‌گیرد که حافظه را کجا تخصیص دهد. مقادیر کوچک و کوتاه‌مدت در پشته باقی می‌مانند. مقادیر بزرگتر یا فرار شده به هیپ می‌روند.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## حالت آزادسازی خودکار
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+آزادسازی خودکار به صورت خودکار حافظه را وقتی متغیرها از محدوده خارج می‌شوند آزاد می‌کند. از شمارش مراجع برای تخصیص‌های هیپ استفاده می‌کند.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none و حافظه دستی
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+با `-gc none`، V جمع‌آوری زباله را غیرفعال می‌کند. باید حافظه را با `free` به صورت دستی مدیریت کنید.
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## تخصیص آرنا -prealloc
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc از تخصیص آرنا برای عملکرد بهتر در حلقه‌های فشرده استفاده می‌کند. تخصیص‌ها به صورت انبوه آزاد می‌شوند.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## کد ناامن
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+بلوک `unsafe` عملیاتی را که تضمین‌های ایمنی V را دور می‌زنند اجازه می‌دهد، مانند حساب اشاره‌گر و دسترسی مستقیم به حافظه.
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### حساب اشاره‌گر
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## تنظیم عملکرد
 
-Choosing the right memory management mode can significantly impact performance.
+انتخاب حالت مدیریت حافظه مناسب می‌تواند به طور قابل توجهی بر عملکرد تأثیر بگذارد.
 
-### Benchmarking different modes
+### بنچ‌مارک حالت‌های مختلف
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### بهینه‌سازی ساختارهای داده
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+در این فصل، درباره حالت‌های مدیریت حافظه، تخصیص پشته در مقابل هیپ، آزادسازی خودکار، مدیریت دستی حافظه، prealloc، کد ناامن و تنظیم عملکرد یاد گرفتید. در فصل بعد، به ابزارها می‌پردازیم.

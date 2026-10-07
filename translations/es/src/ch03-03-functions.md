@@ -1,6 +1,6 @@
-# Functions
+# Funciones
 
-Functions are declared with `fn`:
+Las funciones se declaran con `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## Múltiples valores de retorno
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## Sin valor de retorno
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## Hoisting de funciones
 
-Functions can be called before they are declared:
+Las funciones pueden ser llamadas antes de ser declaradas:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## Siguiente
 
-[Comments](ch03-04-comments.md)
+[Comentarios](ch03-04-comments.md)

@@ -1,6 +1,6 @@
-# Access Modifiers
+# Erişim Belirleyiciler
 
-Fields are private by default:
+Alanlar varsayılan olarak özeldir:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## Görünürlük
 
-| Modifier | Scope |
+| Belirleyici | Kapsam |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| (yok) | Yalnızca modül |
+| `pub` | Herkese açık |
 
-## Next
+## Sonraki
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[Bölüm 6: Enum'lar ve Toplam Tipler](ch06-enums-and-sum-types.md)

@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# Chapitre 15 : Framework Web Veb
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb est le framework web intégré de V. Il fournit le routage, la gestion JSON, les templates HTML, le middleware et le service de fichiers statiques — le tout avec une API minimale.
 
-## Hello, Veb!
+## Bonjour, Veb !
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+La struct `App` contient l'état de votre application. Chaque route est une méthode sur `App` annotée avec `@['/path']`. Le gestionnaire reçoit un `veb.Context` qui fournit des méthodes pour écrire des réponses.
 
-## Routing
+## Routage
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb utilise des paramètres de chemin avec la syntaxe `:name`. Les paramètres de chemin sont passés directement comme arguments de fonction au gestionnaire.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+Les paramètres de chemin (`:id`) sont extraits de l'URL et passés comme arguments. Les paramètres de chaîne de requête (`?q=...`) sont accessibles via `ctx.query` qui est une `map[string]string`.
 
-## JSON responses
+## Réponses JSON
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` sérialise n'importe quelle valeur V en JSON et définit l'en-tête `Content-Type` sur `application/json`.
 
 ## Templates
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb supporte les templates HTML avec la fonction `$tmpl`. Les templates utilisent la syntaxe d'interpolation de chaînes de V.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+Le fichier template reçoit la struct de données et peut accéder à ses champs avec `{{ field_name }}`.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Le middleware enveloppe chaque requête. Utilisez `app.use()` pour enregistrer un middleware global, ou `app.route_use()` pour un middleware spécifique à une route.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+Le middleware renvoie un `bool` — `true` pour continuer vers le gestionnaire suivant, `false` pour arrêter.
 
-## Static files
+## Fichiers statiques
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb peut servir des fichiers statiques depuis un répertoire en utilisant `app.handle_static()`.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+Les fichiers du répertoire `public/` sont servis à la racine. Par exemple, `public/style.css` est accessible à `http://localhost:8080/style.css`.
 
-## Summary
+## Résumé
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+Dans ce chapitre, vous avez appris Veb — le framework web intégré de V. Vous avez vu comment définir des routes avec des paramètres de chemin et de requête, renvoyer des réponses JSON, rendre des templates HTML, ajouter du middleware pour les préoccupations transversales et servir des fichiers statiques. Dans le chapitre suivant, nous explorerons l'interop C.

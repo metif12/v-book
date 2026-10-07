@@ -1,6 +1,6 @@
-# Chapter 15: Veb Web Framework
+# 第 15 章：Veb Web 框架
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb 是 V 内置的 Web 框架。它提供路由、JSON 处理、HTML 模板、中间件和静态文件服务——所有功能都具有极简的 API。
 
 ## Hello, Veb!
 
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+`App` 结构体保存你的应用状态。每个路由是 `App` 上使用 `@['/path']` 注解的方法。处理函数接收 `veb.Context`，它提供写入响应的方法。
 
-## Routing
+## 路由
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb 使用 `:name` 语法的路径参数。路径参数直接作为函数参数传递给处理函数。
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+路径参数（`:id`）从 URL 中提取并作为参数传递。查询字符串参数（`?q=...`）通过 `ctx.query` 访问，它是一个 `map[string]string`。
 
-## JSON responses
+## JSON 响应
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` 将任何 V 值序列化为 JSON 并设置 `Content-Type` 头为 `application/json`。
 
-## Templates
+## 模板
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb 支持使用 `$tmpl` 函数的 HTML 模板。模板使用 V 的字符串插值语法。
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+模板文件接收数据结构体，可以使用 `{{ field_name }}` 访问其字段。
 
-## Middleware
+## 中间件
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+中间件包装每个请求。使用 `app.use()` 注册全局中间件，或使用 `app.route_use()` 注册路由特定的中间件。
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+中间件返回 `bool` — `true` 继续到下一个处理函数，`false` 停止。
 
-## Static files
+## 静态文件
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb 可以使用 `app.handle_static()` 从目录提供静态文件。
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+`public/` 目录中的文件在根路径提供。例如，`public/style.css` 可在 `http://localhost:8080/style.css` 访问。
 
-## Summary
+## 小结
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+在本章中，你学习了 Veb——V 内置的 Web 框架。你了解了如何定义带路径和查询参数的路由、返回 JSON 响应、渲染 HTML 模板、添加中间件处理横切关注点以及提供静态文件。在下一章中，我们将探讨 C 语言互操作。

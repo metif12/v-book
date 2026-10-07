@@ -1,4 +1,4 @@
-# Maps
+# میپس
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## میپ آپریشنز
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Strings](ch08-03-strings.md)
+[اسٹرنگز](ch08-03-strings.md)

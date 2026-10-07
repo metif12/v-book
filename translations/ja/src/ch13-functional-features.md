@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# 第13章：関数型機能
 
-V supports closures and higher-order functions.
+Vはクロージャと高次関数をサポートしています。
 
-## Closures
+## クロージャ
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## 高次関数
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## 匿名関数
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+この章では、クロージャと高次関数について学びました。次の章では、並行性を見ていきます。

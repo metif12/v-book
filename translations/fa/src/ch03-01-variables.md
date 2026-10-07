@@ -1,6 +1,6 @@
-# Variables and Mutability
+# متغیرها و تغییرپذیری
 
-In V, variables are immutable by default:
+در V، متغیرها به صورت پیش‌فرض غیرقابل تغییر هستند:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## تعریف
 
-Use `:=` to declare and initialize:
+از `:=` برای تعریف و مقداردهی اولیه استفاده کنید:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## استنتاج نوع
 
-V infers types from the initializer:
+V انواع را از مقداردهی اولیه استنتاج می‌کند:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## انواع صریح
 
-You can specify types explicitly:
+می‌توانید انواع را به صراحت مشخص کنید:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## بعدی
 
-[Data Types](ch03-02-data-types.md)
+[انواع داده](ch03-02-data-types.md)

@@ -1,4 +1,4 @@
-# Pattern Matching
+# 模式匹配
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Match 穷尽性
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## 下一步
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[第 7 章：模块与包](ch07-modules-and-packages.md)

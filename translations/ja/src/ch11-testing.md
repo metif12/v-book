@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# 第11章：テスト
 
-V has a built-in testing framework.
+Vには組み込みのテストフレームワークがあります。
 
-## Test files
+## テストファイル
 
-Create a file ending in `_test.v`:
+`_test.v`で終わるファイルを作成します：
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## テストの実行
 
 ```bash
 v test .
 ```
 
-## Test organization
+## テストの整理
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## テーブル駆動テスト
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+この章では、Vのテストフレームワークについて学びました。次の章では、コマンドラインツールを構築します。

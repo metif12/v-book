@@ -1,4 +1,4 @@
-# Strings
+# 文字列
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## 文字列メソッド
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[第9章：エラー処理](ch09-error-handling.md)

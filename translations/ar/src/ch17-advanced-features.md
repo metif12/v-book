@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# الفصل 17: الميزات المتقدمة
 
-## Attributes
+## السمات (Attributes)
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+السمات هي تعليقات وصفية تُوضع قبل التعريفات. تتحكم في سلوك المُصرِّف، تلميحات التحسين، ودورة حياة API.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+يُعلّم دالة أو نوعاً بأنه مهمل. المُصرِّف يُصدر تحذيراً عند استخدام العنصر.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+يلمح للمُصرِّف لتضمين الدالة عند موقع الاستدعاء، مما يلغي تكلفة الاستدعاء. الأفضل للدوال الصغيرة كثيرة الاستدعاء.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+يُعلّم دالة بأنها غير آمنة، مما يسمح لها باستخدام كتل `unsafe` دون أن يُعلَّم المُستدعي أيضاً كغير آمن.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+تجميع شرطي عند وقت التصريف. الكتلة تُضمَّن فقط عندما يكون الشرط صحيحاً.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## كود وقت التصريف
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V يوفر عدة تراكيب وقت التصريف تُنفذ أثناء التصريف، مما يتيح البرمجة الوصفية والتجريدات بدون تكلفة.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+يُقيّم الشروط عند وقت التصريف. يدعم كشف المنصة، فحص المعمارية، والعلامات المخصصة.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+يكرر عند وقت التصريف على المصفوفات، حقول struct، أو النطاقات. مفيد لتوليد كود متكرر.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+تأكيدات وقت التصريف تُوقف التصريف إذا كان الشرط خاطئاً.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## تحميل زائد للمعاملات (Operator Overloading)
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V يسمح بتعريف سلوك مخصص للمعاملات على الأنواع المُعرَّفة من المستخدم. كل معامل يرتبط بدالة بتوقيع محدد.
 
-### Arithmetic operators
+### المعاملات الحسابية
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### معاملات المقارنة
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### معامل الفهرسة
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## انعكاس وقت التصريف
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+`$for` في V يمكنه التكرار على حقول struct عند وقت التصريف، مما يتيح التسلسل التلقائي، التحقق، وأكثر.
 
-### Iterating struct fields
+### التكرار على حقول struct
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### توليد كود التحقق
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+في هذا الفصل، تعلمت عن السمات، كود وقت التصريف، تحميل زائد للمعاملات، وانعكاس وقت التصريف. هذه الميزات تتيح أنماط برمجة وصفية قوية وتحكمًا دقيقًا في التصريف. في الفصل التالي، سنستكشف إدارة الذاكرة بالتفصيل.

@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# अध्याय 19: टूलिंग
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+V सोर्स कोड को ऑफ़िशियल स्टाइल गाइड के अनुसार फॉर्मेट करता है। परिवर्तनों को सीधे लिखने के लिए `-w` का उपयोग करें।
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### एकल फ़ाइल फॉर्मेट करना
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### लिए बिना फॉर्मेटिंग जांचना
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+V सोर्स फ़ाइलों से डॉक्यूमेंटेशन जनरेट करता है। डिफ़ॉल्ट रूप से HTML आउटपुट देता है।
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### विशिष्ट मॉड्यूल का डॉक्यूमेंटेशन
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+परफ़ॉर्मेंस बॉटलनेकक को पहचानने के लिए प्रोग्राम निष्पादन को प्रोफ़ाइल करता है।
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### प्रोफ़ाइल आउटपुट का विश्लेषण
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+वर्तमान डायरेक्टरी या निर्दिष्ट फ़ाइल में यूनिट टेस्ट चलाता है।
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### विशिष्ट टेस्ट चलाना
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### कवरेज के साथ टेस्ट चलाना
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+V कोड पर स्टैटिक एनालिसिस करता है, एरर, चेतावनियों और स्टाइल समस्याओं की जांच करता है।
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### एकल फ़ाइल जांचना
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## क्रॉस-कंपाइलेशन
 
-V can compile code for different operating systems and architectures from a single machine.
+V एक ही मशीन से विभिन्न ऑपरेटिंग सिस्टम और आर्किटेक्चर के लिए कोड कंपाइल कर सकता है।
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### आर्किटेक्चर निर्दिष्ट करना
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### एम्बेडेड टार्गेट के लिए क्रॉस-कंपाइलेशन
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+V इंस्टॉलेशन के बारे में नैदानिक जानकारी दिखाता है, जिसमें कंपाइलर वर्ज़न, OS और कॉन्फ़िगरेशन शामिल है।
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+V कंपाइलर को नवीनतम वर्ज़न में अपडेट करता है।
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### विशिष्ट वर्ज़न में अपडेट करना
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+इस अध्याय में, आपने V के टूलिंग इकोसिस्टम के बारे में सीखा: फॉर्मेटिंग के लिए `v fmt`, डॉक्यूमेंटेशन के लिए `v doc`, परफ़ॉर्मेंस एनालिसिस के लिए `v profiler`, टेस्टिंग के लिए `v test`, स्टैटिक एनालिसिस के लिए `v check`, क्रॉस-कंपाइलेशन, नैदानिक के लिए `v doctor`, और सेल्फ-अपडेट के लिए `v up`। अगले अध्याय में, हम एक फाइनल प्रोजेक्ट बनाएंगे।

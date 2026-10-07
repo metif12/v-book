@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# Anhang G: Wie V gemacht wird
 
-V is an open-source project. The compiler is written in V itself.
+V ist ein Open-Source-Projekt. Der Compiler ist selbst in V geschrieben.
 
 ## Repository
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- Lizenz: MIT
 
-## Building from source
+## Aus dem Quellcode kompilieren
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,9 +15,9 @@ cd v
 make
 ```
 
-## Contributing
+## Mitwirgen
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+Siehe den [Leitfaden für Beiträge](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
 
 ## Community
 

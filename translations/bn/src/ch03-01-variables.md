@@ -1,6 +1,6 @@
-# Variables and Mutability
+# ভেরিয়েবল এবং মিউটেবিলিটি
 
-In V, variables are immutable by default:
+V-এ ভেরিয়েবল ডিফল্টভাবে অপরিবর্তনীয়:
 
 ```v
 fn main() {
@@ -14,9 +14,9 @@ fn main() {
 }
 ```
 
-## Declaration
+## ঘোষণা
 
-Use `:=` to declare and initialize:
+ঘোষণা এবং আরম্ভ করতে `:=` ব্যবহার করুন:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## টাইপ ইনফারেন্স
 
-V infers types from the initializer:
+V আরম্ভকারী থেকে টাইপ ইনফার করে:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## স্পষ্ট টাইপ
 
-You can specify types explicitly:
+আপনি স্পষ্টভাবে টাইপ উল্লেখ করতে পারেন:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## পরবর্তী
 
-[Data Types](ch03-02-data-types.md)
+[ডেটা টাইপ](ch03-02-data-types.md)

@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# فصل ۶: enum ها و انواع جمع
 
-## Enums
+## enum ها
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## انواع جمع
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## تطبیق الگو
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+در این فصل، درباره enum ها، انواع جمع و تطبیق الگو یاد گرفتید. در فصل بعد، به ماژول‌ها و بسته‌ها می‌پردازیم.

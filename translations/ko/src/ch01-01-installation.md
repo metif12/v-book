@@ -1,10 +1,10 @@
-# Installation
+# 설치
 
 ## Windows
 
-### Installer
+### 인스톨러
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+[vlang.io/install](https://vlang.io/install.html)에서 최신 인스톨러를 다운로드하여 실행하세요.
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### 수동 설치
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. [GitHub releases](https://github.com/vlang/v/releases)에서 최신 릴리스를 다운로드하세요.
+2. zip 파일을 압축 해제하세요.
+3. `v` 디렉터리를 PATH에 추가하세요.
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### 인스톨러 스크립트
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### 인스톨러 스크립트
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## 소스에서 빌드
 
-To build V from source, you need a C compiler (gcc or clang):
+소스에서 V를 빌드하려면 C 컴파일러(gcc 또는 clang)가 필요합니다:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+Windows에서는 `make` 대신 `win.bat`을 사용하세요.
 
-## Verifying
+## 설치 확인
 
 ```bash
 v version
 ```
 
-## Next
+## 다음
 
 [Hello, World!](ch01-02-hello-world.md)

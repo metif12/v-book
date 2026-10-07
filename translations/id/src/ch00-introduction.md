@@ -1,33 +1,33 @@
-# Introduction
+# Pengantar
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*Buku Bahasa Pemrograman V* adalah panduan lengkap untuk [bahasa pemrograman V](https://vlang.io) — bahasa yang sederhana, cepat, aman, terkompilasi untuk membangun perangkat lunak yang mudah dipelihara.
 
-## Who this book is for
+## Untuk siapa buku ini
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+Buku ini berasumsi Anda memiliki pengalaman pemrograman dalam bahasa lain. Buku ini tidak berasumsi Anda mengenal V. Kita mulai dari dasar dan membangun hingga topik lanjutan.
 
-## How to use this book
+## Cara menggunakan buku ini
 
-The book is organized into parts:
+Buku ini terorganisir menjadi beberapa bagian:
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **Bagian I: Memulai** — Instalasi V, menulis program pertama Anda, memahami struktur proyek.
+- **Bagian II: Konsep Pemrograman Umum** — Variabel, tipe, fungsi, alur kontrol, struct, enum, modul, koleksi, penanganan error.
+- **Bagian III: V Menengah** — Generics, testing, konkurensi, pengembangan web, C interop, fitur lanjutan, dan proyek akhir.
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+Setiap bab membangun dari bab sebelumnya. Contoh kode diuji di CI — setiap blok kode V di buku ini dikompilasi dan dijalankan secara otomatis.
 
-## Code examples
+## Contoh kode
 
-Code examples in this book follow these conventions:
+Contoh kode di buku ini mengikuti konvensi berikut:
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- Blok kode `v` dikompilasi dan dijalankan di CI.
+- Blok kode `v ignore` tidak dikompilasi (digunakan untuk pseudocode atau contoh yang belum lengkap).
+- Blok kode `v no_run` dikompilasi tetapi tidak dijalankan (digunakan untuk contoh yang akan memblokir atau memerlukan input).
 
-## Translations
+## Terjemahan
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+Buku ini tersedia dalam 16 bahasa. Lihat [Lampiran F](appendix-f-translations.md) untuk daftar lengkap.
 
-## Contributing
+## Kontribusi
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+Buku ini adalah proyek komunitas. Lihat [repositori GitHub](https://github.com/vlang/v-book) untuk cara berkontribusi.

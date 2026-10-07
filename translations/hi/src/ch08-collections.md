@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# अध्याय 8: कलेक्शन
 
-## Arrays
+## ऐरे
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## मैप
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## स्ट्रिंग
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+इस अध्याय में, आपने ऐरे, मैप, और स्ट्रिंग के बारे में सीखा। अगले अध्याय में, हम एरर हैंडलिंग का पता लगाएंगे।

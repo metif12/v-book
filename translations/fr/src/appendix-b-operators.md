@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# Annexe B : Opérateurs
 
-## Arithmetic
+## Arithmétiques
 
-| Operator | Description |
-|----------|-------------|
+| Opérateur | Description |
+|-----------|-------------|
 | `+` | Addition |
-| `-` | Subtraction |
+| `-` | Soustraction |
 | `*` | Multiplication |
 | `/` | Division |
 | `%` | Modulo |
-| `**` | Power |
+| `**` | Puissance |
 
-## Comparison
+## Comparaison
 
-| Operator | Description |
-|----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| Opérateur | Description |
+|-----------|-------------|
+| `==` | Égal |
+| `!=` | Différent |
+| `<` | Inférieur à |
+| `>` | Supérieur à |
+| `<=` | Inférieur ou égal |
+| `>=` | Supérieur ou égal |
 
-## Logical
+## Logiques
 
-| Operator | Description |
-|----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| Opérateur | Description |
+|-----------|-------------|
+| `&&` | ET logique |
+| `\|\|` | OU logique |
+| `!` | NON logique |
 
-## Bitwise
+## Binaires
 
-| Operator | Description |
-|----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| Opérateur | Description |
+|-----------|-------------|
+| `&` | ET binaire |
+| `\|` | OU binaire |
+| `^` | XOR binaire |
+| `<<` | Décalage à gauche |
+| `>>` | Décalage à droite |
 
-## Assignment
+## Affectation
 
-| Operator | Description |
-|----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| Opérateur | Description |
+|-----------|-------------|
+| `=` | Affectation |
+| `:=` | Déclaration courte |
+| `+=` | Addition et affectation |
+| `-=` | Soustraction et affectation |
+| `*=` | Multiplication et affectation |
+| `/=` | Division et affectation |
+| `%=` | Modulo et affectation |

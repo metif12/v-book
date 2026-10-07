@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# الفصل 15: إطار عمل Veb للويب
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb هو إطار عمل الويب المدمج في V. يوفر التوجيه، معالجة JSON، قوالب HTML، middleware، وتقديم الملفات الثابتة — كل ذلك بواجهة API بسيطة.
 
-## Hello, Veb!
+## مرحباً، Veb!
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+struct `App` يحتفظ بحالة تطبيقك. كل مسار هو دالة على `App` مُعلَّمة بـ `@['/path']`. المعالج يستقبل `veb.Context` الذي يوفر دوالاً لكتابة الاستجابات.
 
-## Routing
+## التوجيه (Routing)
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb يستخدم معاملات المسار بصيغة `:name`. معاملات المسار تُمرَّر مباشرة كمعاملات للدالة المعالجة.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+معاملات المسار (`:id`) تُستخرج من عنوان URL وتُمرَّر كمعاملات. معاملات سلسلة الاستعلام (`?q=...`) تُوصَل عبر `ctx.query` وهو `map[string]string`.
 
-## JSON responses
+## استجابات JSON
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` يُسلسِل أي قيمة V إلى JSON ويعيّن ترويسة `Content-Type` إلى `application/json`.
 
-## Templates
+## القوالب (Templates)
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb يدعم قوالب HTML مع دالة `$tmpl`. القوالب تستخدم صيغة استيفاء النصوص في V.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+ملف القالب يستقبل struct البيانات ويمكنه الوصول إلى حقوله بـ `{{ field_name }}`.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+middleware يُغلِّف كل طلب. استخدم `app.use()` لتسجيل middleware عام، أو `app.route_use()` لمiddleware خاص بمسار.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+middleware يُعيد `bool` — `true` للمتابعة إلى المعالج التالي، `false` للتوقف.
 
-## Static files
+## الملفات الثابتة
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb يمكنه تقديم الملفات الثابتة من مجلد باستخدام `app.handle_static()`.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+الملفات في مجلد `public/` تُقدَّم عند المسار الجذري. على سبيل المثال، `public/style.css` متاح على `http://localhost:8080/style.css`.
 
-## Summary
+## الملخص
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+في هذا الفصل، تعلمت عن Veb — إطار عمل الويب المدمج في V. رأيت كيف تُعرّف المسارات بمعاملات المسار وسلسلة الاستعلام، وتُعيد استجابات JSON، وتُصيغ قوالب HTML، وتضيف middleware للمخاوف المتقاطعة، وتقدم الملفات الثابتة. في الفصل التالي، سنستكشف التفاعل مع C.

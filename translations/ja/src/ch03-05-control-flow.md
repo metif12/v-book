@@ -1,4 +1,4 @@
-# Control Flow
+# 制御フロー
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If式
 
 ```v
 fn main() {
@@ -23,22 +23,22 @@ fn main() {
 }
 ```
 
-## For loop
+## Forループ
 
 ```v
 fn main() {
-    // Over an array
+    // 配列のループ
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range
+    // 範囲
     for i in 0 .. 5 {
         println(i)
     }
 
-    // With index
+    // インデックス付き
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## 次へ
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[第4章：所有権とメモリ](ch04-ownership-and-memory.md)

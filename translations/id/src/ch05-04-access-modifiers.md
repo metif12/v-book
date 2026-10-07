@@ -1,6 +1,6 @@
-# Access Modifiers
+# Modifier Akses
 
-Fields are private by default:
+Field bersifat private secara default:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## Visibilitas
 
 | Modifier | Scope |
 |----------|-------|
 | (none) | Module only |
 | `pub` | Public |
 
-## Next
+## Berikutnya
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[Bab 6: Enum dan Tipe Sum](ch06-enums-and-sum-types.md)

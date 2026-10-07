@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# Apéndice B: Operadores
 
-## Arithmetic
+## Aritméticos
 
-| Operator | Description |
+| Operador | Descripción |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | Suma |
+| `-` | Resta |
+| `*` | Multiplicación |
+| `/` | División |
+| `%` | Módulo |
+| `**` | Potencia |
 
-## Comparison
+## Comparación
 
-| Operator | Description |
+| Operador | Descripción |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | Igual |
+| `!=` | No igual |
+| `<` | Menor que |
+| `>` | Mayor que |
+| `<=` | Menor o igual |
+| `>=` | Mayor o igual |
 
-## Logical
+## Lógicos
 
-| Operator | Description |
+| Operador | Descripción |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | AND lógico |
+| `\|\|` | OR lógico |
+| `!` | NOT lógico |
 
-## Bitwise
+## Bits
 
-| Operator | Description |
+| Operador | Descripción |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | AND de bits |
+| `\|` | OR de bits |
+| `^` | XOR de bits |
+| `<<` | Desplazamiento a la izquierda |
+| `>>` | Desplazamiento a la derecha |
 
-## Assignment
+## Asignación
 
-| Operator | Description |
+| Operador | Descripción |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | Asignación |
+| `:=` | Declaración corta |
+| `+=` | Suma y asigna |
+| `-=` | Resta y asigna |
+| `*=` | Multiplica y asigna |
+| `/=` | Divide y asigna |
+| `%=` | Módulo y asigna |

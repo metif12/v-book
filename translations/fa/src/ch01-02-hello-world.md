@@ -1,6 +1,6 @@
-# Hello, World!
+# سلام، دنیا!
 
-Create a file called `main.v`:
+یک فایل به نام `main.v` ایجاد کنید:
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+آن را اجرا کنید:
 
 ```bash
 v run main.v
 ```
 
-Output:
+خروجی:
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## کالبدشکافی یک برنامه V
 
-Let's break down the program:
+بیایید برنامه را تجزیه کنیم:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — هر برنامه V با یک تابع `main` شروع می‌شود. کلمه کلیدی `fn` یک تابع را تعریف می‌کند.
+- `println(...)` — یک تابع داخلی که یک خط را به stdout چاپ می‌کند.
+- `'Hello, World!'` — یک رشته ثابت. V از نقل‌قول تکی برای رشته‌ها استفاده می‌کند.
 
-## Compiling vs running
+## کامپایل در مقابل اجرا
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` در یک مرحله کامپایل و اجرا می‌کند. همچنین می‌توانید ابتدا کامپایل کنید:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## بعدی
 
-[Hello, V!](ch01-03-hello-v.md)
+[سلام، V!](ch01-03-hello-v.md)

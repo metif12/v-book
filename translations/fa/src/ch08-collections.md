@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# فصل ۸: مجموعه‌ها
 
-## Arrays
+## آرایه‌ها
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## نقشه‌ها
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## رشته‌ها
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+در این فصل، درباره آرایه‌ها، نقشه‌ها و رشته‌ها یاد گرفتید. در فصل بعد، به مدیریت خطا می‌پردازیم.

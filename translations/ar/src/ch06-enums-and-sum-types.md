@@ -1,4 +1,4 @@
-# Chapter 6: Enums and Sum Types
+# الفصل 6: Enums وأنواع الجمع
 
 ## Enums
 
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## أنواع الجمع
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## مطابقة الأنماط
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+في هذا الفصل، تعلمت عن enums، أنواع الجمع، ومطابقة الأنماط. في الفصل التالي، سنستكشف الوحدات والحزم.

@@ -1,4 +1,4 @@
-# Arrays
+# Tableaux
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## Opérations sur les tableaux
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
 [Maps](ch08-02-maps.md)

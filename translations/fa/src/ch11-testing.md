@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# فصل ۱۱: تست‌نویسی
 
-V has a built-in testing framework.
+V یک فریم‌ورک تست داخلی دارد.
 
-## Test files
+## فایل‌های تست
 
-Create a file ending in `_test.v`:
+یک فایل با پسوند `_test.v` ایجاد کنید:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## اجرای تست‌ها
 
 ```bash
 v test .
 ```
 
-## Test organization
+## سازماندهی تست‌ها
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## تست‌های جدول‌محور
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+در این فصل، درباره فریم‌ورک تست V یاد گرفتید. در فصل بعد، یک ابزار خط فرمان می‌سازیم.

@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+فایل `v.mod` پروژه شما را توصیف می‌کند:
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## فیلدها
 
-| Field | Description |
+| فیلد | توضیح |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | نام پروژه (باید با نام دایرکتوری مطابقت داشته باشد) |
+| `description` | توضیح کوتاه |
+| `version` | نسخه معنایی |
+| `license` | شناسه مجوز |
+| `dependencies` | لیست نام بسته‌های VPM |
 
-## Next
+## بعدی
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[قالب‌بندی با v fmt](ch02-03-formatting.md)

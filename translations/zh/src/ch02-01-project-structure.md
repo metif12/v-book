@@ -1,6 +1,6 @@
-# Project Structure
+# 项目结构
 
-A V project is a directory with a `v.mod` file:
+V 项目是一个包含 `v.mod` 文件的目录：
 
 ```
 my_project/
@@ -22,12 +22,12 @@ Module {
 }
 ```
 
-## Creating a project
+## 创建项目
 
 ```bash
 v init
 ```
 
-## Next
+## 下一步
 
 [v.mod](ch02-02-vmod.md)

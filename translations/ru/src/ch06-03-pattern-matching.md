@@ -1,4 +1,4 @@
-# Pattern Matching
+# Сопоставление с образцом
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Исчерпывающий match
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## Далее
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[Глава 7: Модули и пакеты](ch07-modules-and-packages.md)

@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# باب ۵: structs
 
-Structs are V's way to define custom data types.
+structs حسب منشا ڈیٹا اقسام کی تعریف کرنے کا V کا طریقہ ہیں۔
 
-## Defining Structs
+## structs کی تعریف
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## میتھڈز
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## ایمبیڈڈ structs
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## رسائی کی تعدیل کار
 
-Fields are private by default. Use `pub` to make them public:
+فیلڈز ڈیفالٹ طور پر نجی ہوتے ہیں۔ انہیں عوامی بنانے کے لیے `pub` استعمال کریں:
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+اس باب میں، آپ نے structs، میتھڈز، ایمبیڈنگ، اور رسائی کی تعدیل کار کے بارے میں سیکھا۔ اگلے باب میں، ہم enums اور سم ٹائپس کو دریافت کریں گے۔

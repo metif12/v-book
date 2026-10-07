@@ -1,6 +1,6 @@
-# Stack and Heap
+# Pile et tas
 
-V automatically decides whether to allocate on the stack or heap:
+V décide automatiquement d'allouer sur la pile ou le tas :
 
 ```v
 fn main() {
@@ -18,18 +18,18 @@ fn main() {
 }
 ```
 
-## Stack
+## Pile
 
-- Fast allocation and deallocation
-- Fixed size at compile time
-- Automatically freed when scope ends
+- Allocation et désallocation rapides
+- Taille fixe au moment de la compilation
+- Automatiquement libérée à la fin de la portée
 
-## Heap
+## Tas
 
-- Dynamic size
-- Slower allocation
-- Managed by GC or autofree
+- Taille dynamique
+- Allocation plus lente
+- Géré par le GC ou autofree
 
-## Next
+## Suivant
 
-[Garbage Collection](ch04-02-garbage-collection.md)
+[Ramasse-miettes](ch04-02-garbage-collection.md)

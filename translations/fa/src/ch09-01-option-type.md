@@ -1,4 +1,4 @@
-# Option Type
+# نوع Option
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## باز کردن بسته
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Result Type](ch09-02-result-type.md)
+[نوع Result](ch09-02-result-type.md)

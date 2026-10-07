@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# Bölüm 16: C Birlikte Çalışma
 
-V can call C functions and be called from C.
+V, C fonksiyonlarını çağırabilir ve C'den çağrılabilir.
 
-## Calling C from V
+## V'den C'yi çağırma
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V, `C` modülünü kullanarak C fonksiyonlarını doğrudan çağırabilir. C fonksiyon imzasını tanımlamanız ve gerekli başlık dosyalarını dahil etmeniz gerekir.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag` yönergesi bayrakları C derleyicisine geçirir. Örneğin, `-lm` matematik kütüphanesini bağlar. `#include` yönergesi C başlık dosyalarını dahil eder, böylece derleyici C fonksiyonlarını bilir. `fn C.function_name` bildirimi V'ye C fonksiyon imzasını söyler.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+İmzasını tanımlayarak herhangi bir C fonksiyonunu çağırabilirsiniz. Örneğin, `puts` çağırmak için:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## C'den V'yi çağırma
 
-Compile V to a shared library:
+V'yi paylaşılan kütüphane olarak derleyin:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+Ardından paylaşılan kütüphaneyi C'den kullanın:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V, C kodunu V'ye çevirebilir:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## C tipleriyle çalışma
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V, `C.int`, `C.double`, `C.char` gibi C uyumlu tipler sağlar.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## Callback'ler
 
-You can pass V functions to C callbacks:
+V fonksiyonlarını C callback'lerine geçirebilirsiniz:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+Bu bölümde C birlikte çalışma hakkında bilgi edindiniz. Sonraki bölümde gelişmiş özellikleri inceleyeceğiz.

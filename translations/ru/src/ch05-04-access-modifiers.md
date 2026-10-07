@@ -1,6 +1,6 @@
-# Access Modifiers
+# Модификаторы доступа
 
-Fields are private by default:
+Поля по умолчанию приватные:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## Видимость
 
-| Modifier | Scope |
-|----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| Модификатор | Область видимости |
+|-------------|-------------------|
+| (нет) | Только модуль |
+| `pub` | Публичный |
 
-## Next
+## Далее
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[Глава 6: Перечисления и суммирующие типы](ch06-enums-and-sum-types.md)

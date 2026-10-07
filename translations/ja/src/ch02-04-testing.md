@@ -1,6 +1,6 @@
-# Testing with v test
+# v testによるテスト
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+Vには組み込みのテストフレームワークがあります。`_test.v`で終わるファイルを作成します：
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+テストの実行：
 
 ```bash
 v test .
 ```
 
-## Test functions
+## テスト関数
 
-Test functions start with `test_` and take no arguments:
+テスト関数は`test_`で始まり、引数を取りません：
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## アサーション
 
-Use `assert` to check conditions:
+`assert`を使って条件を確認します：
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## 次へ
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[第3章：共通概念](ch03-common-concepts.md)

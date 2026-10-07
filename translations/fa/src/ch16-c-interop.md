@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# فصل ۱۶: همکاری با C
 
-V can call C functions and be called from C.
+V می‌تواند توابع C را فراخوانی کند و از C فراخوانی شود.
 
-## Calling C from V
+## فراخوانی C از V
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V می‌تواند مستقیماً با ماژول `C` توابع C را فراخوانی کند. باید امضای تابع C را اعلام کنید و هدرهای لازم را شامل کنید.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+دستور `#flag` پرچم‌ها را به کامپایلر C منتقل می‌کند. به عنوان مثال، `-lm` کتابخانه ریاضی را لینک می‌کند. دستور `#include` فایل‌های هدر C را شامل می‌کند تا کامپایلر از توابع C مطلع شود. اعلام `fn C.function_name` امضای تابع C را به V معرفی می‌کند.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+می‌توانید هر تابع C را با اعلام امضای آن فراخوانی کنید. به عنوان مثال، برای فراخوانی `puts`:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## فراخوانی V از C
 
-Compile V to a shared library:
+V را به یک کتابخانه مشترک کامپایل کنید:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+سپس از کتابخانه مشترک در C استفاده کنید:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V می‌تواند کد C را به V ترجمه کند:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## کار با انواع C
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V انواع سازگار با C مانند `C.int`، `C.double`، `C.char` و غیره ارائه می‌دهد.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## بازگشت‌ها (Callbacks)
 
-You can pass V functions to C callbacks:
+می‌توانید توابع V را به بازگشت‌های C منتقل کنید:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+در این فصل، درباره همکاری با C یاد گرفتید. در فصل بعد، به ویژگی‌های پیشرفته می‌پردازیم.

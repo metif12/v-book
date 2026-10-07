@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# Глава 8: Коллекции
 
-## Arrays
+## Массивы
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## Словари
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## Строки
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+В этой главе вы узнали о массивах, словарях и строках. В следующей главе мы рассмотрим обработку ошибок.

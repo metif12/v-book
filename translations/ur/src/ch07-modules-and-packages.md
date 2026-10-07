@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# باب ۷: ماڈیولز اور پیکجز
 
-## Module System
+## ماڈیول سسٹم
 
-V organizes code into modules. A module is a directory with `.v` files:
+V کوڈ کو ماڈیولز میں منظم کرتا ہے۔ ایک ماڈیول ایک ڈائریکٹری ہے جس میں `.v` فائلیں ہوتی ہیں:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## مرئیت
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — عوامی، دیگر ماڈیولز سے قابل رسائی
+- (کوئی تعدیل کار نہیں) — نجی، صرف ماڈیول
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+V پیکج مینیجر (VPM) کمیونٹی پیکجز میزبان کرتا ہے:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+اس باب میں، آپ نے ماڈیولز، مرئیت، اور VPM کے بارے میں سیکھا۔ اگلے باب میں، ہم کلکشنز کو دریافت کریں گے۔

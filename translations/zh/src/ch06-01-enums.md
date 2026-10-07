@@ -1,4 +1,4 @@
-# Enums
+# 枚举
 
 ```v
 enum Color {
@@ -18,6 +18,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Sum Types](ch06-02-sum-types.md)
+[和类型](ch06-02-sum-types.md)

@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# Anhang C: V-Syntaxreferenz
 
-## Functions
+## Funktionen
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## Sum Types
 
 ```v
 struct Type1 {}
@@ -37,7 +37,7 @@ struct Type2 {}
 type SumType = Type1 | Type2
 ```
 
-## Interfaces
+## Schnittstellen
 
 ```v
 interface InterfaceName {
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## Module
 
 ```v ignore
 module module_name

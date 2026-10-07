@@ -1,4 +1,4 @@
-# Strings
+# النصوص
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## دوال النصوص
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[الفصل 9: معالجة الأخطاء](ch09-error-handling.md)

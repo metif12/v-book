@@ -1,8 +1,8 @@
-# Data Types
+# Veri Tipleri
 
-## Integer types
+## Tamsayı tipleri
 
-| Type | Size | Range |
+| Tip | Boyut | Aralık |
 |------|------|-------|
 | `i8` | 8-bit | -128 to 127 |
 | `i16` | 16-bit | -32,768 to 32,767 |
@@ -14,21 +14,21 @@
 | `u32` | 32-bit | 0 to 2^32-1 |
 | `u64` | 64-bit | 0 to 2^64-1 |
 
-## Float types
+## Ondalıklı sayı tipleri
 
-| Type | Size |
+| Tip | Boyut |
 |------|------|
 | `f32` | 32-bit |
 | `f64` | 64-bit |
 
-## Other types
+## Diğer tipler
 
 - `bool` — `true` or `false`
 - `string` — UTF-8 string
 - `rune` — single Unicode character (alias for `u32`)
 - `byte` — alias for `u8`
 
-## Type conversion
+## Tip dönüştürme
 
 ```v
 fn main() {
@@ -39,6 +39,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Functions](ch03-03-functions.md)
+[Fonksiyonlar](ch03-03-functions.md)

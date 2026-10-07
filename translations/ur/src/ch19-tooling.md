@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# باب ۱۹: ٹولنگ
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+V ماخذ کوڈ کو سرکاری طرز کے رہنما کے مطابق فارمیٹ کرتا ہے۔ تبدیلیوں کو جگہ پر لکھنے کے لیے `-w` استعمال کریں۔
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### ایک فائل کو فارمیٹ کرنا
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### لکھنے کے بغیر فارمیٹنگ کی جانچ
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+V ماخذ فائلوں سے دستاویزات تیار کرتا ہے۔ ڈیفالٹ طور پر HTML آؤٹ پٹ دیتا ہے۔
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### کسی مخصوص ماڈیول کی دستاویزات
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+پروگرام کے عمل درآمد کا پروفائل بناتا ہے تاکہ پرفارنس کی رکاوٹوں کی شناخت کی جا سکے۔
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### پروفائل آؤٹ پٹ کا تجزیہ
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+موجودہ ڈائریکٹری یا مخصوص فائل میں یونٹ ٹیسٹ چلاتا ہے۔
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### کسی مخصوص ٹیسٹ کو چلانا
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### کوریج کے ساتھ ٹیسٹ چلانا
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+V کوڈ پر سٹیٹک تجزیہ کرتا ہے، خرابیوں، وارننگز، اور طرز کے مسائل کی جانچ کرتا ہے۔
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### ایک فائل کی جانچ
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## کراس کمپائلیشن
 
-V can compile code for different operating systems and architectures from a single machine.
+V ایک ہی مشین سے مختلف آپریٹنگ سسٹمز اور آرکٹیکچرز کے لیے کوڈ کمپائل کر سکتا ہے۔
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### آرکٹیکچر کی وضاحت
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### ایمبیڈڈ ٹارگٹس کے لیے کراس کمپائلنگ
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+V انسٹالیشن کے بارے میں تشخیصی معلومات دکھاتا ہے، جن میں کمپائلر ورژن، OS، اور کنفیگریشن شامل ہے۔
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+V کمپائلر کو تازہ ترین ورژن میں اپ ڈیٹ کرتا ہے۔
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### کسی مخصوص ورژن میں اپ ڈیٹ
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+اس باب میں، آپ نے V کے ٹولنگ ایکوسسٹم کے بارے میں سیکھا: فارمیٹنگ کے لیے `v fmt`، دستاویزات کے لیے `v doc`، پرفارنس تجزیہ کے لیے `v profiler`، ٹیسٹنگ کے لیے `v test`، سٹیٹک تجزیہ کے لیے `v check`، کراس کمپائلیشن، تشخیص کے لیے `v doctor`، اور خودکار اپ ڈیٹ کے لیے `v up`۔ اگلے باب میں، ہم ایک حتمی پروجیکٹ بنائیں گے۔

@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# Ek B: Operatörler
 
-## Arithmetic
+## Aritmetik
 
-| Operator | Description |
+| Operatör | Açıklama |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | Toplama |
+| `-` | Çıkarma |
+| `*` | Çarpma |
+| `/` | Bölme |
+| `%` | Mod |
+| `**` | Üs |
 
-## Comparison
+## Karşılaştırma
 
-| Operator | Description |
+| Operatör | Açıklama |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | Eşit |
+| `!=` | Eşit değil |
+| `<` | Küçük |
+| `>` | Büyük |
+| `<=` | Küçük veya eşit |
+| `>=` | Büyük veya eşit |
 
-## Logical
+## Mantıksal
 
-| Operator | Description |
+| Operatör | Açıklama |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | Mantıksal VE |
+| `\|\|` | Mantıksal VEYA |
+| `!` | Mantıksal DEĞİL |
 
-## Bitwise
+## Bit düzeyinde
 
-| Operator | Description |
+| Operatör | Açıklama |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | Bit düzeyinde VE |
+| `\|` | Bit düzeyinde VEYA |
+| `^` | Bit düzeyinde XOR |
+| `<<` | Sola kaydırma |
+| `>>` | Sağa kaydırma |
 
-## Assignment
+## Atama
 
-| Operator | Description |
+| Operatör | Açıklama |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | Atama |
+| `:=` | Kısa bildirim |
+| `+=` | Topla ve ata |
+| `-=` | Çıkar ve ata |
+| `*=` | Çarp ve ata |
+| `/=` | Böl ve ata |
+| `%=` | Mod ve ata |

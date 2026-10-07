@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# الملحق D: نظرة عامة على المكتبة القياسية
 
-V's standard library includes:
+مكتبة V القياسية تشمل:
 
-| Module | Description |
+| الوحدة | الوصف |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | واجهة نظام التشغيل |
+| `io` | الإدخال/الإخراج |
+| `strings` | أدوات النصوص |
+| `arrays` | أدوات المصفوفات |
+| `math` | الدوال الرياضية |
+| `time` | الوقت والتاريخ |
+| `json` | ترميز/فك ترميز JSON |
+| `http` | عميل/خادم HTTP |
+| `db` | واجهة قاعدة البيانات |
+| `rand` | توليد الأرقام العشوائية |
+| `crypto` | الدوال التشفيرية |
+| `encoding` | أدوات الترميز |
+| `term` | أدوات الطرفية |
+| `sync` | بدائل المزامنة |
+| `v.ast` | معالجة V AST |
+| `v.compiler` | أدوات المُصرِّف |

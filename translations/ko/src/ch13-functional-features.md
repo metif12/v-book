@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# Chapter 13: 함수형 기능
 
-V supports closures and higher-order functions.
+V는 클로저와 고차 함수를 지원합니다.
 
-## Closures
+## 클로저
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## 고차 함수
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## 익명 함수
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+이 장에서는 클로저와 고차 함수에 대해 배웠습니다. 다음 장에서는 동시성을 살펴보겠습니다.

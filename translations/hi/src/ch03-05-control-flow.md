@@ -1,4 +1,4 @@
-# Control Flow
+# कंट्रोल फ़्लो
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If एक्सप्रेशन के रूप में
 
 ```v
 fn main() {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[अध्याय 4: ओनरशिप और मेमोरी](ch04-ownership-and-memory.md)

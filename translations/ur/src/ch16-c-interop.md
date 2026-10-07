@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# باب ۱۶: C انٹراپ
 
-V can call C functions and be called from C.
+V C فنکشنز کو بلا سکتا ہے اور C سے بلا یا جا سکتا ہے۔
 
-## Calling C from V
+## V سے C بلانا
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V `C` ماڈیول کے ذریعے براہ راست C فنکشنز کو بلا سکتا ہے۔ آپ کو C فنکشن کے دستخط کی تعریف اور ضروری ہیڈرز شامل کرنے کی ضرورت ہے۔
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag` ہدایت C کمپائلر کو فلگز دیتی ہے۔ مثال کے طور پر، `-lm` میتھ لائبریری کو جوڑتا ہے۔ `#include` ہدایت C ہیڈر فائلوں کو شامل کرتی ہے تاکہ کمپائلر C فنکشنز کے بارے میں جان سکے۔ `fn C.function_name` تعریف V کو C فنکشن کے دستخط کے بارے میں بتاتی ہے۔
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+آپ کسی بھی C فنکشن کو اس کے دستخط کی تعریف کر کے بلا سکتے ہیں۔ مثال کے طور پر، `puts` کو بلانے کے لیے:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## C سے V بلانا
 
-Compile V to a shared library:
+V کو مشترکہ لائبریری میں کمپائل کریں:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+پھر C سے مشترکہ لائبریری استعمال کریں:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V C کوڈ کو V میں ترجمہ کر سکتا ہے:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## C ٹائپس کے ساتھ کام
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V `C.int`، `C.double`، `C.char` وغیرہ جیسے C کے ساتھ ہم آہنگ ٹائپس فراہم کرتا ہے۔
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## کال بیکس
 
-You can pass V functions to C callbacks:
+آپ V فنکشنز کو C کال بیکس میں پاس کر سکتے ہیں:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+اس باب میں، آپ نے C انٹراپ کے بارے میں سیکھا۔ اگلے باب میں، ہم جدید خصوصیات کو دریافت کریں گے۔

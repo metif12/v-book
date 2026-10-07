@@ -1,4 +1,4 @@
-# Sum Types
+# Toplam Tipler
 
 ```v
 type Shape = Circle | Rectangle
@@ -27,6 +27,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Pattern Matching](ch06-03-pattern-matching.md)
+[Desen Eşleştirme](ch06-03-pattern-matching.md)

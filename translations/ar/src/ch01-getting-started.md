@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# الفصل 1: البداية
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+لنبدأ رحلتك مع V! هناك الكثير لتعلمه، لكن كل رحلة تبدأ بخطوة صغيرة. في هذا الفصل، ستتعلم كيف:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- تثبّت V على نظامك
+- تكتب برنامج "مرحباً، عالم!"
+- تستخدم مُصرِّف V وأوامره
+- تنشئ مشروع V
 
-## Installation
+## التثبيت
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+يمكن تثبيت V على Windows و macOS و Linux. أسهل طريقة هي استخدام سكربت التثبيت:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+حمّل وشغّل المُثبِّت من [vlang.io/install](https://vlang.io/install.html)، أو استخدم PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+أو استخدم سكربت التثبيت:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### من المصدر
 
-To build V from source:
+لبناء V من المصدر:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## التحقق من التثبيت
 
-After installation, verify V is working:
+بعد التثبيت، تحقق من أن V يعمل:
 
 ```bash
 v version
 ```
 
-You should see output like:
+يجب أن ترى ناتجاً مثل:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## مرحباً، عالم!
 
-Now let's write our first V program. Create a file called `main.v`:
+الآن لنكتب أول برنامج V. أنشئ ملفاً باسم `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+شغّله:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+يجب أن ترى:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+تهانينا! لقد كتبت وشغّلت أول برنامج V لك.
 
-## Hello, V!
+## مرحباً، V!
 
-Let's look at a slightly more interesting example:
+لننظر إلى مثال أكثر إثارة للاهتمام:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+شغّله:
 
 ```bash
 v run main.v
 ```
 
-Output:
+الناتج:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## مُصرِّف V
 
-The V compiler is invoked with the `v` command. Common commands:
+يُستدعى مُصرِّف V بالأمر `v`. الأوامر الشائعة:
 
-| Command | Description |
+| الأمر | الوصف |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | يُصرّف ويُشغّل ملف V |
+| `v file.v` | يُصرّف ملف V إلى ملف تنفيذي |
+| `v fmt file.v` | يُنسّق ملف V |
+| `v test .` | يُشغّل الاختبارات في المجلد الحالي |
+| `v doc .` | يُولّد التوثيق |
+| `v doctor` | يشخّص تثبيت V لديك |
 
-## Summary
+## الملخص
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+في هذا الفصل، تعلمت كيف تثبّت V، وتكتب برنامج "مرحباً، عالم!"، وتستخدم مُصرِّف V. في الفصل التالي، سننظر في كيفية بناء مشروع V.

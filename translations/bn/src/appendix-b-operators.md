@@ -1,53 +1,51 @@
-# Appendix B: Operators
+# অতিরিক্ত B: অপারেটর
 
-## Arithmetic
+## পাঙ্কিতিক
 
-| Operator | Description |
+| অপারেটর | বিবরণ |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | সংযোজন |
+| `-` | বিয়োগ |
+| `*` | গুণ |
+| `/` | ভাগ |
+| `%` | মডুলো |
+| `**` | ঘাত |
 
-## Comparison
+## তুলনামূলক
 
-| Operator | Description |
+| অপারেটর | বিবরণ |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | সমান |
+| `!=` | অসমান |
+| `<` | কম |
+| `>` | বেশি |
+| `<=` | কম বা সমান |
+| `>=` | বেশি বা সমান |
 
-## Logical
+## লজিক্যাল
 
-| Operator | Description |
+| অপারেটর | বিবরণ |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | লজিক্যাল AND |
+| `\|\|` | লজিক্যাল OR |
+| `!` | লজিক্যাল NOT |
 
-## Bitwise
+## বিটওয়াইজ
 
-| Operator | Description |
+| অপারেটর | বিবরণ |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | বিটওয়াইজ AND |
+| `\|` | বিটওয়াইজ OR |
+| `^` | বিটওয়াইজ XOR |
+| `<<` | বাম শিফট |
+| `>>` | ডান শিফট |
 
-## Assignment
-
-| Operator | Description |
+| অপারেটর | বিবরণ |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | অ্যাসাইনমেন্ট |
+| `:=` | সংক্ষিপ্ত ঘোষণা |
+| `+=` | যোগ করে অ্যাসাইন করা |
+| `-=` | বিয়োগ করে অ্যাসাইন করা |
+| `*=` | গুণ করে অ্যাসাইন করা |
+| `/=` | ভাগ করে অ্যাসাইন করা |
+| `%=` | মডুলো করে অ্যাসাইন করা |

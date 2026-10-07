@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# Bölüm 17: Gelişmiş Özellikler
 
-## Attributes
+## Nitelikler (Attributes)
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+Nitelikler, bildirimlerin önüne yerleştirilen meta veri açıklamalarıdır. Derleyici davranışını, optimizasyon ipuçlarını ve API yaşam döngüsünü kontrol eder.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+Bir fonksiyonu veya tipi kullanımdan kaldırılmış olarak işaretler. Derleyici, öğe kullanıldığında bir uyarı yayar.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+Derleyicinin fonksiyonu çağırma noktasında satır içi yapmasına ipucu verir, çağrı maliyetini ortadan kaldırır. Küçük, sık çağrılan fonksiyonlar için en iyisidir.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+Bir fonksiyonu güvensiz olarak işaretler, çağıranın da güvensiz işaretlenmesine gerek kalmadan `unsafe` bloklarını kullanmasına izin verir.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+Derleme zamanında koşullu derleme. Blok yalnızca koşul doğru olduğunda dahil edilir.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## Derleme zamanı kod
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V, derleme sırasında yürütülen ve metaprogramlama ve sıfır maliyetli soyutlamalar sağlayan çeşitli derleme zamanı yapıları sağlar.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+Koşulları derleme zamanında değerlendirir. Platform algılama, mimari kontroller ve özel bayrakları destekler.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+Derleme zamanında diziler, struct alanları veya arayüzler üzerinde yineleme yapar. Tekrarlayan kod oluşturmak için kullanışlıdır.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+Koşul yanlışsa derlemeyi durduran derleme zamanı assert ifadeleri.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## Operatör aşırı yükleme
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V, kullanıcı tanımlı tipler için operatörlerin özel davranışlarını tanımlamaya izin verir. Her operatör, belirli bir imzaya sahip bir metoda eşlenir.
 
-### Arithmetic operators
+### Aritmetik operatörler
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### Karşılaştırma operatörleri
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### İndeks operatörü
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## Derleme zamanı yansıma
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+V'nin `$for` yapısı, derleme zamanında struct alanları üzerinde yineleme yapabilir, otomatik serileştirme, doğrulama ve daha fazlasını mümkün kılar.
 
-### Iterating struct fields
+### Struct alanları üzerinde yineleme
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### Doğrulama kodu oluşturma
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+Bu bölümde nitelikler, derleme zamanı kod, operatör aşırı yükleme ve derleme zamanı yansıma hakkında bilgi edindiniz. Bu özellikler güçlü metaprogramlama desenlerini ve derleme üzerinde ince kontrolü mümkün kılar. Sonraki bölümde bellek yönetimini derinlemesine inceleyeceğiz.

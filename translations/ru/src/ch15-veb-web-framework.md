@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# Глава 15: Веб-фреймворк Veb
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb — это встроенный веб-фреймворк V. Он предоставляет маршрутизацию, обработку JSON, HTML-шаблоны, промежуточное ПО (middleware) и раздачу статических файлов — всё с минимальным API.
 
-## Hello, Veb!
+## Привет, Veb!
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+Структура `App` хранит состояние вашего приложения. Каждый маршрут — это метод на `App` с аннотацией `@['/path']`. Обработчик получает `veb.Context`, который предоставляет методы для записи ответов.
 
-## Routing
+## Маршрутизация
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb использует параметры пути с синтаксисом `:name`. Параметры пути передаются напрямую как аргументы функции обработчику.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+Параметры пути (`:id`) извлекаются из URL и передаются как аргументы. Параметры строки запроса (`?q=...`) доступны через `ctx.query`, который является `map[string]string`.
 
-## JSON responses
+## JSON-ответы
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` сериализует любое значение V в JSON и устанавливает заголовок `Content-Type` в `application/json`.
 
-## Templates
+## Шаблоны
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb поддерживает HTML-шаблоны с функцией `$tmpl`. Шаблоны используют синтаксис интерполяции строк V.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+Файл шаблона получает структуру данных и может обращаться к её полям через `{{ field_name }}`.
 
-## Middleware
+## Промежуточное ПО (Middleware)
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Middleware оборачивает каждый запрос. Используйте `app.use()` для регистрации глобального middleware или `app.route_use()` для middleware конкретного маршрута.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+Middleware возвращает `bool` — `true` для продолжения к следующему обработчику, `false` для остановки.
 
-## Static files
+## Статические файлы
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb может раздавать статические файлы из каталога с помощью `app.handle_static()`.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+Файлы в каталоге `public/` раздаются по корневому пути. Например, `public/style.css` доступен по адресу `http://localhost:8080/style.css`.
 
-## Summary
+## Итоги
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+В этой главе вы узнали о Veb — встроенном веб-фреймворке V. Вы увидели, как определять маршруты с параметрами пути и строки запроса, возвращать JSON-ответы, рендерить HTML-шаблоны, добавлять middleware для сквозных задач и раздавать статические файлы. В следующей главе мы рассмотрим интероперабельность с C.

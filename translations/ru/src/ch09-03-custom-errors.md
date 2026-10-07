@@ -1,4 +1,4 @@
-# Custom Errors
+# Пользовательские ошибки
 
 ```v
 struct MyError {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Chapter 10: Generics](ch10-generics.md)
+[Глава 10: Дженерики](ch10-generics.md)

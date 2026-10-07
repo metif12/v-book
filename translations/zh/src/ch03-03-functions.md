@@ -1,6 +1,6 @@
-# Functions
+# 函数
 
-Functions are declared with `fn`:
+函数使用 `fn` 声明：
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## 多返回值
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## 无返回值
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## 函数提升
 
-Functions can be called before they are declared:
+函数可以在声明之前调用：
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## 下一步
 
-[Comments](ch03-04-comments.md)
+[注释](ch03-04-comments.md)

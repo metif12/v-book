@@ -1,4 +1,4 @@
-# Arrays
+# Diziler
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## Dizi işlemleri
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Maps](ch08-02-maps.md)
+[Haritalar](ch08-02-maps.md)

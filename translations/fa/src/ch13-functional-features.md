@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# فصل ۱۳: ویژگی‌های تابعی
 
-V supports closures and higher-order functions.
+V از بسته‌ها (closures) و توابع مرتبه بالا پشتیبانی می‌کند.
 
-## Closures
+## بسته‌ها
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## توابع مرتبه بالا
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## توابع ناشناس
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+در این فصل، درباره بسته‌ها و توابع مرتبه بالا یاد گرفتید. در فصل بعد، به همزمانی می‌پردازیم.

@@ -1,6 +1,6 @@
-# Testing with v test
+# v test ile Test Etme
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V'nin yerleşik bir test çerçevesi vardır. `_test.v` ile biten bir dosya oluşturun:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Testleri çalıştırın:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## Test fonksiyonları
 
-Test functions start with `test_` and take no arguments:
+Test fonksiyonları `test_` ile başlar ve argüman almaz:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## Assert ifadeleri
 
-Use `assert` to check conditions:
+Koşulları kontrol etmek için `assert` kullanın:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[Bölüm 3: Ortak Kavramlar](ch03-common-concepts.md)

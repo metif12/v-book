@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Chapitre 12 : Projet E/S : Créer un outil CLI
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+Dans ce chapitre, nous allons créer un outil en ligne de commande simple qui lit un fichier et compte ses lignes, mots et caractères.
 
-## Project setup
+## Configuration du projet
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## Implémentation
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## Exécution
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+Dans ce chapitre, vous avez créé un outil en ligne de commande. Dans le chapitre suivant, nous explorerons les fonctionnalités fonctionnelles.

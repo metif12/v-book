@@ -1,4 +1,4 @@
-# Custom Errors
+# 自定义错误
 
 ```v
 struct MyError {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Chapter 10: Generics](ch10-generics.md)
+[第 10 章：泛型](ch10-generics.md)

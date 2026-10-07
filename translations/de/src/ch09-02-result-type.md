@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## Fehlerpropagierung
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
-[Custom Errors](ch09-03-custom-errors.md)
+[Eigene Fehler](ch09-03-custom-errors.md)

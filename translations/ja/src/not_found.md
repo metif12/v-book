@@ -1,5 +1,5 @@
-# Page Not Found
+# ページが見つかりません
 
-The page you're looking for doesn't exist.
+お探しのページは存在しません。
 
-[Back to the book](index.html)
+[本のトップに戻る](index.html)

@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# Chapitre 5 : Structs
 
-Structs are V's way to define custom data types.
+Les structs sont la manière de V de définir des types de données personnalisés.
 
-## Defining Structs
+## Définir des structs
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## Méthodes
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## Structs imbriquées
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modificateurs d'accès
 
-Fields are private by default. Use `pub` to make them public:
+Les champs sont privés par défaut. Utilisez `pub` pour les rendre publics :
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+Dans ce chapitre, vous avez appris les structs, les méthodes, l'imbrication et les modificateurs d'accès. Dans le chapitre suivant, nous explorerons les enums et les types somme.

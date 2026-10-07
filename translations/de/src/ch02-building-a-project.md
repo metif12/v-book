@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Kapitel 2: Ein Projekt aufbauen
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+In diesem Kapitel lernen Sie, wie Sie ein V-Projekt strukturieren, `v.mod` verwenden, Code mit `v fmt` formatieren und Tests mit `v test` schreiben.
 
-## Project structure
+## Projektstruktur
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Ein V-Projekt ist ein Verzeichnis mit einer `v.mod`-Datei und einer oder mehreren `.v`-Dateien:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Jedes V-Projekt hat eine `v.mod`-Datei, die das Projekt beschreibt:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Erstellen Sie ein neues Projekt mit:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Dies erstellt eine `v.mod` und eine `main.v` mit einer Grundvorlage.
 
-## Formatting with v fmt
+## Formatierung mit v fmt
 
-V has a built-in code formatter. Run it on your project:
+V verfügt über einen integrierten Code-Formatierer. Führen Sie ihn in Ihrem Projekt aus:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+Das Flag `-w` schreibt den formatierten Code zurück in die Dateien.
 
-## Testing with v test
+## Testen mit v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V verfügt über ein integriertes Testframework. Erstellen Sie eine Datei, die mit `_test.v` endet:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Tests ausführen:
 
 ```bash
 v test .
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+In diesem Kapitel haben Sie gelernt, wie Sie ein V-Projekt strukturieren, `v.mod` verwenden, Code formatieren und Tests schreiben. Im nächsten Kapitel tauchen wir in die häufigen Programmierkonzepte in V ein.

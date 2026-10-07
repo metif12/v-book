@@ -1,6 +1,6 @@
-# Access Modifiers
+# رسائی کی تعدیل کار
 
-Fields are private by default:
+فیلڈز ڈیفالٹ طور پر نجی ہوتے ہیں:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## مرئیت
 
-| Modifier | Scope |
+| تعدیل کار | دائرہ کار |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| (کوئی نہیں) | صرف ماڈیول |
+| `pub` | عوامی |
 
-## Next
+## اگلا
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[باب ۶: enums اور سم ٹائپس](ch06-enums-and-sum-types.md)

@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# الملحق C: مرجع بناء جملة V
 
-## Functions
+## الدوال
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -28,7 +28,7 @@ enum EnumName {
 }
 ```
 
-## Sum types
+## أنواع الجمع
 
 ```v
 struct Type1 {}
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## الوحدات
 
 ```v ignore
 module module_name

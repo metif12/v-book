@@ -1,22 +1,22 @@
-# Variables and Mutability
+# 변수와 가변성
 
-In V, variables are immutable by default:
+V에서 변수는 기본적으로 불변입니다:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // 에러: name은 불변입니다
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: count는 가변입니다
     count++
     println(count)
 }
 ```
 
-## Declaration
+## 선언
 
-Use `:=` to declare and initialize:
+`:=`를 사용하여 선언하고 초기화합니다:
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## 타입 추론
 
-V infers types from the initializer:
+V는 초기화 표현식에서 타입을 추론합니다:
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## 명시적 타입
 
-You can specify types explicitly:
+타입을 명시적으로 지정할 수 있습니다:
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## 다음
 
-[Data Types](ch03-02-data-types.md)
+[데이터 타입](ch03-02-data-types.md)

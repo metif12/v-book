@@ -1,4 +1,4 @@
-# Strings
+# رشته‌ها
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## متدهای رشته
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[فصل ۹: مدیریت خطا](ch09-error-handling.md)

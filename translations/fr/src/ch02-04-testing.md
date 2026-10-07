@@ -1,6 +1,6 @@
-# Testing with v test
+# Tests avec v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V dispose d'un framework de test intégré. Créez un fichier se terminant par `_test.v` :
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Exécutez les tests :
 
 ```bash
 v test .
 ```
 
-## Test functions
+## Fonctions de test
 
-Test functions start with `test_` and take no arguments:
+Les fonctions de test commencent par `test_` et ne prennent aucun argument :
 
 ```v
 fn test_something() {
@@ -31,7 +31,7 @@ fn test_something() {
 
 ## Assertions
 
-Use `assert` to check conditions:
+Utilisez `assert` pour vérifier des conditions :
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## Suivant
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[Chapitre 3 : Concepts courants](ch03-common-concepts.md)

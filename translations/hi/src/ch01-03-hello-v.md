@@ -1,6 +1,6 @@
 # Hello, V!
 
-Let's look at a more interesting example:
+आइए एक अधिक रोचक उदाहरण देखें:
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+इसे चलाएं:
 
 ```bash
 v run main.v
 ```
 
-Output:
+आउटपुट:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## स्ट्रिंग इंटरपोलेशन
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V स्ट्रिंग इंटरपोलेशन के लिए `${...}` का उपयोग करता है। `${...}` के अंदर का कोई भी एक्सप्रेशन मूल्यांकित होता है और स्ट्रिंग में परिवर्तित होता है:
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## वेरिएबल
 
-Use `:=` to declare and initialize a variable:
+वेरिएबल घोषित करने और इनिशियलाइज़ करने के लिए `:=` का उपयोग करें:
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[अध्याय 2: प्रोजेक्ट बनाना](ch02-building-a-project.md)

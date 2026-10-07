@@ -1,6 +1,6 @@
-# Appendix C: V Syntax Reference
+# अपेंडिक्स C: V सिंटैक्स रेफरेंस
 
-## Functions
+## फ़ंक्शन
 
 ```v
 fn function_name(param1 int, param2 string) int {
@@ -37,7 +37,7 @@ struct Type2 {}
 type SumType = Type1 | Type2
 ```
 
-## Interfaces
+## इंटरफ़ेस
 
 ```v
 interface InterfaceName {
@@ -45,7 +45,7 @@ interface InterfaceName {
 }
 ```
 
-## Modules
+## मॉड्यूल
 
 ```v ignore
 module module_name

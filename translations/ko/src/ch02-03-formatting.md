@@ -1,16 +1,16 @@
-# Formatting with v fmt
+# v fmt로 포맷팅하기
 
-V has a built-in code formatter:
+V에는 내장 코드 포매터가 있습니다:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes changes back to files. Without it, the formatter prints to stdout.
+`-w` 플래그는 변경 사항을 파일에 다시 저장합니다. 없으면 포매터가 stdout에 출력합니다.
 
-## Example
+## 예제
 
-Before:
+포맷팅 전:
 
 ```v
 fn main(){
@@ -18,7 +18,7 @@ println( 'hello' )
 }
 ```
 
-After `v fmt`:
+`v fmt` 후:
 
 ```v
 fn main() {
@@ -26,6 +26,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Testing with v test](ch02-04-testing.md)
+[v test로 테스트하기](ch02-04-testing.md)

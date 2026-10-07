@@ -1,4 +1,4 @@
-# Pattern Matching
+# 패턴 매칭
 
 ```v
 fn describe(x ?int) string {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Match exhaustiveness
+## Match 완전성
 
 ```v
 enum Direction {
@@ -35,6 +35,6 @@ fn turn(d Direction) string {
 }
 ```
 
-## Next
+## 다음
 
-[Chapter 7: Modules and Packages](ch07-modules-and-packages.md)
+[Chapter 7: 모듈과 패키지](ch07-modules-and-packages.md)

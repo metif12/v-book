@@ -1,8 +1,8 @@
-# Chapter 20: Final Project: Web Application
+# فصل ۲۰: پروژه پایانی: برنامه وب
 
-In this chapter, we'll build a simple web application with Veb and an ORM.
+در این فصل، یک برنامه وب ساده با Veb و ORM می‌سازیم.
 
-## Project setup
+## راه‌اندازی پروژه
 
 ```bash
 mkdir myapp
@@ -10,7 +10,7 @@ cd myapp
 v init
 ```
 
-## Database
+## پایگاه داده
 
 ```v no_run
 import veb
@@ -37,7 +37,7 @@ fn main() {
 }
 ```
 
-## Routes
+## مسیرها
 
 ```v no_run
 import veb
@@ -67,6 +67,6 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-## Summary
+## خلاصه
 
-Congratulations! You've completed The V Programming Language Book. You now have a solid foundation in V and are ready to build real-world applications.
+آفرین! شما کتاب زبان برنامه‌نویسی V را تکمیل کرده‌اید. اکنون پایه محیطی در V دارید و آماده ساخت برنامه‌های واقعی هستید.

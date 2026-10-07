@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## Métodos de strings
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## Siguiente
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[Capítulo 9: Manejo de Errores](ch09-error-handling.md)

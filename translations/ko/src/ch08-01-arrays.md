@@ -1,4 +1,4 @@
-# Arrays
+# 배열
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## Array operations
+## 배열 연산
 
 ```v
 fn main() {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Maps](ch08-02-maps.md)
+[맵](ch08-02-maps.md)

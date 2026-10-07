@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# Lampiran G: Cara V Dibuat
 
-V is an open-source project. The compiler is written in V itself.
+V adalah proyek open-source. Kompiler ditulis dalam V itu sendiri.
 
-## Repository
+## Repositori
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- Lisensi: MIT
 
-## Building from source
+## Membangun dari sumber
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,11 +15,11 @@ cd v
 make
 ```
 
-## Contributing
+## Kontribusi
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+Lihat [panduan kontribusi](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
 
-## Community
+## Komunitas
 
 - [Forum](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)

@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# 付録A：キーワード
 
-V has the following keywords:
+Vには以下のキーワードがあります：
 
-| Keyword | Description |
+| キーワード | 説明 |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | 型キャスト |
+| `assert` | アサーション |
+| `break` | ループから抜ける |
+| `const` | 定数宣言 |
+| `continue` | 次の反復に進む |
+| `defer` | 遅延実行 |
+| `else` | else分岐 |
+| `enum` | 列挙型 |
+| `false` | 偽 |
+| `fn` | 関数宣言 |
+| `for` | ループ |
+| `go` | goroutineの起動 |
+| `goto` | goto文 |
+| `if` | 条件分岐 |
+| `import` | モジュールインポート |
+| `in` | メンバーシップテスト |
+| `interface` | インターフェース宣言 |
+| `is` | 型チェック |
+| `lock` | ミューテックスロック |
+| `match` | パターンマッチング |
+| `module` | モジュール宣言 |
+| `mut` | 可変 |
+| `none` | none値 |
+| `or` | エラー処理 |
+| `pub` | パブリック可視性 |
+| `return` | 関数から戻る |
+| `struct` | struct宣言 |
+| `true` | 真 |
+| `type` | 型宣言 |
+| `union` | union宣言 |
+| `unsafe` | unsafeコード |

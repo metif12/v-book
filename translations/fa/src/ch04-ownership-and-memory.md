@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# فصل ۴: مالکیت و حافظه
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V رویکرد متفاوتی نسبت به مدیریت حافظه نسبت به بسیاری از زبان‌ها دارد. به جای مدیریت دستی حافظه یا فقط جمع‌آوری زباله، V چندین استراتژی ارائه می‌دهد.
 
-## Stack and Heap
+## پشته و هیپ
 
-V automatically decides whether to allocate on the stack or heap:
+V به صورت خودکار تصمیم می‌گیرد که آیا در پشته یا هیپ تخصیص دهد:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## جمع‌آوری زباله
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V به صورت پیش‌فرض از یک جمع‌آوری زباله استفاده می‌کند. شما نیازی ندارید حافظه را به صورت دستی آزاد کنید:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## آزادسازی خودکار
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V یک حالت آزادسازی خودکار دارد که به صورت خودکار حافظه را وقتی متغیرها از محدوده خارج می‌شوند آزاد می‌کند:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## مراجع
 
-You can use references to avoid copying large data:
+می‌توانید از مراجع برای جلوگیری از کپی کردن داده‌های بزرگ استفاده کنید:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## حالت‌های مدیریت حافظه
 
-| Mode | Flag | Description |
+| حالت | پرچم | توضیح |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (پیش‌فرض) | `-gc boehm` | جمع‌آوری زباله Boehm |
+| آزادسازی خودکار | `-autofree` | آزادسازی خودکار حافظه |
+| هیچ | `-gc none` | مدیریت دستی حافظه |
+| پیش‌تخصیص | `-prealloc` | تخصیص آرنا |
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+در این فصل، درباره گزینه‌های مدیریت حافظه V یاد گرفتید. در فصل بعد، به struct ها می‌پردازیم.

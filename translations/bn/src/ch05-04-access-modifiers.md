@@ -1,6 +1,6 @@
-# Access Modifiers
+# অ্যাক্সেস মডিফায়ার
 
-Fields are private by default:
+ফিল্ডগুলো ডিফল্টভাবে প্রাইভেট:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## ভিজিবিলিটি
 
-| Modifier | Scope |
+| মডিফায়ার | স্কোপ |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| (কোনোটি নেই) | শুধুমাত্র module |
+| `pub` | পাবলিক |
 
-## Next
+## পরবর্তী
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[অধ্যায় 6: enum এবং sum type](ch06-enums-and-sum-types.md)

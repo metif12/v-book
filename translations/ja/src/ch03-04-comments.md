@@ -1,20 +1,20 @@
-# Comments
+# コメント
 
-## Line comments
-
-```v
-// This is a line comment
-x := 42 // Comment after code
-```
-
-## Block comments
+## 行コメント
 
 ```v
-/* This is a
-   block comment */
+// これは行コメントです
+x := 42 // コード後のコメント
 ```
 
-## Documentation comments
+## ブロックコメント
+
+```v
+/* これは
+   ブロックコメントです */
+```
+
+## ドキュメンテーションコメント
 
 ```v
 // add returns the sum of a and b.
@@ -23,6 +23,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## 次へ
 
-[Control Flow](ch03-05-control-flow.md)
+[制御フロー](ch03-05-control-flow.md)

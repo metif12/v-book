@@ -18,6 +18,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Sum Types](ch06-02-sum-types.md)
+[أنواع الجمع](ch06-02-sum-types.md)

@@ -1,6 +1,6 @@
-# Chapter 15: Veb Web Framework
+# 第15章：Veb Webフレームワーク
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+VebはVの組み込みWebフレームワークです。ルーティング、JSON処理、HTMLテンプレート、ミドルウェア、静的ファイル提供を最小限のAPIで提供します。
 
 ## Hello, Veb!
 
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+`App` structはアプリケーションの状態を保持します。各ルートは`@['/path']`でアノテートされた`App`のメソッドです。ハンドラは`veb.Context`を受け取り、レスポンスを書き込むためのメソッドを提供します。
 
-## Routing
+## ルーティング
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Vebは`:name`構文でパスパラメータを使用します。パスパラメータはハンドラの関数引数として直接渡されます。
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+パスパラメータ（`:id`）はURLから抽出されて引数として渡されます。クエリ文字列パラメータ（`?q=...`）は`ctx.query`（`map[string]string`）を介してアクセスされます。
 
-## JSON responses
+## JSONレスポンス
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()`は任意のVの値をJSONにシリアライズし、`Content-Type`ヘッダーを`application/json`に設定します。
 
-## Templates
+## テンプレート
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Vebは`$tmpl`関数でHTMLテンプレートをサポートします。テンプレートはVの文字列補間構文を使用します。
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+テンプレートファイルはデータstructを受け取り、`{{ field_name }}`でフィールドにアクセスできます。
 
-## Middleware
+## ミドルウェア
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+ミドルウェアはすべてのリクエストをラップします。`app.use()`でグローバルミドルウェアを登録するか、`app.route_use()`でルート固有のミドルウェアを登録します。
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+ミドルウェアは`bool`を返します。`true`で次のハンドラに続行、`false`で停止します。
 
-## Static files
+## 静的ファイル
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Vebは`app.handle_static()`でディレクトリから静的ファイルを提供できます。
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+`public/`ディレクトリのファイルはルートパスで提供されます。例えば、`public/style.css`は`http://localhost:8080/style.css`でアクセスできます。
 
-## Summary
+## まとめ
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+この章では、Vの組み込みWebフレームワークであるVebについて学びました。パスパラメータとクエリパラメータによるルート定義、JSONレスポンスの返却、HTMLテンプレートのレンダリング、横断的関心事のためのミドルウェア追加、静的ファイルの提供を見てきました。次の章では、C相互運用を見ていきます。

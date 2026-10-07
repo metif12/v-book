@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# 第 14 章：并发
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V 内置并发支持，包括 goroutine、channel 和共享状态。
 
-## Spawning goroutines
+## 启动 goroutine
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+goroutine 是轻量级线程。使用 `go` 关键字启动：
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+`go` 关键字在新 goroutine 中启动函数并立即返回。主函数本身不会等待 goroutine 完成。
 
-To wait for goroutines, use a `sync.WaitGroup`:
+要等待 goroutine，使用 `sync.WaitGroup`：
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` 在 goroutine 启动前递增计数器。`wg.done()` 在 goroutine 完成时递减计数器。`wg.wait()` 阻塞直到计数器归零。
 
-## Channels
+## Channel
 
-Channels pass values between goroutines. Create one with `chan T`:
+Channel 在 goroutine 之间传递值。使用 `chan T` 创建：
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+无缓冲 channel 在发送时阻塞，直到接收方就绪。有缓冲 channel 有容量，在满之前不会阻塞：
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+Channel 方向限制 channel 的使用方式。`chan<- T` 仅发送，`<-chan T` 仅接收：
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## 共享状态
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+当 goroutine 共享可变状态时，使用 `sync.Mutex` 保护它：
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` 阻塞直到互斥锁可用，然后在代码块作用域内持有它。保持临界区简短。
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+当读操作比写操作更频繁时，使用 `sync.RwMutex`。它允许多个读者同时访问：
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+对于单个值，使用 `sync.stdatomic` 中的原子操作代替锁：
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## select 语句
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` 等待多个 channel，返回第一个就绪的 channel 的索引。负超时无限等待；正超时返回 -1 表示超时：
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+在本章中，你学习了 goroutine、channel、共享状态和 select。在下一章中，我们将探讨 Veb Web 框架。

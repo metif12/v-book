@@ -1,7 +1,7 @@
-# Visibility
+# 가시성
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — public, 다른 모듈에서 접근 가능
+- (제어자 없음) — private, 모듈 내부만
 
 ```v ignore
 module math
@@ -15,6 +15,6 @@ pub fn public_function() int {
 }
 ```
 
-## Next
+## 다음
 
 [VPM](ch07-03-vpm.md)

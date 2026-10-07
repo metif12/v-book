@@ -1,5 +1,5 @@
-# Page Not Found
+# صفحه یافت نشد
 
-The page you're looking for doesn't exist.
+صفحه‌ای که دنبال آن هستید وجود ندارد.
 
-[Back to the book](index.html)
+[بازگشت به کتاب](index.html)

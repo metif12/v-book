@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# Bölüm 8: Koleksiyonlar
 
-## Arrays
+## Diziler
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## Haritalar
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## String'ler
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+Bu bölümde diziler, haritalar ve string'ler hakkında bilgi edindiniz. Sonraki bölümde hata yönetimini inceleyeceğiz.

@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# Capítulo 3: Conceptos Comunes
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Este capítulo cubre los conceptos comunes de programación en V: variables, tipos de datos, funciones, comentarios y flujo de control.
 
-## Variables and Mutability
+## Variables y Mutabilidad
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+En V, las variables son inmutables por defecto. Usa `mut` para hacerlas mutables:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## Tipos de Datos
 
-V has a rich type system:
+V tiene un sistema de tipos rico:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Funciones
 
-Functions are declared with `fn`:
+Las funciones se declaran con `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Comentarios
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Flujo de Control
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### Bucle For
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumen
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+En este capítulo, aprendiste sobre variables, tipos de datos, funciones, comentarios y flujo de control en V. En el siguiente capítulo, exploraremos la propiedad y la gestión de memoria.

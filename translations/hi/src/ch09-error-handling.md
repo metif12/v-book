@@ -1,6 +1,6 @@
-# Chapter 9: Error Handling
+# अध्याय 9: एरर हैंडलिंग
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V एरर हैंडलिंग के लिए Option (`?T`) और Result (`!T`) टाइप्स का उपयोग करता है।
 
 ## Option Type
 
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## कस्टम एरर
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## सारांश
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+इस अध्याय में, आपने Option, Result, और कस्टम एरर के बारे में सीखा। अगले अध्याय में, हम जेनरिक्स का पता लगाएंगे।

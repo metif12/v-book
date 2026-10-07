@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# 第 17 章：高级特性
 
-## Attributes
+## 属性
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+属性是放在声明之前的元数据注解。它们控制编译器行为、优化提示和 API 生命周期。
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+将函数或类型标记为已弃用。使用该条目时编译器会发出警告。
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+提示编译器在调用处内联函数，消除调用开销。最适合小型、频繁调用的函数。
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+将函数标记为不安全，允许它在调用者未被标记为不安全的情况下使用 `unsafe` 块。
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+编译时条件编译。仅在条件为 true 时包含该块。
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## 编译时代码
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V 提供多种在编译期间执行的编译时结构，支持元编程和零成本抽象。
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+在编译时求值条件。支持平台检测、架构检查和自定义标志。
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+在编译时遍历数组、结构体字段或范围。适用于生成重复代码。
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+编译时断言，如果条件为 false 则中止编译。
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## 运算符重载
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V 允许为用户定义类型定义运算符的自定义行为。每个运算符映射到具有特定签名的方法。
 
-### Arithmetic operators
+### 算术运算符
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### 比较运算符
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### 索引运算符
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## 编译时反射
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+V 的 `$for` 结构可以在编译时遍历结构体字段，实现自动序列化、验证等功能。
 
-### Iterating struct fields
+### 遍历结构体字段
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### 生成验证代码
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+在本章中，你学习了属性、编译时代码、运算符重载和编译时反射。这些特性支持强大的元编程模式和对编译的精细控制。在下一章，我们将深入探讨内存管理。

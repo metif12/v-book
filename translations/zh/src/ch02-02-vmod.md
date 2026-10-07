@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+`v.mod` 文件描述你的项目：
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## 字段
 
-| Field | Description |
+| 字段 | 描述 |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | 项目名称（必须与目录名匹配） |
+| `description` | 简短描述 |
+| `version` | 语义化版本号 |
+| `license` | 许可证标识符 |
+| `dependencies` | VPM 包名列表 |
 
-## Next
+## 下一步
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[使用 v fmt 格式化](ch02-03-formatting.md)

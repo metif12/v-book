@@ -1,4 +1,4 @@
-# Custom Errors
+# कस्टम एरर
 
 ```v
 struct MyError {
@@ -22,6 +22,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Chapter 10: Generics](ch10-generics.md)
+[अध्याय 10: जेनरिक्स](ch10-generics.md)

@@ -1,6 +1,6 @@
-# Testing with v test
+# Menguji dengan v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V memiliki framework testing bawaan. Buat file yang diakhiri dengan `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Jalankan test:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## Fungsi test
 
-Test functions start with `test_` and take no arguments:
+Fungsi test dimulai dengan `test_` dan tidak mengambil argumen:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## Assertion
 
-Use `assert` to check conditions:
+Gunakan `assert` untuk memeriksa kondisi:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[Bab 3: Konsep Umum](ch03-common-concepts.md)

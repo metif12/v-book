@@ -1,4 +1,4 @@
-# Methods
+# Méthodes
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Mutable receivers
+## Récepteurs mutables
 
 ```v
 struct Counter {
@@ -36,6 +36,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Embedded Structs](ch05-03-embedded-structs.md)
+[Structs imbriquées](ch05-03-embedded-structs.md)

@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Глава 2: Создание проекта
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+В этой главе вы узнаете, как структурировать проект на V, использовать `v.mod`, форматировать код с помощью `v fmt` и писать тесты с помощью `v test`.
 
-## Project structure
+## Структура проекта
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Проект на V — это каталог с файлом `v.mod` и одним или несколькими файлами `.v`:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Каждый проект на V имеет файл `v.mod`, который описывает проект:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Создайте новый проект с помощью:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Это создаст файлы `v.mod` и `main.v` с базовым шаблоном.
 
-## Formatting with v fmt
+## Форматирование с помощью v fmt
 
-V has a built-in code formatter. Run it on your project:
+В V есть встроенный форматтер кода. Запустите его для вашего проекта:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+Флаг `-w` записывает отформатированный код обратно в файлы.
 
-## Testing with v test
+## Тестирование с помощью v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+В V есть встроенный фреймворк для тестирования. Создайте файл с окончанием `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Запустите тесты:
 
 ```bash
 v test .
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+В этой главе вы узнали, как структурировать проект на V, использовать `v.mod`, форматировать код и писать тесты. В следующей главе мы погрузимся в общие концепции программирования на V.

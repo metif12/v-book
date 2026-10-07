@@ -1,6 +1,6 @@
-# Testing with v test
+# الاختبار مع v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V يحتوي على إطار عمل اختبار مدمج. أنشئ ملفاً ينتهي بـ `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+شغّل الاختبارات:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## دوال الاختبار
 
-Test functions start with `test_` and take no arguments:
+دوال الاختبار تبدأ بـ `test_` ولا تأخذ معاملات:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## التأكيدات
 
-Use `assert` to check conditions:
+استخدم `assert` للتحقق من الشروط:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## التالي
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[الفصل 3: المفاهيم الشائعة](ch03-common-concepts.md)

@@ -1,7 +1,7 @@
-# Visibility
+# الظهور
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — عام، يمكن الوصول إليه من وحدات أخرى
+- (بدون محدد) — خاص، للوحدة فقط
 
 ```v ignore
 module math
@@ -15,6 +15,6 @@ pub fn public_function() int {
 }
 ```
 
-## Next
+## التالي
 
 [VPM](ch07-03-vpm.md)

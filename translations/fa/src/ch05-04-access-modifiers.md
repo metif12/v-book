@@ -1,6 +1,6 @@
-# Access Modifiers
+# اصلاح‌کننده‌های دسترسی
 
-Fields are private by default:
+فیلدها به صورت پیش‌فرض خصوصی هستند:
 
 ```v
 struct User {
@@ -16,13 +16,13 @@ fn main() {
 }
 ```
 
-## Visibility
+## قابلیت مشاهده
 
-| Modifier | Scope |
+| اصلاح‌کننده | محدوده |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| (هیچ) | فقط ماژول |
+| `pub` | عمومی |
 
-## Next
+## بعدی
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[فصل ۶: enum ها و انواع جمع](ch06-enums-and-sum-types.md)

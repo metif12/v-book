@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# Bab 8: Koleksi
 
-## Arrays
+## Array
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## Map
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## String
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+Dalam bab ini, Anda telah belajar tentang array, map, dan string. Di bab berikutnya, kita akan menjelajahi penanganan error.

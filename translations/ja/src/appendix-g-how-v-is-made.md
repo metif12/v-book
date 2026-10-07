@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# 付録G：Vの作られ方
 
-V is an open-source project. The compiler is written in V itself.
+Vはオープンソースプロジェクトです。コンパイラはV自身で書かれています。
 
-## Repository
+## リポジトリ
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- ライセンス: MIT
 
-## Building from source
+## ソースからビルド
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,12 +15,12 @@ cd v
 make
 ```
 
-## Contributing
+## 貢献
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+[貢献ガイド](https://github.com/vlang/v/blob/master/CONTRIBUTING.md)を参照してください。
 
-## Community
+## コミュニティ
 
-- [Forum](https://forum.vlang.io)
+- [フォーラム](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

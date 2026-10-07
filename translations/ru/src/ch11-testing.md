@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# Глава 11: Тестирование
 
-V has a built-in testing framework.
+В V есть встроенный фреймворк для тестирования.
 
-## Test files
+## Тестовые файлы
 
-Create a file ending in `_test.v`:
+Создайте файл с окончанием `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## Запуск тестов
 
 ```bash
 v test .
 ```
 
-## Test organization
+## Организация тестов
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## Табличные тесты
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+В этой главе вы узнали о фреймворке тестирования V. В следующей главе мы создадим инструмент командной строки.

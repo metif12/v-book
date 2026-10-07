@@ -1,6 +1,6 @@
-# Garbage Collection
+# جمع القمامة
 
-V uses a garbage collector by default:
+يستخدم V جامع قمامة افتراضياً:
 
 ```v
 fn main() {
@@ -13,14 +13,14 @@ fn main() {
 }
 ```
 
-## Disabling GC
+## تعطيل GC
 
-For performance-critical code, you can disable GC:
+للكود الحساس للأداء، يمكنك تعطيل GC:
 
 ```bash
 v -gc none main.v
 ```
 
-## Next
+## التالي
 
-[Autofree](ch04-03-autofree.md)
+[التحرير التلقائي](ch04-03-autofree.md)

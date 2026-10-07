@@ -1,7 +1,7 @@
-# Visibility
+# مرئیت
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — عوامی، دیگر ماڈیولز سے قابل رسائی
+- (کوئی تعدیل کار نہیں) — نجی، صرف ماڈیول
 
 ```v ignore
 module math
@@ -15,6 +15,6 @@ pub fn public_function() int {
 }
 ```
 
-## Next
+## اگلا
 
 [VPM](ch07-03-vpm.md)

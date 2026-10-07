@@ -1,37 +1,37 @@
-# Appendix A: Keywords
+# ضمیمہ A: کی ورڈز
 
-V has the following keywords:
+V کے درج ذیل کی ورڈز ہیں:
 
-| Keyword | Description |
+| کی ورڈ | تفصیل |
 |---------|-------------|
-| `as` | Type casting |
-| `assert` | Assertions |
-| `break` | Break from loop |
-| `const` | Constant declaration |
-| `continue` | Continue to next iteration |
-| `defer` | Deferred execution |
-| `else` | Else branch |
-| `enum` | Enumeration |
-| `false` | Boolean false |
-| `fn` | Function declaration |
-| `for` | Loop |
-| `go` | Spawn goroutine |
-| `goto` | Goto statement |
-| `if` | Conditional |
-| `import` | Module import |
-| `in` | Membership test |
-| `interface` | Interface declaration |
-| `is` | Type check |
-| `lock` | Mutex lock |
-| `match` | Pattern matching |
-| `module` | Module declaration |
-| `mut` | Mutable |
-| `none` | None value |
-| `or` | Error handling |
-| `pub` | Public visibility |
-| `return` | Return from function |
-| `struct` | Struct declaration |
-| `true` | Boolean true |
-| `type` | Type declaration |
-| `union` | Union declaration |
-| `unsafe` | Unsafe code |
+| `as` | ٹائپ کاسٹنگ |
+| `assert` | اثبات |
+| `break` | لوپ سے باہر نکلنا |
+| `const` | مستقل تعریف |
+| `continue` | اگلی تکرار پر جانا |
+| `defer` | مؤخر شدہ عمل درآمد |
+| `else` | متفرع شاخ |
+| `enum` | اعداد و شمار |
+| `false` | بولین غلط |
+| `fn` | فنکشن تعریف |
+| `for` | لوپ |
+| `go` | goroutine پیدا کرنا |
+| `goto` | goto بیان |
+| `if` | مشروط |
+| `import` | ماڈیول درآمد |
+| `in` | رکنیت کی جانچ |
+| `interface` | انٹرفیس تعریف |
+| `is` | ٹائپ جانچ |
+| `lock` | Mutex لاک |
+| `match` | پیٹرن میچنگ |
+| `module` | ماڈیول تعریف |
+| `mut` | تبدیل پذیر |
+| `none` | کوئی قدر نہیں |
+| `or` | خرابی کی عاملہ کاری |
+| `pub` | عوامی مرئیت |
+| `return` | فنکشن سے واپسی |
+| `struct` | struct تعریف |
+| `true` | بولین سچ |
+| `type` | ٹائپ تعریف |
+| `union` | یونین تعریف |
+| `unsafe` | غیر محفوظ کوڈ |

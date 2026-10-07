@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+`v.mod` 파일은 프로젝트를 설명합니다:
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## 필드
 
-| Field | Description |
+| 필드 | 설명 |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | 프로젝트 이름 (디렉터리 이름과 일치해야 함) |
+| `description` | 간단한 설명 |
+| `version` | 시맨틱 버전 |
+| `license` | 라이선스 식별자 |
+| `dependencies` | VPM 패키지 이름 목록 |
 
-## Next
+## 다음
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[v fmt로 포맷팅하기](ch02-03-formatting.md)

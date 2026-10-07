@@ -1,4 +1,4 @@
-# Maps
+# نقشه‌ها
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## عملیات نقشه
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Strings](ch08-03-strings.md)
+[رشته‌ها](ch08-03-strings.md)

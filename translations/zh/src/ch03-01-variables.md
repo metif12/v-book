@@ -1,22 +1,22 @@
-# Variables and Mutability
+# 变量与可变性
 
-In V, variables are immutable by default:
+在 V 中，变量默认是不可变的：
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // 错误：name 是不可变的
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // 正确：count 是可变的
     count++
     println(count)
 }
 ```
 
-## Declaration
+## 声明
 
-Use `:=` to declare and initialize:
+使用 `:=` 声明和初始化：
 
 ```v
 x := 42
@@ -24,9 +24,9 @@ name := 'V'
 is_ready := true
 ```
 
-## Type inference
+## 类型推断
 
-V infers types from the initializer:
+V 从初始化表达式推断类型：
 
 ```v
 a := 42      // int
@@ -35,9 +35,9 @@ c := 'hello' // string
 d := true    // bool
 ```
 
-## Explicit types
+## 显式类型
 
-You can specify types explicitly:
+你可以显式指定类型：
 
 ```v
 a := i64(42)
@@ -45,6 +45,6 @@ b := f32(3.14)
 c := u8(255)
 ```
 
-## Next
+## 下一步
 
-[Data Types](ch03-02-data-types.md)
+[数据类型](ch03-02-data-types.md)

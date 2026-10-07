@@ -1,6 +1,6 @@
 # v.mod
 
-The `v.mod` file describes your project:
+`v.mod` ফাইলটি আপনার প্রজেক্ট বর্ণনা করে:
 
 ```v ignore
 Module {
@@ -12,16 +12,16 @@ Module {
 }
 ```
 
-## Fields
+## ফিল্ড
 
-| Field | Description |
+| ফিল্ড | বিবরণ |
 |-------|-------------|
-| `name` | Project name (must match directory name) |
-| `description` | Short description |
-| `version` | Semantic version |
-| `license` | License identifier |
-| `dependencies` | List of VPM package names |
+| `name` | প্রজেক্টের নাম (ডিরেক্টরির নামের সাথে মিলতে হবে) |
+| `description` | সংক্ষিপ্ত বিবরণ |
+| `version` | সিম্যান্টিক ভার্সন |
+| `license` | লাইসেন্স শনাক্তকারী |
+| `dependencies` | VPM প্যাকেজ নামের তালিকা |
 
-## Next
+## পরবর্তী
 
-[Formatting with v fmt](ch02-03-formatting.md)
+[v fmt দিয়ে ফরম্যাটিং](ch02-03-formatting.md)

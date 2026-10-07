@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Capítulo 1: Primeros Pasos
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+¡Comencemos tu viaje con V! Hay mucho que aprender, pero todo viaje comienza con un pequeño paso. En este capítulo, aprenderás a:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- Instalar V en tu sistema
+- Escribir un programa "¡Hola, Mundo!"
+- Usar el compilador de V y sus comandos
+- Crear un proyecto V
 
-## Installation
+## Instalación
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V se puede instalar en Windows, macOS y Linux. La forma más fácil es usar el script de instalación:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Descarga y ejecuta el instalador desde [vlang.io/install](https://vlang.io/install.html), o usa PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+O usa el script de instalación:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### Desde el código fuente
 
-To build V from source:
+Para compilar V desde el código fuente:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## Verificando la instalación
 
-After installation, verify V is working:
+Después de la instalación, verifica que V funcione:
 
 ```bash
 v version
 ```
 
-You should see output like:
+Deberías ver una salida como:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## ¡Hola, Mundo!
 
-Now let's write our first V program. Create a file called `main.v`:
+Ahora escribamos nuestro primer programa en V. Crea un archivo llamado `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+Ejecútalo:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+Deberías ver:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+¡Felicidades! Has escrito y ejecutado tu primer programa en V.
 
-## Hello, V!
+## ¡Hola, V!
 
-Let's look at a slightly more interesting example:
+Veamos un ejemplo un poco más interesante:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+Ejecútalo:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Salida:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## El compilador de V
 
-The V compiler is invoked with the `v` command. Common commands:
+El compilador de V se invoca con el comando `v`. Comandos comunes:
 
-| Command | Description |
+| Comando | Descripción |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | Compila y ejecuta un archivo V |
+| `v file.v` | Compila un archivo V a un ejecutable |
+| `v fmt file.v` | Formatea un archivo V |
+| `v test .` | Ejecuta pruebas en el directorio actual |
+| `v doc .` | Genera documentación |
+| `v doctor` | Diagnostica tu instalación de V |
 
-## Summary
+## Resumen
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+En este capítulo, aprendiste a instalar V, escribir un programa "¡Hola, Mundo!" y usar el compilador de V. En el siguiente capítulo, veremos cómo estructurar un proyecto V.

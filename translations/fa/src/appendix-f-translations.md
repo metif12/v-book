@@ -1,10 +1,10 @@
-# Appendix F: Translations
+# پیوست F: ترجمه‌ها
 
-This book is available in 16 languages:
+این کتاب به ۱۶ زبان در دسترس است:
 
-| Code | Language | Status |
+| کد | زبان | وضعیت |
 |------|----------|--------|
-| en | English | Complete (canonical) |
+| en | English | کامل (اصل) |
 | zh | 简体中文 | TODO |
 | hi | हिन्दी | TODO |
 | es | Español | TODO |
@@ -21,6 +21,6 @@ This book is available in 16 languages:
 | tr | Türkçe | TODO |
 | ko | 한국어 | TODO |
 
-## Contributing
+## مشارکت
 
-See [translations/README.md](../translations/README.md) for how to contribute a translation.
+برای نحوه مشارکت در ترجمه به [translations/README.md](../translations/README.md) مراجعه کنید.

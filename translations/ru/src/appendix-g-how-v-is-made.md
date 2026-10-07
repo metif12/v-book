@@ -1,13 +1,13 @@
-# Appendix G: How V is Made
+# Приложение G: Как устроен V
 
-V is an open-source project. The compiler is written in V itself.
+V — это проект с открытым исходным кодом. Компилятор написан на самом V.
 
-## Repository
+## Репозиторий
 
 - GitHub: [vlang/v](https://github.com/vlang/v)
-- License: MIT
+- Лицензия: MIT
 
-## Building from source
+## Сборка из исходного кода
 
 ```bash
 git clone https://github.com/vlang/v
@@ -15,12 +15,12 @@ cd v
 make
 ```
 
-## Contributing
+## Участие в проекте
 
-See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
+См. [руководство по участию](https://github.com/vlang/v/blob/master/CONTRIBUTING.md).
 
-## Community
+## Сообщество
 
-- [Forum](https://forum.vlang.io)
+- [Форум](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

@@ -1,23 +1,23 @@
 # VPM
 
-V Package Manager (VPM) hosts community packages:
+V 包管理器（VPM）托管社区包：
 
 ```bash
 v install vsl
 ```
 
-## Searching
+## 搜索
 
 ```bash
 v search json
 ```
 
-## Installing
+## 安装
 
 ```bash
 v install vsl
 ```
 
-## Next
+## 下一步
 
-[Chapter 8: Collections](ch08-collections.md)
+[第 8 章：集合](ch08-collections.md)

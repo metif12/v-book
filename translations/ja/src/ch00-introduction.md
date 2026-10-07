@@ -1,33 +1,33 @@
-# Introduction
+# はじめに
 
-*The V Programming Language Book* is a comprehensive guide to the [V programming language](https://vlang.io) — a simple, fast, safe, compiled language for building maintainable software.
+*Vプログラミング言語ブック*は、[Vプログラミング言語](https://vlang.io)包括的なガイドです。これは、保守可能なソフトウェアを構築するための、シンプルで高速かつ安全なコンパイル言語です。
 
-## Who this book is for
+## この本の対象読者
 
-This book assumes you have some experience with programming in another language. It does not assume you know V. We start from the basics and build up to advanced topics.
+この本は、他の言語でプログラミングの経験があることを前提としています。Vの知識は前提としていません。基礎から始めて、高度なトピックまで構築していきます。
 
-## How to use this book
+## この本の使い方
 
-The book is organized into parts:
+この本はいくつかのパートに分かれています：
 
-- **Part I: Getting Started** — Install V, write your first program, understand project structure.
-- **Part II: Common Programming Concepts** — Variables, types, functions, control flow, structs, enums, modules, collections, error handling.
-- **Part III: Intermediate V** — Generics, testing, concurrency, web development, C interop, advanced features, and a final project.
+- **第I部：はじめに** — Vのインストール、最初のプログラムの作成、プロジェクト構造の理解。
+- **第II部：一般的なプログラミング概念** — 変数、型、関数、制御フロー、struct、enum、モジュール、コレクション、エラー処理。
+- **第III部：中級V** — ジェネリクス、テスト、並行性、Web開発、C相互運用、高度な機能、最終プロジェクト。
 
-Each chapter builds on the previous ones. Code examples are tested in CI — every V code block in this book is compiled and run automatically.
+各章は前の章の内容を基礎としています。コード例はCIでテストされています。この本のすべてのVコードブロックは自動的にコンパイルされ実行されます。
 
-## Code examples
+## コード例
 
-Code examples in this book follow these conventions:
+この本のコード例は以下の規則に従います：
 
-- `v` code blocks are compiled and run in CI.
-- `v ignore` code blocks are not compiled (used for pseudocode or incomplete examples).
-- `v no_run` code blocks are compiled but not run (used for examples that would block or require input).
+- `v`コードブロックはCIでコンパイルされ実行されます。
+- `v ignore`コードブロックはコンパイルされません（疑似コードや不完全な例に使用）。
+- `v no_run`コードブロックはコンパイルされますが実行されません（ブロックする例や入力を必要とする例に使用）。
 
-## Translations
+## 翻訳
 
-This book is available in 16 languages. See [Appendix F](appendix-f-translations.md) for the full list.
+この本は16の言語で利用可能です。完全なリストは[付録F](appendix-f-translations.md)を参照してください。
 
-## Contributing
+## 貢献
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+この本はコミュニティプロジェクトです。貢献方法については[GitHubリポジトリ](https://github.com/vlang/v-book)を参照してください。

@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# باب ۴: ملکیت اور میموری
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V میموری مینجمنٹ کے لیے بہت سی زبانوں سے مختلف نقطہ نظر رکھتا ہے۔ دستی میموری مینجمنٹ یا صرف گاربيج کلکشن کے بجائے، V کئی حکمت عملی پیش کرتا ہے۔
 
-## Stack and Heap
+## اسٹیک اور ہیپ
 
-V automatically decides whether to allocate on the stack or heap:
+V خودکار طور پر فیصلہ کرتا ہے کہ اسٹیک یا ہیپ پر الاکیٹ کرنا ہے:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## گاربيج کلکشن
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V ڈیفالٹ طور پر گاربيج کلکٹر استعمال کرتا ہے۔ آپ کو میموری کو دستی طور پر آزاد کرنے کی ضرورت نہیں:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## آٹوفری
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V میں ایک آٹوفری موڈ ہے جو متغیرات کے اسکوپ سے باہر جانے پر خودکار طور پر میموری آزاد کرتا ہے:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## حوالہ جات
 
-You can use references to avoid copying large data:
+بڑے ڈیٹا کی کاپی سے بچنے کے لیے حوالہ جات استعمال کر سکتے ہیں:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## میموری مینجمنٹ موڈز
 
-| Mode | Flag | Description |
+| موڈ | فلگ | تفصیل |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (ڈیفالٹ) | `-gc boehm` | Boehm گاربيج کلکٹر |
+| آٹوفری | `-autofree` | خودکار میموری آزادی |
+| کوئی نہیں | `-gc none` | دستی میموری مینجمنٹ |
+| پری الاکیٹ | `-prealloc` | ایرینا الاکیٹر |
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+اس باب میں، آپ نے V کے میموری مینجمنٹ کے اختیارات کے بارے میں سیکھا۔ اگلے باب میں، ہم structs کو دریافت کریں گے۔

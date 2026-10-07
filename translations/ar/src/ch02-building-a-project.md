@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# الفصل 2: بناء مشروع
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+في هذا الفصل، ستتعلم كيف تبني مشروع V، وتستخدم `v.mod`، وتُنسّق الكود مع `v fmt`، وتكتب الاختبارات مع `v test`.
 
-## Project structure
+## بنية المشروع
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+مشروع V هو مجلد يحتوي على ملف `v.mod` وملف أو أكثر بامتداد `.v`:
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+كل مشروع V يحتوي على ملف `v.mod` يصف المشروع:
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+أنشئ مشروعاً جديداً بـ:
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+هذا ينشئ ملف `v.mod` وملف `main.v` مع قالب أساسي.
 
-## Formatting with v fmt
+## التنسيق مع v fmt
 
-V has a built-in code formatter. Run it on your project:
+V يحتوي على مُنسّق كود مدمج. شغّله على مشروعك:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+العلمة `-w` تكتب الكود المنسّق مرة أخرى إلى الملفات.
 
-## Testing with v test
+## الاختبار مع v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V يحتوي على إطار عمل اختبار مدمج. أنشئ ملفاً ينتهي بـ `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+شغّل الاختبارات:
 
 ```bash
 v test .
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+في هذا الفصل، تعلمت كيف تبني مشروع V، وتستخدم `v.mod`، وتُنسّق الكود، وتكتب الاختبارات. في الفصل التالي، سنتعمق في مفاهيم البرمجة الشائعة في V.

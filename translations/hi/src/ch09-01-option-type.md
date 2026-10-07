@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## अनरैपिंग
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
 [Result Type](ch09-02-result-type.md)

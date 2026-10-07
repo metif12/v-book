@@ -1,16 +1,16 @@
-# Formatting with v fmt
+# v fmt ile Biçimlendirme
 
-V has a built-in code formatter:
+V'nin yerleşik bir kod biçimlendiricisi vardır:
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes changes back to files. Without it, the formatter prints to stdout.
+`-w` bayrağı değişiklikleri dosyaların üzerine yazar. Bu bayrak olmadan, biçimlendirici stdout'a yazdırır.
 
-## Example
+## Örnek
 
-Before:
+Öncesi:
 
 ```v
 fn main(){
@@ -18,7 +18,7 @@ println( 'hello' )
 }
 ```
 
-After `v fmt`:
+`v fmt` sonrası:
 
 ```v
 fn main() {
@@ -26,6 +26,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Testing with v test](ch02-04-testing.md)
+[v test ile Test Etme](ch02-04-testing.md)

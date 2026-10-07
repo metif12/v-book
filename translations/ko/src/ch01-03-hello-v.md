@@ -1,6 +1,6 @@
 # Hello, V!
 
-Let's look at a more interesting example:
+조금 더 흥미로운 예제를 살펴봅시다:
 
 ```v
 fn main() {
@@ -10,22 +10,22 @@ fn main() {
 }
 ```
 
-Run it:
+실행하세요:
 
 ```bash
 v run main.v
 ```
 
-Output:
+출력:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## String interpolation
+## 문자열 보간
 
-V uses `${...}` for string interpolation. Any expression inside `${...}` is evaluated and converted to a string:
+V는 문자열 보간에 `${...}`을 사용합니다. `${...}` 안의 모든 표현식은 평가되어 문자열로 변환됩니다:
 
 ```v
 fn main() {
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-## Variables
+## 변수
 
-Use `:=` to declare and initialize a variable:
+`:=`를 사용하여 변수를 선언하고 초기화합니다:
 
 ```v
 fn main() {
@@ -49,6 +49,6 @@ fn main() {
 }
 ```
 
-## Next
+## 다음
 
-[Chapter 2: Building a Project](ch02-building-a-project.md)
+[Chapter 2: 프로젝트 구성하기](ch02-building-a-project.md)

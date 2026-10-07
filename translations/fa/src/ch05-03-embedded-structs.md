@@ -1,4 +1,4 @@
-# Embedded Structs
+# struct های تودرتو
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## بعدی
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[اصلاح‌کننده‌های دسترسی](ch05-04-access-modifiers.md)

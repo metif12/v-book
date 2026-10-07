@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# Capítulo 7: Módulos e Pacotes
 
-## Module System
+## Sistema de Módulos
 
-V organizes code into modules. A module is a directory with `.v` files:
+V organiza código em módulos. Um módulo é um diretório com arquivos `.v`:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## Visibilidade
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — público, acessível de outros módulos
+- (sem modificador) — privado, apenas módulo
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+O V Package Manager (VPM) hospeda pacotes da comunidade:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+Neste capítulo, você aprendeu sobre módulos, visibilidade e VPM. No próximo capítulo, vamos explorar coleções.

@@ -1,10 +1,10 @@
-# Installation
+# Instalación
 
 ## Windows
 
-### Installer
+### Instalador
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+Descarga el instalador más reciente desde [vlang.io/install](https://vlang.io/install.html) y ejecútalo.
 
 ### PowerShell
 
@@ -14,9 +14,9 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 
 ### Manual
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. Descarga la versión más reciente desde [GitHub releases](https://github.com/vlang/v/releases).
+2. Extrae el archivo zip.
+3. Agrega el directorio `v` a tu PATH.
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### Script de instalación
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### Script de instalación
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## Desde el código fuente
 
-To build V from source, you need a C compiler (gcc or clang):
+Para compilar V desde el código fuente, necesitas un compilador de C (gcc o clang):
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+En Windows, usa `win.bat` en lugar de `make`.
 
-## Verifying
+## Verificación
 
 ```bash
 v version
 ```
 
-## Next
+## Siguiente
 
-[Hello, World!](ch01-02-hello-world.md)
+[¡Hola, Mundo!](ch01-02-hello-world.md)

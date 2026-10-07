@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# 第 13 章：函数式特性
 
-V supports closures and higher-order functions.
+V 支持闭包和高阶函数。
 
-## Closures
+## 闭包
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## 高阶函数
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## 匿名函数
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+在本章中，你学习了闭包和高阶函数。在下一章中，我们将探讨并发。

@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# Bab 5: Struct
 
-Structs are V's way to define custom data types.
+Struct adalah cara V untuk mendefinisikan tipe data kustom.
 
-## Defining Structs
+## Mendefinisikan Struct
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## Metode
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## Struct Tersemat
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## Modifier Akses
 
-Fields are private by default. Use `pub` to make them public:
+Field bersifat private secara default. Gunakan `pub` untuk membuatnya public:
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+Dalam bab ini, Anda telah belajar tentang struct, metode, embedding, dan modifier akses. Di bab berikutnya, kita akan menjelajahi enum dan tipe sum.

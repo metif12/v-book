@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## एरर प्रोपेगेशन
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## अगला
 
-[Custom Errors](ch09-03-custom-errors.md)
+[कस्टम एरर](ch09-03-custom-errors.md)

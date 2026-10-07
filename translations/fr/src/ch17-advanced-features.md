@@ -1,12 +1,12 @@
-# Chapter 17: Advanced Features
+# Chapitre 17 : Fonctionnalités avancées
 
-## Attributes
+## Attributs
 
-Attributes are metadata annotations placed before declarations. They control compiler behavior, optimization hints, and API lifecycle.
+Les attributs sont des annotations de métadonnées placées avant les déclarations. Ils contrôlent le comportement du compilateur, les indices d'optimisation et le cycle de vie des API.
 
 ### [deprecated]
 
-Marks a function or type as deprecated. The compiler emits a warning when the item is used.
+Marque une fonction ou un type comme obsolète. Le compilateur émet un avertissement lorsque l'élément est utilisé.
 
 ```v
 [deprecated]
@@ -22,7 +22,7 @@ fn old_multiply(a int, b int) int {
 
 ### [inline]
 
-Hints the compiler to inline the function at the call site, eliminating call overhead. Best for small, frequently called functions.
+Indique au compilateur d'inliner la fonction au site d'appel, éliminant la surcharge d'appel. Idéal pour les petites fonctions fréquemment appelées.
 
 ```v
 [inline]
@@ -38,7 +38,7 @@ fn main() {
 
 ### [unsafe]
 
-Marks a function as unsafe, allowing it to use `unsafe` blocks without the caller also being marked unsafe.
+Marque une fonction comme non sécurisée, lui permettant d'utiliser des blocs `unsafe` sans que l'appelant soit également marqué unsafe.
 
 ```v
 [unsafe]
@@ -55,7 +55,7 @@ fn main() {
 
 ### [if]
 
-Conditional compilation at compile time. The block is included only when the condition is true.
+Compilation conditionnelle au moment de la compilation. Le bloc n'est inclus que lorsque la condition est vraie.
 
 ```v
 $if debug {
@@ -65,13 +65,13 @@ $if debug {
 }
 ```
 
-## Compile-time code
+## Code au moment de la compilation
 
-V provides several compile-time constructs that execute during compilation, enabling metaprogramming and zero-cost abstractions.
+V fournit plusieurs constructions au moment de la compilation qui s'exécutent pendant la compilation, permettant la métaprogrammation et les abstractions à coût nul.
 
 ### $if
 
-Evaluates conditions at compile time. Supports platform detection, architecture checks, and custom flags.
+Évalue les conditions au moment de la compilation. Supporte la détection de plateforme, les vérifications d'architecture et les options personnalisées.
 
 ```v
 $if windows {
@@ -91,7 +91,7 @@ fn main() {
 
 ### $for
 
-Iterates at compile time over arrays, struct fields, or ranges. Useful for generating repetitive code.
+Itère au moment de la compilation sur des tableaux, des champs de struct ou des plages. Utile pour générer du code répétitif.
 
 ```v
 const platforms = ['windows', 'linux', 'macos']
@@ -110,7 +110,7 @@ fn main() {
 
 ### $assert
 
-Compile-time assertions that abort compilation if the condition is false.
+Assertions au moment de la compilation qui interrompent la compilation si la condition est fausse.
 
 ```v
 $assert sizeof(int) == 8 || sizeof(int) == 4
@@ -121,11 +121,11 @@ fn main() {
 }
 ```
 
-## Operator overloading
+## Surcharge d'opérateurs
 
-V allows defining custom behavior for operators on user-defined types. Each operator maps to a method with a specific signature.
+V permet de définir un comportement personnalisé pour les opérateurs sur les types définis par l'utilisateur. Chaque opérateur correspond à une méthode avec une signature spécifique.
 
-### Arithmetic operators
+### Opérateurs arithmétiques
 
 ```v
 struct Vec2 {
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-### Comparison operators
+### Opérateurs de comparaison
 
 ```v
 struct Money {
@@ -184,7 +184,7 @@ fn main() {
 }
 ```
 
-### Index operator
+### Opérateur d'indexation
 
 ```v
 struct Grid {
@@ -208,11 +208,11 @@ fn main() {
 }
 ```
 
-## Compile-time reflection
+## Réflexion au moment de la compilation
 
-V's `$for` construct can iterate over struct fields at compile time, enabling automatic serialization, validation, and more.
+La construction `$for` de V peut itérer sur les champs de struct au moment de la compilation, permettant la sérialisation automatique, la validation et plus encore.
 
-### Iterating struct fields
+### Itérer sur les champs de struct
 
 ```v
 struct User {
@@ -240,7 +240,7 @@ fn main() {
 }
 ```
 
-### Generating validation code
+### Générer du code de validation
 
 ```v
 struct Config {
@@ -277,6 +277,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about attributes, compile-time code, operator overloading, and compile-time reflection. These features enable powerful metaprogramming patterns and fine-grained control over compilation. In the next chapter, we'll explore memory management in depth.
+Dans ce chapitre, vous avez appris les attributs, le code au moment de la compilation, la surcharge d'opérateurs et la réflexion au moment de la compilation. Ces fonctionnalités permettent des patrons de métaprogrammation puissants et un contrôle fin de la compilation. Dans le chapitre suivant, nous explorerons la gestion de la mémoire en profondeur.

@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# Bölüm 3: Ortak Kavramlar
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Bu bölüm, V'deki ortak programlama kavramlarını kapsar: değişkenler, veri tipleri, fonksiyonlar, yorumlar ve kontrol akışı.
 
-## Variables and Mutability
+## Değişkenler ve Değişkenlik
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+V'de değişkenler varsayılan olarak değişmezdir. Değişken yapmak için `mut` kullanın:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Hata: name değişmez
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // Tamam: count değişkendir
     count++
     println(count)
 }
 ```
 
-## Data Types
+## Veri Tipleri
 
-V has a rich type system:
+V'nin zengin bir tip sistemi vardır:
 
 ```v
 fn main() {
-    // Integers
+    // Tamsayılar
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // 64-bit tamsayı
+    c := u8(255)   // işaretsiz 8-bit
 
-    // Floats
+    // Ondalıklı sayılar
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // 32-bit ondalıklı
 
-    // Other types
+    // Diğer tipler
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune (tek karakter)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Fonksiyonlar
 
-Functions are declared with `fn`:
+Fonksiyonlar `fn` ile tanımlanır:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Yorumlar
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Kontrol Akışı
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### For döngüsü
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+Bu bölümde V'deki değişkenler, veri tipleri, fonksiyonlar, yorumlar ve kontrol akışı hakkında bilgi edindiniz. Sonraki bölümde sahiplik ve bellek yönetimini inceleyeceğiz.

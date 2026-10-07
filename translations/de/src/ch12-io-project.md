@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Kapitel 12: I/O-Projekt: Ein CLI-Tool bauen
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+In diesem Kapitel bauen wir ein einfaches Kommandozeilen-Tool, das eine Datei liest und deren Zeilen, Wörter und Zeichen zählt.
 
-## Project setup
+## Projekt-Setup
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## Implementierung
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## Ausführung
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+In diesem Kapitel haben Sie ein Kommandozeilen-Tool gebaut. Im nächsten Kapitel untersuchen wir funktionale Merkmale.

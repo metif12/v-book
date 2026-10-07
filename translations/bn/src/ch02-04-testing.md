@@ -1,6 +1,6 @@
-# Testing with v test
+# v test দিয়ে টেস্টিং
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V-তে একটি বিল্ট-ইন টেস্টিং ফ্রেমওয়ার্ক আছে। `_test.v` দিয়ে শেষ হওয়া একটি ফাইল তৈরি করুন:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+টেস্ট চালান:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## টেস্ট ফাংশন
 
-Test functions start with `test_` and take no arguments:
+টেস্ট ফাংশন `test_` দিয়ে শুরু হয় এবং কোনো আর্গুমেন্ট নেয় না:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## অ্যাসারশন
 
-Use `assert` to check conditions:
+শর্ত পরীক্ষা করতে `assert` ব্যবহার করুন:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[অধ্যায় 3: সাধারণ ধারণা](ch03-common-concepts.md)

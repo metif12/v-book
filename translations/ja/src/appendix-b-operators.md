@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# 付録B：演算子
 
-## Arithmetic
+## 算術演算子
 
-| Operator | Description |
+| 演算子 | 説明 |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | 加算 |
+| `-` | 減算 |
+| `*` | 乗算 |
+| `/` | 除算 |
+| `%` | 剰余 |
+| `**` | べき乗 |
 
-## Comparison
+## 比較演算子
 
-| Operator | Description |
+| 演算子 | 説明 |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | 等しい |
+| `!=` | 等しくない |
+| `<` | 小なり |
+| `>` | 大なり |
+| `<=` | 以下 |
+| `>=` | 以上 |
 
-## Logical
+## 論理演算子
 
-| Operator | Description |
+| 演算子 | 説明 |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | 論理積 |
+| `\|\|` | 論理和 |
+| `!` | 論理否定 |
 
-## Bitwise
+## ビット演算子
 
-| Operator | Description |
+| 演算子 | 説明 |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | ビットAND |
+| `\|` | ビットOR |
+| `^` | ビットXOR |
+| `<<` | 左シフト |
+| `>>` | 右シフト |
 
-## Assignment
+## 代入演算子
 
-| Operator | Description |
+| 演算子 | 説明 |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | 代入 |
+| `:=` | 短縮宣言 |
+| `+=` | 加算代入 |
+| `-=` | 減算代入 |
+| `*=` | 乗算代入 |
+| `/=` | 除算代入 |
+| `%=` | 剰余代入 |

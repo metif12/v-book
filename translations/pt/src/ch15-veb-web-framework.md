@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# Capítulo 15: Framework Web Veb
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb é o framework web imbutido de V. Ele fornece roteamento, manipulação de JSON, templates HTML, middleware e servimento de arquivos estáticos — tudo com uma superfície de API mínima.
 
-## Hello, Veb!
+## Olá, Veb!
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+A struct `App` armazena o estado da sua aplicação. Cada rota é um método em `App` anotado com `@['/path']`. O handler recebe um `veb.Context` que fornece métodos para escrever respostas.
 
-## Routing
+## Roteamento
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb usa parâmetros de caminho com a sintaxe `:name`. Parâmetros de caminho são passados diretamente como argumentos da função para o handler.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+Parâmetros de caminho (`:id`) são extraídos da URL e passados como argumentos. Parâmetros de query string (`?q=...`) são acessados via `ctx.query` que é um `map[string]string`.
 
-## JSON responses
+## Respostas JSON
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()` serializa qualquer valor V para JSON e define o cabeçalho `Content-Type` para `application/json`.
 
 ## Templates
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb suporta templates HTML com a função `$tmpl`. Templates usam a sintaxe de interpolação de strings de V.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+O arquivo de template recebe a struct de dados e pode acessar seus campos com `{{ field_name }}`.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Middleware envolve cada requisição. Use `app.use()` para registrar middleware global, ou `app.route_use()` para middleware específico de rota.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+Middleware retorna `bool` — `true` para continuar para o próximo handler, `false` para parar.
 
-## Static files
+## Arquivos estáticos
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb pode servir arquivos estáticos de um diretório usando `app.handle_static()`.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+Arquivos no diretório `public/` são servidos no caminho raiz. Por exemplo, `public/style.css` é acessível em `http://localhost:8080/style.css`.
 
-## Summary
+## Resumo
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+Neste capítulo, você aprendeu sobre Veb — o framework web imbutido de V. Você viu como definir rotas com parâmetros de caminho e query, retornar respostas JSON, renderizar templates HTML, adicionar middleware para preocupações transversais e servir arquivos estáticos. No próximo capítulo, vamos explorar interop com C.

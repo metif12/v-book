@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# অধ্যায় 12: I/O প্রজেক্ট: CLI টুল তৈরি
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+এই অধ্যায়ে আমরা একটি সরল কমান্ড-লাইন টুল তৈরি করব যা একটি ফাইল পড়ে এবং এর লাইন, শব্দ এবং অক্ষর গণনা করে।
 
-## Project setup
+## প্রজেক্ট সেটআপ
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## বাস্তবায়ন
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## চালানো
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+এই অধ্যায়ে আপনি একটি কমান্ড-লাইন টুল তৈরি করেছেন। পরবর্তী অধ্যায়ে আমরা ফাংশনাল ফিচার শিখব।

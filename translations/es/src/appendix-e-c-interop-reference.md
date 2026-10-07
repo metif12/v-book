@@ -1,25 +1,25 @@
-# Appendix E: V and C Interop Reference
+# Apéndice E: Referencia de Interoperabilidad entre V y C
 
-## Including C code
+## Incluyendo código C
 
 ```v ignore
 #include "myheader.h"
 ```
 
-## C flags
+## Opciones de C
 
 ```v
 #flag -lm
 #flag -I/path/to/include
 ```
 
-## Calling C functions
+## Llamando a funciones C
 
 ```v
 fn C.my_c_function(int) int
 ```
 
-## Exporting V functions
+## Exportando funciones V
 
 ```v
 @[export: 'my_v_function']
@@ -28,7 +28,7 @@ fn my_v_function() {
 }
 ```
 
-## Shared libraries
+## Bibliotecas compartidas
 
 ```bash
 v -shared -o libmylib.so mylib.v

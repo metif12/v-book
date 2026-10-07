@@ -1,6 +1,6 @@
 # Autofree
 
-V has an autofree mode that automatically frees memory:
+V verfügt über einen Autofree-Modus, der Speicher automatisch freigibt:
 
 ```bash
 v -autofree main.v
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## Weiter
 
-[References](ch04-04-references.md)
+[Referenzen](ch04-04-references.md)

@@ -1,4 +1,4 @@
-# Enums
+# Enum'lar
 
 ```v
 enum Color {
@@ -18,6 +18,6 @@ fn main() {
 }
 ```
 
-## Next
+## Sonraki
 
-[Sum Types](ch06-02-sum-types.md)
+[Toplam Tipler](ch06-02-sum-types.md)

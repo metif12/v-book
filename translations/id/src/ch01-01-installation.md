@@ -1,10 +1,10 @@
-# Installation
+# Instalasi
 
 ## Windows
 
 ### Installer
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+Unduh installer terbaru dari [vlang.io/install](https://vlang.io/install.html) dan jalankan.
 
 ### PowerShell
 
@@ -14,9 +14,9 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 
 ### Manual
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. Unduh rilis terbaru dari [GitHub releases](https://github.com/vlang/v/releases).
+2. Ekstrak file zip.
+3. Tambahkan direktori `v` ke PATH Anda.
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### Skrip installer
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### Skrip installer
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## Dari sumber
 
-To build V from source, you need a C compiler (gcc or clang):
+Untuk membangun V dari sumber, Anda memerlukan kompiler C (gcc atau clang):
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+Di Windows, gunakan `win.bat` sebagai ganti `make`.
 
-## Verifying
+## Memverifikasi
 
 ```bash
 v version
 ```
 
-## Next
+## Berikutnya
 
 [Hello, World!](ch01-02-hello-world.md)

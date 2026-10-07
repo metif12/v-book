@@ -1,4 +1,4 @@
-# Control Flow
+# 控制流
 
 ## If
 
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## If as expression
+## If 作为表达式
 
 ```v
 fn main() {
@@ -23,22 +23,22 @@ fn main() {
 }
 ```
 
-## For loop
+## For 循环
 
 ```v
 fn main() {
-    // Over an array
+    // 遍历数组
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range
+    // 范围
     for i in 0 .. 5 {
         println(i)
     }
 
-    // With index
+    // 带索引
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Chapter 4: Ownership and Memory](ch04-ownership-and-memory.md)
+[第 4 章：所有权与内存](ch04-ownership-and-memory.md)

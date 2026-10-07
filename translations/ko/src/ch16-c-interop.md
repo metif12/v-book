@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# Chapter 16: C 인터롭
 
-V can call C functions and be called from C.
+V는 C 함수를 호출할 수 있고 C에서 호출될 수도 있습니다.
 
-## Calling C from V
+## V에서 C 호출하기
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V는 `C` 모듈을 사용하여 C 함수를 직접 호출할 수 있습니다. C 함수 시그니처를 선언하고 필요한 헤더를 포함해야 합니다.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+`#flag` 지시문은 C 컴파일러에 플래그를 전달합니다. 예를 들어 `-lm`은 수학 라이브러리를 링크합니다. `#include` 지시문은 C 헤더 파일을 포함하여 컴파일러가 C 함수를 인식할 수 있게 합니다. `fn C.function_name` 선언은 V에 C 함수 시그니처를 알려줍니다.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+시그니처를 선언하여 모든 C 함수를 호출할 수 있습니다. 예를 들어 `puts`를 호출하려면:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## C에서 V 호출하기
 
-Compile V to a shared library:
+V를 공유 라이브러리로 컴파일합니다:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+그런 다음 C에서 공유 라이브러리를 사용합니다:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V는 C 코드를 V로 번역할 수 있습니다:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## C 타입 다루기
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V는 `C.int`, `C.double`, `C.char` 등 C 호환 타입을 제공합니다.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## 콜백
 
-You can pass V functions to C callbacks:
+V 함수를 C 콜백에 전달할 수 있습니다:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+이 장에서는 C 인터롭에 대해 배웠습니다. 다음 장에서는 고급 기능을 살펴보겠습니다.

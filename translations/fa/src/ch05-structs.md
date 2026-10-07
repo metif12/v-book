@@ -1,8 +1,8 @@
-# Chapter 5: Structs
+# فصل ۵: struct ها
 
-Structs are V's way to define custom data types.
+struct ها راه V برای تعریف انواع داده سفارشی هستند.
 
-## Defining Structs
+## تعریف struct ها
 
 ```v
 struct Point {
@@ -16,7 +16,7 @@ fn main() {
 }
 ```
 
-## Methods
+## متدها
 
 ```v
 struct Point {
@@ -34,7 +34,7 @@ fn main() {
 }
 ```
 
-## Embedded Structs
+## struct های تودرتو
 
 ```v
 struct Point {
@@ -56,9 +56,9 @@ fn main() {
 }
 ```
 
-## Access Modifiers
+## اصلاح‌کننده‌های دسترسی
 
-Fields are private by default. Use `pub` to make them public:
+فیلدها به صورت پیش‌فرض خصوصی هستند. از `pub` برای عمومی کردن آن‌ها استفاده کنید:
 
 ```v
 struct User {
@@ -74,6 +74,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about structs, methods, embedding, and access modifiers. In the next chapter, we'll explore enums and sum types.
+در این فصل، درباره struct ها، متدها، تودرتو و اصلاح‌کننده‌های دسترسی یاد گرفتید. در فصل بعد، به enum ها و انواع جمع می‌پردازیم.

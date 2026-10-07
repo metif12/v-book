@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# Chapitre 18 : Approfondissement de la gestion mémoire
 
-## GC modes
+## Modes de GC
 
-V provides several memory management strategies, each suited to different use cases.
+V fournit plusieurs stratégies de gestion de la mémoire, chacune adaptée à différents cas d'usage.
 
-| Mode | Flag | Use case |
-|------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Mode | Option | Cas d'usage |
+|------|--------|-------------|
+| Boehm GC | `-gc boehm` | Usage général |
+| Autofree | `-autofree` | Libération automatique |
+| Aucun | `-gc none` | Gestion manuelle |
+| Prealloc | `-prealloc` | Allocation par arène |
 
-## Stack vs heap
+## Pile vs tas
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+V décide automatiquement où allouer la mémoire. Les petites valeurs de courte durée restent sur la pile. Les valeurs plus grandes ou qui s'échappent vont sur le tas.
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## Mode autofree
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Autofree libère automatiquement la mémoire lorsque les variables sortent de leur portée. Il utilise le comptage de références pour les allocations du tas.
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc none et gestion manuelle de la mémoire
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+Avec `-gc none`, V désactive le ramasse-miettes. Vous devez gérer manuellement la mémoire en utilisant `free`.
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## Allocation par arène -prealloc
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Prealloc utilise l'allocation par arène pour de meilleures performances dans les boucles serrées. Les allocations sont libérées en bloc.
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## Code unsafe
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+Le bloc `unsafe` permet des opérations qui contournent les garanties de sécurité de V, telles que l'arithmétique de pointeurs et l'accès direct à la mémoire.
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### Arithmétique de pointeurs
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## Optimisation des performances
 
-Choosing the right memory management mode can significantly impact performance.
+Choisir le bon mode de gestion de la mémoire peut avoir un impact significatif sur les performances.
 
-### Benchmarking different modes
+### Benchmarker différents modes
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### Optimiser les structures de données
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+Dans ce chapitre, vous avez appris les modes de gestion de la mémoire, l'allocation pile vs tas, autofree, la gestion manuelle de la mémoire, prealloc, le code unsafe et l'optimisation des performances. Dans le chapitre suivant, nous explorerons l'outillage.

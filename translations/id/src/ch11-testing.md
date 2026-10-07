@@ -1,10 +1,10 @@
-# Chapter 11: Testing
+# Bab 11: Testing
 
-V has a built-in testing framework.
+V memiliki framework testing bawaan.
 
-## Test files
+## File test
 
-Create a file ending in `_test.v`:
+Buat file yang diakhiri dengan `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -17,13 +17,13 @@ fn test_add() {
 }
 ```
 
-## Running tests
+## Menjalankan test
 
 ```bash
 v test .
 ```
 
-## Test organization
+## Organisasi test
 
 ```v
 fn add(a int, b int) int {
@@ -51,7 +51,7 @@ fn test_mul() {
 }
 ```
 
-## Table-driven tests
+## Table-driven test
 
 ```v
 fn add(a int, b int) int {
@@ -70,6 +70,6 @@ fn test_add() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about V's testing framework. In the next chapter, we'll build a command-line tool.
+Dalam bab ini, Anda telah belajar tentang framework testing V. Di bab berikutnya, kita akan membangun alat command-line.

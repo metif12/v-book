@@ -1,6 +1,6 @@
-# Functions
+# ফাংশন
 
-Functions are declared with `fn`:
+ফাংশন `fn` দিয়ে ঘোষণা করা হয়:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## একাধিক রিটার্ন মান
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## রিটার্ন মান নেই
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## ফাংশন হোইস্টিং
 
-Functions can be called before they are declared:
+ফাংশন ঘোষণার আগেই কল করা যায়:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Comments](ch03-04-comments.md)
+[কমেন্ট](ch03-04-comments.md)

@@ -1,7 +1,7 @@
-# Visibility
+# Visibilitas
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — public, dapat diakses dari modul lain
+- (tanpa modifier) — private, hanya modul tersebut
 
 ```v ignore
 module math
@@ -15,6 +15,6 @@ pub fn public_function() int {
 }
 ```
 
-## Next
+## Berikutnya
 
 [VPM](ch07-03-vpm.md)

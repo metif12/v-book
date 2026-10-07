@@ -1,4 +1,4 @@
-# Strings
+# Chaînes de caractères
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## Méthodes de chaîne
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## Suivant
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[Chapitre 9 : Gestion des erreurs](ch09-error-handling.md)

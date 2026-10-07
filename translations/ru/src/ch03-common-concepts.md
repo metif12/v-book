@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# Глава 3: Общие концепции
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+Эта глава охватывает общие концепции программирования на V: переменные, типы данных, функции, комментарии и управляющие конструкции.
 
-## Variables and Mutability
+## Переменные и изменяемость
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+В V переменные по умолчанию неизменяемы. Используйте `mut`, чтобы сделать их изменяемыми:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // Ошибка: name неизменяема
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: count изменяема
     count++
     println(count)
 }
 ```
 
-## Data Types
+## Типы данных
 
-V has a rich type system:
+В V богатая система типов:
 
 ```v
 fn main() {
-    // Integers
+    // Целые числа
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // 64-битное целое
+    c := u8(255)   // беззнаковое 8-битное
 
-    // Floats
+    // Числа с плавающей точкой
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // 32-битное с плавающей точкой
 
-    // Other types
+    // Другие типы
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune (один символ)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## Функции
 
-Functions are declared with `fn`:
+Функции объявляются с помощью `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## Комментарии
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## Управляющие конструкции
 
 ### If
 
@@ -88,17 +88,17 @@ fn main() {
 }
 ```
 
-### For loop
+### Цикл for
 
 ```v
 fn main() {
-    // Loop over an array
+    // Цикл по массиву
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range loop
+    // Цикл по диапазону
     for i in 0 .. 5 {
         println(i)
     }
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Итоги
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+В этой главе вы узнали о переменных, типах данных, функциях, комментариях и управляющих конструкциях в V. В следующей главе мы рассмотрим владение и управление памятью.

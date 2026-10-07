@@ -1,4 +1,4 @@
-# Option Type
+# آپشن ٹائپ
 
 ```v
 struct User {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-## Unwrapping
+## ان رپنگ
 
 ```v
 fn main() {
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## اگلا
 
-[Result Type](ch09-02-result-type.md)
+[رزلٹ ٹائپ](ch09-02-result-type.md)

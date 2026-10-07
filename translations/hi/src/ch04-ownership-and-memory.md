@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# अध्याय 4: ओनरशिप और मेमोरी
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V मेमोरी मैनेजमेंट के लिए कई भाषाओं से अलग दृष्टिकोण अपनाता है। मैनुअल मेमोरी मैनेजमेंट या केवल गार्बेज कलेक्शन के बजाय, V कई रणनीतियाँ प्रदान करता है।
 
-## Stack and Heap
+## स्टैक और हीप
 
-V automatically decides whether to allocate on the stack or heap:
+V स्वचालित रूप से तय करता है कि स्टैक या हीप पर एलोकेट करना है:
 
 ```v
 fn main() {
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## गार्बेज कलेक्शन
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V डिफ़ॉल्ट रूप से गार्बेज कलेक्टर का उपयोग करता है। आपको मेमोरी को मैनुअल रूप से फ्री करने की आवश्यकता नहीं है:
 
 ```v
 fn main() {
@@ -37,9 +37,9 @@ fn main() {
 }
 ```
 
-## Autofree
+## ऑटोफ्री
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V में एक ऑटोफ्री मोड है जो वेरिएबल के स्कोप से बाहर जाने पर स्वचालित रूप से मेमोरी फ्री करता है:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## रेफरेंस
 
-You can use references to avoid copying large data:
+बड़े डेटा की प्रतिलिपि से बचने के लिए आप रेफरेंस का उपयोग कर सकते हैं:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## मेमोरी मैनेजमेंट मोड
 
-| Mode | Flag | Description |
+| मोड | फ़्लैग | विवरण |
 |------|------|-------------|
 | GC (default) | `-gc boehm` | Boehm garbage collector |
 | Autofree | `-autofree` | Automatic memory freeing |
 | None | `-gc none` | Manual memory management |
 | Prealloc | `-prealloc` | Arena allocation |
 
-## Summary
+## सारांश
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+इस अध्याय में, आपने V के मेमोरी मैनेजमेंट विकल्पों के बारे में सीखा। अगले अध्याय में, हम structs का पता लगाएंगे।

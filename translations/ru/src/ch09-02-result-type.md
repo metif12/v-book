@@ -1,4 +1,4 @@
-# Result Type
+# Тип Result
 
 ```v
 fn parse_number(s string) !int {
@@ -14,7 +14,7 @@ fn main() {
 }
 ```
 
-## Propagating errors
+## Распространение ошибок
 
 ```v
 import os
@@ -32,6 +32,6 @@ fn main() {
 }
 ```
 
-## Next
+## Далее
 
-[Custom Errors](ch09-03-custom-errors.md)
+[Пользовательские ошибки](ch09-03-custom-errors.md)

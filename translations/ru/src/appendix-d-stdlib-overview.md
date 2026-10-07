@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# Приложение D: Обзор стандартной библиотеки
 
-V's standard library includes:
+Стандартная библиотека V включает:
 
-| Module | Description |
-|--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| Модуль | Описание |
+|--------|----------|
+| `os` | Интерфейс операционной системы |
+| `io` | Ввод/вывод |
+| `strings` | Утилиты для работы со строками |
+| `arrays` | Утилиты для работы с массивами |
+| `math` | Математические функции |
+| `time` | Дата и время |
+| `json` | Кодирование/декодирование JSON |
+| `http` | HTTP-клиент/сервер |
+| `db` | Интерфейс баз данных |
+| `rand` | Генерация случайных чисел |
+| `crypto` | Криптографические функции |
+| `encoding` | Утилиты кодирования |
+| `term` | Утилиты терминала |
+| `sync` | Примитивы синхронизации |
+| `v.ast` | Манипуляция AST V |
+| `v.compiler` | Утилиты компилятора |

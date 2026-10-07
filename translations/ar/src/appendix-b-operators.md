@@ -1,53 +1,53 @@
-# Appendix B: Operators
+# الملحق B: المعاملات
 
-## Arithmetic
+## حسابية
 
-| Operator | Description |
+| المعامل | الوصف |
 |----------|-------------|
-| `+` | Addition |
-| `-` | Subtraction |
-| `*` | Multiplication |
-| `/` | Division |
-| `%` | Modulo |
-| `**` | Power |
+| `+` | جمع |
+| `-` | طرح |
+| `*` | ضرب |
+| `/` | قسمة |
+| `%` | باقي القسمة |
+| `**` | أس |
 
-## Comparison
+## مقارنة
 
-| Operator | Description |
+| المعامل | الوصف |
 |----------|-------------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `<` | Less than |
-| `>` | Greater than |
-| `<=` | Less than or equal |
-| `>=` | Greater than or equal |
+| `==` | يساوي |
+| `!=` | لا يساوي |
+| `<` | أقل من |
+| `>` | أكبر من |
+| `<=` | أقل من أو يساوي |
+| `>=` | أكبر من أو يساوي |
 
-## Logical
+## منطقية
 
-| Operator | Description |
+| المعامل | الوصف |
 |----------|-------------|
-| `&&` | Logical AND |
-| `\|\|` | Logical OR |
-| `!` | Logical NOT |
+| `&&` | وَ منطقي |
+| `\|\|` | أو منطقي |
+| `!` | نفي منطقي |
 
-## Bitwise
+## على مستوى البت
 
-| Operator | Description |
+| المعامل | الوصف |
 |----------|-------------|
-| `&` | Bitwise AND |
-| `\|` | Bitwise OR |
-| `^` | Bitwise XOR |
-| `<<` | Left shift |
-| `>>` | Right shift |
+| `&` | وَ على مستوى البت |
+| `\|` | أو على مستوى البت |
+| `^` | XOR على مستوى البت |
+| `<<` | إزاحة لليسار |
+| `>>` | إزاحة لليمين |
 
-## Assignment
+## إسناد
 
-| Operator | Description |
+| المعامل | الوصف |
 |----------|-------------|
-| `=` | Assignment |
-| `:=` | Short declaration |
-| `+=` | Add and assign |
-| `-=` | Subtract and assign |
-| `*=` | Multiply and assign |
-| `/=` | Divide and assign |
-| `%=` | Modulo and assign |
+| `=` | إسناد |
+| `:=` | تعريف مختصر |
+| `+=` | اجمع وأسند |
+| `-=` | اطرح وأسند |
+| `*=` | اضرب وأسند |
+| `/=` | اقسم وأسند |
+| `%=` | باقي القسمة وأسند |

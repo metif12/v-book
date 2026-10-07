@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# باب ۱۳: فنکشنل خصوصیات
 
-V supports closures and higher-order functions.
+V کلوزرز اور ہائر آرڈر فنکشنز کی حمایت کرتا ہے۔
 
-## Closures
+## کلوزرز
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## ہائر آرڈر فنکشنز
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## گمنام فنکشنز
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+اس باب میں، آپ نے کلوزرز اور ہائر آرڈر فنکشنز کے بارے میں سیکھا۔ اگلے باب میں، ہم ہم آہنگی کو دریافت کریں گے۔

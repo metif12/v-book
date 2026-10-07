@@ -1,4 +1,4 @@
-# Embedded Structs
+# Structs المضمنة
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## التالي
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[محددات الوصول](ch05-04-access-modifiers.md)

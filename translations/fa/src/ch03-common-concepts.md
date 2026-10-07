@@ -1,10 +1,10 @@
-# Chapter 3: Common Concepts
+# فصل ۳: مفاهیم رایج
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+این فصل مفاهیم رایج برنامه‌نویسی در V را پوشش می‌دهد: متغیرها، انواع داده، توابع، کامنت‌ها و کنترل جریان.
 
-## Variables and Mutability
+## متغیرها و تغییرپذیری
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+در V، متغیرها به صورت پیش‌فرض غیرقابل تغییر هستند. از `mut` برای قابل تغییر کردن آن‌ها استفاده کنید:
 
 ```v
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-## Data Types
+## انواع داده
 
-V has a rich type system:
+V یک سیستم نوع غنی دارد:
 
 ```v
 fn main() {
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## توابع
 
-Functions are declared with `fn`:
+توابع با `fn` تعریف می‌شوند:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## کامنت‌ها
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## کنترل جریان
 
 ### If
 
@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-### For loop
+### حلقه For
 
 ```v
 fn main() {
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+در این فصل، درباره متغیرها، انواع داده، توابع، کامنت‌ها و کنترل جریان در V یاد گرفتید. در فصل بعد، به مالکیت و مدیریت حافظه می‌پردازیم.

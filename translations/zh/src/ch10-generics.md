@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# 第 10 章：泛型
 
-Generics allow you to write code that works with any type.
+泛型让你编写适用于任何类型的代码。
 
-## Generic functions
+## 泛型函数
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## 泛型结构体
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## 类型约束
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+在本章中，你学习了泛型函数和泛型结构体。在下一章中，我们将探讨测试。

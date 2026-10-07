@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# 第 6 章：枚举与和类型
 
-## Enums
+## 枚举
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## 和类型
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## 模式匹配
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 小结
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+在本章中，你学习了枚举、和类型和模式匹配。在下一章中，我们将探讨模块与包。

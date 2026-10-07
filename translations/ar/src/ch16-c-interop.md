@@ -1,10 +1,10 @@
-# Chapter 16: C Interop
+# الفصل 16: التفاعل مع C
 
-V can call C functions and be called from C.
+V يمكنه استدعاء دوال C ويمكن استدعاؤه من C.
 
-## Calling C from V
+## استدعاء C من V
 
-V can call C functions directly using the `C` module. You need to declare the C function signature and include the necessary headers.
+V يمكنه استدعاء دوال C مباشرة باستخدام وحدة `C`. تحتاج إلى تعريف توقيع دالة C وتضمين الترويسات اللازمة.
 
 ```v
 #flag -lm
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `#flag` directive passes flags to the C compiler. For example, `-lm` links the math library. The `#include` directive includes C header files so the compiler knows about the C functions. The `fn C.function_name` declaration tells V about the C function signature.
+التوجيه `#flag` يمرر علامات إلى مُصرِّف C. على سبيل المثال، `-lm` يربط مكتبة الرياضيات. التوجيه `#include` يضمّن ملفات ترويسة C حتى يعرف المُصرِّف عن دوال C. التعريف `fn C.function_name` يخبر V عن توقيع دالة C.
 
-You can call any C function by declaring its signature. For example, to call `puts`:
+يمكنك استدعاء أي دالة C بتعريف توقيعها. على سبيل المثال، لاستدعاء `puts`:
 
 ```v
 #flag -lm
@@ -33,15 +33,15 @@ fn main() {
 }
 ```
 
-## Calling V from C
+## استدعاء V من C
 
-Compile V to a shared library:
+صرّف V إلى مكتبة مشتركة:
 
 ```bash
 v -shared -o libmylib.so mylib.v
 ```
 
-Then use the shared library from C:
+ثم استخدم المكتبة المشتركة من C:
 
 ```v ignore
 #include <stdio.h>
@@ -56,15 +56,15 @@ int main() {
 
 ## C2V
 
-V can translate C code to V:
+V يمكنه ترجمة كود C إلى V:
 
 ```bash
 v translate myheader.h
 ```
 
-## Working with C types
+## العمل مع أنواع C
 
-V provides C-compatible types like `C.int`, `C.double`, `C.char`, etc.
+V يوفر أنواعاً متوافقة مع C مثل `C.int`، `C.double`، `C.char`، إلخ.
 
 ```v
 fn main() {
@@ -75,9 +75,9 @@ fn main() {
 }
 ```
 
-## Callbacks
+## الاستدعاءات الراجعة (Callbacks)
 
-You can pass V functions to C callbacks:
+يمكنك تمرير دوال V إلى استدعاءات راجعة في C:
 
 ```v ignore
 #flag -lm
@@ -94,6 +94,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about C interop. In the next chapter, we'll explore advanced features.
+في هذا الفصل، تعلمت عن التفاعل مع C. في الفصل التالي، سنستكشف الميزات المتقدمة.

@@ -1,8 +1,8 @@
-# Chapter 20: Final Project: Web Application
+# Bölüm 20: Final Projesi: Web Uygulaması
 
-In this chapter, we'll build a simple web application with Veb and an ORM.
+Bu bölümde Veb ve ORM ile basit bir web uygulaması oluşturacağız.
 
-## Project setup
+## Proje kurulumu
 
 ```bash
 mkdir myapp
@@ -10,7 +10,7 @@ cd myapp
 v init
 ```
 
-## Database
+## Veritabanı
 
 ```v no_run
 import veb
@@ -37,7 +37,7 @@ fn main() {
 }
 ```
 
-## Routes
+## Rotalar
 
 ```v no_run
 import veb
@@ -67,6 +67,6 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-## Summary
+## Özet
 
-Congratulations! You've completed The V Programming Language Book. You now have a solid foundation in V and are ready to build real-world applications.
+Tebrikler! V Programlama Dili Kitabını tamamladınız. Artık V'de sağlam bir temele sahipsiniz ve gerçek dünya uygulamaları oluşturmaya hazırsınız.

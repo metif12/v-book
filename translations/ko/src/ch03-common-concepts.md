@@ -1,42 +1,42 @@
-# Chapter 3: Common Concepts
+# Chapter 3: 공통 개념
 
-This chapter covers the common programming concepts in V: variables, data types, functions, comments, and control flow.
+이 장에서는 V의 일반적인 프로그래밍 개념을 다룹니다: 변수, 데이터 타입, 함수, 주석, 제어 흐름.
 
-## Variables and Mutability
+## 변수와 가변성
 
-In V, variables are immutable by default. Use `mut` to make them mutable:
+V에서 변수는 기본적으로 불변입니다. 가변으로 만들려면 `mut`을 사용하세요:
 
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Error: name is immutable
+    // name = 'Go'  // 에러: name은 불변입니다
 
     mut count := 0
-    count = 1  // OK: count is mutable
+    count = 1  // OK: count는 가변입니다
     count++
     println(count)
 }
 ```
 
-## Data Types
+## 데이터 타입
 
-V has a rich type system:
+V는 풍부한 타입 시스템을 가집니다:
 
 ```v
 fn main() {
-    // Integers
+    // 정수
     a := 42        // int
-    b := i64(100)  // 64-bit integer
-    c := u8(255)   // unsigned 8-bit
+    b := i64(100)  // 64비트 정수
+    c := u8(255)   // 부호 없는 8비트
 
-    // Floats
+    // 부동소수점
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit float
+    e := f32(2.71) // 32비트 부동소수점
 
-    // Other types
+    // 기타 타입
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (single character)
+    letter := `A`  // rune (단일 문자)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
@@ -44,9 +44,9 @@ fn main() {
 }
 ```
 
-## Functions
+## 함수
 
-Functions are declared with `fn`:
+함수는 `fn`으로 선언합니다:
 
 ```v
 fn add(a int, b int) int {
@@ -64,7 +64,7 @@ fn main() {
 }
 ```
 
-## Comments
+## 주석
 
 ```v
 // This is a line comment
@@ -73,7 +73,7 @@ fn main() {
    block comment */
 ```
 
-## Control Flow
+## 제어 흐름
 
 ### If
 
@@ -88,17 +88,17 @@ fn main() {
 }
 ```
 
-### For loop
+### For 루프
 
 ```v
 fn main() {
-    // Loop over an array
+    // 배열 순회
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Range loop
+    // 범위 루프
     for i in 0 .. 5 {
         println(i)
     }
@@ -118,6 +118,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about variables, data types, functions, comments, and control flow in V. In the next chapter, we'll explore ownership and memory management.
+이 장에서는 V의 변수, 데이터 타입, 함수, 주석, 제어 흐름에 대해 배웠습니다. 다음 장에서는 소유권과 메모리 관리를 살펴보겠습니다.

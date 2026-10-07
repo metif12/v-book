@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# অতিরিক্ত D: স্ট্যান্ডার্ড লাইব্রেরি ওভারভিউ
 
-V's standard library includes:
+V-এর স্ট্যান্ডার্ড লাইব্রেরিতে রয়েছে:
 
-| Module | Description |
+| মডিউল | বিবরণ |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | অপারেটিং সিস্টেম ইন্টারফেস |
+| `io` | ইনপুট/আউটপুট |
+| `strings` | স্ট্রিং ইউটিলিটি |
+| `arrays` | অ্যারে ইউটিলিটি |
+| `math` | গাণিতিক ফাংশন |
+| `time` | সময় এবং তারিখ |
+| `json` JSON এনকোডিং/ডিকোডিং |
+| `http` | HTTP ক্লায়েন্ট/সার্ভার |
+| `db` | ডেটাবেস ইন্টারফেস |
+| `rand` | এলোমেলো সংখ্যা তৈরি |
+| `crypto` | ক্রিপ্টোগ্রাফিক ফাংশন |
+| `encoding` | এনকোডিং ইউটিলিটি |
+| `term` | টার্মিনাল ইউটিলিটি |
+| `sync` | সিঙ্ক্রোনাইজেশন প্রিমিটিভ |
+| `v.ast` | V AST ম্যানিপুলেশন |
+| `v.compiler` | কম্পাইলার ইউটিলিটি |

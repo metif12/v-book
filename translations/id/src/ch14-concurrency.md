@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# Bab 14: Konkurensi
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V memiliki dukungan konkurensi bawaan dengan goroutine, channel, dan shared state.
 
-## Spawning goroutines
+## Membuat goroutine
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+Goroutine adalah thread ringan. Mulai dengan kata kunci `go`:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+Kata kunci `go` memulai fungsi di goroutine baru dan langsung kembali. Fungsi main tidak menunggu goroutine selesai dengan sendirinya.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+Untuk menunggu goroutine, gunakan `sync.WaitGroup`:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` menaikkan penghitung sebelum goroutine dimulai. `wg.done()` menurunkannya ketika goroutine selesai. `wg.wait()` memblokir sampai penghitung mencapai nol.
 
-## Channels
+## Channel
 
-Channels pass values between goroutines. Create one with `chan T`:
+Channel mengirim nilai antar goroutine. Buat dengan `chan T`:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+Channel tanpa buffer memblokir pada pengiriman sampai receiver siap. Channel berkapasitas memiliki kapasitas dan tidak memblokir sampai penuh:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+Arah channel membatasi bagaimana channel dapat digunakan. `chan<- T` hanya untuk mengirim, `<-chan T` hanya untuk menerima:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -96,7 +96,7 @@ fn main() {
 
 ## Shared state
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+Ketika goroutine berbagi mutable state, lindungi dengan `sync.Mutex`:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` memblokir sampai mutex tersedia, lalu memegangnya untuk scope blok tersebut. Jaga critical section tetap pendek.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+Gunakan `sync.RwMutex` ketika pembacaan lebih sering daripada penulisan. Ini memungkinkan beberapa pembaca sekaligus:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+Untuk nilai tunggal, gunakan atomics dari `sync.stdatomic` sebagai ganti lock:
 
 ```v
 import sync.stdatomic
@@ -186,7 +186,7 @@ fn main() {
 
 ## select statement
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` menunggu beberapa channel dan mengembalikan index channel pertama yang siap. Timeout negatif menunggu tanpa batas; timeout positif mengembalikan -1 jika timeout:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+Dalam bab ini, Anda telah belajar tentang goroutine, channel, shared state, dan select. Di bab berikutnya, kita akan menjelajahi web framework Veb.

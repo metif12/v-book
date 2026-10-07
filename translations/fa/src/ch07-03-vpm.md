@@ -1,23 +1,23 @@
 # VPM
 
-V Package Manager (VPM) hosts community packages:
+مدیر بسته V (VPM) بسته‌های جامعه را میزبانی می‌کند:
 
 ```bash
 v install vsl
 ```
 
-## Searching
+## جستجو
 
 ```bash
 v search json
 ```
 
-## Installing
+## نصب
 
 ```bash
 v install vsl
 ```
 
-## Next
+## بعدی
 
-[Chapter 8: Collections](ch08-collections.md)
+[فصل ۸: مجموعه‌ها](ch08-collections.md)

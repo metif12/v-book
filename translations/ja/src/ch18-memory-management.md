@@ -1,19 +1,19 @@
-# Chapter 18: Memory Management Deep Dive
+# 第18章：メモリ管理の詳細
 
-## GC modes
+## GCモード
 
-V provides several memory management strategies, each suited to different use cases.
+Vはいくつかのメモリ管理戦略を提供し、それぞれが異なるユースケースに適しています。
 
-| Mode | Flag | Use case |
+| モード | フラグ | ユースケース |
 |------|------|----------|
-| Boehm GC | `-gc boehm` | General purpose |
-| Autofree | `-autofree` | Automatic freeing |
-| None | `-gc none` | Manual management |
-| Prealloc | `-prealloc` | Arena allocation |
+| Boehm GC | `-gc boehm` | 汎用 |
+| Autofree | `-autofree` | 自動解放 |
+| なし | `-gc none` | 手動管理 |
+| Prealloc | `-prealloc` | アリーナ割り当て |
 
-## Stack vs heap
+## スタックとヒープ
 
-V automatically decides where to allocate memory. Small, short-lived values stay on the stack. Larger or escaped values go to the heap.
+Vはメモリをどこに割り当てるかを自動的に決定します。小さくて短命な値はスタックに残ります。より大きい値やエスケープした値はヒープに行きます。
 
 ```v
 fn stack_example() int {
@@ -35,9 +35,9 @@ fn main() {
 }
 ```
 
-## Autofree mode
+## Autofreeモード
 
-Autofree automatically frees memory when variables go out of scope. It uses reference counting for heap allocations.
+Autofreeは変数のスコープが終了したときにメモリを自動的に解放します。ヒープ割り当てに参照カウントを使用します。
 
 ```v
 fn create_user(name string) string {
@@ -51,9 +51,9 @@ fn main() {
 }
 ```
 
-## -gc none and manual memory
+## -gc noneと手動メモリ管理
 
-With `-gc none`, V disables garbage collection. You must manually manage memory using `free`.
+`-gc none`では、Vはガベージコレクションを無効にします。`free`を使用してメモリを手動で管理する必要があります。
 
 ```v
 fn main() {
@@ -68,9 +68,9 @@ fn main() {
 }
 ```
 
-## -prealloc arena allocation
+## -preallocアリーナ割り当て
 
-Prealloc uses arena allocation for better performance in tight loops. Allocations are freed in bulk.
+Preallocはタイトループでのパフォーマンス向上のためにアリーナ割り当てを使用します。割り当ては一括で解放されます。
 
 ```v
 fn process_items(count int) int {
@@ -93,9 +93,9 @@ fn main() {
 }
 ```
 
-## Unsafe code
+## Unsafeコード
 
-The `unsafe` block allows operations that bypass V's safety guarantees, such as pointer arithmetic and direct memory access.
+`unsafe`ブロックは、ポインタ演算や直接メモリアクセスなど、Vの安全性保証をバイパスする操作を許可します。
 
 ```v
 fn main() {
@@ -109,7 +109,7 @@ fn main() {
 }
 ```
 
-### Pointer arithmetic
+### ポインタ演算
 
 ```v
 fn main() {
@@ -124,11 +124,11 @@ fn main() {
 }
 ```
 
-## Performance tuning
+## パフォーマンスチューニング
 
-Choosing the right memory management mode can significantly impact performance.
+適切なメモリ管理モードの選択はパフォーマンスに大きく影響する可能性があります。
 
-### Benchmarking different modes
+### 異なるモードのベンチマーク
 
 ```v
 fn benchmark_allocations(iterations int) i64 {
@@ -151,7 +151,7 @@ fn main() {
 }
 ```
 
-### Optimizing data structures
+### データ構造の最適化
 
 ```v
 struct Point {
@@ -174,6 +174,6 @@ fn main() {
 }
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about memory management modes, stack vs heap allocation, autofree, manual memory management, prealloc, unsafe code, and performance tuning. In the next chapter, we'll explore tooling.
+この章では、メモリ管理モード、スタックとヒープの割り当て、autofree、手動メモリ管理、prealloc、unsafeコード、パフォーマンスチューニングについて学びました。次の章では、ツールを見ていきます。

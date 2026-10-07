@@ -1,19 +1,19 @@
-# Chapter 1: Getting Started
+# Capítulo 1: Primeiros Passos
 
-Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
+Vamos começar sua jornada em V! Há muito para aprender, mas toda jornada começa com um pequeno passo. Neste capítulo, você aprenderá como:
 
-- Install V on your system
-- Write a "Hello, World!" program
-- Use the V compiler and its commands
-- Create a V project
+- Instalar V no seu sistema
+- Escrever um programa "Olá, Mundo!"
+- Usar o compilador V e seus comandos
+- Criar um projeto V
 
-## Installation
+## Instalação
 
-V can be installed on Windows, macOS, and Linux. The easiest way is to use the installer script:
+V pode ser instalado no Windows, macOS e Linux. A maneira mais fácil é usar o script de instalação:
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Baixe e execute o instalador de [vlang.io/install](https://vlang.io/install.html), ou use PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
@@ -25,7 +25,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-Or use the installer script:
+Ou use o script de instalação:
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -37,9 +37,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 ```
 
-### From source
+### A partir do código-fonte
 
-To build V from source:
+Para compilar V a partir do código-fonte:
 
 ```bash
 git clone https://github.com/vlang/v
@@ -47,23 +47,23 @@ cd v
 make
 ```
 
-## Verifying the installation
+## Verificando a instalação
 
-After installation, verify V is working:
+Após a instalação, verifique se V está funcionando:
 
 ```bash
 v version
 ```
 
-You should see output like:
+Você deve ver uma saída como:
 
 ```
 V 0.5.2
 ```
 
-## Hello, World!
+## Olá, Mundo!
 
-Now let's write our first V program. Create a file called `main.v`:
+Agora vamos escrever nosso primeiro programa V. Crie um arquivo chamado `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +71,23 @@ fn main() {
 }
 ```
 
-Run it:
+Execute:
 
 ```bash
 v run main.v
 ```
 
-You should see:
+Você deve ver:
 
 ```
 Hello, World!
 ```
 
-Congratulations! You've written and run your first V program.
+Parabéns! Você escreveu e executou seu primeiro programa V.
 
-## Hello, V!
+## Olá, V!
 
-Let's look at a slightly more interesting example:
+Vamos ver um exemplo um pouco mais interessante:
 
 ```v
 fn main() {
@@ -97,32 +97,32 @@ fn main() {
 }
 ```
 
-Run it:
+Execute:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Saída:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## The V compiler
+## O compilador V
 
-The V compiler is invoked with the `v` command. Common commands:
+O compilador V é invocado com o comando `v`. Comandos comuns:
 
-| Command | Description |
+| Comando | Descrição |
 |---------|-------------|
-| `v run file.v` | Compile and run a V file |
-| `v file.v` | Compile a V file to an executable |
-| `v fmt file.v` | Format a V file |
-| `v test .` | Run tests in the current directory |
-| `v doc .` | Generate documentation |
-| `v doctor` | Diagnose your V installation |
+| `v run file.v` | Compila e executa um arquivo V |
+| `v file.v` | Compila um arquivo V em um executável |
+| `v fmt file.v` | Formata um arquivo V |
+| `v test .` | Executa testes no diretório atual |
+| `v doc .` | Gera documentação |
+| `v doctor` | Diagnostica sua instalação V |
 
-## Summary
+## Resumo
 
-In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.
+Neste capítulo, você aprendeu como instalar V, escrever um programa "Olá, Mundo!" e usar o compilador V. No próximo capítulo, veremos como estruturar um projeto V.

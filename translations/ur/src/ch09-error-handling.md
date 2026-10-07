@@ -1,8 +1,8 @@
-# Chapter 9: Error Handling
+# باب ۹: خرابی کی عاملہ کاری
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V خرابی کی عاملہ کاری کے لیے Option (`?T`) اور Result (`!T`) ٹائپس استعمال کرتا ہے۔
 
-## Option Type
+## آپشن ٹائپ
 
 ```v
 struct User {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Result Type
+## رزلٹ ٹائپ
 
 ```v
 fn parse_number(s string) !int {
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## حسب منشا خرابیاں
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+اس باب میں، آپ نے Option، Result، اور حسب منشا خرابیوں کے بارے میں سیکھا۔ اگلے باب میں، ہم جنرکس کو دریافت کریں گے۔

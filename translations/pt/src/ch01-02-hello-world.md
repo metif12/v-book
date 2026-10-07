@@ -1,6 +1,6 @@
-# Hello, World!
+# Olá, Mundo!
 
-Create a file called `main.v`:
+Crie um arquivo chamado `main.v`:
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+Execute:
 
 ```bash
 v run main.v
 ```
 
-Output:
+Saída:
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## Anatomia de um programa V
 
-Let's break down the program:
+Vamos analisar o programa:
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — Todo programa V começa com uma função `main`. A palavra-chave `fn` declara uma função.
+- `println(...)` — Uma função imbutida que imprime uma linha na saída padrão.
+- `'Hello, World!'` — Uma string literal. V usa aspas simples para strings.
 
-## Compiling vs running
+## Compilando vs executando
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run` compila e executa em uma só etapa. Você também pode compilar primeiro:
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## Próximo
 
-[Hello, V!](ch01-03-hello-v.md)
+[Olá, V!](ch01-03-hello-v.md)

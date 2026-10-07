@@ -1,8 +1,8 @@
-# Chapter 20: Final Project: Web Application
+# Bab 20: Proyek Akhir: Aplikasi Web
 
-In this chapter, we'll build a simple web application with Veb and an ORM.
+Dalam bab ini, kita akan membangun aplikasi web sederhana dengan Veb dan ORM.
 
-## Project setup
+## Penyiapan proyek
 
 ```bash
 mkdir myapp
@@ -37,7 +37,7 @@ fn main() {
 }
 ```
 
-## Routes
+## Route
 
 ```v no_run
 import veb
@@ -67,6 +67,6 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-## Summary
+## Ringkasan
 
-Congratulations! You've completed The V Programming Language Book. You now have a solid foundation in V and are ready to build real-world applications.
+Selamat! Anda telah menyelesaikan Buku Bahasa Pemrograman V. Anda sekarang memiliki fondasi yang kuat dalam V dan siap membangun aplikasi dunia nyata.

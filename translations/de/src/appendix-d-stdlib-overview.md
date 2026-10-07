@@ -1,22 +1,22 @@
-# Appendix D: Standard Library Overview
+# Anhang D: Standardbibliotheksübersicht
 
-V's standard library includes:
+Die Standardbibliothek von V umfasst:
 
-| Module | Description |
+| Modul | Beschreibung |
 |--------|-------------|
-| `os` | Operating system interface |
-| `io` | Input/output |
-| `strings` | String utilities |
-| `arrays` | Array utilities |
-| `math` | Mathematical functions |
-| `time` | Time and date |
-| `json` | JSON encoding/decoding |
-| `http` | HTTP client/server |
-| `db` | Database interface |
-| `rand` | Random number generation |
-| `crypto` | Cryptographic functions |
-| `encoding` | Encoding utilities |
-| `term` | Terminal utilities |
-| `sync` | Synchronization primitives |
-| `v.ast` | V AST manipulation |
-| `v.compiler` | Compiler utilities |
+| `os` | Betriebssystemschnittstelle |
+| `io` | Ein-/Ausgabe |
+| `strings` | String-Werkzeuge |
+| `arrays` | Array-Werkzeuge |
+| `math` | Mathematische Funktionen |
+| `time` | Zeit und Datum |
+| `json` | JSON-Kodierung/Dekodierung |
+| `http` | HTTP-Client/Server |
+| `db` | Datenbankschnittstelle |
+| `rand` | Zufallszahlengenerierung |
+| `crypto` | Kryptografische Funktionen |
+| `encoding` | Kodierungswerkzeuge |
+| `term` | Terminal-Werkzeuge |
+| `sync` | Synchronisationsprimitive |
+| `v.ast` | V-AST-Manipulation |
+| `v.compiler` | Compiler-Werkzeuge |

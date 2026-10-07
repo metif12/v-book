@@ -1,4 +1,4 @@
-# Defining Structs
+# 定义结构体
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## 初始化
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## 下一步
 
-[Methods](ch05-02-methods.md)
+[方法](ch05-02-methods.md)

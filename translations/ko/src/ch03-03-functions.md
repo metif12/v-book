@@ -1,6 +1,6 @@
-# Functions
+# 함수
 
-Functions are declared with `fn`:
+함수는 `fn`으로 선언합니다:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## 다중 반환 값
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## 반환 값 없음
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## 함수 호이스팅
 
-Functions can be called before they are declared:
+함수는 선언되기 전에 호출할 수 있습니다:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## 다음
 
-[Comments](ch03-04-comments.md)
+[주석](ch03-04-comments.md)

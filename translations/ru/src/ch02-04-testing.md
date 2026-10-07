@@ -1,6 +1,6 @@
-# Testing with v test
+# Тестирование с помощью v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+В V есть встроенный фреймворк для тестирования. Создайте файл с окончанием `_test.v`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,15 +13,15 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Запустите тесты:
 
 ```bash
 v test .
 ```
 
-## Test functions
+## Тестовые функции
 
-Test functions start with `test_` and take no arguments:
+Тестовые функции начинаются с `test_` и не принимают аргументов:
 
 ```v
 fn test_something() {
@@ -29,9 +29,9 @@ fn test_something() {
 }
 ```
 
-## Assertions
+## Проверки (asserts)
 
-Use `assert` to check conditions:
+Используйте `assert` для проверки условий:
 
 ```v
 fn test_math() {
@@ -40,6 +40,6 @@ fn test_math() {
 }
 ```
 
-## Next
+## Далее
 
-[Chapter 3: Common Concepts](ch03-common-concepts.md)
+[Глава 3: Общие концепции](ch03-common-concepts.md)

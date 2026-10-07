@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# 第19章：ツール
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+Vのソースコードを公式スタイルガイドに従ってフォーマットします。`-w`を使用して変更をその場に書き込みます。
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### 単一ファイルのフォーマット
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### 書き込みなしでフォーマットを確認
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+Vのソースファイルからドキュメントを生成します。デフォルトでHTMLを出力します。
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### 特定のモジュールのドキュメント化
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+プログラムの実行をプロファイリングし、パフォーマンスのボトルネックを特定します。
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### プロファイル出力の分析
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+現在のディレクトリまたは指定されたファイルでユニットテストを実行します。
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### 特定のテストの実行
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### カバレッジ付きでテストを実行
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+Vコードに対して静的解析を実行し、エラー、警告、スタイルの問題を確認します。
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### 単一ファイルのチェック
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## クロスコンパイル
 
-V can compile code for different operating systems and architectures from a single machine.
+Vは1つのマシンから異なるオペレーティングシステムとアーキテクチャ用にコードをコンパイルできます。
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### アーキテクチャの指定
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### 組み込みターゲット用クロスコンパイル
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+コンパイラバージョン、OS、設定を含むVのインストールに関する診断情報を表示します。
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+Vコンパイラを最新バージョンに更新します。
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### 特定のバージョンに更新
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## まとめ
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+この章では、Vのツールエコシステムについて学びました：`v fmt`（フォーマット）、`v doc`（ドキュメント）、`v profiler`（パフォーマンス分析）、`v test`（テスト）、`v check`（静的解析）、クロスコンパイル、`v doctor`（診断）、`v up`（自己更新）。次の章では、最終プロジェクトを構築します。

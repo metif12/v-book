@@ -1,5 +1,5 @@
-# Page Not Found
+# الصفحة غير موجودة
 
-The page you're looking for doesn't exist.
+الصفحة التي تبحث عنها غير موجودة.
 
-[Back to the book](index.html)
+[العودة إلى الكتاب](index.html)

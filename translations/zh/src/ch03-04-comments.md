@@ -1,28 +1,28 @@
-# Comments
+# 注释
 
-## Line comments
+## 行注释
 
 ```v
-// This is a line comment
-x := 42 // Comment after code
+// 这是行注释
+x := 42 // 代码后的注释
 ```
 
-## Block comments
+## 块注释
 
 ```v
-/* This is a
-   block comment */
+/* 这是
+   块注释 */
 ```
 
-## Documentation comments
+## 文档注释
 
 ```v
-// add returns the sum of a and b.
+// add 返回 a 和 b 的和。
 fn add(a int, b int) int {
     return a + b
 }
 ```
 
-## Next
+## 下一步
 
-[Control Flow](ch03-05-control-flow.md)
+[控制流](ch03-05-control-flow.md)

@@ -2,9 +2,9 @@
 
 ## Windows
 
-### Installer
+### Programme d'installation
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+Téléchargez le dernier programme d'installation depuis [vlang.io/install](https://vlang.io/install.html) et exécutez-le.
 
 ### PowerShell
 
@@ -12,11 +12,11 @@ Download the latest installer from [vlang.io/install](https://vlang.io/install.h
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 ```
 
-### Manual
+### Manuelle
 
-1. Download the latest release from [GitHub releases](https://github.com/vlang/v/releases).
-2. Extract the zip file.
-3. Add the `v` directory to your PATH.
+1. Téléchargez la dernière version depuis [GitHub releases](https://github.com/vlang/v/releases).
+2. Extrayez le fichier zip.
+3. Ajoutez le répertoire `v` à votre PATH.
 
 ## macOS
 
@@ -26,7 +26,7 @@ irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
 brew install vlang
 ```
 
-### Installer script
+### Script d'installation
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -34,7 +34,7 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 
 ## Linux
 
-### Installer script
+### Script d'installation
 
 ```bash
 curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
@@ -46,9 +46,9 @@ curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
 yay -S vlang
 ```
 
-## From source
+## Depuis les sources
 
-To build V from source, you need a C compiler (gcc or clang):
+Pour compiler V depuis les sources, vous avez besoin d'un compilateur C (gcc ou clang) :
 
 ```bash
 git clone https://github.com/vlang/v
@@ -56,14 +56,14 @@ cd v
 make
 ```
 
-On Windows, use `win.bat` instead of `make`.
+Sur Windows, utilisez `win.bat` au lieu de `make`.
 
-## Verifying
+## Vérification
 
 ```bash
 v version
 ```
 
-## Next
+## Suivant
 
-[Hello, World!](ch01-02-hello-world.md)
+[Bonjour, le Monde !](ch01-02-hello-world.md)

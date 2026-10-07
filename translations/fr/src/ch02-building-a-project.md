@@ -1,10 +1,10 @@
-# Chapter 2: Building a Project
+# Chapitre 2 : Créer un projet
 
-In this chapter, you'll learn how to structure a V project, use `v.mod`, format code with `v fmt`, and write tests with `v test`.
+Dans ce chapitre, vous apprendrez à structurer un projet V, à utiliser `v.mod`, à formater du code avec `v fmt` et à écrire des tests avec `v test`.
 
-## Project structure
+## Structure du projet
 
-A V project is a directory with a `v.mod` file and one or more `.v` files:
+Un projet V est un répertoire avec un fichier `v.mod` et un ou plusieurs fichiers `.v` :
 
 ```
 my_project/
@@ -15,7 +15,7 @@ my_project/
 
 ## v.mod
 
-Every V project has a `v.mod` file that describes the project:
+Chaque projet V possède un fichier `v.mod` qui décrit le projet :
 
 ```v ignore
 Module {
@@ -27,27 +27,27 @@ Module {
 }
 ```
 
-Create a new project with:
+Créez un nouveau projet avec :
 
 ```bash
 v init
 ```
 
-This creates a `v.mod` and a `main.v` with a basic template.
+Cela crée un fichier `v.mod` et un fichier `main.v` avec un modèle de base.
 
-## Formatting with v fmt
+## Formatage avec v fmt
 
-V has a built-in code formatter. Run it on your project:
+V dispose d'un formateur de code intégré. Exécutez-le sur votre projet :
 
 ```bash
 v fmt -w .
 ```
 
-The `-w` flag writes the formatted code back to the files.
+L'option `-w` écrit le code formaté dans les fichiers.
 
-## Testing with v test
+## Tests avec v test
 
-V has a built-in testing framework. Create a file ending in `_test.v`:
+V dispose d'un framework de test intégré. Créez un fichier se terminant par `_test.v` :
 
 ```v
 fn add(a int, b int) int {
@@ -60,12 +60,12 @@ fn test_add() {
 }
 ```
 
-Run tests:
+Exécutez les tests :
 
 ```bash
 v test .
 ```
 
-## Summary
+## Résumé
 
-In this chapter, you learned how to structure a V project, use `v.mod`, format code, and write tests. In the next chapter, we'll dive into the common programming concepts in V.
+Dans ce chapitre, vous avez appris à structurer un projet V, à utiliser `v.mod`, à formater du code et à écrire des tests. Dans le chapitre suivant, nous explorerons les concepts de programmation courants dans V.

@@ -1,6 +1,6 @@
-# Chapter 8: Collections
+# باب ۸: کلکشنز
 
-## Arrays
+## ارےز
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Maps
+## میپس
 
 ```v
 fn main() {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Strings
+## اسٹرنگز
 
 ```v
 fn main() {
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## خلاصہ
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+اس باب میں، آپ نے ارےز، میپس، اور اسٹرنگز کے بارے میں سیکھا۔ اگلے باب میں، ہم خرابی کی عاملہ کاری کو دریافت کریں گے۔

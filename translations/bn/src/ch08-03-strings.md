@@ -1,4 +1,4 @@
-# Strings
+# স্ট্রিং
 
 ```v
 fn main() {
@@ -10,7 +10,7 @@ fn main() {
 }
 ```
 
-## String methods
+## স্ট্রিং মেথড
 
 ```v
 fn main() {
@@ -21,6 +21,6 @@ fn main() {
 }
 ```
 
-## Next
+## পরবর্তী
 
-[Chapter 9: Error Handling](ch09-error-handling.md)
+[অধ্যায় 9: এরর হ্যান্ডলিং](ch09-error-handling.md)

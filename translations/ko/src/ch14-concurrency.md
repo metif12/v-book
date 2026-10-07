@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# Chapter 14: 동시성
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V는 고루틴, 채널, 공유 상태를 통해 내장 동시성 지원을 제공합니다.
 
-## Spawning goroutines
+## 고루틴 생성
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+고루틴은 경량 스레드입니다. `go` 키워드로 시작합니다:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+`go` 키워드는 새 고루틴에서 함수를 시작하고 즉시 반환합니다. main 함수는 고루틴이 끝날 때까지 자동으로 기다리지 않습니다.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+고루틴을 기다리려면 `sync.WaitGroup`을 사용하세요:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)`는 고루틴이 시작되기 전에 카운터를 증가시킵니다. `wg.done()`은 고루틴이 완료될 때 카운터를 감소시킵니다. `wg.wait()`는 카운터가 0이 될 때까지 블로킹합니다.
 
-## Channels
+## 채널
 
-Channels pass values between goroutines. Create one with `chan T`:
+채널은 고루틴 간에 값을 전달합니다. `chan T`로 생성합니다:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+버퍼 없는 채널은 수신자가 준비될 때까지 전송을 블로킹합니다. 버퍼 있는 채널은 용량을 가지며 가득 차기 전까지 블로킹하지 않습니다:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+채널 방향은 채널 사용 방식을 제한합니다. `chan<- T`는 전송 전용, `<-chan T`는 수신 전용입니다:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## 공유 상태
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+고루틴이 가변 상태를 공유할 때는 `sync.Mutex`로 보호하세요:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock`은 뮤텍스를 사용할 수 있을 때까지 블로킹한 후 블록 스코프 동안 유지합니다. 임계 영역을 짧게 유지하세요.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+읽기가 쓰기보다 빈번할 때는 `sync.RwMutex`를 사용하세요. 여러 읽기를 동시에 허용합니다:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+단일 값의 경우 잠금 대신 `sync.stdatomic`의 아톱을 사용하세요:
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## select 문
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select`는 여러 채널을 기다리며 준비된 첫 번째 채널의 인덱스를 반환합니다. 음수 타임아웃은 무한히 기다리고, 양수 타임아웃은 시간 초과 시 -1을 반환합니다:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## 요약
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+이 장에서는 고루틴, 채널, 공유 상태, select에 대해 배웠습니다. 다음 장에서는 Veb 웹 프레임워크를 살펴보겠습니다.

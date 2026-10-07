@@ -1,6 +1,6 @@
 # Hello, World!
 
-Create a file called `main.v`:
+`main.v`というファイルを作成します：
 
 ```v
 fn main() {
@@ -8,35 +8,35 @@ fn main() {
 }
 ```
 
-Run it:
+実行します：
 
 ```bash
 v run main.v
 ```
 
-Output:
+出力：
 
 ```
 Hello, World!
 ```
 
-## Anatomy of a V program
+## Vプログラムの構造
 
-Let's break down the program:
+プログラムを分解してみましょう：
 
-- `fn main()` — Every V program starts with a `main` function. The `fn` keyword declares a function.
-- `println(...)` — A built-in function that prints a line to stdout.
-- `'Hello, World!'` — A string literal. V uses single quotes for strings.
+- `fn main()` — すべてのVプログラムは`main`関数から始まります。`fn`キーワードは関数を宣言します。
+- `println(...)` — 標準出力に一行を出力する組み込み関数です。
+- `'Hello, World!'` — 文字列リテラルです。Vでは文字列にシングルクォートを使用します。
 
-## Compiling vs running
+## コンパイルと実行
 
-`v run` compiles and runs in one step. You can also compile first:
+`v run`はコンパイルと実行を一度に行います。最初にコンパイルすることもできます：
 
 ```bash
 v main.v
 ./main
 ```
 
-## Next
+## 次へ
 
 [Hello, V!](ch01-03-hello-v.md)

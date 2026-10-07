@@ -1,8 +1,8 @@
-# Appendix F: Translations
+# Lampiran F: Terjemahan
 
-This book is available in 16 languages:
+Buku ini tersedia dalam 16 bahasa:
 
-| Code | Language | Status |
+| Kode | Bahasa | Status |
 |------|----------|--------|
 | en | English | Complete (canonical) |
 | zh | 简体中文 | TODO |
@@ -21,6 +21,6 @@ This book is available in 16 languages:
 | tr | Türkçe | TODO |
 | ko | 한국어 | TODO |
 
-## Contributing
+## Kontribusi
 
-See [translations/README.md](../translations/README.md) for how to contribute a translation.
+Lihat [translations/README.md](../translations/README.md) untuk cara berkontribusi terjemahan.

@@ -1,8 +1,8 @@
-# Chapter 9: Error Handling
+# Bölüm 9: Hata Yönetimi
 
-V uses Option (`?T`) and Result (`!T`) types for error handling.
+V, hata yönetimi için Option (`?T`) ve Result (`!T`) tiplerini kullanır.
 
-## Option Type
+## Option Tipi
 
 ```v
 struct User {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## Result Type
+## Result Tipi
 
 ```v
 fn parse_number(s string) !int {
@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-## Custom Errors
+## Özel Hatalar
 
 ```v
 struct MyError {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Özet
 
-In this chapter, you learned about Option, Result, and custom errors. In the next chapter, we'll explore generics.
+Bu bölümde Option, Result ve özel hatalar hakkında bilgi edindiniz. Sonraki bölümde generics'i inceleyeceğiz.

@@ -1,4 +1,4 @@
-# Embedded Structs
+# Struct Tersemat
 
 ```v
 struct Point {
@@ -20,6 +20,6 @@ fn main() {
 }
 ```
 
-## Next
+## Berikutnya
 
-[Access Modifiers](ch05-04-access-modifiers.md)
+[Modifier Akses](ch05-04-access-modifiers.md)

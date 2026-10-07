@@ -1,8 +1,8 @@
-# Chapter 10: Generics
+# Kapitel 10: Generics
 
-Generics allow you to write code that works with any type.
+Generics ermöglichen es Ihnen, Code zu schreiben, der mit jedem Typ funktioniert.
 
-## Generic functions
+## Generische Funktionen
 
 ```v
 fn max[T](a T, b T) T {
@@ -15,7 +15,7 @@ fn main() {
 }
 ```
 
-## Generic structs
+## Generische Structs
 
 ```v
 struct Stack[T] {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-## Type constraints
+## Typbeschränkungen
 
 ```v
 fn sum[T](items []T) T {
@@ -58,6 +58,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about generic functions and structs. In the next chapter, we'll explore testing.
+In diesem Kapitel haben Sie generische Funktionen und Structs kennengelernt. Im nächsten Kapitel untersuchen wir Testen.

@@ -1,6 +1,6 @@
-# Functions
+# توابع
 
-Functions are declared with `fn`:
+توابع با `fn` تعریف می‌شوند:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## چندین مقدار بازگشتی
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## بدون مقدار بازگشتی
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## بالا بردن تابع
 
-Functions can be called before they are declared:
+توابع را می‌توان قبل از تعریف آن‌ها فراخوانی کرد:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## بعدی
 
-[Comments](ch03-04-comments.md)
+[کامنت‌ها](ch03-04-comments.md)

@@ -1,20 +1,20 @@
-# Chapter 19: Tooling
+# Capítulo 19: Ferramentas
 
 ## v fmt
 
-Formats V source code according to the official style guide. Use `-w` to write changes in place.
+Formata código-fonte V de acordo com o guia de estilo oficial. Use `-w` para gravar alterações no local.
 
 ```bash
 v fmt -w .
 ```
 
-### Formatting a single file
+### Formatando um único arquivo
 
 ```bash
 v fmt -w main.v
 ```
 
-### Check formatting without writing
+### Verificando formatação sem gravar
 
 ```bash
 v fmt -check .
@@ -22,13 +22,13 @@ v fmt -check .
 
 ## v doc
 
-Generates documentation from V source files. Outputs HTML by default.
+Gera documentação a partir de arquivos-fonte V. Produz HTML por padrão.
 
 ```bash
 v doc .
 ```
 
-### Documenting a specific module
+### Documentando um módulo específico
 
 ```bash
 v doc -o docs/ .
@@ -36,13 +36,13 @@ v doc -o docs/ .
 
 ## v profiler
 
-Profiles program execution to identify performance bottlenecks.
+Faz perfil da execução do programa para identificar gargalos de desempenho.
 
 ```bash
 v -profile profile.txt run main.v
 ```
 
-### Analyzing profile output
+### Analisando a saída do perfil
 
 ```bash
 v profile profile.txt
@@ -50,19 +50,19 @@ v profile profile.txt
 
 ## v test
 
-Runs unit tests in the current directory or specified file.
+Executa testes unitários no diretório atual ou arquivo especificado.
 
 ```bash
 v test .
 ```
 
-### Running a specific test
+### Executando um teste específico
 
 ```bash
 v test -run TestName .
 ```
 
-### Running tests with coverage
+### Executando testes com cobertura
 
 ```bash
 v test -cover .
@@ -70,21 +70,21 @@ v test -cover .
 
 ## v check
 
-Performs static analysis on V code, checking for errors, warnings, and style issues.
+Realiza análise estática em código V, verificando erros, avisos e problemas de estilo.
 
 ```bash
 v check .
 ```
 
-### Checking a single file
+### Verificando um único arquivo
 
 ```bash
 v check main.v
 ```
 
-## Cross-compilation
+## Compilação cruzada
 
-V can compile code for different operating systems and architectures from a single machine.
+V pode compilar código para diferentes sistemas operacionais e arquiteturas a partir de uma única máquina.
 
 ```bash
 v -os windows main.v
@@ -92,14 +92,14 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### Specifying architecture
+### Especificando arquitetura
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### Cross-compiling for embedded targets
+### Compilação cruzada para alvos embarcados
 
 ```bash
 v -os embedded -arch arm main.v
@@ -107,7 +107,7 @@ v -os embedded -arch arm main.v
 
 ## v doctor
 
-Displays diagnostic information about the V installation, including compiler version, OS, and configuration.
+Exibe informações de diagnóstico sobre a instalação V, incluindo versão do compilador, SO e configuração.
 
 ```bash
 v doctor
@@ -115,18 +115,18 @@ v doctor
 
 ## v up
 
-Updates the V compiler to the latest version.
+Atualiza o compilador V para a versão mais recente.
 
 ```bash
 v up
 ```
 
-### Updating to a specific version
+### Atualizando para uma versão específica
 
 ```bash
 v up --version 0.5.2
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about V's tooling ecosystem: `v fmt` for formatting, `v doc` for documentation, `v profiler` for performance analysis, `v test` for testing, `v check` for static analysis, cross-compilation, `v doctor` for diagnostics, and `v up` for self-updates. In the next chapter, we'll build a final project.
+Neste capítulo, você aprendeu sobre o ecossistema de ferramentas de V: `v fmt` para formatação, `v doc` para documentação, `v profiler` para análise de desempenho, `v test` para testes, `v check` para análise estática, compilação cruzada, `v doctor` para diagnósticos e `v up` para auto-atualizações. No próximo capítulo, vamos construir um projeto final.

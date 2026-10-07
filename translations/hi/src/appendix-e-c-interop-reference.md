@@ -1,25 +1,25 @@
-# Appendix E: V and C Interop Reference
+# अपेंडिक्स E: V और C इंटरॉप रेफरेंस
 
-## Including C code
+## C कोड शामिल करना
 
 ```v ignore
 #include "myheader.h"
 ```
 
-## C flags
+## C फ़्लैग
 
 ```v
 #flag -lm
 #flag -I/path/to/include
 ```
 
-## Calling C functions
+## C फ़ंक्शन कॉल करना
 
 ```v
 fn C.my_c_function(int) int
 ```
 
-## Exporting V functions
+## V फ़ंक्शन एक्सपोर्ट करना
 
 ```v
 @[export: 'my_v_function']
@@ -28,7 +28,7 @@ fn my_v_function() {
 }
 ```
 
-## Shared libraries
+## शेयर्ड लाइब्रेरी
 
 ```bash
 v -shared -o libmylib.so mylib.v

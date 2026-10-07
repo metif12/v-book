@@ -1,4 +1,4 @@
-# Maps
+# 映射
 
 ```v
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Map operations
+## 映射操作
 
 ```v
 fn main() {
@@ -23,6 +23,6 @@ fn main() {
 }
 ```
 
-## Next
+## 下一步
 
-[Strings](ch08-03-strings.md)
+[字符串](ch08-03-strings.md)

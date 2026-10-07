@@ -1,26 +1,26 @@
-# Appendix F: Translations
+# Ek F: Çeviriler
 
-This book is available in 16 languages:
+Bu kitap 16 dilde mevcuttur:
 
-| Code | Language | Status |
-|------|----------|--------|
-| en | English | Complete (canonical) |
-| zh | 简体中文 | TODO |
-| hi | हिन्दी | TODO |
-| es | Español | TODO |
-| fa | فارسی | TODO |
-| ar | العربية | TODO |
-| fr | Français | TODO |
-| bn | বাংলা | TODO |
-| pt | Português | TODO |
-| ru | Русский | TODO |
-| ur | اردو | TODO |
-| id | Bahasa Indonesia | TODO |
-| de | Deutsch | TODO |
-| ja | 日本語 | TODO |
-| tr | Türkçe | TODO |
-| ko | 한국어 | TODO |
+| Kod | Durum |
+|------|----------|
+| en | Tamamlandı (canonical) |
+| zh | TODO |
+| hi | TODO |
+| es | TODO |
+| fa | TODO |
+| ar | TODO |
+| fr | TODO |
+| bn | TODO |
+| pt | TODO |
+| ru | TODO |
+| ur | TODO |
+| id | TODO |
+| de | TODO |
+| ja | TODO |
+| tr | TODO |
+| ko | TODO |
 
-## Contributing
+## Katkıda Bulunma
 
-See [translations/README.md](../translations/README.md) for how to contribute a translation.
+Bir çeviriye nasıl katkıda bulunacağınızı öğrenmek için [translations/README.md](../translations/README.md) dosyasına bakın.

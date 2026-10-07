@@ -1,8 +1,8 @@
-# Chapter 12: I/O Project: Building a CLI Tool
+# Bab 12: Proyek I/O: Membangun Alat CLI
 
-In this chapter, we'll build a simple command-line tool that reads a file and counts its lines, words, and characters.
+Dalam bab ini, kita akan membangun alat command-line sederhana yang membaca file dan menghitung baris, kata, dan karakter.
 
-## Project setup
+## Penyiapan proyek
 
 ```bash
 mkdir wordcount
@@ -10,7 +10,7 @@ cd wordcount
 v init
 ```
 
-## Implementation
+## Implementasi
 
 ```v no_run
 import os
@@ -41,12 +41,12 @@ fn main() {
 }
 ```
 
-## Running
+## Menjalankan
 
 ```bash
 v run . main.v
 ```
 
-## Summary
+## Ringkasan
 
-In this chapter, you built a command-line tool. In the next chapter, we'll explore functional features.
+Dalam bab ini, Anda telah membangun alat command-line. Di bab berikutnya, kita akan menjelajahi fitur fungsional.

@@ -1,10 +1,10 @@
-# Chapter 4: Ownership and Memory
+# Kapitel 4: Ownership und Speicher
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+V verfolgt einen anderen Ansatz zur Speicherverwaltung als viele Sprachen. Statt manueller Speicherverwaltung oder alleiniger Garbage Collection bietet V mehrere Strategien.
 
-## Stack and Heap
+## Stack und Heap
 
-V automatically decides whether to allocate on the stack or heap:
+V entscheidet automatisch, ob auf dem Stack oder Heap allokiert wird:
 
 ```v
 fn main() {
@@ -24,7 +24,7 @@ fn main() {
 
 ## Garbage Collection
 
-V uses a garbage collector by default. You don't need to free memory manually:
+V verwendet standardmäßig einen Garbage Collector. Sie müssen Speicher nicht manuell freigeben:
 
 ```v
 fn main() {
@@ -39,7 +39,7 @@ fn main() {
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+V verfügt über einen Autofree-Modus, der Speicher automatisch freigibt, wenn Variablen ihren Gültigkeitsbereich verlassen:
 
 ```bash
 v -autofree main.v
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## Referenzen
 
-You can use references to avoid copying large data:
+Sie können Referenzen verwenden, um das Kopieren großer Datenmengen zu vermeiden:
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## Speicherverwaltungsmodi
 
-| Mode | Flag | Description |
+| Modus | Flag | Beschreibung |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC (Standard) | `-gc boehm` | Boehm Garbage Collector |
+| Autofree | `-autofree` | Automatische Speicherfreigabe |
+| Keiner | `-gc none` | Manuelle Speicherverwaltung |
+| Prealloc | `-prealloc` | Arena-Allokation |
 
-## Summary
+## Zusammenfassung
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+In diesem Kapitel haben Sie die Speicherverwaltungsoptionen von V kennengelernt. Im nächsten Kapitel untersuchen wir Structs.

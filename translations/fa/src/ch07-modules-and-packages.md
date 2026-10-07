@@ -1,8 +1,8 @@
-# Chapter 7: Modules and Packages
+# فصل ۷: ماژول‌ها و بسته‌ها
 
-## Module System
+## سیستم ماژول
 
-V organizes code into modules. A module is a directory with `.v` files:
+V کد را به ماژول‌ها سازماندهی می‌کند. یک ماژول یک دایرکتوری با فایل‌های `.v` است:
 
 ```
 my_project/
@@ -32,19 +32,19 @@ fn main() {
 }
 ```
 
-## Visibility
+## قابلیت مشاهده
 
-- `pub` — public, accessible from other modules
-- (no modifier) — private, module-only
+- `pub` — عمومی، قابل دسترسی از ماژول‌های دیگر
+- (بدون اصلاح‌کننده) — خصوصی، فقط ماژول
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+مدیر بسته V (VPM) بسته‌های جامعه را میزبانی می‌کند:
 
 ```bash
 v install vsl
 ```
 
-## Summary
+## خلاصه
 
-In this chapter, you learned about modules, visibility, and VPM. In the next chapter, we'll explore collections.
+در این فصل، درباره ماژول‌ها، قابلیت مشاهده و VPM یاد گرفتید. در فصل بعد، به مجموعه‌ها می‌پردازیم.

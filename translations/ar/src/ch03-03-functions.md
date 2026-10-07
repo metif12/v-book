@@ -1,6 +1,6 @@
-# Functions
+# الدوال
 
-Functions are declared with `fn`:
+الدوال تُعرّف بـ `fn`:
 
 ```v
 fn add(a int, b int) int {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Multiple return values
+## قيم إرجاع متعددة
 
 ```v
 fn divmod(a int, b int) (int, int) {
@@ -26,7 +26,7 @@ fn main() {
 }
 ```
 
-## No return value
+## بدون قيمة إرجاع
 
 ```v
 fn greet(name string) {
@@ -38,9 +38,9 @@ fn main() {
 }
 ```
 
-## Function hoisting
+## رفع الدوال
 
-Functions can be called before they are declared:
+يمكن استدعاء الدوال قبل تعريفها:
 
 ```v
 fn main() {
@@ -52,6 +52,6 @@ fn add(a int, b int) int {
 }
 ```
 
-## Next
+## التالي
 
-[Comments](ch03-04-comments.md)
+[التعليقات](ch03-04-comments.md)

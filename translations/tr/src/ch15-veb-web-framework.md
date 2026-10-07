@@ -1,8 +1,8 @@
-# Chapter 15: Veb Web Framework
+# Bölüm 15: Veb Web Framework
 
-Veb is V's built-in web framework. It provides routing, JSON handling, HTML templates, middleware, and static file serving — all with a minimal API surface.
+Veb, V'nin yerleşik web framework'üdür. Yönlendirme, JSON işleme, HTML şablonları, middleware ve statik dosya sunma gibi özellikleri minimal bir API yüzeyiyle sunar.
 
-## Hello, Veb!
+## Merhaba, Veb!
 
 ```v no_run
 import veb
@@ -19,11 +19,11 @@ fn main() {
 }
 ```
 
-The `App` struct holds your application state. Each route is a method on `App` annotated with `@['/path']`. The handler receives a `veb.Context` which provides methods for writing responses.
+`App` struct'ı uygulama durumunuzu tutar. Her rota, `@['/path']` ile açıklanan `App` üzerinde bir metottur. Handler, yanıt yazmak için metotlar sağlayan bir `veb.Context` alır.
 
-## Routing
+## Yönlendirme
 
-Veb uses path parameters with the `:name` syntax. Path parameters are passed directly as function arguments to the handler.
+Veb, `:name` sözdizimiyle yol parametreleri kullanır. Yol parametreleri doğrudan handler'a fonksiyon argümanı olarak geçirilir.
 
 ```v
 import veb
@@ -42,9 +42,9 @@ fn (mut app App) search(mut ctx veb.Context) {
 }
 ```
 
-Path parameters (`:id`) are extracted from the URL and passed as arguments. Query string parameters (`?q=...`) are accessed via `ctx.query` which is a `map[string]string`.
+Yol parametreleri (`:id`) URL'den çıkarılır ve argüman olarak geçirilir. Sorgu string parametreleri (`?q=...`) `ctx.query` üzerinden erişilir, bu bir `map[string]string` dir.
 
-## JSON responses
+## JSON yanıtları
 
 ```v
 import veb
@@ -66,11 +66,11 @@ fn (mut app App) users(mut ctx veb.Context) {
 }
 ```
 
-`ctx.json()` serializes any V value to JSON and sets the `Content-Type` header to `application/json`.
+`ctx.json()`, herhangi bir V değerini JSON'a serileştirir ve `Content-Type` başlığını `application/json` olarak ayarlar.
 
-## Templates
+## Şablonlar
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb, `$tmpl` fonksiyonu ile HTML şablonlarını destekler. Şablonlar V'nin string interpolasyon sözdizimini kullanır.
 
 ```v no_run
 import veb
@@ -100,11 +100,11 @@ fn (mut app App) page(mut ctx veb.Context) {
 </html>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+Şablon dosyası veri struct'ını alır ve `{{ field_name }}` ile alanlarına erişebilir.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Middleware her isteği sarar. Global middleware kaydetmek için `app.use()`, rota özel middleware için `app.route_use()` kullanın.
 
 ```v no_run
 import veb
@@ -136,11 +136,11 @@ fn main() {
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+Middleware `bool` döner — sonraki handler'a devam etmek için `true`, durdurmak için `false`.
 
-## Static files
+## Statik dosyalar
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb, `app.handle_static()` kullanarak bir dizinden statik dosyalar sunabilir.
 
 ```v no_run
 import veb
@@ -162,8 +162,8 @@ fn main() {
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+`public/` dizinindeki dosyalar kök yolda sunulur. Örneğin, `public/style.css` adresine `http://localhost:8080/style.css` ile erişilebilir.
 
-## Summary
+## Özet
 
-In this chapter, you learned about Veb — V's built-in web framework. You saw how to define routes with path and query parameters, return JSON responses, render HTML templates, add middleware for cross-cutting concerns, and serve static files. In the next chapter, we'll explore C interop.
+Bu bölümde V'nin yerleşik web framework'ü Veb hakkında bilgi edindiniz. Yol ve sorgu parametreleriyle rotalar tanımlamayı, JSON yanıtları döndürmeyi, HTML şablonları render etmeyi, cross-cutting concern'ler için middleware eklemeyi ve statik dosyalar sunmayı gördünüz. Sonraki bölümde C birlikte çalışmayı inceleyeceğiz.

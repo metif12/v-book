@@ -1,18 +1,18 @@
-# Chapter 4: Ownership and Memory
+# 第4章：所有権とメモリ
 
-V takes a different approach to memory management than many languages. Instead of manual memory management or garbage collection alone, V offers multiple strategies.
+Vは、多くの言語とは異なるメモリ管理アプローチを採用しています。手動メモリ管理やガベージコレクションだけではなく、複数の戦略を提供しています。
 
-## Stack and Heap
+## スタックとヒープ
 
-V automatically decides whether to allocate on the stack or heap:
+Vはスタックとヒープのどちらに割り当てるかを自動的に決定します：
 
 ```v
 fn main() {
-    // Stack-allocated (small, fixed size)
+    // スタック割り当て（小さい、固定サイズ）
     x := 42
     arr := [1, 2, 3]
 
-    // Heap-allocated (large, dynamic)
+    // ヒープ割り当て（大きい、動的）
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -22,9 +22,9 @@ fn main() {
 }
 ```
 
-## Garbage Collection
+## ガベージコレクション
 
-V uses a garbage collector by default. You don't need to free memory manually:
+Vはデフォルトでガベージコレクタを使用します。メモリを手動で解放する必要はありません：
 
 ```v
 fn main() {
@@ -32,14 +32,14 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // Memory is automatically freed when no longer referenced
+    // 参照されなくなったらメモリは自動的に解放されます
     println(names.len)
 }
 ```
 
 ## Autofree
 
-V has an autofree mode that automatically frees memory when variables go out of scope:
+Vには変数のスコープが終了したときにメモリを自動的に解放するautofreeモードがあります：
 
 ```bash
 v -autofree main.v
@@ -51,7 +51,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data is automatically freed here
+    // dataはここで自動的に解放されます
 }
 
 fn main() {
@@ -60,9 +60,9 @@ fn main() {
 }
 ```
 
-## References
+## 参照
 
-You can use references to avoid copying large data:
+大きなデータのコピーを避けるために参照を使用できます：
 
 ```v
 fn modify(mut arr []int) {
@@ -76,15 +76,15 @@ fn main() {
 }
 ```
 
-## Memory management modes
+## メモリ管理モード
 
-| Mode | Flag | Description |
+| モード | フラグ | 説明 |
 |------|------|-------------|
-| GC (default) | `-gc boehm` | Boehm garbage collector |
-| Autofree | `-autofree` | Automatic memory freeing |
-| None | `-gc none` | Manual memory management |
-| Prealloc | `-prealloc` | Arena allocation |
+| GC（デフォルト） | `-gc boehm` | Boehmガベージコレクタ |
+| Autofree | `-autofree` | 自動メモリ解放 |
+| なし | `-gc none` | 手動メモリ管理 |
+| Prealloc | `-prealloc` | アリーナ割り当て |
 
-## Summary
+## まとめ
 
-In this chapter, you learned about V's memory management options. In the next chapter, we'll explore structs.
+この章では、Vのメモリ管理オプションについて学びました。次の章では、structを見ていきます。

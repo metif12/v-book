@@ -1,4 +1,4 @@
-# Chapter 8: Collections
+# Capítulo 8: Coleções
 
 ## Arrays
 
@@ -38,6 +38,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumo
 
-In this chapter, you learned about arrays, maps, and strings. In the next chapter, we'll explore error handling.
+Neste capítulo, você aprendeu sobre arrays, maps e strings. No próximo capítulo, vamos explorar tratamento de erros.

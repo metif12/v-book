@@ -1,6 +1,6 @@
-# Chapter 6: Enums and Sum Types
+# অধ্যায় 6: enum এবং sum type
 
-## Enums
+## enum
 
 ```v
 enum Color {
@@ -20,7 +20,7 @@ fn main() {
 }
 ```
 
-## Sum Types
+## sum type
 
 ```v
 type Shape = Circle | Rectangle
@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-## Pattern Matching
+## প্যাটার্ন ম্যাচিং
 
 ```v
 fn describe(x ?int) string {
@@ -66,6 +66,6 @@ fn main() {
 }
 ```
 
-## Summary
+## সারসংক্ষেপ
 
-In this chapter, you learned about enums, sum types, and pattern matching. In the next chapter, we'll explore modules and packages.
+এই অধ্যায়ে আপনি enum, sum type এবং প্যাটার্ন ম্যাচিং সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা module এবং প্যাকেজ শিখব।

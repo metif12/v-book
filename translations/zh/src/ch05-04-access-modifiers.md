@@ -1,6 +1,6 @@
-# Access Modifiers
+# 访问修饰符
 
-Fields are private by default:
+字段默认是私有的：
 
 ```v
 struct User {
@@ -11,18 +11,18 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: same module
-    println(u.age)   // OK: public
+    println(u.name)  // 正确：同一模块
+    println(u.age)   // 正确：公开
 }
 ```
 
-## Visibility
+## 可见性
 
-| Modifier | Scope |
+| 修饰符 | 作用域 |
 |----------|-------|
-| (none) | Module only |
-| `pub` | Public |
+| （无） | 仅模块内 |
+| `pub` | 公开 |
 
-## Next
+## 下一步
 
-[Chapter 6: Enums and Sum Types](ch06-enums-and-sum-types.md)
+[第 6 章：枚举与和类型](ch06-enums-and-sum-types.md)

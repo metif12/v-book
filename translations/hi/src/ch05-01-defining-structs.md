@@ -1,4 +1,4 @@
-# Defining Structs
+# Structs परिभाषित करना
 
 ```v
 struct Point {
@@ -12,7 +12,7 @@ fn main() {
 }
 ```
 
-## Initialization
+## इनिशियलाइज़ेशन
 
 ```v
 struct Point {
@@ -24,6 +24,6 @@ p := Point{x: 10, y: 20}
 p2 := Point{10, 20}
 ```
 
-## Next
+## अगला
 
-[Methods](ch05-02-methods.md)
+[मेथड्स](ch05-02-methods.md)

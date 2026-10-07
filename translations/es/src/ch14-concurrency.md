@@ -1,10 +1,10 @@
-# Chapter 14: Concurrency
+# Capítulo 14: Concurrencia
 
-V has built-in concurrency support with goroutines, channels, and shared state.
+V tiene soporte de concurrencia integrado con goroutines, canales y estado compartido.
 
-## Spawning goroutines
+## Lanzando goroutines
 
-A goroutine is a lightweight thread. Start one with the `go` keyword:
+Una goroutine es un hilo ligero. Iníciala con la palabra clave `go`:
 
 ```v
 fn worker(id int) {
@@ -18,9 +18,9 @@ fn main() {
 }
 ```
 
-The `go` keyword starts the function in a new goroutine and returns immediately. The main function does not wait for goroutines to finish on its own.
+La palabra clave `go` inicia la función en una nueva goroutine y retorna inmediatamente. La función main no espera a que las goroutines terminen por sí sola.
 
-To wait for goroutines, use a `sync.WaitGroup`:
+Para esperar a las goroutines, usa un `sync.WaitGroup`:
 
 ```v
 import sync
@@ -43,11 +43,11 @@ fn main() {
 }
 ```
 
-`wg.add(1)` increments the counter before the goroutine starts. `wg.done()` decrements it when the goroutine finishes. `wg.wait()` blocks until the counter reaches zero.
+`wg.add(1)` incrementa el contador antes de que la goroutine comience. `wg.done()` lo decrementa cuando la goroutine termina. `wg.wait()` bloquea hasta que el contador llega a cero.
 
-## Channels
+## Canales
 
-Channels pass values between goroutines. Create one with `chan T`:
+Los canales pasan valores entre goroutines. Crea uno con `chan T`:
 
 ```v
 fn main() {
@@ -61,7 +61,7 @@ fn main() {
 }
 ```
 
-An unbuffered channel blocks on send until a receiver is ready. A buffered channel has a capacity and does not block until full:
+Un canal sin buffer bloquea el envío hasta que un receptor esté listo. Un canal con buffer tiene una capacidad y no bloquea hasta que se llena:
 
 ```v
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 }
 ```
 
-Channel direction restricts how a channel can be used. `chan<- T` is send-only, `<-chan T` is receive-only:
+La dirección del canal restringe cómo se puede usar. `chan<- T` es solo envío, `<-chan T` es solo recepción:
 
 ```v ignore
 fn sender(ch chan<- int) {
@@ -94,9 +94,9 @@ fn main() {
 }
 ```
 
-## Shared state
+## Estado compartido
 
-When goroutines share mutable state, protect it with a `sync.Mutex`:
+Cuando las goroutines comparten estado mutable, protégelo con un `sync.Mutex`:
 
 ```v
 import sync
@@ -132,9 +132,9 @@ fn main() {
 }
 ```
 
-`lock` blocks until the mutex is available, then holds it for the scope of the block. Keep the critical section short.
+`lock` bloquea hasta que el mutex esté disponible, luego lo mantiene durante el ámbito del bloque. Mantén la sección crítica corta.
 
-Use `sync.RwMutex` when reads are more frequent than writes. It allows multiple readers at once:
+Usa `sync.RwMutex` cuando las lecturas son más frecuentes que las escrituras. Permite múltiples lectores a la vez:
 
 ```v
 import sync
@@ -171,7 +171,7 @@ fn main() {
 }
 ```
 
-For a single value, use atomics from `sync.stdatomic` instead of a lock:
+Para un solo valor, usa atomicos de `sync.stdatomic` en lugar de un lock:
 
 ```v
 import sync.stdatomic
@@ -184,9 +184,9 @@ fn main() {
 }
 ```
 
-## select statement
+## Sentencia select
 
-`sync.channel_select` waits on multiple channels and returns the index of the first one that is ready. A negative timeout waits indefinitely; a positive timeout returns -1 on timeout:
+`sync.channel_select` espera en múltiples canales y devuelve el índice del primero que esté listo. Un timeout negativo espera indefinidamente; un timeout positivo devuelve -1 al agotar el tiempo:
 
 ```v
 import sync
@@ -212,6 +212,6 @@ fn main() {
 }
 ```
 
-## Summary
+## Resumen
 
-In this chapter, you learned about goroutines, channels, shared state, and select. In the next chapter, we'll explore the Veb web framework.
+En este capítulo, aprendiste sobre goroutines, canales, estado compartido y select. En el siguiente capítulo, exploraremos el framework web Veb.

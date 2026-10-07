@@ -1,8 +1,8 @@
-# Chapter 13: Functional Features
+# الفصل 13: الميزات الوظيفية
 
-V supports closures and higher-order functions.
+V يدعم الإغلاقات (closures) والدوال من الرتبة العليا (higher-order functions).
 
-## Closures
+## الإغلاقات (Closures)
 
 ```v
 fn main() {
@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-## Higher-order functions
+## الدوال من الرتبة العليا
 
 ```v
 fn apply(f fn (int) int, x int) int {
@@ -28,7 +28,7 @@ fn main() {
 }
 ```
 
-## Anonymous functions
+## الدوال المجهولة
 
 ```v
 fn main() {
@@ -40,6 +40,6 @@ fn main() {
 }
 ```
 
-## Summary
+## الملخص
 
-In this chapter, you learned about closures and higher-order functions. In the next chapter, we'll explore concurrency.
+في هذا الفصل، تعلمت عن الإغلاقات والدوال من الرتبة العليا. في الفصل التالي، سنستكشف التزامن.
