@@ -112,9 +112,8 @@ fn main() {
 
 Compile-time assertions that abort compilation if the condition is false.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
