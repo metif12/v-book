@@ -18,9 +18,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install V
-        uses: vlang/setup-v@v1
-        with:
-          version: ${{ env.V_VERSION }}
+        run: |
+          curl -sSL https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip -o v.zip
+          unzip -o v.zip -d /usr/local/bin
+          chmod +x /usr/local/bin/v/v
+          ln -sf /usr/local/bin/v/v /usr/local/bin/vc
 
       - name: Install mdBook
         run: |
@@ -28,7 +30,7 @@ jobs:
 
       - name: Test V code blocks
         run: |
-          v run tools/mdbook-v-test .
+          /usr/local/bin/v/v run tools/mdbook-v-test .
 
       - name: Build book
         run: mdbook build
@@ -40,9 +42,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install V
-        uses: vlang/setup-v@v1
-        with:
-          version: ${{ env.V_VERSION }}
+        run: |
+          curl -sSL https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip -o v.zip
+          unzip -o v.zip -d /usr/local/bin
+          chmod +x /usr/local/bin/v/v
+          ln -sf /usr/local/bin/v/v /usr/local/bin/vc
 
       - name: Install mdBook
         run: |
