@@ -1,0 +1,51 @@
+﻿[book]
+title = "The V Programming Language"
+authors = ["The V Community"]
+description = "A comprehensive book for the V programming language"
+language = "de"
+multilingual = true
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = true
+
+[output.html]
+default-theme = "v-dark"
+preferred-dark-theme = "v-dark"
+curly-quotes = true
+mathjax-support = false
+copy-font = true
+no-section-label = false
+git-repository-url = "https://github.com/vlang/v-book"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/vlang/v-book/edit/main/{path}"
+site-url = "/v-book/"
+cname = "vbook.vlang.io"
+input-404 = "not_found.md"
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.playground]
+editable = true
+copyable = true
+copy-js = true
+line-numbers = true
+
+[output.html.search]
+enable = true
+limit-results = 30
+teaser-word-count = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+copy-js = true
+
+[output.html.print]
+enable = true
+page-break = true
