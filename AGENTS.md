@@ -19,7 +19,7 @@ v run tools/validate.vsh            # Lint book structure (CI references this)
 - `v ignore` — not compiled (pseudocode, incomplete)
 - `v no_run` — compiled but not run (blocking examples)
 
-The preprocessor (`tools/mdbook-v-test/main.v`) extracts fenced code blocks from `src/*.md` and runs each `v` block through `v run`. A failing block fails CI.
+The test tool (`tools/mdbook-v-test/main.v`) extracts fenced code blocks from `src/*.md` and runs each `v` block through `v run`. A failing block fails CI. It runs as a standalone CI step, not as a registered mdBook preprocessor.
 
 ## Structure
 

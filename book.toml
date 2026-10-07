@@ -49,6 +49,3 @@ copy-js = true
 [output.html.print]
 enable = true
 page-break = true
-
-[preprocessor.v-test]
-command = "v run tools/mdbook-v-test"
