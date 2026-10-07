@@ -4,7 +4,7 @@
 
 ### Installer
 
-Download the latest installer from [vlang.io/install](https://vlang.io/install.html) and run it.
+Download the latest installer from [vlang.io](https://vlang.io) and run it.
 
 ### PowerShell
 

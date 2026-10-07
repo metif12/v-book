@@ -1,4 +1,4 @@
-# 简介
+﻿# 简介
 
 *V 编程语言指南* 是 [V 编程语言](https://vlang.io) 的全面指南——一门简单、快速、安全的编译型语言，用于构建可维护的软件。
 
@@ -30,4 +30,4 @@
 
 ## 贡献
 
-本书是一个社区项目。如何贡献请参见 [GitHub 仓库](https://github.com/vlang/v-book)。
+本书是一个社区项目。如何贡献请参见 [GitHub 仓库](https://github.com/metif12/v-book)。

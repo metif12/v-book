@@ -21,6 +21,5 @@ See the [contributing guide](https://github.com/vlang/v/blob/master/CONTRIBUTING
 
 ## Community
 
-- [Forum](https://forum.vlang.io)
 - [Discord](https://discord.gg/vlang)
 - [Telegram](https://t.me/vlang_en)

@@ -2,4 +2,4 @@
 
 The page you're looking for doesn't exist.
 
-[Back to the book](index.html)
+[Back to the book](./)

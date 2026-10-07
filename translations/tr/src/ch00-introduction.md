@@ -1,4 +1,4 @@
-# Giriş
+﻿# Giriş
 
 *V Programlama Dili Kitabı*, [V programlama dili](https://vlang.io) için kapsamlı bir rehberdir — bakımı yapılabilir yazılımlar oluşturmak için basit, hızlı, güvenli, derlenmiş bir dil.
 
@@ -30,4 +30,4 @@ Bu kitap 16 dilde mevcuttur. Tam liste için [Ek F](appendix-f-translations.md)'
 
 ## Katkıda Bulunma
 
-Bu kitap bir topluluk projesidir. Nasıl katkıda bulunacağınızı öğrenmek için [GitHub deposuna](https://github.com/vlang/v-book) bakın.
+Bu kitap bir topluluk projesidir. Nasıl katkıda bulunacağınızı öğrenmek için [GitHub deposuna](https://github.com/metif12/v-book) bakın.

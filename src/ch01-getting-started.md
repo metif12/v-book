@@ -13,7 +13,7 @@ V can be installed on Windows, macOS, and Linux. The easiest way is to use the i
 
 ### Windows
 
-Download and run the installer from [vlang.io/install](https://vlang.io/install.html), or use PowerShell:
+Download and run the installer from [vlang.io](https://vlang.io), or use PowerShell:
 
 ```powershell
 irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex

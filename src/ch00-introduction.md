@@ -30,4 +30,4 @@ This book is available in 16 languages. See [Appendix F](appendix-f-translations
 
 ## Contributing
 
-This book is a community project. See [the GitHub repository](https://github.com/vlang/v-book) for how to contribute.
+This book is a community project. See [the GitHub repository](https://github.com/metif12/v-book) for how to contribute.

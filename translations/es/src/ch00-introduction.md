@@ -1,4 +1,4 @@
-# Introducción
+﻿# Introducción
 
 *El Libro del Lenguaje de Programación V* es una guía completa del [lenguaje de programación V](https://vlang.io) — un lenguaje simple, rápido, seguro y compilado para construir software mantenible.
 
@@ -30,4 +30,4 @@ Este libro está disponible en 16 idiomas. Consulta el [Apéndice F](appendix-f-
 
 ## Contribuir
 
-Este libro es un proyecto comunitario. Consulta [el repositorio de GitHub](https://github.com/vlang/v-book) para saber cómo contribuir.
+Este libro es un proyecto comunitario. Consulta [el repositorio de GitHub](https://github.com/metif12/v-book) para saber cómo contribuir.

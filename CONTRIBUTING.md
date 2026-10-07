@@ -1,4 +1,4 @@
-# Contributing
+﻿# Contributing
 
 Thank you for your interest in contributing to The V Programming Language Book!
 
@@ -6,7 +6,7 @@ Thank you for your interest in contributing to The V Programming Language Book!
 
 ```bash
 # Clone and setup
-git clone https://github.com/vlang/v-book.git
+git clone https://github.com/metif12/v-book.git
 cd v-book
 
 # Verify everything works

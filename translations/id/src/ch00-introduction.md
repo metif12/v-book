@@ -1,4 +1,4 @@
-# Pengantar
+﻿# Pengantar
 
 *Buku Bahasa Pemrograman V* adalah panduan lengkap untuk [bahasa pemrograman V](https://vlang.io) — bahasa yang sederhana, cepat, aman, terkompilasi untuk membangun perangkat lunak yang mudah dipelihara.
 
@@ -30,4 +30,4 @@ Buku ini tersedia dalam 16 bahasa. Lihat [Lampiran F](appendix-f-translations.md
 
 ## Kontribusi
 
-Buku ini adalah proyek komunitas. Lihat [repositori GitHub](https://github.com/vlang/v-book) untuk cara berkontribusi.
+Buku ini adalah proyek komunitas. Lihat [repositori GitHub](https://github.com/metif12/v-book) untuk cara berkontribusi.

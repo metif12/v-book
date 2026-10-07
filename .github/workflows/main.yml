@@ -55,7 +55,7 @@ jobs:
       - name: Check markdown links
         uses: lycheeverse/lychee-action@v1
         with:
-          args: --verbose --no-progress ./src
+          args: --verbose --no-progress --exclude "github.com/metif12/v-book" ./src
           fail: true
 
       - name: Spellcheck

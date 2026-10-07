@@ -1,4 +1,4 @@
-[book]
+﻿[book]
 title = "The V Programming Language"
 authors = ["The V Community"]
 description = "A comprehensive book for the V programming language"
@@ -17,9 +17,9 @@ smart-punctuation = true
 mathjax-support = false
 copy-fonts = true
 no-section-label = false
-git-repository-url = "https://github.com/vlang/v-book"
+git-repository-url = "https://github.com/metif12/v-book"
 git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/vlang/v-book/edit/main/{path}"
+edit-url-template = "https://github.com/metif12/v-book/edit/main/{path}"
 site-url = "/v-book/"
 cname = "vbook.vlang.io"
 input-404 = "not_found.md"

@@ -1,4 +1,4 @@
-# Einleitung
+﻿# Einleitung
 
 *Das V-Programmierhandbuch* ist ein umfassender Leitfaden für die [V-Programmiersprache](https://vlang.io) — eine einfache, schnelle, sichere, kompilierte Sprache zur Entwicklung wartbarer Software.
 
@@ -30,4 +30,4 @@ Dieses Buch ist in 16 Sprachen verfügbar. Siehe [Anhang F](appendix-f-translati
 
 ## Mitwirken
 
-Dieses Buch ist ein Community-Projekt. Siehe [das GitHub-Repository](https://github.com/vlang/v-book), um zu erfahren, wie Sie beitragen können.
+Dieses Buch ist ein Community-Projekt. Siehe [das GitHub-Repository](https://github.com/metif12/v-book), um zu erfahren, wie Sie beitragen können.
