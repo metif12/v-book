@@ -45,6 +45,21 @@
     color: var(--v-accent);
 }
 
+.v-edit-btn {
+    background: var(--v-accent);
+    color: var(--v-dark);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.v-edit-btn:hover {
+    opacity: 1;
+}
+
 .v-lang-selector select {
     background: var(--v-code-bg);
     color: var(--v-light);
