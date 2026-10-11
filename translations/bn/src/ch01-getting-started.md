@@ -1,61 +1,33 @@
-# অধ্যায় 1: শুরু করা
+# Chapter 1: Getting Started
 
-আসুন আপনার V যাত্রা শুরু করি! শিখতে অনেক কিছু আছে, কিন্তু প্রতিটি যাত্রা একটি ছোট পদক্ষেপ দিয়ে শুরু হয়। এই অধ্যায়ে আপনি শিখবেন কীভাবে:
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- আপনার সিস্টেমে V ইনস্টল করতে হয়
-- একটি "Hello, World!" প্রোগ্রাম লিখতে হয়
-- V কম্পাইলার এবং এর কমান্ড ব্যবহার করতে হয়
-- একটি V প্রজেক্ট তৈরি করতে হয়
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
-## ইনস্টলেশন
+## Installation
 
-V ইনস্টল করা যায় Windows, macOS এবং Linux-এ। সবচেয়ে সহজ উপায় হল ইনস্টলার স্ক্রিপ্ট ব্যবহার করা:
-
-### Windows
-
-[vlang.io/install](https://vlang.io/install.html) থেকে ইনস্টলার ডাউনলোড করে চালান, অথবা PowerShell ব্যবহার করুন:
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-অথবা ইনস্টলার স্ক্রিপ্ট ব্যবহার করুন:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### সোর্স থেকে
-
-সোর্স থেকে V বিল্ড করতে:
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## ইনস্টলেশন যাচাই
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-ইনস্টলেশনের পর, V ঠিকভাবে কাজ করছে কিনা যাচাই করুন:
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-আপনাকে এমন আউটপুট দেখতে হবে:
+You should see output like:
 
 ```
 V 0.5.2
@@ -63,7 +35,7 @@ V 0.5.2
 
 ## Hello, World!
 
-এখন আসুন আমাদের প্রথম V প্রোগ্রাম লিখি। `main.v` নামে একটি ফাইল তৈরি করুন:
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-চালান:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-আপনাকে দেখতে হবে:
+You should see:
 
 ```
 Hello, World!
 ```
 
-অভিনন্দন! আপনি আপনার প্রথম V প্রোগ্রাম লিখেছেন এবং চালিয়েছেন।
+Congratulations! You've written and run your first V program.
 
 ## Hello, V!
 
-আসুন একটু বেশি আকর্ষণীয় উদাহরণ দেখি:
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,32 +69,33 @@ fn main() {
 }
 ```
 
-চালান:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-আউটপুট:
+Output:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## V কম্পাইলার
+## The V compiler
 
-V কম্পাইলার `v` কমান্ড দিয়ে চালানো হয়। সাধারণ কমান্ড:
+The V compiler is invoked with the `v` command. Common commands:
 
-| কমান্ড | বিবরণ |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | একটি V ফাইল কম্পাইল করে চালায় |
-| `v file.v` | একটি V ফাইল কম্পাইল করে এক্সিকিউটেবল তৈরি করে |
-| `v fmt file.v` | একটি V ফাইল ফরম্যাট করে |
-| `v test .` | বর্তমান ডিরেক্টরিতে টেস্ট চালায় |
-| `v doc .` | ডকুমেন্টেশন তৈরি করে |
-| `v doctor` | আপনার V ইনস্টলেশন নির্ণয় করে |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## সারসংক্ষেপ
+## Summary
 
-এই অধ্যায়ে আপনি শিখেছেন কীভাবে V ইনস্টল করতে হয়, একটি "Hello, World!" প্রোগ্রাম লিখতে হয় এবং V কম্পাইলার ব্যবহার করতে হয়। পরবর্তী অধ্যায়ে আমরা দেখব কীভাবে একটি V প্রজেক্ট সাজাতে হয়।
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

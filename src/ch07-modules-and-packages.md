@@ -39,11 +39,13 @@ fn main() {
 
 ## VPM
 
-V Package Manager (VPM) hosts community packages:
+Community packages live in the VPM registry, and `v install` puts them into `~/.vmodules`. Search first — what is available changes:
 
 ```bash
-v install vsl
+v install markdown
 ```
+
+The next chapter looks at the module system in detail.
 
 ## Summary
 

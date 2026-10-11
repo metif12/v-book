@@ -1,69 +1,41 @@
-# Bölüm 1: Başlangıç
+# Chapter 1: Getting Started
 
-V yolculuğunuza başlayalım! Öğrenilecek çok şey var ama her yolculuk küçük bir adımla başlar. Bu bölümde şunları öğreneceksiniz:
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- Sisteminize V kurma
-- "Merhaba, Dünya!" programı yazma
-- V derleyicisini ve komutlarını kullanma
-- Bir V projesi oluşturma
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
-## Kurulum
+## Installation
 
-V, Windows, macOS ve Linux'a kurulabilir. En kolay yol, kurulum betiğini kullanmaktır:
-
-### Windows
-
-[vlang.io/install](https://vlang.io/install.html) adresinden indirip çalıştırın veya PowerShell kullanın:
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-Veya kurulum betiğini kullanın:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Kaynak koddan
-
-V'yi kaynak koddan derlemek için:
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## Kurulumu doğrulama
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-Kurulumdan sonra V'nin çalıştığını doğrulayın:
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-Şöyle bir çıktı görmelisiniz:
+You should see output like:
 
 ```
 V 0.5.2
 ```
 
-## Merhaba, Dünya!
+## Hello, World!
 
-Şimdi ilk V programımızı yazalım. `main.v` adında bir dosya oluşturun:
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-Çalıştırın:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-Şöyle görmelisiniz:
+You should see:
 
 ```
 Hello, World!
 ```
 
-Tebrikler! İlk V programınızı yazdınız ve çalıştırdınız.
+Congratulations! You've written and run your first V program.
 
-## Merhaba, V!
+## Hello, V!
 
-Biraz daha ilginç bir örneğe bakalım:
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,32 +69,33 @@ fn main() {
 }
 ```
 
-Çalıştırın:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-Çıktı:
+Output:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## V derleyicisi
+## The V compiler
 
-V derleyicisi `v` komutuyla çağrılır. Yaygın komutlar:
+The V compiler is invoked with the `v` command. Common commands:
 
-| Komut | Açıklama |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | Bir V dosyasını derler ve çalıştırır |
-| `v file.v` | Bir V dosyasını çalıştırılabilir dosyaya derler |
-| `v fmt file.v` | Bir V dosyasını biçimlendirir |
-| `v test .` | Mevcut dizindeki testleri çalıştırır |
-| `v doc .` | Dokümantasyon oluşturur |
-| `v doctor` | V kurulumunuzu teşhis eder |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## Özet
+## Summary
 
-Bu bölümde V'yi kurmayı, "Merhaba, Dünya!" programı yazmayı ve V derleyicisini kullanmayı öğrendiniz. Sonraki bölümde bir V projesinin nasıl yapılandırılacağına bakacağız.
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

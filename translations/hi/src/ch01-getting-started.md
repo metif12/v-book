@@ -1,61 +1,33 @@
-# अध्याय 1: शुरुआत करना
+# Chapter 1: Getting Started
 
-आइए अपनी V यात्रा शुरू करें! सीखने के लिए बहुत कुछ है, लेकिन हर यात्रा एक छोटे कदम से शुरू होती है। इस अध्याय में, आप सीखेंगे कि कैसे:
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- अपने सिस्टम पर V इंस्टॉल करें
-- एक "Hello, World!" प्रोग्राम लिखें
-- V कंपाइलर और उसके कमांड का उपयोग करें
-- एक V प्रोजेक्ट बनाएं
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
-## इंस्टॉलेशन
+## Installation
 
-V को Windows, macOS, और Linux पर इंस्टॉल किया जा सकता है। सबसे आसान तरीका इंस्टॉलर स्क्रिप्ट का उपयोग करना है:
-
-### Windows
-
-[vlang.io/install](https://vlang.io/install.html) से इंस्टॉलर डाउनलोड करें और चलाएं, या PowerShell का उपयोग करें:
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-या इंस्टॉलर स्क्रिप्ट का उपयोग करें:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### सोर्स से
-
-V को सोर्स से बिल्ड करने के लिए:
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## इंस्टॉलेशन सत्यापित करना
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-इंस्टॉलेशन के बाद, V के काम करने की पुष्टि करें:
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-आपको ऐसा आउटपुट दिखना चाहिए:
+You should see output like:
 
 ```
 V 0.5.2
@@ -63,7 +35,7 @@ V 0.5.2
 
 ## Hello, World!
 
-अब आइए अपना पहला V प्रोग्राम लिखें। `main.v` नामक एक फ़ाइल बनाएं:
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-इसे चलाएं:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-आपको यह दिखना चाहिए:
+You should see:
 
 ```
 Hello, World!
 ```
 
-बधाई हो! आपने अपना पहला V प्रोग्राम लिखा और चलाया।
+Congratulations! You've written and run your first V program.
 
 ## Hello, V!
 
-आइए एक थोड़ा अधिक रोचक उदाहरण देखें:
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,32 +69,33 @@ fn main() {
 }
 ```
 
-इसे चलाएं:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-आउटपुट:
+Output:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## V कंपाइलर
+## The V compiler
 
-V कंपाइलर `v` कमांड से चलाया जाता है। सामान्य कमांड:
+The V compiler is invoked with the `v` command. Common commands:
 
-| कमांड | विवरण |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | V फ़ाइल को कंपाइल और चलाएं |
-| `v file.v` | V फ़ाइल को एक्सीक्यूटेबल में कंपाइल करें |
-| `v fmt file.v` | V फ़ाइल को फॉर्मेट करें |
-| `v test .` | वर्तमान डायरेक्टरी में टेस्ट चलाएं |
-| `v doc .` | डॉक्यूमेंटेशन जेनरेट करें |
-| `v doctor` | अपने V इंस्टॉलेशन का निदान करें |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## सारांश
+## Summary
 
-इस अध्याय में, आपने सीखा कि V कैसे इंस्टॉल करें, "Hello, World!" प्रोग्राम कैसे लिखें, और V कंपाइलर का उपयोग कैसे करें। अगले अध्याय में, हम देखेंगे कि V प्रोजेक्ट को कैसे संरचित किया जाता है।
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

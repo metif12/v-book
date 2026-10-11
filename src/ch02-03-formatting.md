@@ -4,15 +4,23 @@ Formatting is not style any more once a tool enforces it. `v fmt` rewrites a V f
 
 ## Running it
 
+`v fmt` reads a file or a directory and writes the formatted source to standard output. To change the files, pass `-w`:
+
 ```bash
-v fmt path/to/file.v
+cat main.v | v fmt          # from stdin, to stdout
+v fmt main.v                # the formatted source on stdout
+v fmt -w main.v             # rewrite the file
+v fmt -w .                  # every V file in this directory and below
+v fmt -diff main.v          # show what would change
 ```
 
-Without a path, `v fmt` formats every V file in the current directory and below. `-w`... is not needed: `v fmt` writes by default; `-verify` reports the files that would change without touching them, which is what a CI job wants:
+To check without touching anything — the form a CI job wants — use `-verify`, or the quicker `-c`:
 
 ```bash
 v fmt -verify .
 ```
+
+The documentation recommends setting your editor up so that `v fmt -w` runs on every save. A run is cheap, usually under 30 milliseconds, so there is nothing to wait for.
 
 ## What it fixes
 
@@ -43,7 +51,8 @@ fn main() {
 
 - Indentation is a tab.
 - Field alignment is left to `v fmt`: consecutive lines of the same struct line up.
-- A short function can open its brace on the same line: `fn add(a int, b int) int { return a + b }`.
+- A short function can keep its brace on the same line, as long as the whole body is one statement that fits in 100 columns:
+  `fn add(a int, b int) int { return a + b }`.
 - String literals may use single or double quotes; a string with a single quote inside uses double quotes.
 - Imports are grouped: standard library first, then third-party.
 
@@ -57,9 +66,21 @@ fn main() {
 }
 ```
 
+A block that should never be touched — a table laid out by hand, a string with deliberate whitespace — is wrapped in comments:
+
+```v ignore
+// vfmt off
+
+some code   that keeps   its shape
+
+// vfmt on
+```
+
+`v vet` is a separate command: it reports suspicious constructs — a shadowed variable, an unused result — and it is about correctness rather than shape.
+
 ## v vet
 
-`v vet` runs the compiler's own static checks over a file or directory — shadowed variables, unreachable code, and unused results:
+`v vet` runs the compiler's own static checks over a file or directory:
 
 ```bash
 v vet .
@@ -69,10 +90,11 @@ v vet .
 
 ## Editor integration
 
-Most editors format on save with a single setting. The rule that matters is the same everywhere: never hand-format, and run `v fmt -verify .` before opening a pull request.
+Most editors format on save with a single setting; the setting to look for is `v fmt -w`. The rule that matters is the same everywhere: never hand-format, and run `v fmt -verify .` before opening a pull request.
 
 ## Exercises
 
-1. Take a file with mixed tabs and spaces and run `v fmt` on it. Read the diff.
+1. Take a file with mixed tabs and spaces and run `v fmt -w` on it, then `git diff` the result.
 2. Run `v fmt -verify .` in your own project and note the output.
-3. Run `v vet` on a file with an unused variable and read what it says.
+3. Wrap a block in `// vfmt off` and `// vfmt on`, run `v fmt -w`, and confirm the block kept its shape.
+4. Run `v vet` on a file with an unused variable and read what it says.

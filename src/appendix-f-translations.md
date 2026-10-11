@@ -28,9 +28,28 @@ The three right-to-left languages are the ones to watch when changing the site's
 shell: `book.css` carries the RTL rules, and the page's `dir` attribute is what
 switches the sidebar, the pager and the reading column.
 
-New chapters appear in English in every language until a translation lands. The
-language menu links to the page the reader is on when that page exists in the
-language, and back to the root of the language when it does not.
+## Pages that are still English
+
+A lesson whose English source was rewritten leaves the translation describing a
+command that no longer exists, so those lessons ship in English in every
+language until a translator redoes them. The language menu still links to them
+and the pager still walks through them:
+
+| Page | Status |
+|------|--------|
+| Chapter 1: Getting Started | English after the install rewrite |
+| Installation | English after the install rewrite |
+| Chapter 2: Formatting with v fmt | English after the `v fmt` review |
+| Chapter 7: VPM | English after the toolchain review |
+| Chapter 11: Testing | English after the testing review |
+| Chapter 19: Tooling | English after the toolchain review |
+| Chapter 21: Cross-Compilation and Deployment | new |
+| Chapter 22: Performance and Benchmarking | new |
+| Appendix H: Exercises | new |
+
+Everything else keeps its translation. The V code blocks inside a translation
+always come from the English source, so no language can show code CI does not
+compile.
 
 ## Building one language
 

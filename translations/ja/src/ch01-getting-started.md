@@ -1,61 +1,33 @@
-# 第1章：はじめに
+# Chapter 1: Getting Started
 
-Vの旅を始めましょう！学ぶことはたくさんありますが、すべての旅は一歩から始まります。この章では、以下の方法を学びます：
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- システムにVをインストールする
-- "Hello, World!"プログラムを書く
-- Vコンパイラとそのコマンドを使う
-- Vプロジェクトを作成する
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
-## インストール
+## Installation
 
-VはWindows、macOS、Linuxにインストールできます。最も簡単な方法はインストーラースクリプトを使うことです：
-
-### Windows
-
-[vlang.io/install](https://vlang.io/install.html)からインストーラーをダウンロードして実行するか、PowerShellを使用します：
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-またはインストーラースクリプトを使用します：
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### ソースからビルド
-
-ソースからVをビルドするには：
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## インストールの確認
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-インストール後、Vが動作することを確認します：
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-以下のような出力が表示されます：
+You should see output like:
 
 ```
 V 0.5.2
@@ -63,7 +35,7 @@ V 0.5.2
 
 ## Hello, World!
 
-それでは最初のVプログラムを書いてみましょう。`main.v`というファイルを作成します：
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-実行します：
+Run it:
 
 ```bash
 v run main.v
 ```
 
-以下のように表示されます：
+You should see:
 
 ```
 Hello, World!
 ```
 
-おめでとうございます！最初のVプログラムを書いて実行しました。
+Congratulations! You've written and run your first V program.
 
 ## Hello, V!
 
-もう少し興味深い例を見てみましょう：
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,32 +69,33 @@ fn main() {
 }
 ```
 
-実行します：
+Run it:
 
 ```bash
 v run main.v
 ```
 
-出力：
+Output:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## Vコンパイラ
+## The V compiler
 
-Vコンパイラは`v`コマンドで呼び出されます。一般的なコマンド：
+The V compiler is invoked with the `v` command. Common commands:
 
-| コマンド | 説明 |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | Vファイルをコンパイルして実行 |
-| `v file.v` | Vファイルを実行可能ファイルにコンパイル |
-| `v fmt file.v` | Vファイルをフォーマット |
-| `v test .` | 現在のディレクトリでテストを実行 |
-| `v doc .` | ドキュメントを生成 |
-| `v doctor` | Vのインストールを診断 |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## まとめ
+## Summary
 
-この章では、Vのインストール方法、"Hello, World!"プログラムの書き方、Vコンパイラの使い方を学びました。次の章では、Vプロジェクトの構造を見ていきます。
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

@@ -1,90 +1,107 @@
-# Chapter 19: 도구
+# Chapter 19: Tooling
+
+The `v` command is a toolchain, not just a compiler. This chapter covers the commands you will actually reach for, and what each one prints.
 
 ## v fmt
 
-공식 스타일 가이드에 따라 V 소스 코드를 포맷합니다. `-w`를 사용하여 변경 사항을 저장합니다.
+Formats V source code. `v fmt` writes the formatted source to standard output, so `-w` is what changes the file:
 
 ```bash
-v fmt -w .
+v fmt -w .                  # every V file here and below
+v fmt -w main.v             # one file
+cat main.v | v fmt          # from stdin, to stdout
+v fmt -diff main.v          # show what would change
+v fmt -verify .             # check without writing: the CI form
 ```
 
-### 단일 파일 포맷팅
+`-verify` and `-c` both check, `-c` being the quicker of the two. `-w` is what you want on save. To leave a block of code exactly as written, wrap it in `// vfmt off` and `// vfmt on`.
+
+## v vet
+
+Reports suspicious code constructs: a shadowed variable, an unused result, unreachable code.
 
 ```bash
-v fmt -w main.v
+v vet .
 ```
 
-### 포맷 확인만 (저장 안 함)
-
-```bash
-v fmt -check .
-```
+`v vet` is about correctness, not shape — run it before `v test`.
 
 ## v doc
 
-V 소스 파일에서 문서를 생성합니다. 기본적으로 HTML로 출력합니다.
+Generates the documentation of a module from its doc comments. A module is named rather than pointed at:
 
 ```bash
-v doc .
+v doc strings
+v doc -o docs/ strings
 ```
 
-### 특정 모듈 문서화
-
-```bash
-v doc -o docs/ .
-```
-
-## v profiler
-
-프로그램 실행을 프로파일링하여 성능 병목 현상을 식별합니다.
-
-```bash
-v -profile profile.txt run main.v
-```
-
-### 프로파일 출력 분석
-
-```bash
-v profile profile.txt
-```
+`v vlib-docs` renders the documentation of every standard library module at once.
 
 ## v test
 
-현재 디렉터리 또는 지정된 파일의 유닛 테스트를 실행합니다.
+Runs the `_test.v` files of a directory or a file:
 
 ```bash
 v test .
+v test mymodule/mymodule_test.v
 ```
 
-### 특정 테스트 실행
+### Running a specific test
+
+`-run-only` takes a glob pattern, and only the `test_` functions that match run. A file with no matching function is skipped:
 
 ```bash
-v test -run TestName .
+v test . -run-only test_parse*
+v test . -run-only test_foo,test_bar
 ```
 
-### 커버리지와 함께 테스트 실행
+### More test options
 
 ```bash
-v test -cover .
+v -stats test .             # per-test timing and assertion counts
+v test . -test-runner tap   # machine readable output
+VTEST_ONLY=strings v test . # only test files whose path contains "strings"
 ```
 
-## v check
+## Profiling
 
-V 코드에 정적 분석을 수행하여 에러, 경고, 스타일 문제를 확인합니다.
+Profiling is a build flag rather than a command. `v -profile` instruments the program, writes a profile when it exits, and `-prof` is the shorter spelling:
 
 ```bash
-v check .
+v -profile profile.txt run main.v   # write the report to profile.txt
+v -prof run main.v                  # print the report to standard output
 ```
 
-### 단일 파일 검사
+The report has five columns: call count, total time, exclusive time, average time, and the function name. The exclusive time column is what shows where the program actually spends its time, and it is the one to sort on:
 
 ```bash
-v check main.v
+sort -n -k3 profile.txt | tail
 ```
 
-## 크로스 컴파일
+Useful companions:
 
-V는 한 대의 머신에서 다른 운영체제와 아키텍처용 코드를 컴파일할 수 있습니다.
+```bash
+v -profile-fns println,main -profile run main.v   # only these functions and what they call
+v -profile-no-inline -profile profile.txt run main.v   # leave @[inline] out of the report
+v -d no_profile_startup -profile - run main.v     # leave module init out of the report
+```
+
+For a quick measurement, a stopwatch inside the program is often enough — [Performance and Benchmarking](ch22-performance-and-benchmarking.md) has the pattern.
+
+## Checking a build
+
+`-check` is a build flag too: it scans, parses and checks every function without producing a binary.
+
+```bash
+v -check .          # the whole project
+v -check main.v     # one file
+```
+
+It is the fast answer to "does this still compile", and it is what an editor runs on save.
+
+## Cross-compilation
+
+V can compile code for other operating systems and architectures from one machine:
 
 ```bash
 v -os windows main.v
@@ -92,41 +109,76 @@ v -os linux main.v
 v -os macos main.v
 ```
 
-### 아키텍처 지정
+### Specifying architecture
 
 ```bash
 v -os linux -arch amd64 main.v
 v -os linux -arch arm64 main.v
 ```
 
-### 임베디드 타겟 크로스 컴파일
-
-```bash
-v -os embedded -arch arm main.v
-```
+[Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md) covers production builds and the release pipeline.
 
 ## v doctor
 
-컴파일러 버전, OS, 설정을 포함한 V 설치에 대한 진단 정보를 표시합니다.
+Prints the details a bug report needs: the compiler version, the git state, the environment, and the C toolchain it found.
 
 ```bash
 v doctor
 ```
 
+`v env` prints the settings the compiler uses, one per line, with the value V would fall back to when a variable is not set — `VEXE`, `VROOT`, `VOS`, `VARCH`, `VMODULES`, `VTMP`. One name gives just its value, which is what a shell substitution wants:
+
+```bash
+v env
+v env VMODULES
+```
+
 ## v up
 
-V 컴파일러를 최신 버전으로 업데이트합니다.
+Updates the V compiler to the latest version, and refreshes the bundled TCC binaries. It reuses the existing PATH, so nothing has to be set up again afterwards:
 
 ```bash
 v up
+v up -prod      # build the updated compiler with optimizations
 ```
 
-### 특정 버전으로 업데이트
+## v clean
+
+A build leaves its executable next to the sources, named after them. `v clean` removes exactly that name, and nothing else:
 
 ```bash
-v up --version 0.5.2
+v clean .                # remove the binary a `v .` build would write
+v clean -n .             # show what it would do
 ```
 
-## 요약
+## v install and friends
 
-이 장에서는 V의 도구 생태계에 대해 배웠습니다: 포맷팅을 위한 `v fmt`, 문서화를 위한 `v doc`, 성능 분석을 위한 `v profiler`, 테스팅을 위한 `v test`, 정적 분석을 위한 `v check`, 크로스 컴파일, 진단을 위한 `v doctor`, 자체 업데이트를 위한 `v up`. 다음 장에서는 최종 프로젝트를 만들어보겠습니다.
+Modules are installed from [VPM](https://vpm.url4e.com) into `~/.vmodules`:
+
+```bash
+v install mymodule
+v install --path ~/.vmodules mymodule   # a different location
+v list                                    # what is installed
+v outdated                                # what has an update
+v update mymodule                         # update one
+v upgrade                                 # update everything
+v remove mymodule                         # uninstall
+v search mymodule                         # search the registry
+v show mymodule                           # details of a published module
+v mod why mymodule                        # why a module is in the build graph
+```
+
+`v link` symlinks the current project into `~/.vmodules`, which is how you develop a module and use it at the same time. `v unlink` undoes it.
+
+## v tool
+
+`v tool NAME` builds and runs a tool module by name, the way an import would resolve it — no path to remember:
+
+```bash
+v tool greet        # run ~/.vmodules/greet, or a checkout beside the project
+v tool              # list the tool modules V can see
+```
+
+## Summary
+
+In this chapter, you learned the toolchain around the compiler: `v fmt` and `v vet` for a clean tree, `v doc` for documentation, `v test` with `-run-only` for a subset, `v -profile` for a profile and `sort -n -k3` to read it, `v -check` for a fast compile, `-os`/`-arch` for cross-compilation, `v doctor` and `v env` for diagnosis, `v up` for updates, and `v clean` for the binaries a build leaves behind. In the next chapter, we'll build a final project.

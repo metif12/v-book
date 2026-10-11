@@ -1,61 +1,33 @@
-# Bab 1: Memulai
+# Chapter 1: Getting Started
 
-Mari mulai perjalanan V Anda! Ada banyak hal untuk dipelajari, tetapi setiap perjalanan dimulai dengan satu langkah kecil. Dalam bab ini, Anda akan belajar cara:
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- Menginstal V di sistem Anda
-- Menulis program "Hello, World!"
-- Menggunakan kompiler V dan perintahnya
-- Membuat proyek V
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
-## Instalasi
+## Installation
 
-V dapat diinstal di Windows, macOS, dan Linux. Cara termudah adalah menggunakan skrip installer:
-
-### Windows
-
-Unduh dan jalankan installer dari [vlang.io/install](https://vlang.io/install.html), atau gunakan PowerShell:
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-Atau gunakan skrip installer:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Dari sumber
-
-Untuk membangun V dari sumber:
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## Memverifikasi instalasi
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-Setelah instalasi, verifikasi V berfungsi:
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-Anda akan melihat output seperti:
+You should see output like:
 
 ```
 V 0.5.2
@@ -63,7 +35,7 @@ V 0.5.2
 
 ## Hello, World!
 
-Sekarang mari tulis program V pertama Anda. Buat file bernama `main.v`:
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-Jalankan:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-Anda akan melihat:
+You should see:
 
 ```
 Hello, World!
 ```
 
-Selamat! Anda telah menulis dan menjalankan program V pertama Anda.
+Congratulations! You've written and run your first V program.
 
 ## Hello, V!
 
-Mari lihat contoh yang sedikit lebih menarik:
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,7 +69,7 @@ fn main() {
 }
 ```
 
-Jalankan:
+Run it:
 
 ```bash
 v run main.v
@@ -110,19 +82,20 @@ Hello, V!
 V is a great language.
 ```
 
-## Kompiler V
+## The V compiler
 
-Kompiler V dipanggil dengan perintah `v`. Perintah umum:
+The V compiler is invoked with the `v` command. Common commands:
 
-| Perintah | Deskripsi |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | Kompilasi dan jalankan file V |
-| `v file.v` | Kompilasi file V menjadi executable |
-| `v fmt file.v` | Format file V |
-| `v test .` | Jalankan test di direktori saat ini |
-| `v doc .` | Buat dokumentasi |
-| `v doctor` | Diagnosa instalasi V Anda |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## Ringkasan
+## Summary
 
-Dalam bab ini, Anda telah belajar cara menginstal V, menulis program "Hello, World!", dan menggunakan kompiler V. Di bab berikutnya, kita akan melihat cara mengstruktur proyek V.
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

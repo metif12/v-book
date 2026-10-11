@@ -125,10 +125,33 @@
 	var input = doc.getElementById('search-input');
 	var panel = doc.getElementById('search-panel');
 	var form = doc.getElementById('search-form');
+	var searchToggle = doc.getElementById('search-toggle');
 	var index = window.SEARCH_INDEX || [];
 	var results = [];
 	var active = -1;
 	var timer = 0;
+
+	// On a narrow screen the form is a full screen sheet. openSearch hands the
+	// screen to it, and closeSearchSheet gives it back.
+	function openSearchSheet() {
+		if (form) form.classList.add('open');
+		if (searchToggle) searchToggle.setAttribute('aria-expanded', 'true');
+	}
+
+	function closeSearchSheet() {
+		if (form) form.classList.remove('open');
+		if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
+	}
+
+	if (searchToggle) {
+		searchToggle.addEventListener('click', function () {
+			openSearchSheet();
+			if (input) {
+				input.focus();
+				input.select();
+			}
+		});
+	}
 
 	function escapeHtml(s) {
 		return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -242,6 +265,7 @@
 
 	function focusSearch() {
 		if (!input) return;
+		openSearchSheet();
 		input.focus();
 		input.select();
 		if (input.value.trim() !== '') show(panel, true);
@@ -269,12 +293,22 @@
 					window.location.href = results[active].doc.url;
 				}
 			} else if (e.key === 'Escape') {
-				if (panel.hidden) { this.blur(); return; }
+				if (panel.hidden) { closeSearchSheet(); this.blur(); return; }
 				closeSearch();
+				closeSearchSheet();
 				this.blur();
 			}
 		});
 	}
+
+	// A tap outside the sheet closes it: the language menu's own handler covers
+	// clicks outside the form as well, so both close together.
+	doc.addEventListener('click', function (e) {
+		if (!form || !form.classList.contains('open')) return;
+		if (form.contains(e.target) || e.target === searchToggle) return;
+		closeSearch();
+		closeSearchSheet();
+	});
 
 	doc.addEventListener('click', function (e) {
 		if (panel.hidden) return;

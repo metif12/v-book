@@ -1,69 +1,41 @@
-# Kapitel 1: Erste Schritte
+# Chapter 1: Getting Started
 
-Beginnen Sie Ihre V-Reise! Es gibt viel zu lernen, aber jede Reise beginnt mit einem kleinen Schritt. In diesem Kapitel lernen Sie, wie Sie:
+Let's start your V journey! There's a lot to learn, but every journey starts with a small step. In this chapter, you'll learn how to:
 
-- V auf Ihrem System installieren
-- Ein "Hallo, Welt!"-Programm schreiben
-- Den V-Compiler und seine Befehle verwenden
-- Ein V-Projekt erstellen
+- Install V on your system
+- Write a "Hello, World!" program
+- Use the V compiler and its commands
+- Create a V project
 
 ## Installation
 
-V kann auf Windows, macOS und Linux installiert werden. Der einfachste Weg ist die Verwendung des Installationsskripts:
-
-### Windows
-
-Laden Sie den Installer von [vlang.io/install](https://vlang.io/install.html) herunter und führen Sie ihn aus, oder verwenden Sie PowerShell:
-
-```powershell
-irm https://raw.githubusercontent.com/vlang/v/master/installer.ps1 | iex
-```
-
-### macOS
+V is built from source, which takes a few seconds and needs a working `git` and a C toolchain ([the full instructions are their own lesson](ch01-01-installation.md)):
 
 ```bash
-brew install vlang
-```
-
-Oder verwenden Sie das Installationsskript:
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Linux
-
-```bash
-curl -sSL https://raw.githubusercontent.com/vlang/v/master/installer.sh | bash
-```
-
-### Aus dem Quellcode
-
-Um V aus dem Quellcode zu kompilieren:
-
-```bash
-git clone https://github.com/vlang/v
+git clone --depth=1 https://github.com/vlang/v
 cd v
 make
 ```
 
-## Installation überprüfen
+On Windows run `makev.bat` instead of `make`. Then put V on the PATH with `sudo ./v symlink` — or `v symlink` from an administrative shell on Windows — and restart your shell.
 
-Nach der Installation überprüfen Sie, ob V funktioniert:
+## Verifying the installation
+
+After installation, verify V is working:
 
 ```bash
 v version
 ```
 
-Sie sollten eine Ausgabe wie folgt sehen:
+You should see output like:
 
 ```
 V 0.5.2
 ```
 
-## Hallo, Welt!
+## Hello, World!
 
-Nun schreiben wir unser erstes V-Programm. Erstellen Sie eine Datei namens `main.v`:
+Now let's write our first V program. Create a file called `main.v`:
 
 ```v
 fn main() {
@@ -71,23 +43,23 @@ fn main() {
 }
 ```
 
-Führen Sie es aus:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-Sie sollten folgendes sehen:
+You should see:
 
 ```
 Hello, World!
 ```
 
-Herzlichen Glückwunsch! Sie haben Ihr erstes V-Programm geschrieben und ausgeführt.
+Congratulations! You've written and run your first V program.
 
-## Hallo, V!
+## Hello, V!
 
-Betrachten wir ein etwas interessanteres Beispiel:
+Let's look at a slightly more interesting example:
 
 ```v
 fn main() {
@@ -97,32 +69,33 @@ fn main() {
 }
 ```
 
-Führen Sie es aus:
+Run it:
 
 ```bash
 v run main.v
 ```
 
-Ausgabe:
+Output:
 
 ```
 Hello, V!
 V is a great language.
 ```
 
-## Der V-Compiler
+## The V compiler
 
-Der V-Compiler wird mit dem Befehl `v` aufgerufen. Häufige Befehle:
+The V compiler is invoked with the `v` command. Common commands:
 
-| Befehl | Beschreibung |
+| Command | Description |
 |---------|-------------|
-| `v run file.v` | Eine V-Datei kompilieren und ausführen |
-| `v file.v` | Eine V-Datei zu einer ausführbaren Datei kompilieren |
-| `v fmt file.v` | Eine V-Datei formatieren |
-| `v test .` | Tests im aktuellen Verzeichnis ausführen |
-| `v doc .` | Dokumentation generieren |
-| `v doctor` | Ihre V-Installation diagnostizieren |
+| `v run file.v` | Compile and run a V file |
+| `v file.v` | Compile a V file to an executable |
+| `v fmt -w file.v` | Format a V file in place |
+| `v test .` | Run the `_test.v` files of a directory |
+| `v doc strings` | Generate the documentation of a module |
+| `v doctor` | Print system details for a bug report |
+| `v up` | Update V to the latest version |
 
-## Zusammenfassung
+## Summary
 
-In diesem Kapitel haben Sie gelernt, wie Sie V installieren, ein "Hallo, Welt!"-Programm schreiben und den V-Compiler verwenden. Im nächsten Kapitel werden wir uns ansehen, wie man ein V-Projekt strukturiert.
+In this chapter, you learned how to install V, write a "Hello, World!" program, and use the V compiler. In the next chapter, we'll look at how to structure a V project.

@@ -152,6 +152,8 @@ img { max-width: 100%; }
 
 .toc-button { display: none; }
 
+.search-toggle { display: none; }
+
 .icon-theme-dark { display: none; }
 :root[data-theme="dark"] .icon-theme-light { display: none; }
 :root[data-theme="dark"] .icon-theme-dark { display: inline-block; }
@@ -381,6 +383,10 @@ mark {
 
 .click-catcher { display: none; }
 
+/* The hidden attribute has to beat the media query below, or the drawer's
+   scrim stays on the page after the drawer closes. */
+.click-catcher[hidden] { display: none; }
+
 /* Landing ------------------------------------------------------------- */
 
 .landing {
@@ -598,9 +604,43 @@ mark {
 
 @media (max-width: 760px) {
   .brand-sub { display: none; }
-  .search { width: 100%; }
   .brand-text { display: none; }
   .pager { flex-direction: column; }
   .counter { display: none; }
-  .search-panel { width: min(92vw, 520px); }
+
+  /* Search is a button on a phone. The button hands the whole screen to the
+     search field, so the reader types on a keyboard rather than a one inch
+     box, and Esc or a tap outside gives the screen back. */
+  .search-toggle { display: inline-flex; }
+
+  .search {
+    display: none;
+    position: fixed;
+    inset: var(--bar-h) 0 0;
+    z-index: 60;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    padding: 14px 12px 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .search.open { display: flex; }
+  .search-icon { color: var(--text-muted); }
+  .search-input { height: 44px; color: var(--text); font-size: 16px; }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-kbd { display: none; }
+  .search-panel {
+    position: static;
+    width: 100%;
+    max-height: calc(100vh - var(--bar-h) - 70px);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
 }
