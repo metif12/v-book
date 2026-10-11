@@ -12,7 +12,7 @@ v install markdown
 
 The installed module is imported by name, with no path in the source:
 
-```v no_run
+```v ignore
 import markdown
 
 fn main() {
@@ -22,6 +22,9 @@ fn main() {
 ```
 
 What is in the registry changes from month to month, so search before you install. `vpm.url4e.com` is the registry's home.
+
+> **Note**
+> An example that imports a module from VPM is marked `v ignore` here, because the module has to be installed before the code compiles. Only the standard library is guaranteed to be present, which is why the chapters you have read so far import nothing but that.
 
 ## Searching
 
