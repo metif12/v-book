@@ -9,41 +9,39 @@
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Ошибка: name неизменяема
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count изменяема
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Типы данных
 
 В V богатая система типов:
 
 ```v
 fn main() {
-    // Целые числа
+    // Integers
     a := 42        // int
-    b := i64(100)  // 64-битное целое
-    c := u8(255)   // беззнаковое 8-битное
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // Числа с плавающей точкой
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32-битное с плавающей точкой
+    e := f32(2.71) // 32-bit float
 
-    // Другие типы
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (один символ)
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## Функции
 
 Функции объявляются с помощью `fn`:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## Комментарии
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## Управляющие конструкции
 
 ### If
@@ -87,24 +83,22 @@ fn main() {
     }
 }
 ```
-
 ### Цикл for
 
 ```v
 fn main() {
-    // Цикл по массиву
+    // Loop over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Цикл по диапазону
+    // Range loop
     for i in 0 .. 5 {
         println(i)
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## Итоги
 
 В этой главе вы узнали о переменных, типах данных, функциях, комментариях и управляющих конструкциях в V. В следующей главе мы рассмотрим владение и управление памятью.

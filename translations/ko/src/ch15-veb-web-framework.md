@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 `App` struct는 애플리케이션 상태를 저장합니다. 각 라우트는 `@['/path']` 어노테이션이 있는 `App`의 메서드입니다. 핸들러는 응답 작성을 위한 메서드를 제공하는 `veb.Context`를 받습니다.
 
 ## 라우팅
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 경로 파라미터(`:id`)는 URL에서 추출되어 인자로 전달됩니다. 쿼리 문자열 파라미터(`?q=...`)는 `map[string]string`인 `ctx.query`를 통해 접근합니다.
 
 ## JSON 응답
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()`은 모든 V 값을 JSON으로 직렬화하고 `Content-Type` 헤더를 `application/json`으로 설정합니다.
 
 ## 템플릿
 
 Veb는 `$tmpl` 함수로 HTML 템플릿을 지원합니다. 템플릿은 V의 문자열 보간 구문을 사용합니다.
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 템플릿 파일은 데이터 struct를 받아 `{{ field_name }}`으로 필드에 접근할 수 있습니다.
 
 ## 미들웨어
@@ -110,32 +100,35 @@ fn (mut app App) page(mut ctx veb.Context) {
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 미들웨어는 `bool`을 반환합니다. `true`는 다음 핸들러로 계속, `false`는 중지입니다.
 
 ## 정적 파일
@@ -145,23 +138,24 @@ Veb는 `app.handle_static()`으로 디렉터리에서 정적 파일을 서빙할
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 `public/` 디렉터리의 파일은 루트 경로에서 서빙됩니다. 예를 들어 `public/style.css`는 `http://localhost:8080/style.css`에서 접근할 수 있습니다.
 
 ## 요약

@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 struct `App` يحتفظ بحالة تطبيقك. كل مسار هو دالة على `App` مُعلَّمة بـ `@['/path']`. المعالج يستقبل `veb.Context` الذي يوفر دوالاً لكتابة الاستجابات.
 
 ## التوجيه (Routing)
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 معاملات المسار (`:id`) تُستخرج من عنوان URL وتُمرَّر كمعاملات. معاملات سلسلة الاستعلام (`?q=...`) تُوصَل عبر `ctx.query` وهو `map[string]string`.
 
 ## استجابات JSON
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()` يُسلسِل أي قيمة V إلى JSON ويعيّن ترويسة `Content-Type` إلى `application/json`.
 
 ## القوالب (Templates)
 
 Veb يدعم قوالب HTML مع دالة `$tmpl`. القوالب تستخدم صيغة استيفاء النصوص في V.
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 ملف القالب يستقبل struct البيانات ويمكنه الوصول إلى حقوله بـ `{{ field_name }}`.
 
 ## Middleware
@@ -110,32 +100,35 @@ middleware يُغلِّف كل طلب. استخدم `app.use()` لتسجيل mid
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 middleware يُعيد `bool` — `true` للمتابعة إلى المعالج التالي، `false` للتوقف.
 
 ## الملفات الثابتة
@@ -145,23 +138,24 @@ Veb يمكنه تقديم الملفات الثابتة من مجلد باستخ
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 الملفات في مجلد `public/` تُقدَّم عند المسار الجذري. على سبيل المثال، `public/style.css` متاح على `http://localhost:8080/style.css`.
 
 ## الملخص

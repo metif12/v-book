@@ -2,12 +2,14 @@
 
 // Compile and run every V code block in the book.
 //
-// Usage: v run tools/code_test.vsh [dir ...]
+// Usage: v run tools/code_check.vsh [dir ...]
 //
-// Without arguments it checks src/ and every translation, so a translation
-// cannot regress the code it reuses. Each block is written to its own
-// temporary main.v and compiled in isolation, which is why every example in
-// the book has to be self contained.
+// Without arguments the English src/ is checked, because every translation
+// reuses the same code blocks. Pass a directory to check a translation:
+// `v run tools/code_check.vsh translations/zh/src`.
+//
+// Each block is written to its own temporary main.v and compiled in isolation,
+// which is why every example in the book has to be self contained.
 import os
 
 struct CodeBlock {
@@ -97,24 +99,18 @@ fn run_block(block CodeBlock) (bool, string) {
 }
 
 fn main() {
-	mut args := os.args.clone()
-	args.delete(0)
-	if args.len == 0 {
-		args = ['src']
-		for dir in os.ls('translations') or { []string{} } {
-			src := os.join_path('translations', dir, 'src')
-			if os.is_dir(src) {
-				args << src
-			}
-		}
-	}
+	// With no arguments the English source is checked, because every
+	// translation reuses the same code blocks. Pass a translation's src
+	// directory to check that language on its own.
+	args := os.args[1..]
+	dirs := if args.len == 0 { ['src'] } else { args }
 	mut total := 0
 	mut passed := 0
 	mut skipped := 0
 	mut failures := []Failure{}
-	for dir in args {
+	for dir in dirs {
 		if !os.is_dir(dir) {
-			eprintln('code_test: no such directory: ${dir}')
+			eprintln('code_check: no such directory: ${dir}')
 			continue
 		}
 		mut files := []string{}
@@ -138,7 +134,7 @@ fn main() {
 				}
 			}
 		}
-		println('code_test: ${dir}: ${total} blocks seen so far')
+		println('code_check: ${dir}: ${total} blocks seen so far')
 	}
 	println('')
 	println('V code blocks: ${passed}/${total} passed (${skipped} skipped, ${failures.len} failed)')

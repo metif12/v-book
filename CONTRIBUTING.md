@@ -1,4 +1,4 @@
-﻿# Contributing
+# Contributing
 
 Thank you for your interest in contributing to The V Programming Language Book!
 
@@ -10,7 +10,7 @@ git clone https://github.com/metif12/v-book.git
 cd v-book
 
 # Verify everything works
-v run tools/code_test.vsh        # Compile and run every V code block
+v run tools/code_check.vsh        # Compile and run every V code block
 v run tools/validate.vsh         # Validate book structure
 v run site                       # Build the site into dist/
 ```
@@ -32,7 +32,7 @@ See [translations/README.md](translations/README.md) for the full translation wo
 1. Fork the repository.
 2. Create a branch: `git checkout -b feat/my-chapter`
 3. Write your content following the style guide.
-4. Test code examples: `v run tools/code_test.vsh`
+4. Test code examples: `v run tools/code_check.vsh`
 5. Validate structure: `v run tools/validate.vsh`
 6. Build the site: `v run site`
 7. Open a pull request.
@@ -86,7 +86,7 @@ translations/           # 15 language translations
   <code>/src/           # Translated content, mirror of src/
 listings/               # V code examples by chapter
 tools/
-  code_test.vsh         # compiles and runs every v code block
+  code_check.vsh         # compiles and runs every v code block
   validate.vsh          # book structure validator
 scripts/                # scaffolding scripts
   new_chapter.vsh

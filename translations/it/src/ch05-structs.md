@@ -15,7 +15,6 @@ fn main() {
     println('(${p.x}, ${p.y})')
 }
 ```
-
 ## Metodi
 
 ```v
@@ -33,7 +32,6 @@ fn main() {
     println(p.str())
 }
 ```
-
 ## Struct Incorporate
 
 ```v
@@ -55,7 +53,6 @@ fn main() {
     println('(${c.x}, ${c.y}) r=${c.radius}')
 }
 ```
-
 ## Modificatori di Accesso
 
 I campi sono privati per impostazione predefinita. Usa `pub` per renderli pubblici:
@@ -69,11 +66,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: stesso modulo
-    println(u.age)   // OK: pubblico
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## Riassunto
 
 In questo capitolo, hai imparato gli struct, i metodi, l'incorporamento e i modificatori di accesso. Nel prossimo capitolo, esploreremo i tipi enum e sum.

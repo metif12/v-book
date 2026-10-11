@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 `go` anahtar kelimesi fonksiyonu yeni bir goroutine'de başlatır ve hemen döner. main fonksiyonu kendi başına goroutine'lerin bitmesini beklemez.
 
 Goroutine'leri beklemek için bir `sync.WaitGroup` kullanın:
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)`, goroutine başlamadan önce sayacı artırır. `wg.done()`, goroutine bitince sayacı azaltır. `wg.wait()`, sıfıra ulaşana kadar engeller.
 
 ## Kanallar
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 Araçsız bir kanal, alıcı hazır olana kadar gönderimde engeller. Tamponlu bir kanalın kapasitesi vardır ve dolana kadar engellemez:
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 Kanal yönü, kanalın nasıl kullanılabileceğini kısıtlar. `chan<- T` yalnızca gönderme, `<-chan T` yalnızca alım içindir:
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## Paylaşılan durum
 
 Goroutine'ler değişken durumu paylaştığında, bunu bir `sync.Mutex` ile koruyun:
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock`, mutex kullanılabilir olana kadar engeller, ardından bloğun kapsamı için onu tutar. Kritik bölümü kısa tutun.
 
 Okumalar yazmalardan daha sık olduğunda `sync.RwMutex` kullanın. Aynı anda birden fazla okuyucuya izin verir:
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 Tek bir değer için kilit yerine `sync.stdatomic` atomiklerini kullanın:
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## select ifadesi
 
 `sync.channel_select`, birden fazla kanalı bekler ve hazır olan ilk kanalın indeksini döür. Negatif zaman aşımı süresiz bekler; pozitif zaman aşımı zaman aşımında -1 döner:
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## Özet
 
 Bu bölümde goroutine'ler, kanallar, paylaşılan durum ve select hakkında bilgi edindiniz. Sonraki bölümde Veb web framework'ü inceleyeceğiz.

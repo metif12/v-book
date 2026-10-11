@@ -9,7 +9,7 @@ In V sind Variablen standardmäßig unveränderlich. Verwenden Sie `mut`, um sie
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Fehler: name is immutable
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
     count = 1  // OK: count is mutable
@@ -17,23 +17,22 @@ fn main() {
     println(count)
 }
 ```
-
 ## Datentypen
 
 V verfügt über ein umfangreiches Typsystem:
 
 ```v
 fn main() {
-    // Ganzzahlen
+    // Integers
     a := 42        // int
     b := i64(100)  // 64-bit integer
     c := u8(255)   // unsigned 8-bit
 
-    // Gleitkommazahlen
+    // Floats
     pi := 3.14     // f64
     e := f32(2.71) // 32-bit float
 
-    // Andere Typen
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
     letter := `A`  // rune (single character)
@@ -43,7 +42,6 @@ fn main() {
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## Funktionen
 
 Funktionen werden mit `fn` deklariert:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## Kommentare
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## Kontrollfluss
 
 ### If
@@ -87,7 +83,6 @@ fn main() {
     }
 }
 ```
-
 ### For-Schleife
 
 ```v
@@ -104,7 +99,6 @@ fn main() {
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## Zusammenfassung
 
 In diesem Kapitel haben Sie Variablen, Datentypen, Funktionen, Kommentare und Kontrollfluss in V kennengelernt. Im nächsten Kapitel untersuchen wir Ownership und Speicherverwaltung.

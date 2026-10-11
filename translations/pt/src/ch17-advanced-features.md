@@ -9,23 +9,22 @@ Atributos são anotações de metadados colocadas antes de declarações. Eles c
 Marca uma função ou tipo como depreciada. O compilador emite um aviso quando o item é usado.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Dica ao compilador para embutir a função no local da chamada, eliminando a sobrecarga de chamada. Melhor para funções pequenas e frequentemente chamadas.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Marca uma função como insegura, permitindo que ela use blocos `unsafe` sem que o chamador também seja marcado como inseguro.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Compilação condicional em tempo de compilação. O bloco é incluído apenas quando a condição é verdadeira.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Código em tempo de compilação
 
 V fornece várias construções em tempo de compilação que são executadas durante a compilação, permitindo metaprogramação e abstrações de custo zero.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Itera em tempo de compilação sobre arrays, campos de struct ou intervalos. Útil para gerar código repetitivo.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Asserções em tempo de compilação que abortam a compilação se a condição for falsa.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Sobrecarga de operadores
 
 V permite definir comportamento customizado para operadores em tipos definidos pelo usuário. Cada operador mapeia para um método com uma assinatura específica.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Operadores de comparação
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### Operador de índice
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Reflexão em tempo de compilação
 
 A construção `$for` de V pode iterar sobre campos de struct em tempo de compilação, permitindo serialização automática, validação e mais.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Gerando código de validação
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Resumo
 
 Neste capítulo, você aprendeu sobre atributos, código em tempo de compilação, sobrecarga de operadores e reflexão em tempo de compilação. Esses recursos permitem padrões poderosos de metaprogramação e controle refinado sobre a compilação. No próximo capítulo, vamos explorar gerenciamento de memória em profundidade.

@@ -5,15 +5,14 @@
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Ошибка: name неизменяема
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count изменяема
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Объявление
 
 Используйте `:=` для объявления и инициализации:
@@ -23,7 +22,6 @@ x := 42
 name := 'V'
 is_ready := true
 ```
-
 ## Вывод типов
 
 V выводит типы из инициализатора:
@@ -34,7 +32,6 @@ b := 3.14    // f64
 c := 'hello' // string
 d := true    // bool
 ```
-
 ## Явные типы
 
 Вы можете указать типы явно:
@@ -44,7 +41,6 @@ a := i64(42)
 b := f32(3.14)
 c := u8(255)
 ```
-
 ## Далее
 
 [Типы данных](ch03-02-data-types.md)

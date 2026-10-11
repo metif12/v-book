@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 `go` कीवर्ड फ़ंक्शन को एक नए goroutine में शुरू करता है और तुरंत रिटर्न करता है। main फ़ंक्शन स्वयं goroutines के समाप्त होने की प्रतीक्षा नहीं करता।
 
 Goroutines की प्रतीक्षा के लिए, `sync.WaitGroup` का उपयोग करें:
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)` goroutine शुरू होने से पहले काउंटर बढ़ाता है। `wg.done()` goroutine समाप्त होने पर इसे घटाता है। `wg.wait()` काउंटर शून्य तक पहुंचने तक ब्लॉक करता है।
 
 ## Channels
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 एक unbuffered channel रिसीवर तैयार होने तक सेंड पर ब्लॉक करता है। एक buffered channel की क्षमता होती है और भरने तक ब्लॉक नहीं करता:
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 Channel दिशा channel के उपयोग को प्रतिबंधित करती है। `chan<- T` केवल सेंड के लिए है, `<-chan T` केवल रिसीव के लिए है:
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## शेयर्ड स्टेट
 
 जब goroutines म्यूटेबल स्टेट साझा करते हैं, उसे `sync.Mutex` के साथ सुरक्षित करें:
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock` mutex उपलब्ध होने तक ब्लॉक करता है, फिर ब्लॉक के स्कोप के लिए इसे धारण करता है। क्रिटिकल सेक्शन को छोटा रखें।
 
 जब रीड्स राइट्स से अधिक बार होते हैं, `sync.RwMutex` का उपयोग करें। यह एक साथ कई रीडर्स की अनुमति देता है:
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 एकल मान के लिए, लॉक के बजाय `sync.stdatomic` से atomics का उपयोग करें:
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## select स्टेटमेंट
 
 `sync.channel_select` कई channels पर प्रतीक्षा करता है और पहले तैयार channel का इंडेक्स रिटर्न करता है। एक नकारात्मक टाइमआउट अनिश्चित काल तक प्रतीक्षा करता है; एक सकारात्मक टाइमआउट टाइमआउट पर -1 रिटर्न करता है:
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## सारांश
 
 इस अध्याय में, आपने goroutines, channels, शेयर्ड स्टेट और select के बारे में सीखा। अगले अध्याय में, हम Veb वेब फ्रेमवर्क का पता लगाएंगे।

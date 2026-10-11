@@ -9,41 +9,39 @@ V'de değişkenler varsayılan olarak değişmezdir. Değişken yapmak için `mu
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Hata: name değişmez
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // Tamam: count değişkendir
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Veri Tipleri
 
 V'nin zengin bir tip sistemi vardır:
 
 ```v
 fn main() {
-    // Tamsayılar
+    // Integers
     a := 42        // int
-    b := i64(100)  // 64-bit tamsayı
-    c := u8(255)   // işaretsiz 8-bit
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // Ondalıklı sayılar
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32-bit ondalıklı
+    e := f32(2.71) // 32-bit float
 
-    // Diğer tipler
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (tek karakter)
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## Fonksiyonlar
 
 Fonksiyonlar `fn` ile tanımlanır:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## Yorumlar
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## Kontrol Akışı
 
 ### If
@@ -87,7 +83,6 @@ fn main() {
     }
 }
 ```
-
 ### For döngüsü
 
 ```v
@@ -104,7 +99,6 @@ fn main() {
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## Özet
 
 Bu bölümde V'deki değişkenler, veri tipleri, fonksiyonlar, yorumlar ve kontrol akışı hakkında bilgi edindiniz. Sonraki bölümde sahiplik ve bellek yönetimini inceleyeceğiz.

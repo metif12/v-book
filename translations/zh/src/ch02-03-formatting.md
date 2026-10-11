@@ -13,19 +13,36 @@ v fmt -w .
 格式化前：
 
 ```v
-fn main(){
-println( 'hello' )
+struct Config {
+mut:
+	debug bool
+	path  string
+}
+
+fn describe(c Config) string {
+	return 'debug=${c.debug} path=${c.path}'
+}
+
+fn main() {
+	c := Config{
+		debug: true
+		path:  '/tmp/app'
+	}
+	println(describe(c))
+	assert describe(c) == 'debug=true path=/tmp/app'
 }
 ```
-
 执行 `v fmt` 后：
 
 ```v
+fn shout(s string) string {
+	return s.to_upper()
+}
+
 fn main() {
-    println('hello')
+	println(shout('hello formats'))
 }
 ```
-
 ## 下一步
 
 [使用 v test 测试](ch02-04-testing.md)

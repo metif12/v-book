@@ -5,15 +5,14 @@ V'de değişkenler varsayılan olarak değişmezdir:
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Hata: name değişmez
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // Tamam: count değişkendir
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Tanımlama
 
 Tanımlamak ve başlatmak için `:=` kullanın:
@@ -23,7 +22,6 @@ x := 42
 name := 'V'
 is_ready := true
 ```
-
 ## Tip çıkarımı
 
 V, tipleri başlatıcıdan çıkarır:
@@ -34,7 +32,6 @@ b := 3.14    // f64
 c := 'hello' // string
 d := true    // bool
 ```
-
 ## Açık tipler
 
 Tipleri açıkça belirtebilirsiniz:
@@ -44,7 +41,6 @@ a := i64(42)
 b := f32(3.14)
 c := u8(255)
 ```
-
 ## Sonraki
 
 [Veri Tipleri](ch03-02-data-types.md)

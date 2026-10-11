@@ -15,7 +15,6 @@ fn main() {
     println('(${p.x}, ${p.y})')
 }
 ```
-
 ## 메서드
 
 ```v
@@ -33,7 +32,6 @@ fn main() {
     println(p.str())
 }
 ```
-
 ## 임베디드 Struct
 
 ```v
@@ -55,7 +53,6 @@ fn main() {
     println('(${c.x}, ${c.y}) r=${c.radius}')
 }
 ```
-
 ## 접근 제어자
 
 필드는 기본적으로 private입니다. `pub`을 사용하여 public으로 만드세요:
@@ -69,11 +66,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: 같은 모듈
+    println(u.name)  // OK: same module
     println(u.age)   // OK: public
 }
 ```
-
 ## 요약
 
 이 장에서는 struct, 메서드, 임베딩, 접근 제어자에 대해 배웠습니다. 다음 장에서는 enum과 sum type을 살펴보겠습니다.

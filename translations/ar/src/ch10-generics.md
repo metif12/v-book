@@ -14,11 +14,11 @@ fn main() {
     println(max(3.14, 2.71))
 }
 ```
-
 ## structs معممة
 
 ```v
 struct Stack[T] {
+mut:
     items []T
 }
 
@@ -26,7 +26,7 @@ fn (mut s Stack[T]) push(item T) {
     s.items << item
 }
 
-fn (s Stack[T]) pop() ?T {
+fn (mut s Stack[T]) pop() ?T {
     if s.items.len == 0 {
         return none
     }
@@ -40,7 +40,6 @@ fn main() {
     println(s.pop())
 }
 ```
-
 ## قيود النوع
 
 ```v
@@ -57,7 +56,6 @@ fn main() {
     println(sum([1.0, 2.0, 3.0]))
 }
 ```
-
 ## الملخص
 
 في هذا الفصل، تعلمت عن الدوال وال structs المعممة. في الفصل التالي، سنستكشف الاختبار.

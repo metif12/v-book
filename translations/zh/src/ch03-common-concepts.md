@@ -9,41 +9,39 @@
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // 错误：name 是不可变的
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // 正确：count 是可变的
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## 数据类型
 
 V 有丰富的类型系统：
 
 ```v
 fn main() {
-    // 整数
+    // Integers
     a := 42        // int
-    b := i64(100)  // 64 位整数
-    c := u8(255)   // 无符号 8 位
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // 浮点数
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32 位浮点数
+    e := f32(2.71) // 32-bit float
 
-    // 其他类型
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune（单个字符）
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## 函数
 
 函数使用 `fn` 声明：
@@ -63,16 +61,14 @@ fn main() {
     greet('World')
 }
 ```
-
 ## 注释
 
 ```v
-// 这是行注释
+// This is a line comment
 
-/* 这是
-   块注释 */
+/* This is a
+   block comment */
 ```
-
 ## 控制流
 
 ### If
@@ -87,24 +83,22 @@ fn main() {
     }
 }
 ```
-
 ### For 循环
 
 ```v
 fn main() {
-    // 遍历数组
+    // Loop over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 范围循环
+    // Range loop
     for i in 0 .. 5 {
         println(i)
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## 小结
 
 在本章中，你学习了 V 中的变量、数据类型、函数、注释和控制流。在下一章中，我们将探讨所有权和内存管理。

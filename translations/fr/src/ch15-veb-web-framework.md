@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 La struct `App` contient l'état de votre application. Chaque route est une méthode sur `App` annotée avec `@['/path']`. Le gestionnaire reçoit un `veb.Context` qui fournit des méthodes pour écrire des réponses.
 
 ## Routage
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 Les paramètres de chemin (`:id`) sont extraits de l'URL et passés comme arguments. Les paramètres de chaîne de requête (`?q=...`) sont accessibles via `ctx.query` qui est une `map[string]string`.
 
 ## Réponses JSON
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()` sérialise n'importe quelle valeur V en JSON et définit l'en-tête `Content-Type` sur `application/json`.
 
 ## Templates
 
 Veb supporte les templates HTML avec la fonction `$tmpl`. Les templates utilisent la syntaxe d'interpolation de chaînes de V.
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 Le fichier template reçoit la struct de données et peut accéder à ses champs avec `{{ field_name }}`.
 
 ## Middleware
@@ -110,32 +100,35 @@ Le middleware enveloppe chaque requête. Utilisez `app.use()` pour enregistrer u
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 Le middleware renvoie un `bool` — `true` pour continuer vers le gestionnaire suivant, `false` pour arrêter.
 
 ## Fichiers statiques
@@ -145,23 +138,24 @@ Veb peut servir des fichiers statiques depuis un répertoire en utilisant `app.h
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 Les fichiers du répertoire `public/` sont servis à la racine. Par exemple, `public/style.css` est accessible à `http://localhost:8080/style.css`.
 
 ## Résumé

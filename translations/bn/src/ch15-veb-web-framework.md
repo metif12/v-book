@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 `App` struct আপনার অ্যাপ্লিকেশন স্টেট ধরে রাখে। প্রতিটি রাউট হল `App`-এর একটি মেথড যা `@['/path']` দিয়ে চিহ্নিত। হ্যান্ডলার একটি `veb.Context` পায় যা রেসপন্স লেখার জন্য মেথড প্রদান করে।
 
 ## রাউটিং
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 প্যাথ প্যারামিটার (`:id`) URL থেকে বের করা হয় এবং আর্গুমেন্ট হিসেবে পাঠানো হয়। কোয়েরি স্ট্রিং প্যারামিটার (`?q=...`) `ctx.query` এর মাধ্যমে অ্যাক্সেস করা যায় যা একটি `map[string]string`।
 
 ## JSON রেসপন্স
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()` যেকোনো V মানকে JSON-এ সিরিয়ালাইজ করে এবং `Content-Type` হেডার `application/json`-এ সেট করে।
 
 ## টেমপ্লেট
 
 Veb `$tmpl` ফাংশন দিয়ে HTML টেমপ্লেট সমর্থন করে। টেমপ্লেট V-এর স্ট্রিং ইন্টারপোলেশন সিনট্যাক্স ব্যবহার করে।
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 টেমপ্লেট ফাইল ডেটা struct পায় এবং `{{ field_name }}` দিয়ে এর ফিল্ড অ্যাক্সেস করতে পারে।
 
 ## মিডলওয়্যার
@@ -110,32 +100,35 @@ fn (mut app App) page(mut ctx veb.Context) {
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 মিডলওয়্যার `bool` ফেরত দেয় — পরবর্তী হ্যান্ডলারে যেতে `true`, থামতে `false`।
 
 ## স্ট্যাটিক ফাইল
@@ -145,23 +138,24 @@ Veb `app.handle_static()` ব্যবহার করে একটি ডির
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 `public/` ডিরেক্টরির ফাইলগুলো রুট প্যাথে সার্ভ হয়। উদাহরণস্বরূপ, `public/style.css` অ্যাক্সেসযোগ্য `http://localhost:8080/style.css`-এ।
 
 ## সারসংক্ষেপ

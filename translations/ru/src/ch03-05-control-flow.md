@@ -12,7 +12,6 @@ fn main() {
     }
 }
 ```
-
 ## If как выражение
 
 ```v
@@ -22,29 +21,27 @@ fn main() {
     println(category)
 }
 ```
-
 ## Цикл for
 
 ```v
 fn main() {
-    // По массиву
+    // Over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // По диапазону
+    // Range
     for i in 0 .. 5 {
         println(i)
     }
 
-    // С индексом
+    // With index
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
 }
 ```
-
 ## Match
 
 ```v
@@ -57,7 +54,6 @@ fn main() {
     }
 }
 ```
-
 ## Далее
 
 [Глава 4: Владение и память](ch04-ownership-and-memory.md)

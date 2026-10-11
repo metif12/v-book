@@ -12,7 +12,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // dataはここで自動的に解放されます
+    // data is automatically freed here
 }
 
 fn main() {
@@ -20,7 +20,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 次へ
 
 [参照](ch04-04-references.md)

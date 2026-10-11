@@ -14,11 +14,11 @@ fn main() {
     println(max(3.14, 2.71))
 }
 ```
-
 ## struct های ژنریک
 
 ```v
 struct Stack[T] {
+mut:
     items []T
 }
 
@@ -26,7 +26,7 @@ fn (mut s Stack[T]) push(item T) {
     s.items << item
 }
 
-fn (s Stack[T]) pop() ?T {
+fn (mut s Stack[T]) pop() ?T {
     if s.items.len == 0 {
         return none
     }
@@ -40,7 +40,6 @@ fn main() {
     println(s.pop())
 }
 ```
-
 ## محدودیت‌های نوع
 
 ```v
@@ -57,7 +56,6 @@ fn main() {
     println(sum([1.0, 2.0, 3.0]))
 }
 ```
-
 ## خلاصه
 
 در این فصل، درباره توابع و struct های ژنریک یاد گرفتید. در فصل بعد، به تست‌نویسی می‌پردازیم.

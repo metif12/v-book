@@ -9,41 +9,39 @@ In V, le variabili sono immutabili per impostazione predefinita. Usa `mut` per r
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Errore: name è immutabile
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count è mutabile
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Tipi di Dato
 
 V ha un sistema di tipi ricco:
 
 ```v
 fn main() {
-    // Interi
+    // Integers
     a := 42        // int
-    b := i64(100)  // intero a 64 bit
-    c := u8(255)   // senza segno a 8 bit
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // Float
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // float a 32 bit
+    e := f32(2.71) // 32-bit float
 
-    // Altri tipi
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (carattere singolo)
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## Funzioni
 
 Le funzioni sono dichiarate con `fn`:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## Commenti
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## Flusso di Controllo
 
 ### If
@@ -87,24 +83,22 @@ fn main() {
     }
 }
 ```
-
 ### Ciclo For
 
 ```v
 fn main() {
-    // Iterazione su un array
+    // Loop over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Iterazione su un intervallo
+    // Range loop
     for i in 0 .. 5 {
         println(i)
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## Riassunto
 
 In questo capitolo, hai imparato le variabili, i tipi di dato, le funzioni, i commenti e il flusso di controllo in V. Nel prossimo capitolo, esploreremo ownership e gestione della memoria.

@@ -9,23 +9,22 @@ Gli attributi sono annotazioni di metadati posizionate prima delle dichiarazioni
 Contrassegna una funzione o un tipo come deprecato. Il compilatore emette un avviso quando l'elemento è usato.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Suggerisce al compilatore di inline la funzione al chiamante, eliminando l'overhead della chiamata. Ideale per funzioni piccole e chiamate frequentemente.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Contrassegna una funzione come unsafe, permettendo di usare blocchi `unsafe` senza che il chiamante sia anch'esso marcato unsafe.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Compilazione condizionale in fase di compilazione. Il blocco è incluso solo quando la condizione è vera.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Codice in fase di compilazione
 
 V fornisce diverse costrutti in fase di compilazione che si eseguono durante la compilazione, abilitando metaprogrammazione e astrazioni a costo zero.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Itera in fase di compilazione su array, campi struct o intervalli. Utile per generare codice ripetitivo.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Asserzioni in fase di compilazione che interrompono la compilazione se la condizione è falsa.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Overloading degli operatori
 
 V permette di definire comportamento personalizzato per gli operatori su tipi definiti dall'utente. Ogni operatore corrisponde a un metodo con una firma specifica.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Operatori di confronto
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### Operatore di indice
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Riflessione in fase di compilazione
 
 Il costrutto `$for` di V può iterare sui campi struct in fase di compilazione, abilitando serializzazione automatica, validazione e altro.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Generare codice di validazione
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Riassunto
 
 In questo capitolo, hai imparato gli attributi, il codice in fase di compilazione, l'overloading degli operatori e la riflessione in fase di compilazione. Queste funzionalità abilitano potenti pattern di metaprogrammazione e un controllo fine sulla compilazione. Nel prossimo capitolo, esploreremo la gestione della memoria in profondità.

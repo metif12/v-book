@@ -15,7 +15,6 @@ fn main() {
     println('(${p.x}, ${p.y})')
 }
 ```
-
 ## 方法
 
 ```v
@@ -33,7 +32,6 @@ fn main() {
     println(p.str())
 }
 ```
-
 ## 内嵌结构体
 
 ```v
@@ -55,7 +53,6 @@ fn main() {
     println('(${c.x}, ${c.y}) r=${c.radius}')
 }
 ```
-
 ## 访问修饰符
 
 字段默认是私有的。使用 `pub` 使其公开：
@@ -69,11 +66,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // 正确：同一模块
-    println(u.age)   // 正确：公开
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## 小结
 
 在本章中，你学习了结构体、方法、内嵌和访问修饰符。在下一章中，我们将探讨枚举与和类型。

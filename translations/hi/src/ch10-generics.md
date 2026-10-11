@@ -14,11 +14,11 @@ fn main() {
     println(max(3.14, 2.71))
 }
 ```
-
 ## जेनरिक structs
 
 ```v
 struct Stack[T] {
+mut:
     items []T
 }
 
@@ -26,7 +26,7 @@ fn (mut s Stack[T]) push(item T) {
     s.items << item
 }
 
-fn (s Stack[T]) pop() ?T {
+fn (mut s Stack[T]) pop() ?T {
     if s.items.len == 0 {
         return none
     }
@@ -40,7 +40,6 @@ fn main() {
     println(s.pop())
 }
 ```
-
 ## टाइप कंस्ट्रेंट्स
 
 ```v
@@ -57,7 +56,6 @@ fn main() {
     println(sum([1.0, 2.0, 3.0]))
 }
 ```
-
 ## सारांश
 
 इस अध्याय में, आपने जेनरिक फ़ंक्शन और structs के बारे में सीखा। अगले अध्याय में, हम टेस्टिंग का पता लगाएंगे।

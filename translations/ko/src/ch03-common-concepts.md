@@ -9,41 +9,39 @@ V에서 변수는 기본적으로 불변입니다. 가변으로 만들려면 `mu
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // 에러: name은 불변입니다
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count는 가변입니다
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## 데이터 타입
 
 V는 풍부한 타입 시스템을 가집니다:
 
 ```v
 fn main() {
-    // 정수
+    // Integers
     a := 42        // int
-    b := i64(100)  // 64비트 정수
-    c := u8(255)   // 부호 없는 8비트
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // 부동소수점
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32비트 부동소수점
+    e := f32(2.71) // 32-bit float
 
-    // 기타 타입
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (단일 문자)
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## 함수
 
 함수는 `fn`으로 선언합니다:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## 주석
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## 제어 흐름
 
 ### If
@@ -87,24 +83,22 @@ fn main() {
     }
 }
 ```
-
 ### For 루프
 
 ```v
 fn main() {
-    // 배열 순회
+    // Loop over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 범위 루프
+    // Range loop
     for i in 0 .. 5 {
         println(i)
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## 요약
 
 이 장에서는 V의 변수, 데이터 타입, 함수, 주석, 제어 흐름에 대해 배웠습니다. 다음 장에서는 소유권과 메모리 관리를 살펴보겠습니다.

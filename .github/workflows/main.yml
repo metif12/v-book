@@ -22,7 +22,7 @@ jobs:
 
       - name: Compile and run every code block
         run: |
-          v run tools/code_test.vsh
+          v run tools/code_check.vsh
 
       - name: Check the site builder
         run: |

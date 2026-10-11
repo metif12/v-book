@@ -9,41 +9,39 @@ Em V, variáveis são imutáveis por padrão. Use `mut` para torná-las mutávei
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Erro: name é imutável
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count é mutável
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Tipos de Dados
 
 V tem um sistema de tipos rico:
 
 ```v
 fn main() {
-    // Inteiros
+    // Integers
     a := 42        // int
-    b := i64(100)  // inteiro de 64 bits
-    c := u8(255)   // sem sinal de 8 bits
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
     // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // float de 32 bits
+    e := f32(2.71) // 32-bit float
 
-    // Outros tipos
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune (caractere único)
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## Funções
 
 Funções são declaradas com `fn`:
@@ -63,7 +61,6 @@ fn main() {
     greet('World')
 }
 ```
-
 ## Comentários
 
 ```v
@@ -72,7 +69,6 @@ fn main() {
 /* This is a
    block comment */
 ```
-
 ## Fluxo de Controle
 
 ### If
@@ -87,7 +83,6 @@ fn main() {
     }
 }
 ```
-
 ### Loop For
 
 ```v
@@ -104,7 +99,6 @@ fn main() {
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## Resumo
 
 Neste capítulo, você aprendeu sobre variáveis, tipos de dados, funções, comentários e fluxo de controle em V. No próximo capítulo, vamos explorar posse e gerenciamento de memória.

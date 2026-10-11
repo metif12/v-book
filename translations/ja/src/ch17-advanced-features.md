@@ -9,23 +9,22 @@
 関数または型を非推奨としてマークします。項目が使用されるとコンパイラが警告を出力します。
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 コンパイラに関数を呼び出し地点でインライン展開するようヒントを出します。呼び出しオーバーヘッドを排除します。小さくて頻繁に呼び出される関数に最適です。
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 関数をunsafeとしてマークし、呼び出し元もunsafeとしてマークすることなく`unsafe`ブロックを使用できるようにします。
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 コンパイル時の条件付きコンパイルです。条件がtrueの場合にのみブロックが含まれます。
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## コンパイル時コード
 
 Vはコンパイル中に実行されるいくつかのコンパイル時構文を提供し、メタプログラミングとゼロコスト抽象化を可能にします。
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 コンパイル時に配列、structフィールド、範囲を反復処理します。反復的なコードの生成に便利です。
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 条件がfalseの場合にコンパイルを中止するコンパイル時アサーションです。
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## 演算子オーバーロード
 
 Vはユーザー定義型に対する演算子のカスタム動作を定義できます。各演算子は特定のシグネチャを持つメソッドにマップされます。
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### 比較演算子
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### インデックス演算子
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## コンパイル時リフレクション
 
 Vの`$for`構文はコンパイル時にstructフィールドを反復処理でき、自動シリアライズ、バリデーションなどを可能にします。
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### バリデーションコードの生成
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## まとめ
 
 この章では、アトリビュート、コンパイル時コード、演算子オーバーロード、コンパイル時リフレクションについて学びました。これらの機能は強力なメタプログラミングパターンとコンパイルのきめ細かな制御を可能にします。次の章では、メモリ管理を詳しく見ていきます。

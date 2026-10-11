@@ -8,11 +8,11 @@ V는 스택 또는 힙에 할당할지 자동으로 결정합니다:
 
 ```v
 fn main() {
-    // 스택 할당 (작고, 고정 크기)
+    // Stack-allocated (small, fixed size)
     x := 42
     arr := [1, 2, 3]
 
-    // 힙 할당 (크고, 동적)
+    // Heap-allocated (large, dynamic)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -21,7 +21,6 @@ fn main() {
     println('${x} ${arr} ${big.len}')
 }
 ```
-
 ## 가비지 컬렉션
 
 V는 기본적으로 가비지 컬렉터를 사용합니다. 메모리를 수동으로 해제할 필요가 없습니다:
@@ -32,11 +31,10 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // 더 이상 참조되지 않으면 메모리가 자동으로 해제됩니다
+    // Memory is automatically freed when no longer referenced
     println(names.len)
 }
 ```
-
 ## Autofree
 
 V에는 변수가 스코프를 벗어날 때 메모리를 자동으로 해제하는 autofree 모드가 있습니다:
@@ -51,7 +49,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data는 여기서 자동으로 해제됩니다
+    // data is automatically freed here
 }
 
 fn main() {
@@ -59,7 +57,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 참조
 
 큰 데이터의 복사를 피하기 위해 참조를 사용할 수 있습니다:
@@ -75,7 +72,6 @@ fn main() {
     println(data)
 }
 ```
-
 ## 메모리 관리 모드
 
 | 모드 | 플래그 | 설명 |

@@ -12,7 +12,6 @@ fn main() {
     }
 }
 ```
-
 ## If 作为表达式
 
 ```v
@@ -22,29 +21,27 @@ fn main() {
     println(category)
 }
 ```
-
 ## For 循环
 
 ```v
 fn main() {
-    // 遍历数组
+    // Over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 范围
+    // Range
     for i in 0 .. 5 {
         println(i)
     }
 
-    // 带索引
+    // With index
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
 }
 ```
-
 ## Match
 
 ```v
@@ -57,7 +54,6 @@ fn main() {
     }
 }
 ```
-
 ## 下一步
 
 [第 4 章：所有权与内存](ch04-ownership-and-memory.md)

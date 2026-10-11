@@ -8,11 +8,11 @@ V 自动决定是在栈上还是堆上分配内存：
 
 ```v
 fn main() {
-    // 栈分配（小，固定大小）
+    // Stack-allocated (small, fixed size)
     x := 42
     arr := [1, 2, 3]
 
-    // 堆分配（大，动态）
+    // Heap-allocated (large, dynamic)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -21,7 +21,6 @@ fn main() {
     println('${x} ${arr} ${big.len}')
 }
 ```
-
 ## 垃圾回收
 
 V 默认使用垃圾回收器。你不需要手动释放内存：
@@ -32,11 +31,10 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // 内存不再被引用时自动释放
+    // Memory is automatically freed when no longer referenced
     println(names.len)
 }
 ```
-
 ## 自动释放
 
 V 有自动释放模式，当变量离开作用域时自动释放内存：
@@ -51,7 +49,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data 在这里自动释放
+    // data is automatically freed here
 }
 
 fn main() {
@@ -59,7 +57,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 引用
 
 你可以使用引用来避免复制大量数据：
@@ -75,7 +72,6 @@ fn main() {
     println(data)
 }
 ```
-
 ## 内存管理模式
 
 | 模式 | 参数 | 描述 |

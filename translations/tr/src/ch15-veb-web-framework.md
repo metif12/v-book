@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 `App` struct'ı uygulama durumunuzu tutar. Her rota, `@['/path']` ile açıklanan `App` üzerinde bir metottur. Handler, yanıt yazmak için metotlar sağlayan bir `veb.Context` alır.
 
 ## Yönlendirme
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 Yol parametreleri (`:id`) URL'den çıkarılır ve argüman olarak geçirilir. Sorgu string parametreleri (`?q=...`) `ctx.query` üzerinden erişilir, bu bir `map[string]string` dir.
 
 ## JSON yanıtları
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()`, herhangi bir V değerini JSON'a serileştirir ve `Content-Type` başlığını `application/json` olarak ayarlar.
 
 ## Şablonlar
 
 Veb, `$tmpl` fonksiyonu ile HTML şablonlarını destekler. Şablonlar V'nin string interpolasyon sözdizimini kullanır.
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 Şablon dosyası veri struct'ını alır ve `{{ field_name }}` ile alanlarına erişebilir.
 
 ## Middleware
@@ -110,32 +100,35 @@ Middleware her isteği sarar. Global middleware kaydetmek için `app.use()`, rot
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 Middleware `bool` döner — sonraki handler'a devam etmek için `true`, durdurmak için `false`.
 
 ## Statik dosyalar
@@ -145,23 +138,24 @@ Veb, `app.handle_static()` kullanarak bir dizinden statik dosyalar sunabilir.
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 `public/` dizinindeki dosyalar kök yolda sunulur. Örneğin, `public/style.css` adresine `http://localhost:8080/style.css` ile erişilebilir.
 
 ## Özet

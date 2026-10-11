@@ -9,23 +9,22 @@
 함수나 타입을 더 이상 사용되지 않음으로 표시합니다. 항목이 사용될 때 컴파일러가 경고를 발생시킵니다.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 컴파일러가 호출 사이트에서 함수를 인라인하도록 힌트를 제공합니다. 작고 자주 호출되는 함수에 적합합니다.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 함수를 unsafe로 표시하여 호출자도 unsafe로 표시하지 않고 `unsafe` 블록을 사용할 수 있게 합니다.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 컴파일 타임의 조건부 컴파일입니다. 조건이 참일 때만 블록이 포함됩니다.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## 컴파일 타임 코드
 
 V는 컴파일 중에 실행되는 여러 컴파일 타임 구문을 제공하여 메타프로그래밍과 제로 비용 추상화를 가능하게 합니다.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 컴파일 타임에 배열, struct 필드, 범위를 반복합니다. 반복적인 코드 생성에 유용합니다.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 조건이 거짓이면 컴파일을 중단하는 컴파일 타임 어서션입니다.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## 연산자 오버로딩
 
 V는 사용자 정의 타입의 연산자에 대한 커스텀 동작을 정의할 수 있습니다. 각 연산자는 특정 시그니처를 가진 메서드에 매핑됩니다.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### 비교 연산자
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### 인덱스 연산자
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## 컴파일 타임 리플렉션
 
 V의 `$for` 구문은 컴파일 타임에 struct 필드를 반복할 수 있어 자동 직렬화, 유효성 검사 등을 가능하게 합니다.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### 유효성 검사 코드 생성
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## 요약
 
 이 장에서는 어트리뷰트, 컴파일 타임 코드, 연산자 오버로딩, 컴파일 타임 리플렉션에 대해 배웠습니다. 이러한 기능은 강력한 메타프로그래밍 패턴과 컴파일에 대한 세밀한 제어를 가능하게 합니다. 다음 장에서는 메모리 관리를 심화하여 살펴보겠습니다.

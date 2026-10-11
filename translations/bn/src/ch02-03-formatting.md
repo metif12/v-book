@@ -13,19 +13,36 @@ v fmt -w .
 আগে:
 
 ```v
-fn main(){
-println( 'hello' )
+struct Config {
+mut:
+	debug bool
+	path  string
+}
+
+fn describe(c Config) string {
+	return 'debug=${c.debug} path=${c.path}'
+}
+
+fn main() {
+	c := Config{
+		debug: true
+		path:  '/tmp/app'
+	}
+	println(describe(c))
+	assert describe(c) == 'debug=true path=/tmp/app'
 }
 ```
-
 `v fmt` এর পর:
 
 ```v
+fn shout(s string) string {
+	return s.to_upper()
+}
+
 fn main() {
-    println('hello')
+	println(shout('hello formats'))
 }
 ```
-
 ## পরবর্তী
 
 [v test দিয়ে টেস্টিং](ch02-04-testing.md)

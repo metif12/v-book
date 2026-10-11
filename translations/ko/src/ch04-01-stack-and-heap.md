@@ -4,11 +4,11 @@ V는 스택 또는 힙에 할당할지 자동으로 결정합니다:
 
 ```v
 fn main() {
-    // 스택 할당 (작고, 고정 크기)
+    // Stack-allocated (small, fixed size)
     x := 42
     arr := [1, 2, 3]
 
-    // 힙 할당 (크고, 동적)
+    // Heap-allocated (large, dynamic)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -17,7 +17,6 @@ fn main() {
     println('${x} ${arr} ${big.len}')
 }
 ```
-
 ## 스택
 
 - 빠른 할당 및 해제

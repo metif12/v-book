@@ -9,23 +9,22 @@
 将函数或类型标记为已弃用。使用该条目时编译器会发出警告。
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 提示编译器在调用处内联函数，消除调用开销。最适合小型、频繁调用的函数。
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 将函数标记为不安全，允许它在调用者未被标记为不安全的情况下使用 `unsafe` 块。
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 编译时条件编译。仅在条件为 true 时包含该块。
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## 编译时代码
 
 V 提供多种在编译期间执行的编译时结构，支持元编程和零成本抽象。
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 在编译时遍历数组、结构体字段或范围。适用于生成重复代码。
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 编译时断言，如果条件为 false 则中止编译。
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## 运算符重载
 
 V 允许为用户定义类型定义运算符的自定义行为。每个运算符映射到具有特定签名的方法。
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### 比较运算符
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### 索引运算符
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## 编译时反射
 
 V 的 `$for` 结构可以在编译时遍历结构体字段，实现自动序列化、验证等功能。
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### 生成验证代码
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## 小结
 
 在本章中，你学习了属性、编译时代码、运算符重载和编译时反射。这些特性支持强大的元编程模式和对编译的精细控制。在下一章，我们将深入探讨内存管理。

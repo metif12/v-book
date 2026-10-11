@@ -72,8 +72,8 @@ v run site serve
 ### Test code examples
 
 ```bash
-v run tools/code_test.vsh        # src/ and every translation
-v run tools/code_test.vsh src    # the English source only
+v run tools/code_check.vsh        # src/ and every translation
+v run tools/code_check.vsh src    # the English source only
 ```
 
 ### Validate book structure
@@ -115,7 +115,7 @@ v-book/
 │   ├── search.v            # full text index
 │   └── site.v              # page shell, navigation, locales
 ├── tools/
-│   ├── code_test.vsh       # compiles and runs every code block
+│   ├── code_check.vsh       # compiles and runs every code block
 │   └── validate.vsh        # book structure validator
 ├── translations/           # 16 language translations
 │   ├── README.md
@@ -226,7 +226,7 @@ Code examples follow these conventions:
 - `v ignore` — not compiled (pseudocode, incomplete examples)
 - `v no_run` — compiled but not run (blocking examples)
 
-Every code block is self-contained and tested in CI. `tools/code_test.vsh`
+Every code block is self-contained and tested in CI. `tools/code_check.vsh`
 extracts all `v` blocks and runs each one through `v run`.
 
 ## Contributing

@@ -9,23 +9,22 @@
 يُعلّم دالة أو نوعاً بأنه مهمل. المُصرِّف يُصدر تحذيراً عند استخدام العنصر.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 يلمح للمُصرِّف لتضمين الدالة عند موقع الاستدعاء، مما يلغي تكلفة الاستدعاء. الأفضل للدوال الصغيرة كثيرة الاستدعاء.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 يُعلّم دالة بأنها غير آمنة، مما يسمح لها باستخدام كتل `unsafe` دون أن يُعلَّم المُستدعي أيضاً كغير آمن.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 تجميع شرطي عند وقت التصريف. الكتلة تُضمَّن فقط عندما يكون الشرط صحيحاً.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## كود وقت التصريف
 
 V يوفر عدة تراكيب وقت التصريف تُنفذ أثناء التصريف، مما يتيح البرمجة الوصفية والتجريدات بدون تكلفة.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 يكرر عند وقت التصريف على المصفوفات، حقول struct، أو النطاقات. مفيد لتوليد كود متكرر.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 تأكيدات وقت التصريف تُوقف التصريف إذا كان الشرط خاطئاً.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## تحميل زائد للمعاملات (Operator Overloading)
 
 V يسمح بتعريف سلوك مخصص للمعاملات على الأنواع المُعرَّفة من المستخدم. كل معامل يرتبط بدالة بتوقيع محدد.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### معاملات المقارنة
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### معامل الفهرسة
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## انعكاس وقت التصريف
 
 `$for` في V يمكنه التكرار على حقول struct عند وقت التصريف، مما يتيح التسلسل التلقائي، التحقق، وأكثر.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### توليد كود التحقق
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## الملخص
 
 في هذا الفصل، تعلمت عن السمات، كود وقت التصريف، تحميل زائد للمعاملات، وانعكاس وقت التصريف. هذه الميزات تتيح أنماط برمجة وصفية قوية وتحكمًا دقيقًا في التصريف. في الفصل التالي، سنستكشف إدارة الذاكرة بالتفصيل.

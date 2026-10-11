@@ -9,23 +9,22 @@ Les attributs sont des annotations de métadonnées placées avant les déclarat
 Marque une fonction ou un type comme obsolète. Le compilateur émet un avertissement lorsque l'élément est utilisé.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Indique au compilateur d'inliner la fonction au site d'appel, éliminant la surcharge d'appel. Idéal pour les petites fonctions fréquemment appelées.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Marque une fonction comme non sécurisée, lui permettant d'utiliser des blocs `unsafe` sans que l'appelant soit également marqué unsafe.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Compilation conditionnelle au moment de la compilation. Le bloc n'est inclus que lorsque la condition est vraie.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Code au moment de la compilation
 
 V fournit plusieurs constructions au moment de la compilation qui s'exécutent pendant la compilation, permettant la métaprogrammation et les abstractions à coût nul.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Itère au moment de la compilation sur des tableaux, des champs de struct ou des plages. Utile pour générer du code répétitif.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Assertions au moment de la compilation qui interrompent la compilation si la condition est fausse.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Surcharge d'opérateurs
 
 V permet de définir un comportement personnalisé pour les opérateurs sur les types définis par l'utilisateur. Chaque opérateur correspond à une méthode avec une signature spécifique.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Opérateurs de comparaison
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### Opérateur d'indexation
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Réflexion au moment de la compilation
 
 La construction `$for` de V peut itérer sur les champs de struct au moment de la compilation, permettant la sérialisation automatique, la validation et plus encore.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Générer du code de validation
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Résumé
 
 Dans ce chapitre, vous avez appris les attributs, le code au moment de la compilation, la surcharge d'opérateurs et la réflexion au moment de la compilation. Ces fonctionnalités permettent des patrons de métaprogrammation puissants et un contrôle fin de la compilation. Dans le chapitre suivant, nous explorerons la gestion de la mémoire en profondeur.

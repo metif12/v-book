@@ -18,7 +18,6 @@ fn main() {
     veb.run(mut App{}, 8080)
 }
 ```
-
 ساختار `App` وضعیت برنامه شما را نگه می‌دارد. هر مسیر یک متد روی `App` است که با `@['/path']` مشخص شده است. مدیریت‌کننده یک `veb.Context` دریافت می‌کند که متدهایی برای نوشتن پاسخ‌ها ارائه می‌دهد.
 
 ## مسیریابی
@@ -41,7 +40,6 @@ fn (mut app App) search(mut ctx veb.Context) {
     ctx.text('Searching for: ${query}')
 }
 ```
-
 پارامترهای مسیر (`:id`) از URL استخراج و به عنوان آرگومان منتقل می‌شوند. پارامترهای query string (`?q=...`) از طریق `ctx.query` که یک `map[string]string` است قابل دسترسی هستند.
 
 ## پاسخ‌های JSON
@@ -65,41 +63,33 @@ fn (mut app App) users(mut ctx veb.Context) {
     ctx.json(users)
 }
 ```
-
 `ctx.json()` هر مقدار V را به JSON سریالایز می‌کند و هدر `Content-Type` را به `application/json` تنظیم می‌کند.
 
 ## قالب‌ها
 
 Veb از قالب‌های HTML با تابع `$tmpl` پشتیبانی می‌کند. قالب‌ها از سینتکس درون‌یابی رشته V استفاده می‌کنند.
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
-
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
-
 فایل قالب ساختار داده را دریافت می‌کند و می‌تواند با `{{ field_name }}` به فیلدهای آن دسترسی داشته باشد.
 
 ## میان‌افزار
@@ -110,32 +100,35 @@ fn (mut app App) page(mut ctx veb.Context) {
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
-
 میان‌افزار `bool` برمی‌گرداند — `true` برای ادامه به مدیریت‌کننده بعدی، `false` برای توقف.
 
 ## فایل‌های استاتیک
@@ -145,23 +138,24 @@ Veb می‌تواند فایل‌های استاتیک را از یک دایرک
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
-
 فایل‌های دایرکتوری `public/` در مسیر ریشه سرو می‌شوند. به عنوان مثال، `public/style.css` در `http://localhost:8080/style.css` قابل دسترسی است.
 
 ## خلاصه

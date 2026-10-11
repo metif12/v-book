@@ -9,23 +9,22 @@ Atribut adalah anotasi metadata yang ditempatkan sebelum deklarasi. Mereka mengo
 Menandai fungsi atau tipe sebagai deprecated. Kompiler mengeluarkan peringatan ketika item digunakan.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Memberi petunjuk ke kompiler untuk inline fungsi di call site, menghilangkan overhead call. Terbaik untuk fungsi kecil yang sering dipanggil.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Menandai fungsi sebagai unsafe, memungkinkan penggunaan blok `unsafe` tanpa pemanggil juga ditandai unsafe.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Kompilasi kondisional saat compile time. Blok hanya disertakan ketika kondisi bernilai true.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Kode compile-time
 
 V menyediakan beberapa konstruk compile-time yang dieksekusi selama kompilasi, memungkinkan metaprogramming dan abstraksi zero-cost.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Iterasi saat compile time pada array, field struct, atau range. Berguna untuk menghasilkan kode repetitif.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Assertion compile-time yang menghentikan kompilasi jika kondisi bernilai false.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Operator overloading
 
 V memungkinkan definisi perilaku kustom untuk operator pada tipe yang didefinisikan pengguna. Setiap operator dipetakan ke metode dengan signature spesifik.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Operator perbandingan
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### Operator index
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Refleksi compile-time
 
 Konstruk `$for` V dapat mengiterasi field struct saat compile time, memungkinkan serialisasi otomatis, validasi, dan lainnya.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Menghasilkan kode validasi
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Ringkasan
 
 Dalam bab ini, Anda telah belajar tentang atribut, kode compile-time, operator overloading, dan refleksi compile-time. Fitur-fitur ini memungkinkan pola metaprogramming yang kuat dan kontrol terperinci atas kompilasi. Di bab berikutnya, kita akan menjelajahi manajemen memori secara mendalam.

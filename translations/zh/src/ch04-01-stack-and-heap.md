@@ -4,11 +4,11 @@ V 自动决定是在栈上还是堆上分配内存：
 
 ```v
 fn main() {
-    // 栈分配（小，固定大小）
+    // Stack-allocated (small, fixed size)
     x := 42
     arr := [1, 2, 3]
 
-    // 堆分配（大，动态）
+    // Heap-allocated (large, dynamic)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -17,7 +17,6 @@ fn main() {
     println('${x} ${arr} ${big.len}')
 }
 ```
-
 ## 栈
 
 - 快速的分配和释放

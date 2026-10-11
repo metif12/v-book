@@ -12,7 +12,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data 在这里自动释放
+    // data is automatically freed here
 }
 
 fn main() {
@@ -20,7 +20,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 下一步
 
 [引用](ch04-04-references.md)

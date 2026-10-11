@@ -11,11 +11,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: 同じモジュール
-    println(u.age)   // OK: パブリック
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## 可視性
 
 | 修飾子 | スコープ |

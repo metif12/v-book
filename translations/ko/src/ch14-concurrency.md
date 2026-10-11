@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 `go` 키워드는 새 고루틴에서 함수를 시작하고 즉시 반환합니다. main 함수는 고루틴이 끝날 때까지 자동으로 기다리지 않습니다.
 
 고루틴을 기다리려면 `sync.WaitGroup`을 사용하세요:
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)`는 고루틴이 시작되기 전에 카운터를 증가시킵니다. `wg.done()`은 고루틴이 완료될 때 카운터를 감소시킵니다. `wg.wait()`는 카운터가 0이 될 때까지 블로킹합니다.
 
 ## 채널
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 버퍼 없는 채널은 수신자가 준비될 때까지 전송을 블로킹합니다. 버퍼 있는 채널은 용량을 가지며 가득 차기 전까지 블로킹하지 않습니다:
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 채널 방향은 채널 사용 방식을 제한합니다. `chan<- T`는 전송 전용, `<-chan T`는 수신 전용입니다:
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## 공유 상태
 
 고루틴이 가변 상태를 공유할 때는 `sync.Mutex`로 보호하세요:
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock`은 뮤텍스를 사용할 수 있을 때까지 블로킹한 후 블록 스코프 동안 유지합니다. 임계 영역을 짧게 유지하세요.
 
 읽기가 쓰기보다 빈번할 때는 `sync.RwMutex`를 사용하세요. 여러 읽기를 동시에 허용합니다:
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 단일 값의 경우 잠금 대신 `sync.stdatomic`의 아톱을 사용하세요:
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## select 문
 
 `sync.channel_select`는 여러 채널을 기다리며 준비된 첫 번째 채널의 인덱스를 반환합니다. 음수 타임아웃은 무한히 기다리고, 양수 타임아웃은 시간 초과 시 -1을 반환합니다:
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## 요약
 
 이 장에서는 고루틴, 채널, 공유 상태, select에 대해 배웠습니다. 다음 장에서는 Veb 웹 프레임워크를 살펴보겠습니다.

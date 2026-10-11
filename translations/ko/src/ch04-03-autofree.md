@@ -12,7 +12,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // data는 여기서 자동으로 해제됩니다
+    // data is automatically freed here
 }
 
 fn main() {
@@ -20,7 +20,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 다음
 
 [참조](ch04-04-references.md)

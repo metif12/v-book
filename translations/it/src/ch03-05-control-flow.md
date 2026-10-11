@@ -12,7 +12,6 @@ fn main() {
     }
 }
 ```
-
 ## If come espressione
 
 ```v
@@ -22,29 +21,27 @@ fn main() {
     println(category)
 }
 ```
-
 ## Ciclo For
 
 ```v
 fn main() {
-    // Su un array
+    // Over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // Intervallo
+    // Range
     for i in 0 .. 5 {
         println(i)
     }
 
-    // Con indice
+    // With index
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
 }
 ```
-
 ## Match
 
 ```v
@@ -57,7 +54,6 @@ fn main() {
     }
 }
 ```
-
 ## Avanti
 
 [Capitolo 4: Ownership e Memoria](ch04-ownership-and-memory.md)

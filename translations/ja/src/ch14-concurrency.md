@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 `go`キーワードは新しいgoroutineで関数を開始し、即座に返ります。main関数はgoroutineの完了を自動的には待ちません。
 
 goroutineを待つには、`sync.WaitGroup`を使用します：
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)`はgoroutineが開始する前にカウンターをインクリメントします。`wg.done()`はgoroutineが完了したときにデクリメントします。`wg.wait()`はカウンターがゼロになるまでブロックします。
 
 ## チャネル
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 バッファなしチャネルは受信者が準備できるまで送信をブロックします。バッファ付きチャネルは容量を持ち、いっぱいになるまでブロックしません：
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 チャネルの方向はチャネルの使用方法を制限します。`chan<- T`は送信専用、`<-chan T`は受信専用です：
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## 共有状態
 
 goroutineが可変状態を共有する場合は、`sync.Mutex`で保護します：
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock`はミューテックスが利用可能になるまでブロックし、ブロックのスコープで保持します。クリティカルセクションは短く保ちます。
 
 読み取りが書き込みよりも頻繁な場合は、`sync.RwMutex`を使用します。複数の読み取りを同時に許可します：
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 単一の値の場合は、ロックの代わりに`sync.stdatomic`からアトミック操作を使用します：
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## select文
 
 `sync.channel_select`は複数のチャネルを待機し、準備ができた最初のチャネルのインデックスを返します。負のタイムアウトは無期限に待機し、正のタイムアウトはタイムアウト時に-1を返します：
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## まとめ
 
 この章では、goroutine、チャネル、共有状態、selectについて学びました。次の章では、Veb Webフレームワークを見ていきます。

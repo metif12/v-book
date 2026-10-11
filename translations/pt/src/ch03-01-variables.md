@@ -5,15 +5,14 @@ Em V, variáveis são imutáveis por padrão:
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // Erro: name é imutável
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: count é mutável
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## Declaração
 
 Use `:=` para declarar e inicializar:
@@ -23,7 +22,6 @@ x := 42
 name := 'V'
 is_ready := true
 ```
-
 ## Inferência de tipo
 
 V infere tipos a partir do inicializador:
@@ -34,7 +32,6 @@ b := 3.14    // f64
 c := 'hello' // string
 d := true    // bool
 ```
-
 ## Tipos explícitos
 
 Você pode especificar tipos explicitamente:
@@ -44,7 +41,6 @@ a := i64(42)
 b := f32(3.14)
 c := u8(255)
 ```
-
 ## Próximo
 
 [Tipos de Dados](ch03-02-data-types.md)

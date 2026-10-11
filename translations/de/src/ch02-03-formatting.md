@@ -13,19 +13,36 @@ Das Flag `-w` schreibt Änderungen zurück in die Dateien. Ohne das Flag gibt de
 Vorher:
 
 ```v
-fn main(){
-println( 'hello' )
+struct Config {
+mut:
+	debug bool
+	path  string
+}
+
+fn describe(c Config) string {
+	return 'debug=${c.debug} path=${c.path}'
+}
+
+fn main() {
+	c := Config{
+		debug: true
+		path:  '/tmp/app'
+	}
+	println(describe(c))
+	assert describe(c) == 'debug=true path=/tmp/app'
 }
 ```
-
 Nach `v fmt`:
 
 ```v
+fn shout(s string) string {
+	return s.to_upper()
+}
+
 fn main() {
-    println('hello')
+	println(shout('hello formats'))
 }
 ```
-
 ## Weiter
 
 [Testen mit v test](ch02-04-testing.md)

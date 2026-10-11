@@ -15,7 +15,6 @@ fn main() {
     println('(${p.x}, ${p.y})')
 }
 ```
-
 ## メソッド
 
 ```v
@@ -33,7 +32,6 @@ fn main() {
     println(p.str())
 }
 ```
-
 ## 埋め込みstruct
 
 ```v
@@ -55,7 +53,6 @@ fn main() {
     println('(${c.x}, ${c.y}) r=${c.radius}')
 }
 ```
-
 ## アクセス修飾子
 
 フィールドはデフォルトでプライベートです。パブリックにするには`pub`を使用します：
@@ -69,11 +66,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: 同じモジュール
-    println(u.age)   // OK: パブリック
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## まとめ
 
 この章では、struct、メソッド、埋め込み、アクセス修飾子について学びました。次の章では、enumとsum型を見ていきます。

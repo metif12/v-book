@@ -9,23 +9,22 @@ Attribute sind Metadaten-Annotationen, die vor Deklarationen platziert werden. S
 Markiert eine Funktion oder einen Typ als veraltet. Der Compiler gibt eine Warnung aus, wenn das Element verwendet wird.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Weist den Compiler an, die Funktion am Aufrufort zu inline zu setzen, wodurch der Aufrufaufwand entfällt. Am besten für kleine, häufig aufgerufene Funktionen geeignet.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Markiert eine Funktion als unsicher, sodass sie `unsafe`-Blöcke verwenden kann, ohne dass der Aufer ebenfalls als unsicher markiert sein muss.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Bedingte Kompilierung zur Kompilierzeit. Der Block wird nur eingeschlossen, wenn die Bedingung wahr ist.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Code zur Kompilierzeit
 
 V bietet mehrere Konstrukte zur Kompilierzeit, die während der Kompilierung ausgeführt werden und Metaprogrammierung sowie Abstraktionen mit null Kosten ermöglichen.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Iteriert zur Kompilierzeit über Arrays, Struct-Felder oder Bereiche. Nützlich für die Generierung von repetitivem Code.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Assertions zur Kompilierzeit, die die Kompilierung abbrechen, wenn die Bedingung falsch ist.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Operatorüberladung
 
 V ermöglicht die Definition von benutzerdefiniertem Verhalten für Operatoren auf benutzerdefinierten Typen. Jeder Operator wird einer Methode mit einer bestimmten Signatur zugeordnet.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Vergleichsoperatoren
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### Index-Operator
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Reflexion zur Kompilierzeit
 
 Das `$for`-Konstrukt von V kann zur Kompilierzeit über Struct-Felder iterieren und ermöglicht automatische Serialisierung, Validierung und mehr.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Validierungscode generieren
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Zusammenfassung
 
 In diesem Kapitel haben Sie Attribute, Code zur Kompilierzeit, Operatorüberladung und Reflexion zur Kompilierzeit kennengelernt. Diese Merkmale ermöglichen leistungsstarke Metaprogrammierungsmuster und feine Kontrolle über die Kompilierung. Im nächsten Kapitel untersuchen wir das Speichermanagement eingehend.

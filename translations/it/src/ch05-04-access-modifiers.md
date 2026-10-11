@@ -11,11 +11,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: stesso modulo
-    println(u.age)   // OK: pubblico
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## Visibilità
 
 | Modificatore | Scope |

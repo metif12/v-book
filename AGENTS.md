@@ -13,8 +13,8 @@ builder is V plus `veb`.
 v run site                        # Build the whole site into dist/ (all locales)
 v run site dist-preview           # Build into another directory
 v run site serve                  # Build, then preview at http://localhost:8090/v-book/
-v run tools/code_test.vsh         # Compile + run every `v` code block (src + all translations)
-v run tools/code_test.vsh src     # Same, English source only — what CI runs
+v run tools/code_check.vsh         # Compile + run every `v` code block (src + all translations)
+v run tools/code_check.vsh src     # Same, English source only — what CI runs
 v run tools/validate.vsh          # Lint book structure (CI references this)
 v test .                          # Run V unit tests
 ```
@@ -25,7 +25,7 @@ v test .                          # Run V unit tests
 - `v ignore` — not compiled (pseudocode, incomplete)
 - `v no_run` — compiled but not run (blocking examples, templates that need files)
 
-The tester (`tools/code_test.vsh`) extracts fenced code blocks and writes each
+The tester (`tools/code_check.vsh`) extracts fenced code blocks and writes each
 `v` / `v no_run` block to its own temp `main.v`, then runs it with `v run` (or
 `v -check` for `no_run`). A failing block fails CI. Blocks with no language, or
 `bash`/`sh`/`console`, are skipped.
@@ -46,7 +46,7 @@ The tester (`tools/code_test.vsh`) extracts fenced code blocks and writes each
   - `book.css` (prose typography)
   - `app.js` (theme, Ctrl+K search, panels, code highlighting)
   - `logo.svg`, `favicon.png`, `codemirror/`
-- `tools/code_test.vsh`, `tools/validate.vsh` — CI gates
+- `tools/code_check.vsh`, `tools/validate.vsh` — CI gates
 - `.github/workflows/` — `main.yml` (tests, build, validate) and `pages.yml`
   (deploy `dist/` to GitHub Pages)
 

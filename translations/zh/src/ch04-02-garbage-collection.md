@@ -8,11 +8,10 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // 内存不再被引用时自动释放
+    // Memory is automatically freed when no longer referenced
     println(names.len)
 }
 ```
-
 ## 禁用 GC
 
 对于性能关键型代码，你可以禁用 GC：

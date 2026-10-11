@@ -12,7 +12,6 @@ fn main() {
     }
 }
 ```
-
 ## If 표현식
 
 ```v
@@ -22,29 +21,27 @@ fn main() {
     println(category)
 }
 ```
-
 ## For 루프
 
 ```v
 fn main() {
-    // 배열 순회
+    // Over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 범위
+    // Range
     for i in 0 .. 5 {
         println(i)
     }
 
-    // 인덱스와 함께
+    // With index
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
 }
 ```
-
 ## Match
 
 ```v
@@ -57,7 +54,6 @@ fn main() {
     }
 }
 ```
-
 ## 다음
 
 [Chapter 4: 소유권과 메모리](ch04-ownership-and-memory.md)

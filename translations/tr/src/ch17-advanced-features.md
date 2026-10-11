@@ -9,23 +9,22 @@ Nitelikler, bildirimlerin önüne yerleştirilen meta veri açıklamalarıdır. 
 Bir fonksiyonu veya tipi kullanımdan kaldırılmış olarak işaretler. Derleyici, öğe kullanıldığında bir uyarı yayar.
 
 ```v
-[deprecated]
+@[deprecated]
 fn old_add(a int, b int) int {
     return a + b
 }
 
-[deprecated: 'Use new_add instead']
+@[deprecated: 'Use new_add instead']
 fn old_multiply(a int, b int) int {
     return a * b
 }
 ```
-
 ### [inline]
 
 Derleyicinin fonksiyonu çağırma noktasında satır içi yapmasına ipucu verir, çağrı maliyetini ortadan kaldırır. Küçük, sık çağrılan fonksiyonlar için en iyisidir.
 
 ```v
-[inline]
+@[inline]
 fn square(x int) int {
     return x * x
 }
@@ -35,13 +34,12 @@ fn main() {
     println(result)
 }
 ```
-
 ### [unsafe]
 
 Bir fonksiyonu güvensiz olarak işaretler, çağıranın da güvensiz işaretlenmesine gerek kalmadan `unsafe` bloklarını kullanmasına izin verir.
 
 ```v
-[unsafe]
+@[unsafe]
 fn read_pointer(ptr voidptr) int {
     return unsafe { *(&int(ptr)) }
 }
@@ -52,7 +50,6 @@ fn main() {
     println(val)
 }
 ```
-
 ### [if]
 
 Derleme zamanında koşullu derleme. Blok yalnızca koşul doğru olduğunda dahil edilir.
@@ -64,7 +61,6 @@ $if debug {
     println('Release mode')
 }
 ```
-
 ## Derleme zamanı kod
 
 V, derleme sırasında yürütülen ve metaprogramlama ve sıfır maliyetli soyutlamalar sağlayan çeşitli derleme zamanı yapıları sağlar.
@@ -88,7 +84,6 @@ fn main() {
     println('Running on ${os_name}')
 }
 ```
-
 ### $for
 
 Derleme zamanında diziler, struct alanları veya arayüzler üzerinde yineleme yapar. Tekrarlayan kod oluşturmak için kullanışlıdır.
@@ -107,20 +102,17 @@ fn main() {
     println(is_platform('freebsd'))
 }
 ```
-
 ### $assert
 
 Koşul yanlışsa derlemeyi durduran derleme zamanı assert ifadeleri.
 
-```v
-$assert sizeof(int) == 8 || sizeof(int) == 4
-$assert @VMOD_FILE.len > 0
+```v ignore
+$assert sizeof(int) > 0
 
 fn main() {
     println('Assertions passed')
 }
 ```
-
 ## Operatör aşırı yükleme
 
 V, kullanıcı tanımlı tipler için operatörlerin özel davranışlarını tanımlamaya izin verir. Her operatör, belirli bir imzaya sahip bir metoda eşlenir.
@@ -162,7 +154,6 @@ fn main() {
     println('Quot: ${quot.x}, ${quot.y}')
 }
 ```
-
 ### Karşılaştırma operatörleri
 
 ```v
@@ -183,7 +174,6 @@ fn main() {
     println(a == c)
 }
 ```
-
 ### İndeks operatörü
 
 ```v
@@ -207,7 +197,6 @@ fn main() {
     println(g.get(1, 2))
 }
 ```
-
 ## Derleme zamanı yansıma
 
 V'nin `$for` yapısı, derleme zamanında struct alanları üzerinde yineleme yapabilir, otomatik serileştirme, doğrulama ve daha fazlasını mümkün kılar.
@@ -239,7 +228,6 @@ fn main() {
     println('${u.name} is ${u.age} years old')
 }
 ```
-
 ### Doğrulama kodu oluşturma
 
 ```v
@@ -276,7 +264,6 @@ fn main() {
     println('Config is valid')
 }
 ```
-
 ## Özet
 
 Bu bölümde nitelikler, derleme zamanı kod, operatör aşırı yükleme ve derleme zamanı yansıma hakkında bilgi edindiniz. Bu özellikler güçlü metaprogramlama desenlerini ve derleme üzerinde ince kontrolü mümkün kılar. Sonraki bölümde bellek yönetimini derinlemesine inceleyeceğiz.

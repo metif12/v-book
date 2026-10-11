@@ -8,11 +8,11 @@ Vはスタックとヒープのどちらに割り当てるかを自動的に決�
 
 ```v
 fn main() {
-    // スタック割り当て（小さい、固定サイズ）
+    // Stack-allocated (small, fixed size)
     x := 42
     arr := [1, 2, 3]
 
-    // ヒープ割り当て（大きい、動的）
+    // Heap-allocated (large, dynamic)
     mut big := []int{}
     for i in 0 .. 1000 {
         big << i
@@ -21,7 +21,6 @@ fn main() {
     println('${x} ${arr} ${big.len}')
 }
 ```
-
 ## ガベージコレクション
 
 Vはデフォルトでガベージコレクタを使用します。メモリを手動で解放する必要はありません：
@@ -32,11 +31,10 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // 参照されなくなったらメモリは自動的に解放されます
+    // Memory is automatically freed when no longer referenced
     println(names.len)
 }
 ```
-
 ## Autofree
 
 Vには変数のスコープが終了したときにメモリを自動的に解放するautofreeモードがあります：
@@ -51,7 +49,7 @@ fn process() {
     for i in 0 .. 1000 {
         data << i
     }
-    // dataはここで自動的に解放されます
+    // data is automatically freed here
 }
 
 fn main() {
@@ -59,7 +57,6 @@ fn main() {
     println('done')
 }
 ```
-
 ## 参照
 
 大きなデータのコピーを避けるために参照を使用できます：
@@ -75,7 +72,6 @@ fn main() {
     println(data)
 }
 ```
-
 ## メモリ管理モード
 
 | モード | フラグ | 説明 |

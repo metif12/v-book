@@ -8,11 +8,10 @@ fn main() {
     for i in 0 .. 100 {
         names << 'name ${i}'
     }
-    // 더 이상 참조되지 않으면 메모리가 자동으로 해제됩니다
+    // Memory is automatically freed when no longer referenced
     println(names.len)
 }
 ```
-
 ## GC 비활성화
 
 성능이 중요한 코드에서는 GC를 비활성화할 수 있습니다:

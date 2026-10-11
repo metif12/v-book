@@ -9,41 +9,39 @@ Vでは、変数はデフォルトで不変です。可変にするには`mut`�
 ```v
 fn main() {
     name := 'V'
-    // name = 'Go'  // エラー: nameは不変です
+    // name = 'Go'  // Error: name is immutable
 
     mut count := 0
-    count = 1  // OK: countは可変です
+    count = 1  // OK: count is mutable
     count++
     println(count)
 }
 ```
-
 ## データ型
 
 Vには豊富な型システムがあります：
 
 ```v
 fn main() {
-    // 整数
+    // Integers
     a := 42        // int
-    b := i64(100)  // 64ビット整数
-    c := u8(255)   // 符号なし8ビット
+    b := i64(100)  // 64-bit integer
+    c := u8(255)   // unsigned 8-bit
 
-    // 浮動小数点
+    // Floats
     pi := 3.14     // f64
-    e := f32(2.71) // 32ビット浮動小数点
+    e := f32(2.71) // 32-bit float
 
-    // その他の型
+    // Other types
     name := 'V'    // string
     is_ok := true  // bool
-    letter := `A`  // rune（単一文字）
+    letter := `A`  // rune (single character)
 
     println('${a} ${b} ${c}')
     println('${pi} ${e}')
     println('${name} ${is_ok} ${letter}')
 }
 ```
-
 ## 関数
 
 関数は`fn`で宣言します：
@@ -63,16 +61,14 @@ fn main() {
     greet('World')
 }
 ```
-
 ## コメント
 
 ```v
-// これは行コメントです
+// This is a line comment
 
-/* これは
-   ブロックコメントです */
+/* This is a
+   block comment */
 ```
-
 ## 制御フロー
 
 ### If
@@ -87,24 +83,22 @@ fn main() {
     }
 }
 ```
-
 ### Forループ
 
 ```v
 fn main() {
-    // 配列のループ
+    // Loop over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 範囲ループ
+    // Range loop
     for i in 0 .. 5 {
         println(i)
     }
 }
 ```
-
 ### Match
 
 ```v
@@ -117,7 +111,6 @@ fn main() {
     }
 }
 ```
-
 ## まとめ
 
 この章では、Vの変数、データ型、関数、コメント、制御フローについて学びました。次の章では、所有権とメモリ管理を見ていきます。

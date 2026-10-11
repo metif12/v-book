@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 La palabra clave `go` inicia la función en una nueva goroutine y retorna inmediatamente. La función main no espera a que las goroutines terminen por sí sola.
 
 Para esperar a las goroutines, usa un `sync.WaitGroup`:
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)` incrementa el contador antes de que la goroutine comience. `wg.done()` lo decrementa cuando la goroutine termina. `wg.wait()` bloquea hasta que el contador llega a cero.
 
 ## Canales
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 Un canal sin buffer bloquea el envío hasta que un receptor esté listo. Un canal con buffer tiene una capacidad y no bloquea hasta que se llena:
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 La dirección del canal restringe cómo se puede usar. `chan<- T` es solo envío, `<-chan T` es solo recepción:
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## Estado compartido
 
 Cuando las goroutines comparten estado mutable, protégelo con un `sync.Mutex`:
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock` bloquea hasta que el mutex esté disponible, luego lo mantiene durante el ámbito del bloque. Mantén la sección crítica corta.
 
 Usa `sync.RwMutex` cuando las lecturas son más frecuentes que las escrituras. Permite múltiples lectores a la vez:
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 Para un solo valor, usa atomicos de `sync.stdatomic` en lugar de un lock:
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## Sentencia select
 
 `sync.channel_select` espera en múltiples canales y devuelve el índice del primero que esté listo. Un timeout negativo espera indefinidamente; un timeout positivo devuelve -1 al agotar el tiempo:
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## Resumen
 
 En este capítulo, aprendiste sobre goroutines, canales, estado compartido y select. En el siguiente capítulo, exploraremos el framework web Veb.

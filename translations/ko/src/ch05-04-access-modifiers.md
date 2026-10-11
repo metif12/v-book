@@ -11,11 +11,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // OK: 같은 모듈
+    println(u.name)  // OK: same module
     println(u.age)   // OK: public
 }
 ```
-
 ## 가시성
 
 | 제어자 | 범위 |

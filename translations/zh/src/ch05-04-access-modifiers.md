@@ -11,11 +11,10 @@ pub:
 
 fn main() {
     u := User{name: 'Alice', age: 30}
-    println(u.name)  // 正确：同一模块
-    println(u.age)   // 正确：公开
+    println(u.name)  // OK: same module
+    println(u.age)   // OK: public
 }
 ```
-
 ## 可见性
 
 | 修饰符 | 作用域 |

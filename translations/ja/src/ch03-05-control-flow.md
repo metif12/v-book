@@ -12,7 +12,6 @@ fn main() {
     }
 }
 ```
-
 ## If式
 
 ```v
@@ -22,29 +21,27 @@ fn main() {
     println(category)
 }
 ```
-
 ## Forループ
 
 ```v
 fn main() {
-    // 配列のループ
+    // Over an array
     fruits := ['apple', 'banana', 'cherry']
     for fruit in fruits {
         println(fruit)
     }
 
-    // 範囲
+    // Range
     for i in 0 .. 5 {
         println(i)
     }
 
-    // インデックス付き
+    // With index
     for i, fruit in fruits {
         println('${i}: ${fruit}')
     }
 }
 ```
-
 ## Match
 
 ```v
@@ -57,7 +54,6 @@ fn main() {
     }
 }
 ```
-
 ## 次へ
 
 [第4章：所有権とメモリ](ch04-ownership-and-memory.md)

@@ -17,7 +17,6 @@ fn main() {
     }
 }
 ```
-
 Kata kunci `go` memulai fungsi di goroutine baru dan langsung kembali. Fungsi main tidak menunggu goroutine selesai dengan sendirinya.
 
 Untuk menunggu goroutine, gunakan `sync.WaitGroup`:
@@ -42,7 +41,6 @@ fn main() {
     println('All workers finished')
 }
 ```
-
 `wg.add(1)` menaikkan penghitung sebelum goroutine dimulai. `wg.done()` menurunkannya ketika goroutine selesai. `wg.wait()` memblokir sampai penghitung mencapai nol.
 
 ## Channel
@@ -60,7 +58,6 @@ fn main() {
     println(result)
 }
 ```
-
 Channel tanpa buffer memblokir pada pengiriman sampai receiver siap. Channel berkapasitas memiliki kapasitas dan tidak memblokir sampai penuh:
 
 ```v
@@ -74,7 +71,6 @@ fn main() {
     println(<-ch)
 }
 ```
-
 Arah channel membatasi bagaimana channel dapat digunakan. `chan<- T` hanya untuk mengirim, `<-chan T` hanya untuk menerima:
 
 ```v ignore
@@ -93,7 +89,6 @@ fn main() {
     receiver(ch)
 }
 ```
-
 ## Shared state
 
 Ketika goroutine berbagi mutable state, lindungi dengan `sync.Mutex`:
@@ -131,7 +126,6 @@ fn main() {
     println(c.get())
 }
 ```
-
 `lock` memblokir sampai mutex tersedia, lalu memegangnya untuk scope blok tersebut. Jaga critical section tetap pendek.
 
 Gunakan `sync.RwMutex` ketika pembacaan lebih sering daripada penulisan. Ini memungkinkan beberapa pembaca sekaligus:
@@ -170,7 +164,6 @@ fn main() {
     println(c.get('b'))
 }
 ```
-
 Untuk nilai tunggal, gunakan atomics dari `sync.stdatomic` sebagai ganti lock:
 
 ```v
@@ -183,35 +176,35 @@ fn main() {
     println(counter.load())
 }
 ```
-
 ## select statement
 
 `sync.channel_select` menunggu beberapa channel dan mengembalikan index channel pertama yang siap. Timeout negatif menunggu tanpa batas; timeout positif mengembalikan -1 jika timeout:
 
 ```v
-import sync
 import time
 
 fn main() {
-    ch := chan int{}
-    go fn [ch] () {
+    ch1 := chan int{}
+    ch2 := chan string{}
+    go fn [ch1] () {
         time.sleep(200 * time.millisecond)
-        ch <- 42
+        ch1 <- 42
+    }()
+    go fn [ch2] () {
+        time.sleep(100 * time.millisecond)
+        ch2 <- 'hello'
     }()
 
-    mut chans := [voidptr(ch)]
-    mut dirs := [sync.Direction.pop]
-    mut objs := [voidptr(&ch)]
-    ready := sync.channel_select(mut chans, dirs, mut objs, 100)
-    if ready < 0 {
-        println('Timed out')
-    } else {
-        val := <-ch
-        println('Got ${val}')
+    select {
+        val := <-ch1 {
+            println('Got int ${val}')
+        }
+        msg := <-ch2 {
+            println('Got string ${msg}')
+        }
     }
 }
 ```
-
 ## Ringkasan
 
 Dalam bab ini, Anda telah belajar tentang goroutine, channel, shared state, dan select. Di bab berikutnya, kita akan menjelajahi web framework Veb.

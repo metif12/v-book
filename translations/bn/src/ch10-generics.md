@@ -14,11 +14,11 @@ fn main() {
     println(max(3.14, 2.71))
 }
 ```
-
 ## জেনেরিক struct
 
 ```v
 struct Stack[T] {
+mut:
     items []T
 }
 
@@ -26,7 +26,7 @@ fn (mut s Stack[T]) push(item T) {
     s.items << item
 }
 
-fn (s Stack[T]) pop() ?T {
+fn (mut s Stack[T]) pop() ?T {
     if s.items.len == 0 {
         return none
     }
@@ -40,7 +40,6 @@ fn main() {
     println(s.pop())
 }
 ```
-
 ## টাইপ সীমাবদ্ধতা
 
 ```v
@@ -57,7 +56,6 @@ fn main() {
     println(sum([1.0, 2.0, 3.0]))
 }
 ```
-
 ## সারসংক্ষেপ
 
 এই অধ্যায়ে আপনি জেনেরিক ফাংশন এবং struct সম্পর্কে শিখেছেন। পরবর্তী অধ্যায়ে আমরা টেস্টিং শিখব।
