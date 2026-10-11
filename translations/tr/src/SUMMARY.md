@@ -62,6 +62,8 @@
 - [Bölüm 18: Bellek Yönetimi Derinlemesine](ch18-memory-management.md)
 - [Bölüm 19: Araçlar](ch19-tooling.md)
 - [Bölüm 20: Final Projesi: Web Uygulaması](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # Ekler
 
@@ -72,3 +74,4 @@
 - [Ek E: V ve C Birlikte Çalışma Başvurusu](appendix-e-c-interop-reference.md)
 - [Ek F: Çeviriler](appendix-f-translations.md)
 - [Ek G: V Nasıl Yapılır](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

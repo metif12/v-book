@@ -70,99 +70,123 @@ fn (mut app App) users(mut ctx veb.Context) {
 
 ## Templates
 
-Veb supports HTML templates with the `$tmpl` function. Templates use V's string interpolation syntax.
+Veb renders HTML with V's own templates. The `$tmpl` function loads a template file and fills it with the fields of a struct, and the template syntax is V string interpolation:
 
-```v no_run
-import veb
-
+```v ignore
 struct App {}
 
 struct Page {
-    title string
-    body  string
+	title string
+	body  string
 }
 
 @['/page']
 fn (mut app App) page(mut ctx veb.Context) {
-    page := Page{
-        title: 'My Page'
-        body:  'Welcome to Veb templates!'
-    }
-    ctx.html($tmpl('templates/page.html', page))
+	page := Page{
+		title: 'My Page'
+		body:  'Welcome to Veb templates!'
+	}
+	ctx.html($tmpl('templates/page.html', page))
 }
 ```
 
 ```v ignore
-<!DOCTYPE html>
-<html>
-<head><title>{{ page.title }}</title></head>
-<body>{{ page.body }}</body>
-</html>
+<h1>@page.title</h1>
+<p>@page.body</p>
 ```
 
-The template file receives the data struct and can access its fields with `{{ field_name }}`.
+The template file receives the data struct and reads its fields with `@` followed by the field name. A page that needs no template file can write its HTML inline:
+
+```v no_run
+import veb
+
+struct Context {
+	veb.Context
+}
+
+struct App {}
+
+@['/hello']
+fn (mut app App) hello(mut ctx Context) veb.Result {
+	return ctx.html('<h1>Hello, Veb!</h1><p>Rendered without a template file.</p>')
+}
+
+fn main() {
+	mut app := &App{}
+	veb.run[App, Context](mut app, 18080)
+}
+```
+
+> **Note**
+> Web examples are compiled but not run, because a server would block. The `$tmpl` call above is compile-time, so that example is not run either.
 
 ## Middleware
 
-Middleware wraps every request. Use `app.use()` to register global middleware, or `app.route_use()` for route-specific middleware.
+Middleware wraps every request. A handler returns `bool`: `true` continues to the next handler and eventually to the route, `false` stops the chain. Register it with `use`, or with `route_use` for a single route.
 
 ```v no_run
 import veb
 import time
 
-struct App {
-    mut:
-    request_count int
+struct Context {
+	veb.Context
 }
 
-fn (mut app App) logger(mut ctx veb.Context) bool {
-    start := time.now()
-    app.request_count++
-    println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-    return true
+struct App {
+	veb.Middleware[Context]
+mut:
+	request_count int
+}
+
+fn (mut app App) logger(mut ctx Context) bool {
+	app.request_count++
+	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    mut app := &App{}
-    app.use(veb.Middleware[veb.Context]{
-        handler: app.logger
-    })
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.use(veb.MiddlewareOptions[Context]{
+		handler: app.logger
+	})
+	veb.run(mut app, 18080)
 }
 ```
 
-Middleware returns `bool` — `true` to continue to the next handler, `false` to stop.
+`MiddlewareOptions` also takes `after: true` to run the handler after the route, and a `methods` list to limit which HTTP methods it applies to.
 
 ## Static files
 
-Veb can serve static files from a directory using `app.handle_static()`.
+Veb serves a directory of static files when the app embeds `veb.StaticHandler` and mounts the directory:
 
 ```v no_run
 import veb
 
-struct App {}
+struct App {
+	veb.StaticHandler
+}
 
 @['/']
 fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Static file server')
+	ctx.text('Static file server')
 }
 
 fn main() {
-    mut app := &App{}
-    app.handle_static('public', true) or {
-        eprintln('Failed to serve static files: ${err}')
-        return
-    }
-    veb.run(mut app, 8080)
+	mut app := &App{}
+	app.mount_static_folder_at('public', '/assets') or {
+		eprintln('cannot serve assets: ${err}')
+		return
+	}
+	veb.run(mut app, 18080)
 }
 ```
 
-Files in the `public/` directory are served at the root path. For example, `public/style.css` is accessible at `http://localhost:8080/style.css`.
+Files under `public/` are served under the mount path, so `public/style.css` is reachable at `http://localhost:18080/assets/style.css`. The `ctx.html()` handler above is what serves them, which is why an app that mounts a directory normally has an index route too.
 
 ## Summary
 

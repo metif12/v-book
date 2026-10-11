@@ -62,6 +62,8 @@
 - [Глава 18: Углублённое управление памятью](ch18-memory-management.md)
 - [Глава 19: Инструменты](ch19-tooling.md)
 - [Глава 20: Финальный проект: веб-приложение](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # Приложения
 
@@ -72,3 +74,4 @@
 - [Приложение E: Справочник по интероперабельности V и C](appendix-e-c-interop-reference.md)
 - [Приложение F: Переводы](appendix-f-translations.md)
 - [Приложение G: Как устроен V](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

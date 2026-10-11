@@ -30,10 +30,10 @@ Create a comprehensive, Rust Book-quality resource for the V programming languag
 
 ## Success Metrics
 
-- [ ] All 20 chapters + 7 appendices written
-- [ ] All code examples pass CI
-- [ ] At least 5 non-English translations started
-- [ ] Book builds successfully with mdBook
+- [x] All 22 chapters + 8 appendices written
+- [x] All code examples pass CI
+- [x] At least 5 non-English translations started
+- [x] Book builds with the V site builder into deployable static HTML
 - [ ] Positive community feedback
 
 ## Non-Goals

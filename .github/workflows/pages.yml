@@ -28,23 +28,17 @@ jobs:
           echo "/usr/local/bin/v" >> $GITHUB_PATH
           /usr/local/bin/v/v version
 
-      - name: Install mdBook
+      - name: Build the static site
         run: |
-          curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.40/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C /usr/local/bin
-
-      - name: Test V code blocks
-        run: v run tools/mdbook-v-test .
-
-      - name: Build book
-        run: mdbook build
+          v run site
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/pages/setup-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: book/
+          path: dist/
 
   deploy:
     environment:

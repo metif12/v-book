@@ -62,6 +62,8 @@
 - [Chapter 18: 메모리 관리 심화](ch18-memory-management.md)
 - [Chapter 19: 도구](ch19-tooling.md)
 - [Chapter 20: 최종 프로젝트: 웹 애플리케이션](ch20-final-project.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
 
 # 부록
 
@@ -72,3 +74,4 @@
 - [부록 E: V와 C 인터롭 레퍼런스](appendix-e-c-interop-reference.md)
 - [부록 F: 번역](appendix-f-translations.md)
 - [부록 G: V는 어떻게 만들어지는가](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

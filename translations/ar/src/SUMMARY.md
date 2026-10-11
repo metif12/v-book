@@ -62,6 +62,8 @@
 - [الفصل 18: إدارة الذاكرة بالتفصيل](ch18-memory-management.md)
 - [الفصل 19: الأدوات](ch19-tooling.md)
 - [الفصل 20: المشروع النهائي: تطبيق ويب](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # الملاحق
 
@@ -72,3 +74,4 @@
 - [الملحق E: مرجع التفاعل بين V و C](appendix-e-c-interop-reference.md)
 - [الملحق F: الترجمات](appendix-f-translations.md)
 - [الملحق G: كيف يُصنع V](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

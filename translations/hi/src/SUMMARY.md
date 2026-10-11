@@ -62,6 +62,8 @@
 - [अध्याय 18: मेमोरी मैनेजमेंट डीप डाइव](ch18-memory-management.md)
 - [अध्याय 19: टूलिंग](ch19-tooling.md)
 - [अध्याय 20: फाइनल प्रोजेक्ट: वेब एप्लिकेशन](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # अपेंडिक्स
 
@@ -72,3 +74,4 @@
 - [अपेंडिक्स E: V और C इंटरॉप रेफरेंस](appendix-e-c-interop-reference.md)
 - [अपेंडिक्स F: अनुवाद](appendix-f-translations.md)
 - [अपेंडिक्स G: V कैसे बनाया गया](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

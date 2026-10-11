@@ -10,9 +10,9 @@ git clone https://github.com/metif12/v-book.git
 cd v-book
 
 # Verify everything works
-v run tools/mdbook-v-test .    # Test all V code blocks compile
-v run tools/validate.vsh        # Validate book structure
-mdbook build                    # Build the book
+v run tools/code_test.vsh        # Compile and run every V code block
+v run tools/validate.vsh         # Validate book structure
+v run site                       # Build the site into dist/
 ```
 
 ## How to contribute
@@ -32,9 +32,9 @@ See [translations/README.md](translations/README.md) for the full translation wo
 1. Fork the repository.
 2. Create a branch: `git checkout -b feat/my-chapter`
 3. Write your content following the style guide.
-4. Test code examples: `v run tools/mdbook-v-test .`
+4. Test code examples: `v run tools/code_test.vsh`
 5. Validate structure: `v run tools/validate.vsh`
-6. Build the book: `mdbook build`
+6. Build the site: `v run site`
 7. Open a pull request.
 
 ### Creating a new chapter
@@ -43,7 +43,25 @@ See [translations/README.md](translations/README.md) for the full translation wo
 v run scripts/new_chapter.vsh <number> <title>
 ```
 
-This creates a new chapter directory with a template file. Add the chapter to `src/SUMMARY.md`.
+This creates a new chapter from a template. Add the chapter to `src/SUMMARY.md`
+— the table of contents is what the site's sidebar, pager, search index and
+sitemap are all built from.
+
+## How the book is built
+
+There is no mdBook here. `v run site` is a small V program that:
+
+1. reads `src/SUMMARY.md` and every page it links to,
+2. renders the Markdown to HTML (`site/markdown.v`),
+3. wraps each page in the shared shell (`site/site.v`),
+4. writes the tree into `dist/`, one directory per language,
+5. writes a full text search index, a sitemap, `robots.txt` and a `404.html`.
+
+`v run site serve` previews the result at
+`http://localhost:8090/v-book/`, mounted the same way GitHub Pages serves it.
+
+Pushing to `main` runs the code tests, the validator and the build, then
+`pages.yml` deploys `dist/` to GitHub Pages.
 
 ## Project structure
 
@@ -53,18 +71,24 @@ src/                    # English Markdown (canonical source)
   ch00-introduction.md
   ch01-getting-started.md
   ...
+static/                 # assets copied verbatim into dist/
+  app.css               # chrome: top bar, search, table of contents, theme
+  book.css              # prose typography
+  app.js                # theme, search, panels, code blocks
+  logo.svg              # the V logo
+  codemirror/           # syntax highlighting
+site/                   # the generator (pure V, plus veb for `serve`)
+  main.v                # build, preview, sitemap, 404
+  markdown.v            # Markdown renderer
+  search.v              # full text search index
+  site.v                # page shell, navigation, locales
 translations/           # 15 language translations
-  <code>/src/           # Translated content
-  <code>/book.toml      # Per-locale mdBook config
+  <code>/src/           # Translated content, mirror of src/
 listings/               # V code examples by chapter
 tools/
-  mdbook-v-test/        # CI preprocessor — compiles every v block
-  validate.vsh          # Book structure validator
-theme/                  # mdBook theme (CSS, templates)
-  index.hbs             # Page template with Edit on GitHub button
-  css/
-  js/
-scripts/                # Scaffolding scripts
+  code_test.vsh         # compiles and runs every v code block
+  validate.vsh          # book structure validator
+scripts/                # scaffolding scripts
   new_chapter.vsh
   new_locale.vsh
 ```
@@ -75,10 +99,13 @@ scripts/                # Scaffolding scripts
 
 - All `v` code blocks must compile and run in CI.
 - Use `v ignore` for pseudocode or incomplete examples.
-- Use `v no_run` for examples that would block (e.g., waiting for input).
+- Use `v no_run` for examples that would block — for instance a server that
+  never returns.
 - Keep examples short and focused on the concept being taught.
 - Use meaningful variable names.
-- Each code block is self-contained — it is written to a temp `main.v` and run independently.
+- Each code block is self-contained — it is written to a temp `main.v` and run
+  independently, so a block that needs a module or a template file has to be
+  `v ignore` or `v no_run`.
 
 ### Prose
 
@@ -93,6 +120,7 @@ scripts/                # Scaffolding scripts
 - Use `v fmt` on all V code.
 - Use Markdown formatting consistently.
 - Code blocks use triple backticks with language annotation (`v`, `v ignore`, or `v no_run`).
+- A heading becomes a sidebar anchor, so `##` and deeper are safe to link to.
 
 ## Code of conduct
 

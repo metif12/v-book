@@ -62,6 +62,8 @@
 - [第18章：メモリ管理の詳細](ch18-memory-management.md)
 - [第19章：ツール](ch19-tooling.md)
 - [第20章：最終プロジェクト：Webアプリケーション](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # 付録
 
@@ -72,3 +74,4 @@
 - [付録E：VとCの相互運用リファレンス](appendix-e-c-interop-reference.md)
 - [付録F：翻訳](appendix-f-translations.md)
 - [付録G：Vの作られ方](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

@@ -62,6 +62,8 @@
 - [第 18 章：内存管理深入](ch18-memory-management.md)
 - [第 19 章：工具链](ch19-tooling.md)
 - [第 20 章：最终项目：Web 应用](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # 附录
 
@@ -72,3 +74,4 @@
 - [附录 E：V 与 C 互操作参考](appendix-e-c-interop-reference.md)
 - [附录 F：翻译](appendix-f-translations.md)
 - [附录 G：V 的制作方式](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

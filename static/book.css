@@ -1,0 +1,161 @@
+/* The V Book — prose.
+ *
+ * The reading surface. One centred column, a comfortable measure, and the
+ * typographic rhythm the tour uses so a chapter reads like a lesson.
+ */
+
+.prose {
+  padding: 30px 34px 8px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.prose > :first-child { margin-top: 0; }
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  line-height: 1.25;
+  font-weight: 700;
+  scroll-margin-top: calc(var(--bar-h) + 16px);
+}
+
+.prose h1 {
+  margin: 0 0 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+  font-size: 30px;
+  letter-spacing: -.01em;
+}
+
+.prose h2 {
+  margin: 38px 0 12px;
+  font-size: 22px;
+  padding-left: 13px;
+  border-left: 4px solid var(--accent);
+}
+
+.prose h3 { margin: 28px 0 10px; font-size: 18px; }
+.prose h4 { margin: 22px 0 8px; font-size: 15.5px; color: var(--text-muted); }
+
+.prose p { margin: 0 0 15px; }
+
+.prose a { font-weight: 500; text-decoration: underline; text-decoration-color: var(--border-strong); text-underline-offset: 2px; }
+.prose a:hover { text-decoration-color: var(--accent); }
+
+.prose strong { font-weight: 680; }
+.prose em { font-style: italic; }
+
+.prose code {
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-family: var(--mono);
+  font-size: .88em;
+}
+
+.prose ul,
+.prose ol { margin: 0 0 16px; padding-left: 26px; }
+.prose li { margin: 5px 0; }
+.prose li > ul,
+.prose li > ol { margin: 5px 0 2px; }
+
+.prose hr {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Tables */
+
+.prose table {
+  width: 100%;
+  margin: 18px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+}
+.prose thead th {
+  background: var(--surface-2);
+  text-align: left;
+  font-weight: 650;
+}
+.prose th,
+.prose td {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+.prose tbody tr:nth-child(2n) { background: var(--surface-2); }
+
+/* Callouts: a quote that starts with a bold label becomes a callout. */
+
+.prose blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--v-blue);
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+.prose blockquote > :last-child { margin-bottom: 0; }
+.prose blockquote p { margin: 0 0 8px; }
+.prose blockquote strong { color: var(--accent-strong); }
+
+/* Anchor links on headings. */
+
+.prose h2 > .heading-anchor,
+.prose h3 > .heading-anchor {
+  margin-left: 8px;
+  color: var(--text-muted);
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity .12s ease;
+}
+.prose h2:hover > .heading-anchor,
+.prose h3:hover > .heading-anchor { opacity: 1; }
+
+/* Keyboard hints and inline marks. */
+
+.prose kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  background: var(--surface-2);
+  font-family: var(--mono);
+  font-size: .82em;
+}
+
+.prose mark { padding: 0 3px; background: rgba(255, 204, 51, .5); }
+
+/* Right to left pages keep the reading column centred. */
+
+[dir="rtl"] .prose h2 { padding-left: 0; padding-right: 13px; border-left: 0; border-right: 4px solid var(--accent); }
+[dir="rtl"] .prose ul,
+[dir="rtl"] .prose ol { padding-left: 0; padding-right: 26px; }
+[dir="rtl"] .prose blockquote { border-left: 1px solid var(--border); border-right: 4px solid var(--v-blue); }
+[dir="rtl"] .pager-link.next-page { text-align: left; }
+
+@media (max-width: 760px) {
+  .prose { padding: 22px 18px 4px; border-radius: 12px; }
+  .prose h1 { font-size: 25px; }
+  .prose h2 { font-size: 20px; }
+}
+
+@media print {
+  .top-bar,
+  .toc,
+  .pager,
+  .page-footer,
+  .click-catcher { display: none !important; }
+  body { background: #fff; }
+  .layout { grid-template-columns: 1fr; }
+  .prose { border: 0; box-shadow: none; padding: 0; }
+}

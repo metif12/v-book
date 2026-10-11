@@ -62,6 +62,8 @@
 - [Chapter 18: Memory Management Deep Dive](ch18-memory-management.md)
 - [Chapter 19: Tooling](ch19-tooling.md)
 - [Chapter 20: Final Project: Web Application](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # Appendices
 
@@ -72,3 +74,4 @@
 - [Appendix E: V and C Interop Reference](appendix-e-c-interop-reference.md)
 - [Appendix F: Translations](appendix-f-translations.md)
 - [Appendix G: How V is Made](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

@@ -62,6 +62,8 @@
 - [فصل ۱۸: بررسی عمیق مدیریت حافظه](ch18-memory-management.md)
 - [فصل ۱۹: ابزارها](ch19-tooling.md)
 - [فصل ۲۰: پروژه پایانی: برنامه وب](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # پیوست‌ها
 
@@ -72,3 +74,4 @@
 - [پیوست E: مرجع همکاری V و C](appendix-e-c-interop-reference.md)
 - [پیوست F: ترجمه‌ها](appendix-f-translations.md)
 - [پیوست G: V چگونه ساخته شده است](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

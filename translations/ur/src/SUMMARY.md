@@ -62,6 +62,8 @@
 - [باب ۱۸: میموری مینجمنٹ گہرا جائزہ](ch18-memory-management.md)
 - [باب ۱۹: ٹولنگ](ch19-tooling.md)
 - [باب ۲۰: حتمی پروجیکٹ: ویب ایپلیکیشن](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # ضمائم
 
@@ -72,3 +74,4 @@
 - [ضمیمہ E: V اور C انٹراپ کا حوالہ](appendix-e-c-interop-reference.md)
 - [ضمیمہ F: ترجمے](appendix-f-translations.md)
 - [ضمیمہ G: V کیسے بنایا گیا](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

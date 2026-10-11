@@ -2,12 +2,12 @@
 
 ## Phase 1: Foundation (Complete)
 
-- [x] Project structure (book.toml, v.mod, SUMMARY.md)
-- [x] mdBook configuration
+- [x] Project structure (v.mod, SUMMARY.md)
+- [x] Site generator in V + veb (no mdBook)
 - [x] Theme/CSS with V branding
 - [x] RTL support for fa, ar, ur
-- [x] CI pipeline (test, lint, build)
-- [x] Code testing preprocessor (mdbook-v-test)
+- [x] CI pipeline (test, build, validate)
+- [x] Code testing tool (tools/code_test.vsh)
 - [x] Book structure validator (validate.vsh)
 - [x] Scaffolding scripts
 

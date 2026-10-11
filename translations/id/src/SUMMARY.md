@@ -62,6 +62,8 @@
 - [Bab 18: Manajemen Memori Mendalam](ch18-memory-management.md)
 - [Bab 19: Tooling](ch19-tooling.md)
 - [Bab 20: Proyek Akhir: Aplikasi Web](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # Lampiran
 
@@ -72,3 +74,4 @@
 - [Lampiran E: Referensi Interop V dan C](appendix-e-c-interop-reference.md)
 - [Lampiran F: Terjemahan](appendix-f-translations.md)
 - [Lampiran G: Cara V Dibuat](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)

@@ -1,3 +1,9 @@
 ﻿
+dist/
 book/
-
+sitemap/
+site.exe
+site-build.log
+.preview/
+*.exe
+__pycache__/

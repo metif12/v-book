@@ -62,6 +62,8 @@
 - [অধ্যায় 18: মেমোরি ম্যানেজমেন্ট গভীরে](ch18-memory-management.md)
 - [অধ্যায় 19: টুলিং](ch19-tooling.md)
 - [অধ্যায় 20: ফাইনাল প্রজেক্ট: ওয়েব অ্যাপ্লিকেশন](ch20-final-project.md)
+- [Chapter 21: Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md)
+- [Chapter 22: Performance and Benchmarking](ch22-performance-and-benchmarking.md)
 
 # অতিরিক্ত
 
@@ -72,3 +74,4 @@
 - [অতিরিক্ত E: V এবং C ইন্টরপ রেফারেন্স](appendix-e-c-interop-reference.md)
 - [অতিরিক্ত F: অনুবাদ](appendix-f-translations.md)
 - [অতিরিক্ত G: V কীভাবে তৈরি](appendix-g-how-v-is-made.md)
+- [Appendix H: Exercises](appendix-h-exercises.md)
