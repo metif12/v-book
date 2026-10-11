@@ -7,15 +7,22 @@ Veb ist das integrierte Web-Framework von V. Es bietet Routing, JSON-Verarbeitun
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 Die `App`-Struktur enthält Ihren Anwendungszustand. Jede Route ist eine Methode auf `App`, annotiert mit `@['/path']`. Der Handler erhält einen `veb.Context`, der Methoden zum Schreiben von Antworten bereitstellt.
@@ -98,22 +105,20 @@ Middleware umschließt jede Anfrage. Verwenden Sie `app.use()`, um globale Middl
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 Middleware gibt `bool` zurück — `true`, um zum nächsten Handler fortzufahren, `false`, um zu stoppen.
@@ -138,12 +143,16 @@ Veb kann statische Dateien aus einem Verzeichnis mit `app.handle_static()` berei
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 Dateien im `public/`-Verzeichnis werden unter dem Stammpfad bereitgestellt. Zum Beispiel ist `public/style.css` unter `http://localhost:8080/style.css` zugänglich.

@@ -71,23 +71,23 @@ fn main() {
 When two embedded types expose the same name, the outer struct's own declaration wins, and the compiler no longer promotes the name implicitly:
 
 ```v
-struct A {
-	value string = 'from A'
+struct Alpha {
+	value string = 'from Alpha'
 }
 
-struct B {
-	value string = 'from B'
+struct Beta {
+	value string = 'from Beta'
 }
 
 struct Outer {
-	A
-	B
+	Alpha
+	Beta
 }
 
 fn main() {
 	o := Outer{}
-	assert o.A.value == 'from A'
-	assert o.B.value == 'from B'
+	assert o.Alpha.value == 'from Alpha'
+	assert o.Beta.value == 'from Beta'
 }
 ```
 

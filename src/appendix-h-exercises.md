@@ -155,29 +155,23 @@ fn main() {
 
 ## Concurrency
 
-**7. Parallel sum.** Use a `sync.WaitGroup` to sum the elements of an array on two threads, then combine the results. *(Chapter 14)*
+**7. Parallel sum.** Sum the two halves of an array on separate threads, then combine the results with a channel. *(Chapter 14)*
 
 ```v
-import sync
-
-fn worker(wg &sync.WaitGroup, data []int, mut result []int) {
+fn sum(part []int, ch chan int) {
 	mut total := 0
-	for v in data {
+	for v in part {
 		total += v
 	}
-	result << total
-	wg.done()
+	ch <- total
 }
 
 fn main() {
-	wg := sync.new_waitgroup()
-	wg.add(2)
-	data := [1, 2, 3, 4, 5, 6]
-	mut halves := []int{}
-	spawn worker(wg, data[..3], mut halves)
-	spawn worker(wg, data[3..], mut halves)
-	wg.wait()
-	total := halves[0] + halves[1]
+	ch := chan int{}
+	for part in [[1, 2, 3], [4, 5, 6]] {
+		spawn sum(part, ch)
+	}
+	total := <-ch + <-ch
 	println('total ${total}')
 	assert total == 21
 }

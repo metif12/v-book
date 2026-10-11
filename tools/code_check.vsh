@@ -117,6 +117,7 @@ fn main() {
 		collect_md_files(dir, mut files)
 		for file in files.sorted() {
 			content := os.read_file(file) or { continue }
+			seen := total
 			for block in extract_v_code_blocks(content, file) {
 				total++
 				ok, msg := run_block(block)
@@ -132,6 +133,10 @@ fn main() {
 						message: msg
 					}
 				}
+			}
+			// Progress per page, so a hang or a slow block has a name.
+			if total > seen {
+				println('code_check: ${file}: ${total} blocks checked')
 			}
 		}
 		println('code_check: ${dir}: ${total} blocks seen so far')

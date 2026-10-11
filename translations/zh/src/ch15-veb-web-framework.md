@@ -7,15 +7,22 @@ Veb 是 V 内置的 Web 框架。它提供路由、JSON 处理、HTML 模板、�
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 `App` 结构体保存你的应用状态。每个路由是 `App` 上使用 `@['/path']` 注解的方法。处理函数接收 `veb.Context`，它提供写入响应的方法。
@@ -98,22 +105,20 @@ fn (mut app App) page(mut ctx veb.Context) {
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 中间件返回 `bool` — `true` 继续到下一个处理函数，`false` 停止。
@@ -138,12 +143,16 @@ Veb 可以使用 `app.handle_static()` 从目录提供静态文件。
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 `public/` 目录中的文件在根路径提供。例如，`public/style.css` 可在 `http://localhost:8080/style.css` 访问。

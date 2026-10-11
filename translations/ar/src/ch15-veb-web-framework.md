@@ -7,15 +7,22 @@ Veb هو إطار عمل الويب المدمج في V. يوفر التوجيه
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 struct `App` يحتفظ بحالة تطبيقك. كل مسار هو دالة على `App` مُعلَّمة بـ `@['/path']`. المعالج يستقبل `veb.Context` الذي يوفر دوالاً لكتابة الاستجابات.
@@ -98,22 +105,20 @@ middleware يُغلِّف كل طلب. استخدم `app.use()` لتسجيل mid
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 middleware يُعيد `bool` — `true` للمتابعة إلى المعالج التالي، `false` للتوقف.
@@ -138,12 +143,16 @@ Veb يمكنه تقديم الملفات الثابتة من مجلد باستخ
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 الملفات في مجلد `public/` تُقدَّم عند المسار الجذري. على سبيل المثال، `public/style.css` متاح على `http://localhost:8080/style.css`.

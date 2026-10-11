@@ -7,15 +7,22 @@ Veb হল V-এর বিল্ট-ইন ওয়েব ফ্রেমওয
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 `App` struct আপনার অ্যাপ্লিকেশন স্টেট ধরে রাখে। প্রতিটি রাউট হল `App`-এর একটি মেথড যা `@['/path']` দিয়ে চিহ্নিত। হ্যান্ডলার একটি `veb.Context` পায় যা রেসপন্স লেখার জন্য মেথড প্রদান করে।
@@ -98,22 +105,20 @@ fn (mut app App) page(mut ctx veb.Context) {
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 মিডলওয়্যার `bool` ফেরত দেয় — পরবর্তী হ্যান্ডলারে যেতে `true`, থামতে `false`।
@@ -138,12 +143,16 @@ Veb `app.handle_static()` ব্যবহার করে একটি ডির
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 `public/` ডিরেক্টরির ফাইলগুলো রুট প্যাথে সার্ভ হয়। উদাহরণস্বরূপ, `public/style.css` অ্যাক্সেসযোগ্য `http://localhost:8080/style.css`-এ।

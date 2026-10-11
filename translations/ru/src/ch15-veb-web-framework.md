@@ -7,15 +7,22 @@ Veb — это встроенный веб-фреймворк V. Он предо
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 Структура `App` хранит состояние вашего приложения. Каждый маршрут — это метод на `App` с аннотацией `@['/path']`. Обработчик получает `veb.Context`, который предоставляет методы для записи ответов.
@@ -98,22 +105,20 @@ Middleware оборачивает каждый запрос. Используй�
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 Middleware возвращает `bool` — `true` для продолжения к следующему обработчику, `false` для остановки.
@@ -138,12 +143,16 @@ Veb может раздавать статические файлы из кат�
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 Файлы в каталоге `public/` раздаются по корневому пути. Например, `public/style.css` доступен по адресу `http://localhost:8080/style.css`.

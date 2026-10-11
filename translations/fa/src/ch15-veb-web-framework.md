@@ -7,15 +7,22 @@ Veb فریم‌ورک وب داخلی V است. این فریم‌ورک مسی�
 ```v no_run
 import veb
 
+// Context is the request state every handler receives. Declaring it lets the
+// compiler infer the app's context type in veb.run.
+struct Context {
+	veb.Context
+}
+
 struct App {}
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
-    ctx.text('Hello, Veb!')
+fn (mut app App) index(mut ctx Context) {
+	ctx.text('Hello, Veb!')
 }
 
 fn main() {
-    veb.run(mut App{}, 8080)
+	mut app := &App{}
+	veb.run[App, Context](mut app, 8080)
 }
 ```
 ساختار `App` وضعیت برنامه شما را نگه می‌دارد. هر مسیر یک متد روی `App` است که با `@['/path']` مشخص شده است. مدیریت‌کننده یک `veb.Context` دریافت می‌کند که متدهایی برای نوشتن پاسخ‌ها ارائه می‌دهد.
@@ -98,22 +105,20 @@ fn (mut app App) page(mut ctx veb.Context) {
 
 ```v no_run
 import veb
-import time
 
 struct Context {
 	veb.Context
 }
 
-struct App {
-	veb.Middleware[Context]
-mut:
-	request_count int
+// A middleware handler is a plain function: it takes the context, returns a
+// bool, and keeps its state in the context or in its own module state.
+fn log_request(mut ctx Context) bool {
+	println('${ctx.req.method} ${ctx.req.url}')
+	return true
 }
 
-fn (mut app App) logger(mut ctx Context) bool {
-	app.request_count++
-	println('Request #${app.request_count}: ${ctx.req.method} ${ctx.req.url}')
-	return true
+struct App {
+	veb.Middleware[Context]
 }
 
 @['/']
@@ -124,9 +129,9 @@ fn (mut app App) index(mut ctx Context) {
 fn main() {
 	mut app := &App{}
 	app.use(veb.MiddlewareOptions[Context]{
-		handler: app.logger
+		handler: log_request
 	})
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 میان‌افزار `bool` برمی‌گرداند — `true` برای ادامه به مدیریت‌کننده بعدی، `false` برای توقف.
@@ -138,12 +143,16 @@ Veb می‌تواند فایل‌های استاتیک را از یک دایرک
 ```v no_run
 import veb
 
+struct Context {
+	veb.Context
+}
+
 struct App {
 	veb.StaticHandler
 }
 
 @['/']
-fn (mut app App) index(mut ctx veb.Context) {
+fn (mut app App) index(mut ctx Context) {
 	ctx.text('Static file server')
 }
 
@@ -153,7 +162,7 @@ fn main() {
 		eprintln('cannot serve assets: ${err}')
 		return
 	}
-	veb.run(mut app, 18080)
+	veb.run[App, Context](mut app, 18080)
 }
 ```
 فایل‌های دایرکتوری `public/` در مسیر ریشه سرو می‌شوند. به عنوان مثال، `public/style.css` در `http://localhost:8080/style.css` قابل دسترسی است.
