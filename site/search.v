@@ -86,7 +86,39 @@ fn clean_doc_text(s string) string {
 // strip_inline_marks removes Markdown emphasis markers, which would otherwise
 // sit between the letters of a word a reader searches for.
 fn strip_inline_marks(s string) string {
-	return s.replace('**', '').replace('__', '').replace('`', '').replace('](', '] ')
+	// A link wrapped in its own parentheses — `([text](url))` — leaves the space
+	// where the target was between the text and the closing bracket, so that
+	// space goes too.
+	return strip_links(s.replace('**', '').replace('__', '').replace('`', ''))
+		.replace('[', '')
+		.replace(']', '')
+		.replace(' )', ')')
+}
+
+// strip_links drops a link's target, so the index holds the words a reader sees
+// — "see Getting Started" — and not the book's own file names.
+fn strip_links(s string) string {
+	mut sb := strings.new_builder(s.len + 8)
+	mut i := 0
+	for i < s.len {
+		if s[i] == `]` && i + 1 < s.len && s[i + 1] == `(` {
+			mut depth := 1
+			i += 2
+			for i < s.len && depth > 0 {
+				if s[i] == `(` {
+					depth++
+				} else if s[i] == `)` {
+					depth--
+				}
+				i++
+			}
+			sb.write_u8(` `)
+			continue
+		}
+		sb.write_u8(s[i])
+		i++
+	}
+	return sb.str()
 }
 
 // plain_text is one document's body, used when a page is indexed as a whole.
