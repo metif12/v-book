@@ -77,8 +77,22 @@ fn build(target string) {
 }
 
 // serve previews the built site at the same subdirectory it is published under.
+//
+// veb's static handler compresses what it serves, and the book's heaviest asset
+// is a search index per language, so the preview asks for automatic zstd/gzip
+// rather than sending a megabyte of JSON down the wire on every page.
 fn serve(target string) {
-	mut app := &App{}
+	mut app := &App{
+		enable_static_compression:     true
+		static_compression_mime_types: [
+			'text/html',
+			'text/css',
+			'text/javascript',
+			'application/json',
+			'text/plain',
+			'image/svg+xml',
+		]
+	}
 	app.mount_static_folder_at(target, '/v-book') or {
 		eprintln('serve: ${err.msg()}')
 		return
