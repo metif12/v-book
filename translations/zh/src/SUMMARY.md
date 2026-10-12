@@ -2,6 +2,8 @@
 
 [简介](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # 第一部分：入门
 
 - [第 1 章：入门](ch01-getting-started.md)

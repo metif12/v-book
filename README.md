@@ -149,6 +149,12 @@ v-book/
 
 ## Chapters
 
+### The path
+
+- **The V Roadmap**: a stage-by-stage route through the book, with the tracks
+  (CLI, web, systems, graphics, scripts, metaprogramming) and the projects to
+  build in order
+
 ### Part I: Getting Started
 - **Chapter 0**: Introduction
 - **Chapter 1**: Getting Started (Installation, Hello World, Hello V)

@@ -2,6 +2,8 @@
 
 [المقدمة](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # الجزء الأول: البداية
 
 - [الفصل 1: البداية](ch01-getting-started.md)

@@ -2,6 +2,8 @@
 
 [Giriş](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # Bölüm I: Başlangıç
 
 - [Bölüm 1: Başlangıç](ch01-getting-started.md)

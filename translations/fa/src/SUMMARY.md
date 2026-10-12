@@ -2,6 +2,8 @@
 
 [مقدمه](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # بخش اول: شروع کار
 
 - [فصل ۱: شروع کار](ch01-getting-started.md)

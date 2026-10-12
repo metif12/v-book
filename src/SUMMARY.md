@@ -2,6 +2,8 @@
 
 [Introduction](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # Part I: Getting Started
 
 - [Chapter 1: Getting Started](ch01-getting-started.md)

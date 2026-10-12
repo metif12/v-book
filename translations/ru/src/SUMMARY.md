@@ -2,6 +2,8 @@
 
 [Введение](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # Часть I: Начало работы
 
 - [Глава 1: Начало работы](ch01-getting-started.md)

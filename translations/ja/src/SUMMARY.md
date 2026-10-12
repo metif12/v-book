@@ -2,6 +2,8 @@
 
 [はじめに](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # 第I部：はじめに
 
 - [第1章：はじめに](ch01-getting-started.md)

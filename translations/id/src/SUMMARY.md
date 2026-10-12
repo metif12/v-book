@@ -2,6 +2,8 @@
 
 [Pengantar](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # Bagian I: Memulai
 
 - [Bab 1: Memulai](ch01-getting-started.md)

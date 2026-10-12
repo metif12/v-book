@@ -2,6 +2,8 @@
 
 [تعارف](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # حصہ اول: آغاز
 
 - [باب ۱: آغاز](ch01-getting-started.md)

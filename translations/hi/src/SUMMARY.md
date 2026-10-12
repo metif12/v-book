@@ -2,6 +2,8 @@
 
 [परिचय](ch00-introduction.md)
 
+[The V Roadmap](roadmap.md)
+
 # भाग I: शुरुआत करना
 
 - [अध्याय 1: शुरुआत करना](ch01-getting-started.md)
