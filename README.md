@@ -55,7 +55,14 @@ What the site does:
 
 ### Prerequisites
 
-- [V](https://vlang.io) 0.5.2+
+- [V](https://vlang.io) — 0.5.2 or newer. The generator uses the current
+  `$tmpl('file.html', data)` API and veb's static compression, both of which
+  landed after the 0.5.2 release binary, so the CI workflows build V from
+  source. Locally, `v up` gets you there:
+
+```bash
+v up
+```
 
 ### Build the book
 
