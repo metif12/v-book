@@ -1,6 +1,7 @@
 module main
 
 import strings
+import veb
 
 // base_path is where the book is published, including the leading slash. It is
 // the project subdirectory GitHub Pages serves the book under.
@@ -266,91 +267,75 @@ fn ui_for(locale Locale) Ui {
 	}
 }
 
+// PageData is what the page shell template receives. Every string that carries
+// HTML is a veb.RawHtml, so the template emits it verbatim, and everything the
+// reader can write — a title, a label — is escaped in V before it lands here.
+struct PageData {
+	lang               string
+	dir                string
+	title              string
+	description        string
+	base               string
+	site_name          string
+	site_tagline       string
+	repo_url           string
+	repo_label         string
+	license            string
+	edit_url           string
+	search_placeholder string
+	search_close       string
+	search_index_path  string
+	ui_contents        string
+	ui_language        string
+	ui_theme           string
+	ui_source          string
+	ui_edit            string
+	ui_previous        string
+	ui_next            string
+	toc                veb.RawHtml
+	body               veb.RawHtml
+	lang_menu          veb.RawHtml
+	pager              veb.RawHtml
+}
+
 // render_page wraps rendered content in the shared page shell.
+//
+// The shell lives in site/templates/page.html, so the markup can be edited as
+// HTML instead of as V string concatenation.
 pub fn render_page(opts PageOpts) string {
 	locale := opts.locale
-	dir := locale.dir
-	dir_prefix := locale_dir(locale)
 	ui := ui_for(locale)
-	mut out := strings.new_builder(8192)
-	out.write_string('<!doctype html>\n<html lang="${locale.code}" dir="${dir}" data-theme="light">\n<head>\n')
-	out.write_string('<meta charset="utf-8">\n')
-	out.write_string('<meta name="viewport" content="width=device-width, initial-scale=1.0">\n')
-	out.write_string('<title>${escape_attr(opts.title)}</title>\n')
-	out.write_string('<meta name="description" content="${escape_attr(opts.description)}">\n')
-	out.write_string('<link rel="stylesheet" href="${base_path}app.css">\n')
-	out.write_string('<link rel="stylesheet" href="${base_path}book.css">\n')
-	out.write_string('<link rel="stylesheet" href="${base_path}codemirror/lib/codemirror.css">\n')
-	out.write_string('<link rel="icon" href="${base_path}logo.svg" type="image/svg+xml">\n')
-	out.write_string('</head>\n<body>\n')
-	// Header
-	out.write_string('<header class="top-bar">\n')
-	out.write_string('<button class="bar-button toc-button" id="toc-toggle" aria-label="${escape_attr(ui.contents)}" aria-expanded="false" aria-controls="toc">\n')
-	out.write_string('<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>\n')
-	out.write_string('</button>\n')
-	out.write_string('<a class="brand" href="${base_path}">\n')
-	out.write_string('<img class="brand-logo" src="${base_path}logo.svg" alt="" width="26" height="26">\n')
-	out.write_string('<span class="brand-text">\n<span class="brand-name">${site_name}</span>\n')
-	out.write_string('<span class="brand-sub">${site_tagline}</span>\n</span>\n</a>\n')
-	out.write_string('<div class="search-scrim" id="search-scrim" hidden></div>\n')
-	out.write_string('<form class="search" id="search-form" role="search" autocomplete="off">\n')
-	out.write_string('<div class="search-row">\n')
-	out.write_string('<span class="search-icon" aria-hidden="true">\n<svg width="17" height="17" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>\n</span>\n')
-	out.write_string('<input class="search-input" id="search-input" type="search" placeholder="${escape_attr(ui.search)}" aria-label="${escape_attr(ui.search)}" autocomplete="off" spellcheck="false">\n')
-	out.write_string('<kbd class="search-kbd" aria-hidden="true">Ctrl K</kbd>\n')
-	out.write_string('<button class="search-close" id="search-close" type="button" aria-label="${escape_attr(ui.close_search)}" title="${escape_attr(ui.close_search)}">\n<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>\n</button>\n')
-	out.write_string('</div>\n')
-	out.write_string('<div class="search-panel" id="search-panel" role="listbox" aria-label="${escape_attr(ui.search)}" hidden></div>\n')
-	out.write_string('</form>\n')
-	out.write_string('<button class="bar-button search-toggle" id="search-toggle" aria-label="${escape_attr(ui.search)}" aria-expanded="false">\n')
-	out.write_string('<svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>\n')
-	out.write_string('</button>\n')
-	out.write_string('<div class="top-bar-actions">\n')
-	out.write_string('<a class="bar-button" href="${repo_url}" target="_blank" rel="noopener" title="${escape_attr(ui.source)}" aria-label="${escape_attr(ui.source)}">\n')
-	out.write_string('<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.53-1.32-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.09 1.77 1.18 1.77 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.3 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5z" fill="currentColor"/></svg>\n')
-	out.write_string('</a>\n')
-	out.write_string('<a class="bar-button" href="${escape_attr(opts.edit_url)}" title="${escape_attr(ui.edit)}" aria-label="${escape_attr(ui.edit)}">\n')
-	out.write_string('<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="currentColor" stroke-width="2"/></svg>\n')
-	out.write_string('</a>\n')
-	out.write_string('<div class="menu-wrap">\n')
-	out.write_string('<button class="bar-button" id="lang-toggle" aria-label="${escape_attr(ui.language)}" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu">\n')
-	out.write_string('<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18" stroke="currentColor" stroke-width="2" fill="none"/></svg>\n')
-	out.write_string('</button>\n')
-	out.write_string('${lang_menu(locale.code, opts.page_href)}\n')
-	out.write_string('</div>\n')
-	out.write_string('<button class="bar-button" id="theme-toggle" aria-label="${escape_attr(ui.theme)}" aria-pressed="false">\n')
-	out.write_string('<svg class="icon-theme-light" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>\n')
-	out.write_string('<svg class="icon-theme-dark" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>\n')
-	out.write_string('</button>\n')
-	out.write_string('</div>\n')
-	out.write_string('</header>\n')
-	// Layout
-	out.write_string('<div class="layout">\n')
-	out.write_string('${opts.toc}\n')
-	out.write_string('<div class="click-catcher" id="toc-catcher" hidden></div>\n')
-	out.write_string('<main class="content" id="content">\n')
-	out.write_string('<div class="container" id="container">\n')
-	out.write_string('<article class="prose" id="prose">\n')
-	out.write_string('${opts.body}\n')
-	out.write_string('</article>\n')
-	out.write_string('<nav class="pager" aria-label="Page navigation">\n')
-	out.write_string(pager_link(opts.prev_url, opts.prev_text, 'prev-page', ui.previous, 'prev'))
-	out.write_string('<span class="counter">${escape_text(opts.counter)}</span>\n')
-	out.write_string(pager_link(opts.next_url, opts.next_text, 'next-page', ui.next, 'next'))
-	out.write_string('</nav>\n')
-	out.write_string('<footer class="page-footer">\n')
-	out.write_string('<span>${site_name} · <a href="${repo_url}" target="_blank" rel="noopener">${repo_url.replace('https://', '')}</a></span>\n')
-	out.write_string('<span>${escape_text(opts.license_src)}</span>\n')
-	out.write_string('</footer>\n')
-	out.write_string('</div>\n')
-	out.write_string('</main>\n')
-	out.write_string('</div>\n')
-	out.write_string('<script src="${base_path}codemirror/lib/codemirror.js"></script>\n')
-	out.write_string('<script src="${base_path}codemirror/mode/vlang/vlang.js"></script>\n')
-	out.write_string('<script src="${base_path}${dir_prefix}search-index.js"></script>\n')
-	out.write_string('<script src="${base_path}app.js"></script>\n')
-	out.write_string('</body>\n</html>\n')
-	return out.str()
+	prev_link := pager_link(opts.prev_url, opts.prev_text, 'prev-page', ui.previous, 'prev')
+	next_link := pager_link(opts.next_url, opts.next_text, 'next-page', ui.next, 'next')
+	page := PageData{
+		lang:               escape_attr(locale.code)
+		dir:                escape_attr(locale.dir)
+		title:              escape_attr(opts.title)
+		description:        escape_attr(opts.description)
+		base:               base_path.trim_right('/')
+		site_name:          escape_text(site_name)
+		site_tagline:       escape_text(site_tagline)
+		repo_url:           escape_attr(repo_url)
+		repo_label:         escape_text(repo_url.replace('https://', ''))
+		license:            escape_text(opts.license_src)
+		edit_url:           escape_attr(opts.edit_url)
+		search_placeholder: escape_attr(ui.search)
+		search_close:       escape_attr(ui.close_search)
+		search_index_path:  '${locale_dir(locale)}search-index.js'
+		ui_contents:        escape_attr(ui.contents)
+		ui_language:        escape_attr(ui.language)
+		ui_theme:           escape_attr(ui.theme)
+		ui_source:          escape_attr(ui.source)
+		ui_edit:            escape_attr(ui.edit)
+		ui_previous:        escape_attr(ui.previous)
+		ui_next:            escape_attr(ui.next)
+		toc:                veb.RawHtml(opts.toc)
+		body:               veb.RawHtml(opts.body)
+		lang_menu:          veb.RawHtml(lang_menu(locale.code, opts.page_href))
+		pager:              veb.RawHtml(prev_link + '<span class="counter">${escape_text(opts.counter)}</span>' +
+			next_link)
+	}
+	return $tmpl('templates/page.html', page)
 }
 
 // PageOpts is everything a rendered page needs.

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="@page.lang" dir="@page.dir" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@page.title</title>
+<meta name="description" content="@page.description">
+<link rel="stylesheet" href="@page.base/app.css">
+<link rel="stylesheet" href="@page.base/book.css">
+<link rel="stylesheet" href="@page.base/codemirror/lib/codemirror.css">
+<link rel="icon" href="@page.base/logo.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top-bar">
+<button class="bar-button toc-button" id="toc-toggle" aria-label="@page.ui_contents" aria-expanded="false" aria-controls="toc">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+</button>
+<a class="brand" href="@page.base/">
+<img class="brand-logo" src="@page.base/logo.svg" alt="" width="26" height="26">
+<span class="brand-text">
+<span class="brand-name">@page.site_name</span>
+<span class="brand-sub">@page.site_tagline</span>
+</span>
+</a>
+<div class="search-scrim" id="search-scrim" hidden></div>
+<form class="search" id="search-form" role="search" autocomplete="off">
+<div class="search-row">
+<span class="search-icon" aria-hidden="true">
+<svg width="17" height="17" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</span>
+<input class="search-input" id="search-input" type="search" placeholder="@page.search_placeholder" aria-label="@page.search_placeholder" autocomplete="off" spellcheck="false">
+<kbd class="search-kbd" aria-hidden="true">Ctrl K</kbd>
+<button class="search-close" id="search-close" type="button" aria-label="@page.search_close" title="@page.search_close">
+<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+</div>
+<div class="search-panel" id="search-panel" role="listbox" aria-label="@page.search_placeholder" hidden></div>
+</form>
+<button class="bar-button search-toggle" id="search-toggle" aria-label="@page.search_placeholder" aria-expanded="false">
+<svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+</button>
+<div class="top-bar-actions">
+<a class="bar-button" href="@page.repo_url" target="_blank" rel="noopener" title="@page.ui_source" aria-label="@page.ui_source">
+<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.55v-2.1c-3.2.7-3.88-1.4-3.88-1.4-.53-1.32-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.09 1.77 1.18 1.77 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.3 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.18-1.48 3.14-1.18 3.14-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12A11.5 11.5 0 0 0 12 .5z" fill="currentColor"/></svg>
+</a>
+<a class="bar-button" href="@page.edit_url" title="@page.ui_edit" aria-label="@page.ui_edit">
+<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4l10-10-4-4L4 16v4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="currentColor" stroke-width="2"/></svg>
+</a>
+<div class="menu-wrap">
+<button class="bar-button" id="lang-toggle" aria-label="@page.ui_language" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/><path d="M3 12h18M12 3c2.6 2.8 2.6 15.2 0 18M12 3c-2.6 2.8-2.6 15.2 0 18" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+</button>
+@page.lang_menu
+</div>
+<button class="bar-button" id="theme-toggle" aria-label="@page.ui_theme" aria-pressed="false">
+<svg class="icon-theme-light" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+<svg class="icon-theme-dark" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+</button>
+</div>
+</header>
+<div class="layout">
+@page.toc
+<div class="click-catcher" id="toc-catcher" hidden></div>
+<main class="content" id="content">
+<div class="container" id="container">
+<article class="prose" id="prose">
+@page.body
+</article>
+<nav class="pager" aria-label="Page navigation">
+@page.pager
+</nav>
+<footer class="page-footer">
+<span>@page.site_name · <a href="@page.repo_url" target="_blank" rel="noopener">@page.repo_label</a></span>
+<span>@page.license</span>
+</footer>
+</div>
+</main>
+</div>
+<script src="@page.base/codemirror/lib/codemirror.js"></script>
+<script src="@page.base/codemirror/mode/vlang/vlang.js"></script>
+<script src="@page.base/@page.search_index_path"></script>
+<script src="@page.base/app.js"></script>
+</body>
+</html>

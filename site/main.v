@@ -167,33 +167,29 @@ fn write_not_found(locale Locale, src_dir string, sub string) ! {
 }
 
 // write_root_index sends the site root to the first page of the English book.
+//
+// The card itself is site/templates/landing.html, so the landing page is HTML
+// in the same place as the rest of the shell.
 fn write_root_index(target string) ! {
 	first := locales[0]
 	content := os.read_file(os.join_path(en_source, 'SUMMARY.md'))!
 	entries := parse_summary(content)
 	root := locale_root(first, entries)
-	langs := language_links()
-	mut html := '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-	html += '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
-	html += '<meta http-equiv="refresh" content="0; url=${root}">\n'
-	html += '<link rel="canonical" href="${root}">\n'
-	html += '<link rel="icon" href="${base_path}logo.svg" type="image/svg+xml">\n'
-	html += '<title>${site_name}</title>\n'
-	html += '<link rel="stylesheet" href="${base_path}app.css">\n'
-	html += '</head>\n<body class="landing">\n'
-	html += '<div class="landing-card">\n'
-	html += '<img class="landing-logo" src="${base_path}logo.svg" alt="" width="72" height="72">\n'
-	html += '<h1 class="landing-title">${site_name}</h1>\n'
-	html += '<p class="landing-text">The book opens in ${wait_note()}. If it does not, '
-	html += '<a href="${root}">open the first page</a>.</p>\n'
-	html += '<nav class="landing-langs">${langs}</nav>\n'
-	html += '</div>\n</body>\n</html>\n'
-	os.write_file(os.join_path(target, 'index.html'), html)!
+	landing := LandingData{
+		first:     escape_attr(root)
+		base:      base_path.trim_right('/')
+		site_name: escape_text(site_name)
+		langs:     veb.RawHtml(language_links())
+	}
+	os.write_file(os.join_path(target, 'index.html'), $tmpl('templates/landing.html', landing))!
 }
 
-// wait_note is the redirect delay, written as a word so the sentence reads well.
-fn wait_note() string {
-	return 'a moment'
+// LandingData is what the landing template receives.
+struct LandingData {
+	first     string
+	base      string
+	site_name string
+	langs     veb.RawHtml
 }
 
 // language_links renders the landing page language list.
