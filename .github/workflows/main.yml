@@ -15,10 +15,14 @@ jobs:
 
       - name: Install V
         run: |
-          curl -sSL https://github.com/vlang/v/releases/download/0.5.2/v_linux.zip -o v.zip
-          unzip -o v.zip -d /usr/local/bin
-          chmod +x /usr/local/bin/v/v
-          echo "/usr/local/bin/v" >> $GITHUB_PATH
+          # The site builder uses the current `$tmpl` API and veb's static
+          # compression, both of which landed after the 0.5.2 release binary.
+          sudo apt-get update -qq
+          sudo apt-get install -y make git
+          git clone --depth=1 https://github.com/vlang/v /tmp/v
+          cd /tmp/v && make
+          echo "/tmp/v" >> $GITHUB_PATH
+          /tmp/v/v version
 
       - name: Compile and run every code block
         run: |
