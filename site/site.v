@@ -197,6 +197,7 @@ pub fn lang_menu(current string, href string) string {
 // ui holds the chrome labels, which change with the language.
 struct Ui {
 	search       string
+	close_search string
 	contents     string
 	language     string
 	theme        string
@@ -212,6 +213,7 @@ struct Ui {
 fn ui_en() Ui {
 	return Ui{
 		search:       'Search the book'
+		close_search: 'Close search'
 		contents:     'Contents'
 		language:     'Language'
 		theme:        'Toggle theme'
@@ -231,6 +233,7 @@ fn ui_for(locale Locale) Ui {
 		'de' {
 			return Ui{
 				search:       'Buch durchsuchen'
+				close_search: 'Suche schließen'
 				contents:     'Inhalt'
 				language:     'Sprache'
 				theme:        'Design wechseln'
@@ -245,6 +248,7 @@ fn ui_for(locale Locale) Ui {
 		'zh' {
 			return Ui{
 				search:       '搜索本书'
+				close_search: '关闭搜索'
 				contents:     '目录'
 				language:     '语言'
 				theme:        '切换主题'
@@ -288,10 +292,14 @@ pub fn render_page(opts PageOpts) string {
 	out.write_string('<img class="brand-logo" src="${base_path}logo.svg" alt="" width="26" height="26">\n')
 	out.write_string('<span class="brand-text">\n<span class="brand-name">${site_name}</span>\n')
 	out.write_string('<span class="brand-sub">${site_tagline}</span>\n</span>\n</a>\n')
+	out.write_string('<div class="search-scrim" id="search-scrim" hidden></div>\n')
 	out.write_string('<form class="search" id="search-form" role="search" autocomplete="off">\n')
+	out.write_string('<div class="search-row">\n')
 	out.write_string('<span class="search-icon" aria-hidden="true">\n<svg width="17" height="17" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>\n</span>\n')
 	out.write_string('<input class="search-input" id="search-input" type="search" placeholder="${escape_attr(ui.search)}" aria-label="${escape_attr(ui.search)}" autocomplete="off" spellcheck="false">\n')
 	out.write_string('<kbd class="search-kbd" aria-hidden="true">Ctrl K</kbd>\n')
+	out.write_string('<button class="search-close" id="search-close" type="button" aria-label="${escape_attr(ui.close_search)}" title="${escape_attr(ui.close_search)}">\n<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>\n</button>\n')
+	out.write_string('</div>\n')
 	out.write_string('<div class="search-panel" id="search-panel" role="listbox" aria-label="${escape_attr(ui.search)}" hidden></div>\n')
 	out.write_string('</form>\n')
 	out.write_string('<button class="bar-button search-toggle" id="search-toggle" aria-label="${escape_attr(ui.search)}" aria-expanded="false">\n')

@@ -126,20 +126,24 @@
 	var panel = doc.getElementById('search-panel');
 	var form = doc.getElementById('search-form');
 	var searchToggle = doc.getElementById('search-toggle');
+	var scrim = doc.getElementById('search-scrim');
+	var searchClose = doc.getElementById('search-close');
 	var index = window.SEARCH_INDEX || [];
 	var results = [];
 	var active = -1;
 	var timer = 0;
 
-	// On a narrow screen the form is a full screen sheet. openSearch hands the
-	// screen to it, and closeSearchSheet gives it back.
+	// On a narrow screen the form is a full screen overlay. openSearchSheet
+	// shows the scrim with it, and closeSearchSheet takes both away.
 	function openSearchSheet() {
 		if (form) form.classList.add('open');
+		if (scrim) scrim.hidden = false;
 		if (searchToggle) searchToggle.setAttribute('aria-expanded', 'true');
 	}
 
 	function closeSearchSheet() {
 		if (form) form.classList.remove('open');
+		if (scrim) scrim.hidden = true;
 		if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
 	}
 
@@ -150,6 +154,23 @@
 				input.focus();
 				input.select();
 			}
+		});
+	}
+
+	// The close button and the scrim both take the overlay away, and the focus
+	// goes back to the button that opened it.
+	if (searchClose) {
+		searchClose.addEventListener('click', function () {
+			closeSearch();
+			closeSearchSheet();
+			if (searchToggle) searchToggle.focus();
+		});
+	}
+
+	if (scrim) {
+		scrim.addEventListener('click', function () {
+			closeSearch();
+			closeSearchSheet();
 		});
 	}
 
@@ -301,8 +322,8 @@
 		});
 	}
 
-	// A tap outside the sheet closes it: the language menu's own handler covers
-	// clicks outside the form as well, so both close together.
+	// Anything outside the overlay (including the scrim, which has its own
+	// handler) takes it away, so a stray result never keeps the screen.
 	doc.addEventListener('click', function (e) {
 		if (!form || !form.classList.contains('open')) return;
 		if (form.contains(e.target) || e.target === searchToggle) return;

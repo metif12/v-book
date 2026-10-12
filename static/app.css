@@ -152,7 +152,34 @@ img { max-width: 100%; }
 
 .toc-button { display: none; }
 
-.search-toggle { display: none; }
+/* The search button is a floating action button on a phone, and nothing at all
+   on a wider screen, where the field sits in the bar. */
+.search-toggle {
+  display: none;
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+}
+.search-toggle:hover { background: var(--accent-strong); }
+
+/* The row the field, the icon and the close button share. On a wide screen it
+   is the bar itself; on a phone it is the first line of the overlay. */
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
 .icon-theme-dark { display: none; }
 :root[data-theme="dark"] .icon-theme-light { display: none; }
@@ -242,6 +269,9 @@ img { max-width: 100%; }
 }
 .search-result:hover { background: var(--surface-2); text-decoration: none; }
 .search-result.active { background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent); }
+
+/* A hairline between results keeps a long list readable in the overlay. */
+.search-result + .search-result { border-top: 1px solid var(--border); }
 
 .search-result-part {
   display: block;
@@ -386,6 +416,20 @@ mark {
 /* The hidden attribute has to beat the media query below, or the drawer's
    scrim stays on the page after the drawer closes. */
 .click-catcher[hidden] { display: none; }
+
+/* The search overlay's own scrim: it sits under the sheet, above the page, and
+   only exists while the overlay is open. */
+.search-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  display: block;
+  background: rgba(6, 10, 22, .55);
+  backdrop-filter: blur(1.5px);
+}
+.search-scrim[hidden] { display: none; }
+
+.search-close { display: none; }
 
 /* Landing ------------------------------------------------------------- */
 
@@ -540,6 +584,10 @@ mark {
 
 /* CodeMirror theme overrides, so the editor matches the dark plate. */
 .CodeMirror {
+  /* The positioned rule matters: CodeMirror keeps a hidden 1000px input
+     absolutely positioned inside the editor, and without a positioned parent
+     it stretches the page horizontally on a phone. */
+  position: relative;
   height: auto !important;
   max-width: 100%;
   padding: 8px 0;
@@ -547,6 +595,7 @@ mark {
   background: var(--code-bg) !important;
   color: var(--code-fg) !important;
 }
+.CodeMirror-scroll { max-width: 100%; }
 .CodeMirror-gutters {
   background: var(--code-bg) !important;
   border-right: 1px solid var(--code-border) !important;
@@ -608,39 +657,76 @@ mark {
   .pager { flex-direction: column; }
   .counter { display: none; }
 
-  /* Search is a button on a phone. The button hands the whole screen to the
-     search field, so the reader types on a keyboard rather than a one inch
-     box, and Esc or a tap outside gives the screen back. */
+  /* Search is a floating button on a phone. The button opens an overlay that
+     owns the whole screen: an opaque panel, one row with the icon, the field
+     and the close button, and the results scrolling under it. Escape, the close
+     button or a tap on the scrim takes it away. */
   .search-toggle { display: inline-flex; }
 
   .search {
     display: none;
     position: fixed;
-    inset: var(--bar-h) 0 0;
+    inset: 0;
     z-index: 60;
     width: 100%;
     max-width: none;
-    height: auto;
+    height: 100%;
     padding: 14px 12px 0;
     border: 0;
     border-radius: 0;
     background: var(--surface);
-    box-shadow: var(--shadow-lg);
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
   }
+  /* The base rule for :focus-within is more specific than .search, so the open
+     overlay names its own background. */
   .search.open { display: flex; }
-  .search-icon { color: var(--text-muted); }
-  .search-input { height: 44px; color: var(--text); font-size: 16px; }
+  .search.open,
+  .search.open:focus-within { background: var(--surface); }
+  .search-icon { color: var(--text-muted); flex: 0 0 auto; }
+  .search-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 46px;
+    color: var(--text);
+    font-size: 16px;
+  }
   .search-input::placeholder { color: var(--text-muted); }
   .search-kbd { display: none; }
+  .search-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .search-close:hover { color: var(--text); border-color: var(--border-strong); }
+
   .search-panel {
     position: static;
     width: 100%;
-    max-height: calc(100vh - var(--bar-h) - 70px);
+    max-width: none;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    margin-top: 4px;
+    padding: 4px 0 24px;
     border: 0;
     border-radius: 0;
     box-shadow: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
+  .search-result { padding: 11px 10px; }
+  .search-result-title { font-size: 15px; overflow-wrap: anywhere; }
+  .search-result-snippet { overflow-wrap: anywhere; }
+  .search-head { position: sticky; top: 0; background: var(--surface); }
 }
