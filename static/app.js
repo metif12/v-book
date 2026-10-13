@@ -395,6 +395,83 @@
 		});
 	}
 
+	/* The roadmap ------------------------------------------------------- */
+
+	// Each node links to a chapter, so the diagram doubles as a progress map:
+	// the reader's browser remembers which chapters have been opened, and this
+	// page marks them. Nothing leaves the browser.
+	var READ_KEY = 'vbook-read';
+
+	function readPages() {
+		try {
+			var raw = window.localStorage.getItem(READ_KEY);
+			var list = raw ? JSON.parse(raw) : [];
+			return Array.isArray(list) ? list : [];
+		} catch (e) {
+			return [];
+		}
+	}
+
+	function markRead(href) {
+		var pages = readPages();
+		var same = window.location.pathname;
+		if (href === same) return; // the page the reader is on
+		var base = root.getAttribute('data-base') || '/';
+		if (href.indexOf(base) !== 0) return; // another language, or a link off-site
+		if (pages.indexOf(href) !== -1) return;
+		pages.push(href);
+		try {
+			window.localStorage.setItem(READ_KEY, JSON.stringify(pages));
+		} catch (e) { /* storage blocked, the map just stays empty */ }
+	}
+
+	function relFromAbs(href) {
+		var a = document.createElement('a');
+		a.href = href;
+		return a.pathname;
+	}
+
+	var roadmap = document.querySelector('.roadmap');
+	if (roadmap) {
+		var progress = document.getElementById('roadmap-progress');
+		var reset = document.getElementById('roadmap-reset');
+		var pages = readPages();
+		var total = 0;
+		var done = 0;
+		var nodes = roadmap.querySelectorAll('.roadmap-link[href]');
+		for (var i = 0; i < nodes.length; i++) {
+			var rel = relFromAbs(nodes[i].getAttribute('href'));
+			var node = nodes[i].parentNode;
+			total++;
+			if (pages.indexOf(rel) !== -1) {
+				node.classList.add('is-read');
+				done++;
+			}
+			if (window.location.pathname === rel) {
+				node.classList.add('is-current');
+				done++;
+			}
+		}
+		if (progress) {
+			progress.hidden = false;
+			progress.textContent = done + ' of ' + total + ' opened';
+		}
+		if (reset) {
+			reset.hidden = false;
+			reset.addEventListener('click', function () {
+				try {
+					window.localStorage.removeItem(READ_KEY);
+				} catch (e) { /* ignore */ }
+				var all = roadmap.querySelectorAll('.roadmap-node');
+				for (var j = 0; j < all.length; j++) {
+					all[j].classList.remove('is-read');
+				}
+				if (progress) progress.textContent = '0 of ' + total + ' opened';
+			});
+		}
+		markRead(window.location.pathname);
+	}
+
 	/* Start ------------------------------------------------------------- */
 
 	applyTheme(storedTheme() || 'auto');

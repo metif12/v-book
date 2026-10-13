@@ -20,64 +20,35 @@ little sits between the intent and the machine code.
 
 Work through the stages in order. Each one ends with something you can run.
 
-### Stage 1 — The language
 
-- **Install V and run your first program** — the source build, `v run`, what the
-  compiler accepts. ([Getting Started](ch01-getting-started.md),
-  [Installation](ch01-01-installation.md), [Hello, World!](ch01-02-hello-world.md))
-- **Read a program out loud** — the parts of "Hello, V!": string interpolation,
-  functions, the shape of a `main.v`. ([Hello, V!](ch01-03-hello-v.md))
-- **Set up the workflow** — a project, a `v.mod`, `v fmt -w` on save,
-  `v test .`, `v vet .`. ([Building a Project](ch02-building-a-project.md),
-  [Testing with v test](ch02-04-testing.md))
-- **Learn the core concepts** — variables and mutability, types, functions,
-  comments, control flow. This is the chapter to reread, not skim.
-  ([Common Concepts](ch03-common-concepts.md))
-- **Model data** — structs, methods, embedded structs, enums, sum types, and
-  the `match` that ties them together. ([Structs](ch05-structs.md),
-  [Enums and Sum Types](ch06-enums-and-sum-types.md))
-- **Split a program into modules** — what is public, what a module is, and how
-  to import one. ([Modules and Packages](ch07-modules-and-packages.md))
+```roadmap
+Stage 1 — The language
+  Install V and run your first program | ch01-01-installation
+  Read a program out loud | ch01-02-hello-world
+  Set up the workflow: v fmt and v test | ch02-building-a-project
+  Learn the core concepts | ch03-common-concepts
+  Model data with structs, enums and match | ch05-structs
+  Split a program into modules | ch07-modules-and-packages
+Stage 2 — Data and errors
+  Arrays, maps and the methods that replace loops | ch08-collections
+  ?T for a value that may not exist, !T for one that can fail | ch09-error-handling
+  Stack, heap and the GC modes | ch04-ownership-and-memory
+Stage 3 — Build something a stranger can use
+  Tests first: _test.v and assert | ch11-testing
+  Ship a command-line tool | ch12-io-project
+  Closures, map, filter and sort with a comparator | ch13-functional-features
+  Goroutines, channels and shared state | ch14-concurrency
+  Routes, JSON, templates, middleware, static files | ch15-veb-web-framework
+  Call C, and let C call you | ch16-c-interop
+Stage 4 — Go deeper
+  Generics and comptime | ch17-advanced-features
+  GC modes, autofree and what a profile says | ch18-memory-management
+  Measure: stopwatches and v -profile | ch22-performance-and-benchmarking
+  The toolchain: v -check, v clean, v doctor | ch19-tooling
+  Cross-compile and ship one binary | ch21-cross-compilation-and-deployment
+  A whole application | ch20-final-project
+```
 
-### Stage 2 — Data and errors
-
-- **Work with collections** — arrays and the methods that replace loops, maps
-  for lookups, strings without surprises. ([Collections](ch08-collections.md))
-- **Fail well** — `?T` for a value that may not exist, `!T` for an operation that
-  may fail, and how to write a custom error the caller can match.
-  ([Error Handling](ch09-error-handling.md))
-- **Understand where your data lives** — stack and heap, the GC modes,
-  references. Not needed to write code; needed to write code that stays fast.
-  ([Ownership and Memory](ch04-ownership-and-memory.md))
-
-### Stage 3 — Build something a stranger can use
-
-- **Write tests first** — `_test.v`, `test_` functions, and the assert that
-  prints both sides. ([Testing](ch11-testing.md))
-- **Ship a command-line tool** — arguments, files, stdin and stdout, and the
-  shape of a real `main.v`. ([I/O Project](ch12-io-project.md))
-- **Use the higher-order tools** — closures, `map`, `filter`, `sort` with a
-  comparator. ([Functional Features](ch13-functional-features.md))
-- **Use the concurrency model** — goroutines, channels, shared state, and the
-  race detector. ([Concurrency](ch14-concurrency.md))
-- **Serve HTTP** — routes, JSON, templates, middleware, static files.
-  ([Veb Web Framework](ch15-veb-web-framework.md))
-- **Call C, and let C call you** — declaring a C function, `#flag`, `#include`,
-  shared libraries. ([C Interop](ch16-c-interop.md))
-
-### Stage 4 — Go deeper
-
-- **Generics and comptime** — when a generic earns its keep, and how much code
-  moves to compile time. ([Generics](ch10-generics.md),
-  [Advanced Features](ch17-advanced-features.md))
-- **Memory management in detail** — GC modes, autofree, `-gc none`, and what
-  profiling says. ([Memory Management](ch18-memory-management.md),
-  [Performance and Benchmarking](ch22-performance-and-benchmarking.md))
-- **The toolchain** — `v -check`, `v -profile`, `v doctor`, `v clean`, and VPM.
-  ([Tooling](ch19-tooling.md))
-- **Ship it** — production builds, cross-compilation, container images.
-  ([Cross-Compilation and Deployment](ch21-cross-compilation-and-deployment.md))
-- **A whole application** — the capstone. ([Final Project](ch20-final-project.md))
 
 ## Choose a track
 

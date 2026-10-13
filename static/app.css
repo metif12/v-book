@@ -657,6 +657,142 @@ mark {
 .cm-s-default .cm-operator { color: #9fb4e8 !important; }
 .cm-s-default .cm-builtin { color: var(--code-type) !important; }
 
+/* The roadmap diagram ------------------------------------------------- */
+
+.roadmap-figure {
+  margin: 22px 0 26px;
+}
+
+.roadmap {
+  padding: 14px 10px 6px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.roadmap-svg {
+  display: block;
+  min-width: 900px;
+  height: auto;
+}
+
+.roadmap-stage-box {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.roadmap-stage-name {
+  fill: #fff;
+  font: 650 13px/1 var(--sans);
+  letter-spacing: .02em;
+}
+
+.roadmap-arrow,
+.roadmap-arrow-head {
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 2;
+}
+
+.roadmap-box {
+  fill: var(--surface-2);
+  stroke: var(--border-strong);
+  stroke-width: 1.5;
+}
+
+.roadmap-label {
+  fill: var(--text);
+  font: 500 13px/1.3 var(--sans);
+}
+
+/* The hit area is a transparent rect on top of the node, which keeps the whole
+   node clickable while the text below stays selectable. */
+.roadmap-hit {
+  fill: transparent;
+  stroke: none;
+}
+
+.roadmap-link {
+  outline: none;
+}
+
+.roadmap-link:hover + .roadmap-box,
+.roadmap-node:hover .roadmap-box {
+  stroke: var(--accent);
+}
+
+.roadmap-link:focus-visible .roadmap-hit {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+/* A chapter the reader has opened: the node fills in. */
+.roadmap-node.is-read .roadmap-box {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+}
+
+.roadmap-node.is-read .roadmap-label {
+  fill: var(--accent-strong);
+  font-weight: 650;
+}
+
+.roadmap-node.is-current .roadmap-box {
+  fill: var(--mark);
+  stroke: var(--accent);
+}
+
+.roadmap-caption {
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.roadmap-progress {
+  font-family: var(--mono);
+}
+
+.roadmap-reset {
+  margin-left: 6px;
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.roadmap-reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.roadmap-source {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.roadmap-source summary {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.roadmap-source-line {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.roadmap-source-line.is-node {
+  padding-left: 2.6em;
+  font-size: 12.5px;
+}
+
 /* Narrow screens ------------------------------------------------------ */
 
 @media (max-width: 1180px) {

@@ -16,6 +16,7 @@ enum BlockKind {
 	table
 	quote
 	hr
+	roadmap
 }
 
 struct Block {
@@ -62,6 +63,13 @@ fn parse_blocks(src string) []Block {
 				i++
 			}
 			i++ // closing fence
+			if lang == roadmap_fence {
+				blocks << Block{
+					kind:  .roadmap
+					lines: body
+				}
+				continue
+			}
 			blocks << Block{
 				kind:  .code
 				lang:  lang
@@ -184,6 +192,33 @@ fn render_block(block Block) string {
 				''
 			}
 			return '<h${block.level} id="${id}">${render_inline(block.lines[0])}${anchor}</h${block.level}>\n'
+		}
+		.roadmap {
+			// The diagram itself comes from the template; the figure around it,
+			// the caption with its progress line, and the text form below are
+			// the page's own furniture.
+			mut sb := strings.new_builder(4096)
+			sb.write_string('<figure class="roadmap-figure">\n')
+			sb.write_string('<div class="roadmap" role="group" aria-label="The V roadmap">\n')
+			sb.write_string(render_roadmap(block.lines))
+			sb.write_string('</div>\n')
+			sb.write_string('<figcaption class="roadmap-caption">A node fills in once the chapter it links to has been opened. <span class="roadmap-progress" id="roadmap-progress" hidden></span><button class="roadmap-reset" type="button" id="roadmap-reset" hidden>Start over</button></figcaption>\n')
+			sb.write_string('<details class="roadmap-source">\n<summary>The path as text</summary>\n')
+			for line in block.lines {
+				t := line.trim_space()
+				if t == '' {
+					continue
+				}
+				node_class := if line.starts_with(' ') || line.starts_with('\t') {
+					' is-node'
+				} else {
+					''
+				}
+				sb.write_string('<p class="roadmap-source-line${node_class}">${escape_text(t)}</p>\n')
+			}
+			sb.write_string('</details>\n')
+			sb.write_string('</figure>\n')
+			return sb.str()
 		}
 		.quote {
 			return render_quote(block.lines)

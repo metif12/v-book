@@ -1,0 +1,26 @@
+<svg class="roadmap-svg" viewBox="0 0 @roadmap.width @roadmap.height" width="100%" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+<title>The path through this book</title>
+<defs><marker id="roadmap-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="roadmap-arrow-head"/></marker></defs>
+@for stage in roadmap.stages
+<g class="roadmap-stage">
+<rect class="roadmap-stage-box" x="@stage.x" y="@roadmap.pad_y" width="@roadmap.col_w" height="@roadmap.header_h" rx="10"/>
+<text class="roadmap-stage-name" x="@stage.name_x" y="@stage.name_y">@stage.name</text>
+@if stage.has_next
+<path class="roadmap-arrow" d="M@stage.arrow_x @stage.arrow_y L@stage.arrow_end @stage.arrow_y" marker-end="url(#roadmap-head)"/>
+@end
+@for node in stage.nodes
+<g class="roadmap-node">
+<rect class="roadmap-box" x="@stage.x" y="@node.y" width="@roadmap.col_w" height="@node.height" rx="10"/>
+@for line in node.lines
+<text class="roadmap-label" x="@node.text_x" y="@line.y">@line.text</text>
+@end
+@if node.target == ''
+<a class="roadmap-link is-static"></a>
+@else
+<a class="roadmap-link" href="@node.target" aria-label="@node.label"><rect class="roadmap-hit" x="@stage.x" y="@node.y" width="@roadmap.col_w" height="@node.height" rx="10"/></a>
+@end
+</g>
+@end
+</g>
+@end
+</svg>
