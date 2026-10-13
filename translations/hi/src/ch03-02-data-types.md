@@ -26,7 +26,6 @@
 - `bool` — `true` or `false`
 - `string` — UTF-8 string
 - `rune` — single Unicode character (alias for `u32`)
-- `byte` — alias for `u8`
 
 ## टाइप कन्वर्ज़न
 

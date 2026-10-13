@@ -49,9 +49,12 @@ The tester (`tools/code_check.vsh`) extracts fenced code blocks and writes each
 - `static/` — assets copied verbatim into `dist/`:
   - `app.css` (chrome: top bar, search panel, TOC, theme, code shell)
   - `book.css` (prose typography)
-  - `app.js` (theme, Ctrl+K search, panels, code highlighting)
-  - `logo.svg`, `favicon.png`, `codemirror/`
+  - `app.js` (theme, Ctrl+K search, panels, code highlighting, offline)
+  - `logo.svg`, `favicon.png`, `icon-192.png`, `icon-512.png`, `og-image.png`
+  - `manifest.webmanifest`, `sw.js` (the offline shell)
+  - `codemirror/`
 - `tools/code_check.vsh`, `tools/validate.vsh` — CI gates
+- `tools/make_icons.vsh` — draws the PWA icons and the social card as PNGs
 - `.github/workflows/` — `main.yml` (tests, build, validate) and `pages.yml`
   (deploy `dist/` to GitHub Pages)
 

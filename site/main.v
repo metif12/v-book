@@ -84,10 +84,16 @@ fn build(target string) {
 fn serve(target string) {
 	mut app := &App{
 		enable_static_compression:     true
+		// veb does not know the web app manifest by default, and a browser
+		// refuses to read one it was served without a type.
+		static_mime_types:             {
+			'.webmanifest': 'application/manifest+json'
+		}
 		static_compression_mime_types: [
 			'text/html',
 			'text/css',
 			'text/javascript',
+			'application/manifest+json',
 			'application/json',
 			'text/plain',
 			'image/svg+xml',
@@ -218,19 +224,38 @@ fn language_links() string {
 }
 
 // index_urls lists every page of a locale as a sitemap entry.
+//
+// Each entry carries its language alternates and the page's own modification
+// time, so a crawler knows which edition to serve and when a page last moved.
 fn index_urls(locale Locale, src_dir string) string {
 	content := os.read_file(os.join_path(src_dir, 'SUMMARY.md')) or { return '' }
 	mut sb := ''
 	for p in pages_only(parse_summary(content)) {
-		sb += '  <url>\n    <loc>https://metif12.github.io${page_url(locale, p.href)}</loc>\n  </url>\n'
+		file := p.href.replace('.md', '.html')
+		path := os.join_path(src_dir, p.href)
+		mut lastmod := ''
+		if os.is_file(path) {
+			stamp := time.unix(os.file_last_mod_unix(path)).format_rfc3339()
+			lastmod = '\n    <lastmod>${stamp}</lastmod>'
+		}
+		sb += '  <url>\n    <loc>${canonical_url(locale, p.href)}</loc>${lastmod}\n'
+		for l in locales {
+			target := if l.code == 'en' {
+				base_path + file
+			} else {
+				base_path + l.code + '/' + file
+			}
+			sb += '    <xhtml:link rel="alternate" hreflang="${l.code}" href="${site_origin}${target}"/>\n'
+		}
+		sb += '  </url>\n'
 	}
 	return sb
 }
 
 // write_seo writes robots.txt and a sitemap covering every published page.
 fn write_seo(target string, sitemap []string) ! {
-	os.write_file(os.join_path(target, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://metif12.github.io${base_path}sitemap.xml\n')!
-	mut xml := '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+	os.write_file(os.join_path(target, 'robots.txt'), 'User-agent: *\nAllow: /\n\nSitemap: ${site_origin}${base_path}sitemap.xml\n')!
+	mut xml := '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
 	for part in sitemap {
 		xml += part
 	}

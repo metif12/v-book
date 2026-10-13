@@ -26,7 +26,6 @@
 - `bool` — `true` 또는 `false`
 - `string` — UTF-8 문자열
 - `rune` — 단일 유니코드 문자 (`u32`의 별칭)
-- `byte` — `u8`의 별칭
 
 ## 타입 변환
 

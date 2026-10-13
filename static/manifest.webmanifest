@@ -1,0 +1,51 @@
+{
+  "name": "The V Programming Language Book",
+  "short_name": "The V Book",
+  "description": "A complete guide to the V programming language: installation, memory, structs, concurrency, veb, C interop and cross-compilation, with every code example compiled and run.",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/v-book/",
+  "start_url": "/v-book/",
+  "scope": "/v-book/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#eef1f8",
+  "theme_color": "#0b1230",
+  "categories": ["education", "books", "developer", "programming"],
+  "icons": [
+    {
+      "src": "/v-book/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/v-book/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/v-book/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/v-book/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Read the book",
+      "url": "/v-book/ch00-introduction.html"
+    },
+    {
+      "name": "The roadmap",
+      "url": "/v-book/roadmap.html"
+    }
+  ]
+}

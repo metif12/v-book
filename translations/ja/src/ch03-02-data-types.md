@@ -26,7 +26,6 @@
 - `bool` — `true`または`false`
 - `string` — UTF-8文字列
 - `rune` — 単一Unicode文字（`u32`のエイリアス）
-- `byte` — `u8`のエイリアス
 
 ## 型変換
 

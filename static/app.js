@@ -398,4 +398,20 @@
 	/* Start ------------------------------------------------------------- */
 
 	applyTheme(storedTheme() || 'auto');
+
+	/* Offline ----------------------------------------------------------- */
+
+	// A book is read on a train, so the shell is cached and the pages the
+	// reader opened stay readable without a connection. The worker is
+	// registered from the page's base path, which the shell writes on <html>.
+	if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+		var pwaBase = root.getAttribute('data-base') || '/';
+		window.addEventListener('load', function () {
+			var sw = navigator.serviceWorker;
+			if (!sw) return;
+			sw.register(pwaBase + 'sw.js').catch(function () {
+				// No worker, no offline mode, nothing else changes.
+			});
+		});
+	}
 })();

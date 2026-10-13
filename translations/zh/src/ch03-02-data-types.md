@@ -26,7 +26,6 @@
 - `bool` — `true` 或 `false`
 - `string` — UTF-8 字符串
 - `rune` — 单个 Unicode 字符（`u32` 的别名）
-- `byte` — `u8` 的别名
 
 ## 类型转换
 

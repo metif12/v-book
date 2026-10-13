@@ -55,6 +55,38 @@
     Consolas, "SFMono-Regular", Menlo, monospace;
 }
 
+/* Scrollbars.
+ *
+ * A 900 pixel table of operators and a 400 entry search result list both need a
+ * scrollbar, and the platform default is a bright stripe in the middle of the
+ * page in both themes. These follow the resolved theme instead.
+ */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background: var(--border-strong);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+  background-clip: content-box;
+}
+
 :root[data-theme="dark"] {
   --page-bg: #060a16;
   --surface: #0e1526;
@@ -100,8 +132,13 @@ img { max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 40;
-  height: var(--bar-h);
-  display: flex;
+  min-height: var(--bar-h);
+  display: grid;
+  /* Three columns: the wordmark, the search field, the buttons. A grid keeps
+     the field centred in the bar whatever the other two measure, which a flex
+     row with a margin cannot do. */
+  grid-auto-flow: column;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 14px;
   padding: 0 16px;
@@ -146,7 +183,7 @@ img { max-width: 100%; }
 .bar-button:hover { background: var(--bar-hover); border-color: var(--bar-border); text-decoration: none; }
 .bar-button:focus-visible { outline: 2px solid var(--mark); outline-offset: 2px; }
 
-.top-bar-actions { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.top-bar-actions { display: flex; align-items: center; gap: 4px; }
 
 .menu-wrap { position: relative; }
 
@@ -177,8 +214,10 @@ img { max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+  width: min(430px, 100%);
   min-width: 0;
+  position: relative;
 }
 
 .icon-theme-dark { display: none; }
@@ -191,8 +230,9 @@ img { max-width: 100%; }
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  width: min(430px, 42vw);
+  min-width: 0;
   height: 38px;
   padding: 0 10px;
   border: 1px solid var(--bar-border);
@@ -235,8 +275,8 @@ img { max-width: 100%; }
 .search-panel {
   position: absolute;
   top: calc(100% + 10px);
+  left: 0;
   right: 0;
-  left: auto;
   width: max(100%, 520px);
   max-height: min(70vh, 620px);
   overflow-y: auto;
@@ -663,6 +703,13 @@ mark {
      button or a tap on the scrim takes it away. */
   .search-toggle { display: inline-flex; }
 
+  /* The overlay owns the screen, so the row inside it is full width. */
+  .search-row {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
   .search {
     display: none;
     position: fixed;
@@ -689,8 +736,7 @@ mark {
     flex: 1 1 auto;
     min-width: 0;
     height: 46px;
-    color: var(--text);
-    font-size: 16px;
+    color: var(--text);    font-size: 16px;
   }
   .search-input::placeholder { color: var(--text-muted); }
   .search-kbd { display: none; }

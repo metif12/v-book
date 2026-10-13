@@ -10,6 +10,11 @@ const base_path = '/v-book/'
 // site_name is what the header shows next to the logo.
 const site_name = 'The V Book'
 
+// site_origin is the host the book is published on, including the scheme. Every
+// absolute URL in the head, the sitemap and the search index is built from it,
+// so a canonical link never points at a preview.
+const site_origin = 'https://metif12.github.io'
+
 // site_tagline sits under the name in the header, the way the tour labels its
 // edition.
 const site_tagline = 'V 0.5.2+'
@@ -274,6 +279,7 @@ struct PageData {
 	lang               string
 	dir                string
 	title              string
+	og_title           string
 	description        string
 	base               string
 	site_name          string
@@ -282,6 +288,10 @@ struct PageData {
 	repo_label         string
 	license            string
 	edit_url           string
+	canonical          string
+	og_image           string
+	hreflang           veb.RawHtml
+	json_ld            veb.RawHtml
 	search_placeholder string
 	search_close       string
 	search_index_path  string
@@ -298,6 +308,43 @@ struct PageData {
 	pager              veb.RawHtml
 }
 
+// canonical_url is the published address of one page, which every absolute URL
+// in the head and the sitemap is built from.
+fn canonical_url(locale Locale, href string) string {
+	return site_origin + page_url(locale, href)
+}
+
+// hreflang_links tells a search engine which language edition a page has, in
+// the format it reads: one alternate per language, plus the default.
+fn hreflang_links(href string) veb.RawHtml {
+	file := href.replace('.md', '.html')
+	mut sb := strings.new_builder(1024)
+	for l in locales {
+		target := if l.code == 'en' { base_path + file } else { base_path + l.code + '/' + file }
+		sb.write_string('<link rel="alternate" hreflang="${escape_attr(l.code)}" href="${site_origin}${target}">\n')
+	}
+	sb.write_string('<link rel="alternate" hreflang="x-default" href="${site_origin}${base_path}${file}">\n')
+	return veb.RawHtml(sb.str())
+}
+
+// json_ld describes a page to a crawler as one chapter of one book, which is
+// what it is: a titled section of a published work.
+fn json_ld(opts PageOpts) veb.RawHtml {
+	mut sb := strings.new_builder(512)
+	sb.write_string('<script type="application/ld+json">')
+	sb.write_string('{"@context":"https://schema.org","@type":"Article",')
+	sb.write_string('"headline":')
+	sb.write_string(json_string(escape_text(opts.title)))
+	sb.write_string(',"description":')
+	sb.write_string(json_string(escape_text(opts.description)))
+	sb.write_string(',"url":${json_string(escape_attr(canonical_url(opts.locale, opts.page_href)))},')
+	sb.write_string('"inLanguage":"${escape_attr(opts.locale.code)}","isPartOf":')
+	sb.write_string(json_string(escape_text(site_name)))
+	sb.write_string(',"license":"https://opensource.org/licenses/MIT"')
+	sb.write_string('}</script>\n')
+	return veb.RawHtml(sb.str())
+}
+
 // render_page wraps rendered content in the shared page shell.
 //
 // The shell lives in site/templates/page.html, so the markup can be edited as
@@ -311,6 +358,7 @@ pub fn render_page(opts PageOpts) string {
 		lang:               escape_attr(locale.code)
 		dir:                escape_attr(locale.dir)
 		title:              escape_attr(opts.title)
+		og_title:           escape_attr(opts.title.replace(' · ${site_name}', ''))
 		description:        escape_attr(opts.description)
 		base:               base_path.trim_right('/')
 		site_name:          escape_text(site_name)
@@ -319,6 +367,10 @@ pub fn render_page(opts PageOpts) string {
 		repo_label:         escape_text(repo_url.replace('https://', ''))
 		license:            escape_text(opts.license_src)
 		edit_url:           escape_attr(opts.edit_url)
+		canonical:          escape_attr(canonical_url(locale, opts.page_href))
+		og_image:           escape_attr(site_origin + base_path + 'og-image.png')
+		hreflang:           hreflang_links(opts.page_href)
+		json_ld:            json_ld(opts)
 		search_placeholder: escape_attr(ui.search)
 		search_close:       escape_attr(ui.close_search)
 		search_index_path:  '${locale_dir(locale)}search-index.js'

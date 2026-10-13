@@ -26,7 +26,6 @@
 - `bool` — `true` o `false`
 - `string` — stringa UTF-8
 - `rune` — carattere Unicode singolo (alias per `u32`)
-- `byte` — alias per `u8`
 
 ## Conversione di tipo
 
